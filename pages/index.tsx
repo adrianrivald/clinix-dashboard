@@ -1,5 +1,5 @@
 import Head from "next/head";
-import { Client, Hero, Products, Testimoni, WhyUs } from "../components";
+import { Client, Faq, Hero, Products, Testimoni, WhyUs } from "../components";
 
 export default function Home() {
   return (
@@ -16,6 +16,7 @@ export default function Home() {
         <Products />
         <Client />
         <Testimoni />
+        <Faq />
       </main>
     </div>
   );
