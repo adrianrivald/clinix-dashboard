@@ -1,0 +1,7 @@
+export * from "./Layout"
+export * from "./Ui"
+export * from "./Hero/Hero"
+export * from "./WhyUs/WhyUs"
+export * from "./Products/Products"
+export * from "./Client/Client"
+export * from "./Testimoni/Testimoni"
