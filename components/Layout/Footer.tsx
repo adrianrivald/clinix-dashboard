@@ -1,7 +1,7 @@
 import Image from "next/image";
 import React from "react";
 import { twMerge } from "tailwind-merge";
-import { maxWidthContainer } from "../../../constants/class";
+import { maxWidthContainer } from "../../constants/class";
 import {
   FacebookRounded,
   InstagramRounded,
@@ -10,7 +10,7 @@ import {
   PhoneIcon,
   PinMapIcon,
   TwitterRounded,
-} from "../../Icons";
+} from "../Icons";
 
 export function Footer() {
   return (
