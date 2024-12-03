@@ -19,7 +19,7 @@ export function Products() {
         Menyediakan Solusi Untuk Berbagai Praktisi
       </div>
       <div className="flex mt-16 justify-between items-center max-w-[100rem] mx-auto px-32">
-        <div className="bg-white rounded-md p-8">
+        <div className="bg-white rounded-md p-8 hover:bg-primary-100 hover:text-primary-500 cursor-pointer">
           <div className="flex justify-between">
             <div className="flex flex-col gap-4 w-3/4">
               <Image
@@ -34,7 +34,7 @@ export function Products() {
             <ArrowRightUp />
           </div>
         </div>
-        <div className="bg-white rounded-md p-8">
+        <div className="bg-white rounded-md p-8 hover:bg-primary-100 hover:text-primary-500 cursor-pointer">
           <div className="flex justify-between">
             <div className="flex flex-col gap-4 w-3/4">
               <Image
@@ -49,7 +49,7 @@ export function Products() {
             <ArrowRightUp />
           </div>
         </div>
-        <div className="bg-white rounded-md p-8">
+        <div className="bg-white rounded-md p-8 hover:bg-primary-100 hover:text-primary-500 cursor-pointer">
           <div className="flex justify-between">
             <div className="flex flex-col gap-4 w-3/4">
               <Image
@@ -64,7 +64,7 @@ export function Products() {
             <ArrowRightUp />
           </div>
         </div>
-        <div className="bg-white rounded-md p-8">
+        <div className="bg-white rounded-md p-8 hover:bg-primary-100 hover:text-primary-500 cursor-pointer">
           <div className="flex justify-between">
             <div className="flex flex-col gap-4 w-3/4">
               <Image

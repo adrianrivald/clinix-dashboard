@@ -1,6 +1,6 @@
 import Image from "next/image";
 import React from "react";
-import { Button, Dropdown } from "../../../components";
+import { Button, Dropdown } from "../..";
 
 export function Header() {
   return (
@@ -17,10 +17,12 @@ export function Header() {
 
       {/* Navigation menus */}
       <nav id="menus" className="flex items-center gap-16 text-base">
-        <div>Perusahaan</div>
-        <div>Produk</div>
-        <div>Karir</div>
-        <div>Artikel</div>
+        <div className="hover:text-primary-500 cursor-pointer font-bold text-primary-500">
+          Perusahaan
+        </div>
+        <div className="hover:text-primary-500 cursor-pointer">Produk</div>
+        <div className="hover:text-primary-500 cursor-pointer">Karir</div>
+        <div className="hover:text-primary-500 cursor-pointer">Artikel</div>
       </nav>
 
       {/* Right section */}

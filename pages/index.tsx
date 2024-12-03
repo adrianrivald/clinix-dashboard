@@ -1,5 +1,14 @@
 import Head from "next/head";
-import { Client, Faq, Hero, Products, Testimoni, WhyUs } from "../components";
+import {
+  Client,
+  Contact,
+  Faq,
+  Hero,
+  Products,
+  Testimoni,
+  WhyUs,
+  Banner,
+} from "../components";
 
 export default function Home() {
   return (
@@ -17,6 +26,8 @@ export default function Home() {
         <Client />
         <Testimoni />
         <Faq />
+        <Contact />
+        <Banner />
       </main>
     </div>
   );

@@ -1,1 +1,2 @@
-export * from "./Header/header"
+export * from "./Header/Header"
+export * from "./Footer/Footer"

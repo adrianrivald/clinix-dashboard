@@ -42,7 +42,7 @@ export function WhyUs() {
           </div>
           <div className="p-8 bg-primary-100 flex items-center gap-4 rounded-md">
             <Image
-              src="/assets/images/placeholder.png"
+              src="/assets/images/usplogo2.png"
               width={64}
               height={56}
               alt="placeholder"
@@ -55,6 +55,24 @@ export function WhyUs() {
                 Raih efisiensi dengan sistem kesehatan yang terhubung langsung
                 ke SatuSehat dan BPJS Kesehatan. Proses administrasi lebih cepat
                 dan sinkronisasi data lebih andal
+              </p>
+            </div>
+          </div>
+          <div className="p-8 bg-primary-100 flex items-center gap-4 rounded-md">
+            <Image
+              src="/assets/images/usplogo3.png"
+              width={64}
+              height={56}
+              alt="placeholder"
+            />
+            <div id="item-1">
+              <h3 className="text-[20px] font-bold">
+                Dirancang Spesifik untuk Setiap Spesialisasi
+              </h3>
+              <p className="mt-2">
+                Sistem yang disesuaikan untuk kebutuhan unik setiap spesialisasi
+                medis, memastikan fungsionalitas optimal dan kemudahan
+                penggunaan bagi tim Anda
               </p>
             </div>
           </div>
