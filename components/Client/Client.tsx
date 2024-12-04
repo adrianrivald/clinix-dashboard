@@ -13,12 +13,12 @@ export function Client() {
       )}
     >
       <h2 className="text-[32px] font-bold">Telah Beroperasi dan Dipercaya</h2>
-      <p className="w-1/2 text-center text-base">
+      <p className="w-full lg:w-1/2 text-center text-base">
         Sistem kami telah dipercaya untuk beroperasi pada klien kami. Utilisasi
         dari sistem kami terbukti meningkatkan efisiensi operasional pelayanan
         dan administrasi klien kami
       </p>
-      <div className="flex items-center justify-between">
+      <div className="flex flex-col lg:flex-row items-center justify-between">
         <Image
           src="/assets/images/clients/rs-sapta-medika.png"
           width={328}
