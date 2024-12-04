@@ -21,8 +21,8 @@ export function WhyUs() {
             keunggulan terintegrasi di balik layar, tanpa komplikasi teknis
           </p>
         </div>
-        <div className="lg:absolute lg:-top-10 flex flex-col lg:-right-10 lg:w-1/2 gap-2 mt-8 lg:mt-0">
-          <div className="p-8 bg-primary-100 flex items-center gap-4 rounded-md">
+        <div className="lg:absolute lg:-top-20 flex flex-col lg:-right-10 lg:w-1/2 gap-4 mt-8 lg:mt-0">
+          <div className="p-8 bg-white shadow-md flex items-center gap-4 rounded-md">
             <Image
               src="/assets/images/usplogo.png"
               width={120}
@@ -41,7 +41,7 @@ export function WhyUs() {
               </p>
             </div>
           </div>
-          <div className="p-8 bg-primary-100 flex items-center gap-4 rounded-md">
+          <div className="p-8 bg-white shadow-md flex items-center gap-4 rounded-md">
             <Image
               src="/assets/images/usplogo2.png"
               width={64}
@@ -60,7 +60,7 @@ export function WhyUs() {
               </p>
             </div>
           </div>
-          <div className="p-8 bg-primary-100 flex items-center gap-4 rounded-md">
+          <div className="p-8 bg-white shadow-md flex items-center gap-4 rounded-md">
             <Image
               src="/assets/images/usplogo3.png"
               width={64}

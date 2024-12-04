@@ -18,7 +18,7 @@ export function Client() {
         dari sistem kami terbukti meningkatkan efisiensi operasional pelayanan
         dan administrasi klien kami
       </p>
-      <div className="flex items-center">
+      <div className="flex items-center justify-between">
         <Image
           src="/assets/images/clients/rs-sapta-medika.png"
           width={328}
