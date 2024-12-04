@@ -9,12 +9,12 @@ export function Contact() {
     <div
       id="why-us"
       className={twMerge(
-        "bg-[url('/assets/images/why-us.png')] p-16 mt-24 bg-no-repeat bg-left bg-auto",
+        "bg-[url('/assets/images/why-us.png')] p-8 lg:p-16 mt-8 lg:mt-24 bg-no-repeat bg-left bg-auto",
         maxWidthContainer
       )}
     >
-      <div className="flex items-center gap-16 backdrop-blur-lg border border-2 rounded-xl shadow-xl p-16 relative min-h-[400px] w-[100%] mx-auto">
-        <div className="w-[40%]">
+      <div className="flex flex-col lg:flex-row items-center gap-16 backdrop-blur-lg border border-2 rounded-xl shadow-xl p-4 lg:p-16 relative min-h-[400px] w-[100%] mx-auto">
+        <div className="lg:w-[40%]">
           <h2 className="font-bold text-[24px] text-neutral-300">
             Memiliki Pertanyaan Lain?
           </h2>
@@ -26,7 +26,7 @@ export function Contact() {
             kirimkan
           </p>
         </div>
-        <div className="w-[60%]">
+        <div className="w-full lg:w-[60%]">
           <ContactForm />
         </div>
       </div>

@@ -22,6 +22,9 @@ module.exports = {
           500: "#31475E",
         },
       },
+      objectPosition: {
+        "middle-bottom": "0px -210px",
+      },
     },
   },
   plugins: [],

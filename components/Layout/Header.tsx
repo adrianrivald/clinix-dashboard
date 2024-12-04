@@ -16,7 +16,7 @@ export function Header() {
       </div>
 
       {/* Navigation menus */}
-      <nav id="menus" className="flex items-center gap-16 text-base">
+      <nav id="menus" className="hidden lg:flex items-center gap-16 text-base">
         <div className="hover:text-primary-500 cursor-pointer font-bold text-primary-500">
           Perusahaan
         </div>
@@ -26,7 +26,7 @@ export function Header() {
       </nav>
 
       {/* Right section */}
-      <div id="right" className="flex gap-3">
+      <div id="right" className="hidden lg:flex gap-3">
         <Dropdown title="ID" />
         <Button title="Coba Demo Gratis" isPrimary />
       </div>

@@ -19,11 +19,11 @@ export function Hero() {
         width={591}
         height={620}
         alt="doctor"
-        className="w-1/2"
+        className="hidden lg:block w-1/2"
       />
 
       {/* Our Words */}
-      <div id="our-words" className="max-w-[40rem]">
+      <div id="our-words" className="mt-36 lg:mt-0 px-16 lg:px-0 max-w-[40rem]">
         <h1 className="text-[32px] font-bold">
           Keunggulan Medis Dimulai dari Sistem yang Memahami Anda
         </h1>

@@ -8,7 +8,7 @@ export function Client() {
     <div
       id="client"
       className={twMerge(
-        "mt-32 flex flex-col justify-center items-center gap-5",
+        "mt-32 flex flex-col p-8 justify-center items-center gap-5",
         maxWidthContainer
       )}
     >

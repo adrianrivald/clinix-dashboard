@@ -38,17 +38,20 @@ const faqData = [
 
 export function Faq() {
   return (
-    <div id="testimoni" className={twMerge("p-16 mt-32", maxWidthContainer)}>
-      <div className="flex items-center justify-between mx-14">
+    <div
+      id="testimoni"
+      className={twMerge("p-16 mt-16 lg:mt-32", maxWidthContainer)}
+    >
+      <div className="flex flex-col lg:flex-row lg:items-center justify-between lg:mx-14">
         <h2 className="text-[32px] font-bold">
           Anda Bertanya, Kami <br /> Menjawab
         </h2>
-        <p className="text-right text-[16px] w-[30rem]">
+        <p className="mt-4 lg:mt-0 lg:text-right text-[16px] w-[30rem]">
           Kami mengkurasi pertanyaan yang sering ditanyakan berikut dengan
           jawabannya
         </p>
       </div>
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mt-16">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mt-8 lg:mt-16">
         {faqData?.map((faq) => {
           return (
             <div className="bg-neutral-200 p-8">

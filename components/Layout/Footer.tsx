@@ -17,12 +17,12 @@ export function Footer() {
     <footer
       id="footer"
       className={twMerge(
-        " p-16 mt-32 flex justify-between gap-16",
+        " p-16 mt-32 flex flex-col lg:flex-row justify-between gap-16",
         maxWidthContainer
       )}
     >
       {/* Logo */}
-      <div className="flex flex-col gap-4 w-[20%]">
+      <div className="flex flex-col gap-4 lg:w-[20%]">
         <Image
           src="/assets/logo/logo-memos.png"
           width={108}
@@ -70,7 +70,7 @@ export function Footer() {
       </div>
 
       {/* Kontak */}
-      <div className="flex flex-col gap-4 w-[30%]">
+      <div className="flex flex-col gap-4 lg:w-[30%]">
         <div className="font-bold">Kontak</div>
         <div className="flex items-center gap-4">
           <PhoneIcon />

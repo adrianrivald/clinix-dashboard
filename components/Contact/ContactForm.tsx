@@ -43,7 +43,11 @@ export function ContactForm() {
           rows={4}
         />
       </div>
-      <Button isPrimary title="Kirim Pertanyaan Anda" className="w-[250px]" />
+      <Button
+        isPrimary
+        title="Kirim Pertanyaan Anda"
+        className="lg:w-[250px]"
+      />
     </form>
   );
 }

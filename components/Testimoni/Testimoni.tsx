@@ -9,12 +9,12 @@ export function Testimoni() {
     <div
       id="testimoni"
       className={twMerge(
-        "bg-[url('/assets/images/testi.png')] p-16 mt-32 bg-no-repeat bg-right-top bg-auto",
+        "bg-[url('/assets/images/testi.png')] p-8 lg:p-16 mt-16 lg:mt-32 bg-no-repeat bg-right-top bg-auto",
         maxWidthContainer
       )}
     >
       <div className="backdrop-blur-lg border border-2 rounded-xl shadow-xl p-8 relative min-h-[400px] w-[100%] mx-auto">
-        <div className="flex items-center justify-between mx-16">
+        <div className="flex items-center justify-between lg:mx-16">
           <h2 className="font-bold text-[32px] ">
             Apa kata
             <br />
@@ -30,7 +30,7 @@ export function Testimoni() {
           </div>
         </div>
         <div className="flex items-center gap-4 mt-8">
-          <div className="bg-primary-100 rounded-md p-4 w-1/2">
+          <div className="bg-primary-100 rounded-md p-4 w-full md:w-1/2">
             <div className="flex items-center justify-between">
               <div className="flex gap-3 items-center">
                 <Image
@@ -60,7 +60,7 @@ export function Testimoni() {
               </p>
             </div>
           </div>
-          <div className="bg-primary-100 rounded-md p-4 w-1/2">
+          <div className="hidden lg:block bg-primary-100 rounded-md p-4 w-1/2">
             <div className="flex items-center justify-between">
               <div className="flex gap-3 items-center">
                 <Image
