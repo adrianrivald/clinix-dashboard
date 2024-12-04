@@ -13,7 +13,7 @@ export function Products() {
         width={870}
         height={357}
         alt="products"
-        className="absolute left-1/2 -translate-x-1/2 transform -top-[12rem] scale-[75%] lg:scale-100"
+        className="hidden lg:block absolute left-1/2 -translate-x-1/2 transform -top-[20%] md:-top-[35%] scale-[75%] lg:scale-100"
       />
       <div className="w-full px-8 text-center pt-[2rem] lg:pt-[12rem] flex justify-center text-white text-[32px] font-bold">
         Menyediakan Solusi Untuk Berbagai Praktisi
