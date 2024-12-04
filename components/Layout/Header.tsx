@@ -8,7 +8,11 @@ export function Header() {
   const router = useRouter();
   const { asPath, pathname } = router;
   const isHome = asPath === "/";
-  console.log(pathname === "/career", "router");
+
+  const onClickLogo = () => {
+    router.push("/");
+  };
+
   return (
     <>
       {isHome ? (
@@ -20,6 +24,8 @@ export function Header() {
               width={216}
               height={56}
               alt="logo-memos"
+              onClick={onClickLogo}
+              className="cursor-pointer"
             />
           </div>
 
@@ -77,6 +83,8 @@ export function Header() {
               width={216}
               height={56}
               alt="logo-memos"
+              onClick={onClickLogo}
+              className="cursor-pointer"
             />
           </div>
 
