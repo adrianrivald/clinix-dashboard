@@ -81,7 +81,7 @@ export function Testimoni() {
             },
           }}
         >
-          <div className="flex items-center justify-between lg:mx-16">
+          <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between lg:mx-16 gap-2 mb-4">
             <h2 className="font-bold text-[32px] ">
               Apa kata
               <br />

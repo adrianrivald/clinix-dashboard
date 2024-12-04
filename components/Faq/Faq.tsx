@@ -46,7 +46,7 @@ export function Faq() {
         <h2 className="text-[32px] font-bold">
           Anda Bertanya, Kami <br /> Menjawab
         </h2>
-        <p className="mt-4 lg:mt-0 lg:text-right text-[16px] w-[30rem]">
+        <p className="mt-4 lg:mt-0 lg:text-right text-[16px] lg:w-[30rem]">
           Kami mengkurasi pertanyaan yang sering ditanyakan berikut dengan
           jawabannya
         </p>
