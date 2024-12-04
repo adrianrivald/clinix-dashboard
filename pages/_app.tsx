@@ -7,9 +7,7 @@ export default function App({ Component, pageProps }: AppProps) {
     // max-w-[100rem]
     <section className=" w-full mx-auto text-neutral-500">
       <Header />
-      <main className="mt-24">
-        <Component {...pageProps} />
-      </main>
+      <Component {...pageProps} />
       <Footer />
     </section>
   );

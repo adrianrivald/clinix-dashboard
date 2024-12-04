@@ -10,7 +10,7 @@ import {
   Banner,
 } from "../components";
 
-export default function Home() {
+export default function HomePage() {
   return (
     <div>
       <Head>
@@ -19,7 +19,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main>
+      <main className="mt-24">
         <Hero />
         <WhyUs />
         <Products />

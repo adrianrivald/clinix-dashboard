@@ -25,6 +25,7 @@ module.exports = {
       },
       objectPosition: {
         "middle-bottom": "0px -210px",
+        "middle-top": "0px -100px",
       },
     },
   },

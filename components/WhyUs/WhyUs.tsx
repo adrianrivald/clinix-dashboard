@@ -13,7 +13,7 @@ export function WhyUs() {
       )}
     >
       <div className="backdrop-blur-lg border border-2 rounded-xl shadow-xl p-8 relative min-h-[400px] w-[100%] mx-auto">
-        <div className="lg:absolute lg:top-1/2 lg:-translate-y-1/2 lg:transform lg:w-[30%]">
+        <div className="lg:absolute lg:top-1/2 lg:-translate-y-1/2 lg:transform lg:w-[35%]">
           <h2 className="font-bold text-[32px]">Mengapa Memos?</h2>
           <p className="mt-4">
             Dengan teknologi kami, Anda bisa fokus memberikan perawatan terbaik
@@ -21,7 +21,7 @@ export function WhyUs() {
             keunggulan terintegrasi di balik layar, tanpa komplikasi teknis
           </p>
         </div>
-        <div className="lg:absolute lg:-top-20 flex flex-col lg:-right-10 lg:w-1/2 gap-4 mt-8 lg:mt-0">
+        <div className="lg:absolute lg:-top-16 flex flex-col lg:-right-10 lg:w-[60%] gap-4 mt-8 lg:mt-0">
           <div className="p-8 bg-white shadow-md flex items-center gap-4 rounded-md">
             <Image
               src="/assets/images/usplogo.png"
