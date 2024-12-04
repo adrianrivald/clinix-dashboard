@@ -73,24 +73,30 @@ export function Footer() {
         {/* Kontak */}
         <div className="flex flex-col gap-4 lg:w-[30%]">
           <div className="font-bold">Kontak</div>
-          <div className="flex items-center gap-4">
-            <PhoneIcon className="w-4 flex-none" />
+          <div className="flex items-start gap-4">
+            <PhoneIcon className="w-4 flex-none mt-1" />
             <span>+62 851-7315-0717</span>
           </div>
-          <div className="flex items-center gap-4">
-            <PinMapIcon className="w-4 flex-none" />
+          <div className="flex items-start gap-4">
+            <PinMapIcon className="w-4 flex-none mt-1" />
             <span>
               Jl. Seturan Raya, Kledokan, Caturtunggal, Kec. Depok, Kabupaten
               Sleman, Daerah Istimewa Yogyakarta
             </span>
           </div>
-          <div className="flex items-center gap-4">
-            <MailIcon className="w-4 flex-none" />
+          <div className="flex items-start gap-4">
+            <MailIcon className="w-4 flex-none mt-1" />
             <span>info@notes.co.id</span>
           </div>
         </div>
       </div>
-      <div id="copyright" className="flex justify-center w-full">
+      <div
+        id="copyright"
+        className={twMerge(
+          "flex justify-center w-full p-8 ",
+          maxWidthContainer
+        )}
+      >
         <span className="text-neutral-400">
           © 2024 PT. Cipta Integrasi Nusantara | Terdaftar di Direktorat
           Jenderal Kekayaan Intelektual Republik Indonesia.
