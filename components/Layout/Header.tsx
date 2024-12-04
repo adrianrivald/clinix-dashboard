@@ -1,12 +1,14 @@
 import Image from "next/image";
+import Link from "next/link";
 import { useRouter } from "next/router";
 import React from "react";
 import { Button, Dropdown } from "..";
 
 export function Header() {
   const router = useRouter();
-  const { asPath } = router;
+  const { asPath, pathname } = router;
   const isHome = asPath === "/";
+  console.log(pathname === "/career", "router");
   return (
     <>
       {isHome ? (
@@ -26,12 +28,38 @@ export function Header() {
             id="menus"
             className="hidden lg:flex items-center gap-16 text-base"
           >
-            <div className="hover:text-primary-500 cursor-pointer font-bold text-primary-500">
+            <Link
+              href="/"
+              className={`hover:text-primary-500 cursor-pointer ${
+                pathname === "/" ? "font-bold text-primary-500" : ""
+              }`}
+            >
               Perusahaan
-            </div>
-            <div className="hover:text-primary-500 cursor-pointer">Produk</div>
-            <div className="hover:text-primary-500 cursor-pointer">Karir</div>
-            <div className="hover:text-primary-500 cursor-pointer">Artikel</div>
+            </Link>
+            <Link
+              href="/product"
+              className={`hover:text-primary-500 cursor-pointer ${
+                pathname === "/product" ? "font-bold text-primary-500" : ""
+              }`}
+            >
+              Produk
+            </Link>
+            <Link
+              href="/career"
+              className={`hover:text-primary-500 cursor-pointer ${
+                pathname === "/career" ? "font-bold text-primary-500" : ""
+              }`}
+            >
+              Karir
+            </Link>
+            <Link
+              href="/article"
+              className={`hover:text-primary-500 cursor-pointer ${
+                pathname === "/article" ? "font-bold text-primary-500" : ""
+              }`}
+            >
+              Artikel
+            </Link>
           </nav>
 
           {/* Right section */}
@@ -57,12 +85,38 @@ export function Header() {
             id="menus"
             className="hidden lg:flex items-center gap-16 text-base"
           >
-            <div className="hover:text-primary-500 cursor-pointer font-bold text-primary-500">
+            <Link
+              href="/"
+              className={`hover:text-primary-500 cursor-pointer ${
+                pathname === "/" ? "font-bold text-primary-500" : ""
+              }`}
+            >
               Perusahaan
-            </div>
-            <div className="hover:text-primary-500 cursor-pointer">Produk</div>
-            <div className="hover:text-primary-500 cursor-pointer">Karir</div>
-            <div className="hover:text-primary-500 cursor-pointer">Artikel</div>
+            </Link>
+            <Link
+              href="/product"
+              className={`hover:text-primary-500 cursor-pointer ${
+                pathname === "/product" ? "font-bold text-primary-500" : ""
+              }`}
+            >
+              Produk
+            </Link>
+            <Link
+              href="/career"
+              className={`hover:text-primary-500 cursor-pointer ${
+                pathname === "/career" ? "font-bold text-primary-500" : ""
+              }`}
+            >
+              Karir
+            </Link>
+            <Link
+              href="/article"
+              className={`hover:text-primary-500 cursor-pointer ${
+                pathname === "/article" ? "font-bold text-primary-500" : ""
+              }`}
+            >
+              Artikel
+            </Link>
           </nav>
 
           {/* Right section */}

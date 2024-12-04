@@ -1,4 +1,4 @@
-export function ArrowDown({ ...props }) {
+export function ArrowDownIcon({ ...props }) {
   return (
     <svg
       width="12"

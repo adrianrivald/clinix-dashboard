@@ -1,4 +1,4 @@
-export function IndonesiaRounded({ ...props }) {
+export function IndonesiaRoundedIcon({ ...props }) {
   return (
     <svg
       width="24"

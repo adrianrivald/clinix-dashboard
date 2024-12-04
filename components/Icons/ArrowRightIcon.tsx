@@ -1,4 +1,4 @@
-export function ArrowRightUp({ ...props }) {
+export function ArrowRightIcon({ ...props }) {
   return (
     <svg
       width="16"
@@ -9,8 +9,8 @@ export function ArrowRightUp({ ...props }) {
       {...props}
     >
       <path
-        d="M5.5 0.5V2.5H12.09L0.5 14.09L1.91 15.5L13.5 3.91V10.5H15.5V0.5H5.5Z"
-        fill="#31475E"
+        d="M8 0L6.59 1.41L12.17 7H0V9H12.17L6.59 14.59L8 16L16 8L8 0Z"
+        fill="white"
       />
     </svg>
   );

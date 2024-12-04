@@ -1,4 +1,4 @@
-export function Star({ ...props }) {
+export function StarIcon({ ...props }) {
   return (
     <svg
       width="24"

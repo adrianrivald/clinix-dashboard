@@ -1,4 +1,4 @@
-export function ArrowRight({ ...props }) {
+export function ArrowLeftIcon({ ...props }) {
   return (
     <svg
       width="16"
@@ -9,7 +9,7 @@ export function ArrowRight({ ...props }) {
       {...props}
     >
       <path
-        d="M8 0L6.59 1.41L12.17 7H0V9H12.17L6.59 14.59L8 16L16 8L8 0Z"
+        d="M16 7H3.83L9.42 1.41L8 0L0 8L8 16L9.41 14.59L3.83 9H16V7Z"
         fill="white"
       />
     </svg>

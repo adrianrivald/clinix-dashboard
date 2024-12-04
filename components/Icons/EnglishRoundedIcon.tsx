@@ -1,4 +1,4 @@
-export function EnglishRounded() {
+export function EnglishRoundedIcon() {
   return (
     <svg
       width="24"

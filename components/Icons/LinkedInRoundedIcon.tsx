@@ -1,4 +1,4 @@
-export function LinkedInRounded({ ...props }) {
+export function LinkedInRoundedIcon({ ...props }) {
   return (
     <svg
       width="32"

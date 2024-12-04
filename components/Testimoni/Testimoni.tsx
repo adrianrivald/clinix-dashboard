@@ -6,7 +6,7 @@ import { Navigation } from "swiper/modules";
 
 import { twMerge } from "tailwind-merge";
 import { maxWidthContainer } from "../../constants/class";
-import { ArrowLeft, ArrowRight, Star } from "../Icons";
+import { ArrowLeftIcon, ArrowRightIcon, StarIcon } from "../Icons";
 import "swiper/css";
 import "swiper/css/navigation";
 
@@ -92,13 +92,13 @@ export function Testimoni() {
                 ref={navigationPrevRef}
                 className="cursor-pointer bg-primary-500 px-6 py-4 rounded-md"
               >
-                <ArrowLeft />
+                <ArrowLeftIcon />
               </div>
               <div
                 ref={navigationNextRef}
                 className="cursor-pointer bg-primary-500 px-6 py-4 rounded-md"
               >
-                <ArrowRight />
+                <ArrowRightIcon />
               </div>
             </div>
           </div>
@@ -120,11 +120,11 @@ export function Testimoni() {
                       </div>
                     </div>
                     <div className="flex gap-2">
-                      <Star />
-                      <Star />
-                      <Star />
-                      <Star />
-                      <Star />
+                      <StarIcon />
+                      <StarIcon />
+                      <StarIcon />
+                      <StarIcon />
+                      <StarIcon />
                     </div>
                   </div>
                   <div className="bg-white rounded-md mt-4 px-4 py-8 min-h-[150px] flex items-center">

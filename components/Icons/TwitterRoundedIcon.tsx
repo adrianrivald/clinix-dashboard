@@ -1,4 +1,4 @@
-export function TwitterRounded({ ...props }) {
+export function TwitterRoundedIcon({ ...props }) {
   return (
     <svg
       width="32"

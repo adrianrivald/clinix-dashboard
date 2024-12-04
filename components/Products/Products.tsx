@@ -1,6 +1,6 @@
 import Image from "next/image";
 import React from "react";
-import { ArrowRightUp } from "../Icons";
+import { ArrowRightUpIcon } from "../Icons";
 
 export function Products() {
   return (
@@ -31,7 +31,7 @@ export function Products() {
 
               <div>Sistem Encounter Rumah Sakit</div>
             </div>
-            <ArrowRightUp />
+            <ArrowRightUpIcon />
           </div>
         </div>
         <div className="bg-white rounded-md p-8 hover:bg-primary-100 hover:text-primary-500 cursor-pointer">
@@ -46,7 +46,7 @@ export function Products() {
 
               <div>Sistem Encounter Rumah Sakit</div>
             </div>
-            <ArrowRightUp />
+            <ArrowRightUpIcon />
           </div>
         </div>
         <div className="bg-white rounded-md p-8 hover:bg-primary-100 hover:text-primary-500 cursor-pointer">
@@ -61,7 +61,7 @@ export function Products() {
 
               <div>Sistem Encounter Rumah Sakit</div>
             </div>
-            <ArrowRightUp />
+            <ArrowRightUpIcon />
           </div>
         </div>
         {/* <div className="bg-white rounded-md p-8 hover:bg-primary-100 hover:text-primary-500 cursor-pointer">

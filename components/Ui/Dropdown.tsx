@@ -1,7 +1,11 @@
 import { Menu, Transition } from "@headlessui/react";
 import Image from "next/image";
 import { Fragment, useEffect, useRef, useState } from "react";
-import { ArrowDown, EnglishRounded, IndonesiaRounded } from "../Icons";
+import {
+  ArrowDownIcon,
+  EnglishRoundedIcon,
+  IndonesiaRoundedIcon,
+} from "../Icons";
 
 interface DropdownProps {
   title: string;
@@ -12,9 +16,9 @@ export function Dropdown({ title }: DropdownProps) {
     <Menu as="div" className="relative inline-block text-left">
       <div>
         <Menu.Button className="rounded-md px-4 py-2 bg-neutral-200 flex items-center gap-6 min-h-12 focus:outline-none">
-          <IndonesiaRounded />
+          <IndonesiaRoundedIcon />
           {title}
-          <ArrowDown />
+          <ArrowDownIcon />
         </Menu.Button>
       </div>
       <Transition
@@ -33,7 +37,7 @@ export function Dropdown({ title }: DropdownProps) {
                 <button
                   className={`w-full rounded-md px-4 py-2 bg-neutral-200 flex items-center gap-6 min-h-12 focus:outline-none`}
                 >
-                  <EnglishRounded />
+                  <EnglishRoundedIcon />
                   ENG
                 </button>
               )}

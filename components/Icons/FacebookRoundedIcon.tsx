@@ -1,4 +1,4 @@
-export function FacebookRounded({ ...props }) {
+export function FacebookRoundedIcon({ ...props }) {
   return (
     <svg
       width="32"

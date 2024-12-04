@@ -3,13 +3,13 @@ import React from "react";
 import { twMerge } from "tailwind-merge";
 import { maxWidthContainer } from "../../constants/class";
 import {
-  FacebookRounded,
-  InstagramRounded,
-  LinkedInRounded,
+  FacebookRoundedIcon,
+  InstagramRoundedIcon,
+  LinkedInRoundedIcon,
   MailIcon,
   PhoneIcon,
   PinMapIcon,
-  TwitterRounded,
+  TwitterRoundedIcon,
 } from "../Icons";
 
 export function Footer() {
@@ -36,10 +36,10 @@ export function Footer() {
           <div className="font-bold text-neutral-500">
             Sosial Media Kami
             <div className="flex items-center gap-4 mt-2">
-              <FacebookRounded />
-              <InstagramRounded />
-              <LinkedInRounded />
-              <TwitterRounded />
+              <FacebookRoundedIcon />
+              <InstagramRoundedIcon />
+              <LinkedInRoundedIcon />
+              <TwitterRoundedIcon />
             </div>
           </div>
         </div>

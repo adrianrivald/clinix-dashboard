@@ -1,4 +1,4 @@
-export function InstagramRounded({ ...props }) {
+export function InstagramRoundedIcon({ ...props }) {
   return (
     <svg
       width="32"
