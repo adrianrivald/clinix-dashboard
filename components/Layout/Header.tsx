@@ -40,6 +40,14 @@ export function Header() {
                 pathname === "/" ? "font-bold text-primary-500" : ""
               }`}
             >
+              Home
+            </Link>
+            <Link
+              href="/company"
+              className={`hover:text-primary-500 cursor-pointer ${
+                pathname === "/company" ? "font-bold text-primary-500" : ""
+              }`}
+            >
               Perusahaan
             </Link>
             <Link
@@ -97,6 +105,14 @@ export function Header() {
               href="/"
               className={`hover:text-primary-500 cursor-pointer ${
                 pathname === "/" ? "font-bold text-primary-500" : ""
+              }`}
+            >
+              Home
+            </Link>
+            <Link
+              href="/company"
+              className={`hover:text-primary-500 cursor-pointer ${
+                pathname === "/company" ? "font-bold text-primary-500" : ""
               }`}
             >
               Perusahaan

@@ -4,7 +4,7 @@ import { Button } from "../Ui";
 
 export function Banner() {
   return (
-    <div className="w-full h-[350px] bg-primary-500 my-24 relative">
+    <div className="w-full h-[350px] bg-primary-500 mt-24 relative">
       <Image
         src="/assets/images/banner.png"
         width={1440}

@@ -14,11 +14,11 @@ import {
 
 export function Footer() {
   return (
-    <footer className="mt-32 mb-4">
+    <footer className="mb-4 border-t">
       <div
         id="footer"
         className={twMerge(
-          "p-8 lg:p-16 flex flex-col lg:flex-row justify-between gap-16",
+          "p-8 lg:px-16 lg:pt-24 flex flex-col lg:flex-row justify-between gap-16",
           maxWidthContainer
         )}
       >
