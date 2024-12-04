@@ -45,7 +45,9 @@ export function Header() {
             <Link
               href="/company"
               className={`hover:text-primary-500 cursor-pointer ${
-                pathname === "/company" ? "font-bold text-primary-500" : ""
+                pathname.includes("/company")
+                  ? "font-bold text-primary-500"
+                  : ""
               }`}
             >
               Perusahaan
@@ -53,7 +55,9 @@ export function Header() {
             <Link
               href="/product"
               className={`hover:text-primary-500 cursor-pointer ${
-                pathname === "/product" ? "font-bold text-primary-500" : ""
+                pathname.includes("/product")
+                  ? "font-bold text-primary-500"
+                  : ""
               }`}
             >
               Produk
@@ -61,7 +65,7 @@ export function Header() {
             <Link
               href="/career"
               className={`hover:text-primary-500 cursor-pointer ${
-                pathname === "/career" ? "font-bold text-primary-500" : ""
+                pathname.includes("/career") ? "font-bold text-primary-500" : ""
               }`}
             >
               Karir
@@ -69,7 +73,9 @@ export function Header() {
             <Link
               href="/article"
               className={`hover:text-primary-500 cursor-pointer ${
-                pathname === "/article" ? "font-bold text-primary-500" : ""
+                pathname.includes("/article")
+                  ? "font-bold text-primary-500"
+                  : ""
               }`}
             >
               Artikel
@@ -112,7 +118,9 @@ export function Header() {
             <Link
               href="/company"
               className={`hover:text-primary-500 cursor-pointer ${
-                pathname === "/company" ? "font-bold text-primary-500" : ""
+                pathname.includes("/company")
+                  ? "font-bold text-primary-500"
+                  : ""
               }`}
             >
               Perusahaan
@@ -120,7 +128,9 @@ export function Header() {
             <Link
               href="/product"
               className={`hover:text-primary-500 cursor-pointer ${
-                pathname === "/product" ? "font-bold text-primary-500" : ""
+                pathname.includes("/product")
+                  ? "font-bold text-primary-500"
+                  : ""
               }`}
             >
               Produk
@@ -128,7 +138,7 @@ export function Header() {
             <Link
               href="/career"
               className={`hover:text-primary-500 cursor-pointer ${
-                pathname === "/career" ? "font-bold text-primary-500" : ""
+                pathname.includes("/career") ? "font-bold text-primary-500" : ""
               }`}
             >
               Karir
@@ -136,7 +146,9 @@ export function Header() {
             <Link
               href="/article"
               className={`hover:text-primary-500 cursor-pointer ${
-                pathname === "/article" ? "font-bold text-primary-500" : ""
+                pathname.includes("/article")
+                  ? "font-bold text-primary-500"
+                  : ""
               }`}
             >
               Artikel
