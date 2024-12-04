@@ -17,7 +17,7 @@ export function Footer() {
     <footer
       id="footer"
       className={twMerge(
-        " p-16 mt-32 flex flex-col lg:flex-row justify-between gap-16",
+        "p-8 lg:p-16 mt-32 flex flex-col lg:flex-row justify-between gap-16",
         maxWidthContainer
       )}
     >
