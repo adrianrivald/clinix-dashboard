@@ -28,3 +28,9 @@ a {
     background: black;
   }
 }
+
+.swiper {
+  display: flex !important;
+  flex-direction: column-reverse;
+  gap: 1rem;
+}

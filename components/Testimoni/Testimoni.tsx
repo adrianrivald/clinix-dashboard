@@ -1,10 +1,54 @@
 import Image from "next/image";
 import React from "react";
+import { useSwiper } from "swiper/react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation } from "swiper/modules";
+
 import { twMerge } from "tailwind-merge";
 import { maxWidthContainer } from "../../constants/class";
 import { ArrowLeft, ArrowRight, Star } from "../Icons";
+import "swiper/css";
+import "swiper/css/navigation";
+
+const testimoniData = [
+  {
+    photo: "/assets/images/testi-1.png",
+    name: "Dr Ridwan Winoto",
+    occupation: "Dokter Spesialis Penyakit Dalam",
+    content: `“ERP ini sangat membantu! Integrasi dengan BPJS dan fitur
+    khusus spesialisasi membuat pekerjaan lebih efisien. Siap
+    pakai tanpa ribet, jadi saya bisa lebih fokus ke pasien”`,
+  },
+  {
+    photo: "/assets/images/testi-2.png",
+    name: "Maryam Kusniawati",
+    occupation: "Kepala Suster",
+    content: ` “Sistem ini mempermudah koordinasi tim kami. Integrasi dengan
+    BPJS dan fitur siap pakai menghemat waktu, sehingga kami bisa
+    lebih fokus pada perawatan pasien”`,
+  },
+  {
+    photo: "/assets/images/testi-2.png",
+    name: "Maryam Kusniawati",
+    occupation: "Kepala Suster",
+    content: ` “Sistem ini mempermudah koordinasi tim kami. Integrasi dengan
+    BPJS dan fitur siap pakai menghemat waktu, sehingga kami bisa
+    lebih fokus pada perawatan pasien”`,
+  },
+  {
+    photo: "/assets/images/testi-2.png",
+    name: "Maryam Kusniawati",
+    occupation: "Kepala Suster",
+    content: ` “Sistem ini mempermudah koordinasi tim kami. Integrasi dengan
+    BPJS dan fitur siap pakai menghemat waktu, sehingga kami bisa
+    lebih fokus pada perawatan pasien”`,
+  },
+];
 
 export function Testimoni() {
+  const navigationPrevRef = React.useRef(null);
+  const navigationNextRef = React.useRef(null);
+
   return (
     <div
       id="testimoni"
@@ -14,84 +58,84 @@ export function Testimoni() {
       )}
     >
       <div className="backdrop-blur-lg border border-2 rounded-xl shadow-xl p-8 relative min-h-[400px] w-[100%] mx-auto">
-        <div className="flex items-center justify-between lg:mx-16">
-          <h2 className="font-bold text-[32px] ">
-            Apa kata
-            <br />
-            Klien Kami
-          </h2>
-          <div className="flex gap-2">
-            <div className="bg-primary-500 px-6 py-4 rounded-md">
-              <ArrowLeft />
-            </div>
-            <div className="bg-primary-500 px-6 py-4 rounded-md">
-              <ArrowRight />
+        {/* <div className="flex items-center gap-4 mt-8"> */}
+        <Swiper
+          className="flex flex-col flex-reverse"
+          modules={[Navigation]}
+          spaceBetween={12}
+          slidesPerView={2}
+          navigation={{
+            prevEl: navigationPrevRef.current,
+            nextEl: navigationNextRef.current,
+          }}
+          onBeforeInit={(swiper: any) => {
+            swiper.params.navigation.prevEl = navigationPrevRef.current;
+            swiper.params.navigation.nextEl = navigationNextRef.current;
+          }}
+          breakpoints={{
+            1024: {
+              slidesPerView: 2,
+            },
+            0: {
+              slidesPerView: 1,
+            },
+          }}
+        >
+          <div className="flex items-center justify-between lg:mx-16">
+            <h2 className="font-bold text-[32px] ">
+              Apa kata
+              <br />
+              Klien Kami
+            </h2>
+            <div className="flex gap-2">
+              <div
+                ref={navigationPrevRef}
+                className="cursor-pointer bg-primary-500 px-6 py-4 rounded-md"
+              >
+                <ArrowLeft />
+              </div>
+              <div
+                ref={navigationNextRef}
+                className="cursor-pointer bg-primary-500 px-6 py-4 rounded-md"
+              >
+                <ArrowRight />
+              </div>
             </div>
           </div>
-        </div>
-        <div className="flex items-center gap-4 mt-8">
-          <div className="bg-primary-100 rounded-md p-4 w-full md:w-1/2">
-            <div className="flex items-center justify-between">
-              <div className="flex gap-3 items-center">
-                <Image
-                  src="/assets/images/testi-1.png"
-                  width={60}
-                  height={60}
-                  alt="testi-1"
-                />
-                <div className="">
-                  <h4 className="font-bold">Dr Ridwan Winoto</h4>
-                  <p>Dokter Spesialis Penyakit Dalam</p>
+          {testimoniData &&
+            testimoniData?.map((data) => (
+              <SwiperSlide>
+                <div className="bg-primary-100 rounded-md p-4 w-full">
+                  <div className="flex items-center justify-between">
+                    <div className="flex gap-3 items-center">
+                      <Image
+                        src={data?.photo}
+                        width={60}
+                        height={60}
+                        alt="testi-1"
+                      />
+                      <div className="">
+                        <h4 className="font-bold">{data?.name}</h4>
+                        <p>{data?.occupation}</p>
+                      </div>
+                    </div>
+                    <div className="flex gap-2">
+                      <Star />
+                      <Star />
+                      <Star />
+                      <Star />
+                      <Star />
+                    </div>
+                  </div>
+                  <div className="bg-white rounded-md mt-4 px-4 py-8 min-h-[150px] flex items-center">
+                    <p>{data?.content}</p>
+                  </div>
                 </div>
-              </div>
-              <div className="flex gap-2">
-                <Star />
-                <Star />
-                <Star />
-                <Star />
-                <Star />
-              </div>
-            </div>
-            <div className="bg-white rounded-md mt-4 p-4">
-              <p>
-                “ERP ini sangat membantu! Integrasi dengan BPJS dan fitur khusus
-                spesialisasi membuat pekerjaan lebih efisien. Siap pakai tanpa
-                ribet, jadi saya bisa lebih fokus ke pasien”
-              </p>
-            </div>
-          </div>
-          <div className="hidden lg:block bg-primary-100 rounded-md p-4 w-1/2">
-            <div className="flex items-center justify-between">
-              <div className="flex gap-3 items-center">
-                <Image
-                  src="/assets/images/testi-2.png"
-                  width={60}
-                  height={60}
-                  alt="testi-1"
-                />
-                <div className="">
-                  <h4 className="font-bold">Maryam Kusniawati</h4>
-                  <p>Kepala Suster</p>
-                </div>
-              </div>
-              <div className="flex gap-2">
-                <Star />
-                <Star />
-                <Star />
-                <Star />
-                <Star />
-              </div>
-            </div>
-            <div className="bg-white rounded-md mt-4 p-4">
-              <p>
-                “Sistem ini mempermudah koordinasi tim kami. Integrasi dengan
-                BPJS dan fitur siap pakai menghemat waktu, sehingga kami bisa
-                lebih fokus pada perawatan pasien”
-              </p>
-            </div>
-          </div>
-        </div>
+              </SwiperSlide>
+            ))}
+        </Swiper>
       </div>
+      {/* </div> */}
     </div>
   );
 }
