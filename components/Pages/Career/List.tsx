@@ -14,7 +14,7 @@ export function CareerList() {
       <h2 className="text-[32px] font-bold text-center">
         Discover the best job
       </h2>
-      <div className="grid grid-cols-3 mt-16 gap-8">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mt-16 gap-8">
         <div className="p-8 shadow-lg rounded-lg flex flex-col gap-6">
           <CareerIcon />
           <div>
