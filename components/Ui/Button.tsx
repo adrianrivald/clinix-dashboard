@@ -12,7 +12,7 @@ export function Button({ title, isPrimary, className, onClick }: ButtonProps) {
   return (
     <button
       className={twMerge(
-        "rounded-md px-4 py-2 border-2 min-h-12",
+        "rounded-lg px-4 py-2 border-2 min-h-12",
         isPrimary
           ? "bg-primary-500 border-primary-500 text-white"
           : "bg-white border-primary-500 text-primary-500",

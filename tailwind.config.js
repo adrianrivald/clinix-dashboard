@@ -22,6 +22,7 @@ module.exports = {
           400: "#ACB8C3",
           500: "#31475E",
         },
+        link: "#3080E2",
       },
       objectPosition: {
         "middle-bottom": "0px -210px",
