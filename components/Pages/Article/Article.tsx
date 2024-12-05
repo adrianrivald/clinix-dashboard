@@ -52,9 +52,15 @@ const newsData = [
 
 export function ArticleContent() {
   const router = useRouter();
+
   const onClickItem = (uri: string) => {
     router.push(`/article/${uri}`);
   };
+
+  const onClickMoreLatestNews = () => {
+    router.push("/article/latest-news");
+  };
+
   return (
     <div className={twMerge("p-8 lg:p-16", maxWidthContainer)}>
       {/* Hot Topics */}
@@ -77,7 +83,7 @@ export function ArticleContent() {
             </div>
           </div>
           <div id="hot-topic-sum">
-            <p className="text-lg">
+            <p className="text-lg text-justify">
               Nisi, sagittis aliquet sit rutrum. Nunc, id vestibulum quam ornare
               adipiscing. Pellentesque sed turpis nunc gravida pharetra, sit nec
               vivamus pharetra. Velit, dui, egestas nisi, elementum mattis
@@ -125,7 +131,12 @@ export function ArticleContent() {
           ))}
         </div>
         <div className="flex justify-center mt-14">
-          <Button isPrimary={false} title="Lihat Semua" className="w-36" />
+          <Button
+            onClick={onClickMoreLatestNews}
+            isPrimary={false}
+            title="Lihat Semua"
+            className="w-36"
+          />
         </div>
       </div>
 
@@ -133,7 +144,7 @@ export function ArticleContent() {
 
       <div
         id="latest-news-list"
-        className={twMerge("my-24", maxWidthContainer)}
+        className={twMerge("mt-36 mb-24", maxWidthContainer)}
       >
         <div className="text-center">
           <h2 className="text-[32px] font-bold">Info Buat Kamu</h2>
