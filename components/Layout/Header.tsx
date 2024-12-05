@@ -89,7 +89,7 @@ export function Header() {
           </div>
         </header>
       ) : (
-        <header className="w-full bg-white justify-between border-neutral-100 py-4 flex items-center mx-auto max-w-[85%] px-16 border border-2 border-white">
+        <header className="w-full bg-white shadow-md  justify-between border-neutral-300 py-4 flex items-center mx-auto max-w-[100%] px-8">
           {/* Logo */}
           <div id="logo">
             <Image
