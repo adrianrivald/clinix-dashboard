@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import Hamburger from "hamburger-react";
+import { Squash as Hamburger } from "hamburger-react";
 
 import { useRouter } from "next/router";
 import React, { Dispatch } from "react";
