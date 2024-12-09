@@ -43,11 +43,9 @@ export function Header() {
               Home
             </Link>
             <Link
-              href="/company"
+              href="/about"
               className={`hover:text-primary-500 cursor-pointer ${
-                pathname.includes("/company")
-                  ? "font-bold text-primary-500"
-                  : ""
+                pathname.includes("/about") ? "font-bold text-primary-500" : ""
               }`}
             >
               Perusahaan
@@ -116,11 +114,9 @@ export function Header() {
               Home
             </Link>
             <Link
-              href="/company"
+              href="/about"
               className={`hover:text-primary-500 cursor-pointer ${
-                pathname.includes("/company")
-                  ? "font-bold text-primary-500"
-                  : ""
+                pathname.includes("/about") ? "font-bold text-primary-500" : ""
               }`}
             >
               Perusahaan
