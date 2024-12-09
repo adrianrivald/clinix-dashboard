@@ -1,14 +1,13 @@
 import Image from "next/image";
 import React from "react";
-import { useSwiper } from "swiper/react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/navigation";
 
 import { twMerge } from "tailwind-merge";
 import { maxWidthContainer } from "../../constants/class";
 import { ArrowLeftIcon, ArrowRightIcon, StarIcon } from "../Icons";
-import "swiper/css";
-import "swiper/css/navigation";
 
 const testimoniData = [
   {

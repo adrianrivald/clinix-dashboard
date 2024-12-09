@@ -5,10 +5,12 @@ import { Header, Footer } from "../components";
 export default function App({ Component, pageProps }: AppProps) {
   return (
     // max-w-[100rem]
-    <section className=" w-full mx-auto text-neutral-500">
+    <section className="w-full mx-auto text-neutral-500">
       <Header />
-      <Component {...pageProps} />
-      <Footer />
+      <div className="mt-28 xl:mt-0">
+        <Component {...pageProps} />
+        <Footer />
+      </div>
     </section>
   );
 }

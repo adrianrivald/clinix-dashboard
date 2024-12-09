@@ -1,21 +1,28 @@
 import Image from "next/image";
 import { useRouter } from "next/router";
 import React from "react";
+
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/navigation";
 import { twMerge } from "tailwind-merge";
 import { maxWidthContainer } from "../../../constants/class";
 
 export function AboutContent() {
   const router = useRouter();
+  const navigationPrevRef = React.useRef(null);
+  const navigationNextRef = React.useRef(null);
 
   return (
     <div id="about">
       <div className={twMerge("p-8 lg:p-16", maxWidthContainer)}>
         <div className="flex flex-col lg:flex-row justify-between gap-8 items-end">
-          <h2 className="m-0 text-[32px] lg:text-[40px] font-bold w-full lg:w-1/2">
+          <h2 className="text-center lg:text-left m-0 text-[32px] lg:text-[40px] font-bold w-full lg:w-1/2">
             we bridge the gap between healthcare providers and cutting-edge
             technology
           </h2>
-          <p className="m-0 text-[14px] text-[20px] w-full lg:w-1/2">
+          <p className="text-center lg:text-left m-0 text-[14px] text-[20px] w-full lg:w-1/2">
             Our integrated solutions enhance hospital efficiency, simplify
             workflows for medical staff, and ensure faster, more accurate care
             for patients.
@@ -28,14 +35,14 @@ export function AboutContent() {
           width={1392}
           height={500}
           alt="about-us"
-          className="w-full object-cover h-[500px] rounded-[16px]"
+          className="w-full object-contain rounded-[16px]"
         />
       </div>
 
       <div className={twMerge("mt-4 p-8 lg:p-16", maxWidthContainer)}>
         <div className="flex flex-col lg:flex-row justify-between gap-8">
           {/* Founded */}
-          <div className="flex gap-16 w-full lg:w-1/2">
+          <div className="flex flex-col lg:flex-row gap-4 lg:gap-16 w-full lg:w-1/2">
             <div className="flex gap-2">
               <div className="bg-primary-500 w-3 h-3 mt-[5px] rounded-full"></div>
               <div>
@@ -116,6 +123,45 @@ export function AboutContent() {
               </div>
             ))}
           </div>
+
+          {/* <Swiper
+            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mt-16"
+            modules={[Navigation]}
+            spaceBetween={12}
+            slidesPerView={8}
+            navigation={{
+              prevEl: navigationPrevRef.current,
+              nextEl: navigationNextRef.current,
+            }}
+            onBeforeInit={(swiper: any) => {
+              swiper.params.navigation.prevEl = navigationPrevRef.current;
+              swiper.params.navigation.nextEl = navigationNextRef.current;
+            }}
+            breakpoints={{
+              1024: {
+                slidesPerView: 2,
+              },
+              0: {
+                slidesPerView: 1,
+              },
+            }}
+          >
+            {Array.from({ length: 18 }).map(() => (
+              <div>
+                <Image
+                  src="/assets/images/team-1.jpg"
+                  width={276}
+                  height={329}
+                  alt="team-1"
+                  className="rounded-[12px] w-full object-cover h-[400px]"
+                />
+                <div className="mt-2">
+                  <h4 className="text-[24px] font-bold">Brandon Shaw</h4>
+                  <h5 className="text-base">Founder {"&"} CEO</h5>
+                </div>
+              </div>
+            ))}
+          </Swiper> */}
         </div>
       </div>
     </div>
