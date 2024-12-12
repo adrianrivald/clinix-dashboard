@@ -381,7 +381,7 @@ export function Header() {
   };
 
   const onSearchLanguage = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const value: string = e.target.value;
+    const value = e.target.value;
     setSearchTerm(value);
   };
 

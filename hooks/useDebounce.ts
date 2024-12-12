@@ -9,5 +9,5 @@ export function useSearchDebounce(delay = 500) {
       return () => clearTimeout(delayFn);
     }, [searchQuery, delay]);
   
-    return [search as string, setSearchQuery as React.Dispatch<SetStateAction<string>>];
+    return [search , setSearchQuery] as const;
   }
