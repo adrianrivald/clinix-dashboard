@@ -1,9 +1,16 @@
 import Image from "next/image";
 import { useRouter } from "next/router";
 import React from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, Pagination } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/navigation";
+
 import { twMerge } from "tailwind-merge";
 import { maxWidthContainer } from "../../../constants/class";
 import { Button } from "../../Ui";
+import { ChevronLeftIcon, ChevronRightIcon } from "../../Icons";
+import { hotTopics } from "./data";
 
 const newsData = [
   {
@@ -52,6 +59,8 @@ const newsData = [
 
 export function ArticleContent() {
   const router = useRouter();
+  const navigationPrevRef = React.useRef(null);
+  const navigationNextRef = React.useRef(null);
 
   const onClickItem = (uri: string) => {
     router.push(`/article/${uri}`);
@@ -64,36 +73,71 @@ export function ArticleContent() {
   return (
     <div className={twMerge("p-4 lg:p-16", maxWidthContainer)}>
       {/* Hot Topics */}
-      <div id="hot-topics">
+
+      <div id="hot-topics" className="relative">
         <h1 className="text-[32px] lg:text-[50px] font-bold">Hot Topics</h1>
-        <div className="flex flex-col lg:flex-row items-start gap-8 mt-4 ">
-          <div className="relative rounded-md w-full min-h-[400px] lg:w-[70%] lg:flex-none">
-            <Image
-              src="/assets/images/hot-topic-1.jpg"
-              width={870}
-              height={400}
-              alt="featured-1"
-              className="object-cover rounded-lg w-full h-[400px]"
-            />
-            <div className="absolute left-10 bottom-10">
-              <h2 className="lg:w-[60%] font-bold text-[32px] text-white">
-                Dokter Ungkap Gejala Henti Jantung Mendadak di Usia Muda seperti
-                Dialami Min Jae{" "}
-              </h2>
-            </div>
-          </div>
-          <div id="hot-topic-sum">
-            <p className="text-lg text-justify">
-              Nisi, sagittis aliquet sit rutrum. Nunc, id vestibulum quam ornare
-              adipiscing. Pellentesque sed turpis nunc gravida pharetra, sit nec
-              vivamus pharetra. Velit, dui, egestas nisi, elementum mattis
-              mauris, magnis. Massa tortor nibh nulla condimentum imperdiet
-              scelerisque...attis mauris, magnis. Massa tortor nibh nulla
-              condimentum imperdie
-              <br />
-              <span className="text-link font-bold">read more</span>
-            </p>
-          </div>
+        <Swiper
+          className="mySwiper"
+          pagination={{
+            clickable: true,
+          }}
+          modules={[Navigation, Pagination]}
+          slidesPerView={1}
+          navigation={{
+            prevEl: navigationPrevRef.current,
+            nextEl: navigationNextRef.current,
+          }}
+          onBeforeInit={(swiper: any) => {
+            swiper.params.navigation.prevEl = navigationPrevRef.current;
+            swiper.params.navigation.nextEl = navigationNextRef.current;
+          }}
+        >
+          {hotTopics.map((item) => (
+            <SwiperSlide>
+              <div className="flex flex-col lg:flex-row items-start gap-8 mt-4 ">
+                <div className="relative rounded-md w-full min-h-[200px] lg:min-h-[400px] lg:w-[70%] lg:flex-none">
+                  <Image
+                    src={item?.thumbnail}
+                    width={870}
+                    height={400}
+                    alt="featured-1"
+                    className="object-cover rounded-lg w-full h-[200px] md:h-[300px] lg:h-[400px]"
+                  />
+                  <div className="absolute left-4 lg:left-10 bottom-4 lg:bottom-10">
+                    <h2 className="lg:w-[60%] font-bold text-[16px] lg:text-[32px] text-white">
+                      {item?.title}
+                    </h2>
+                    <h4 className="text-[12px] lg:text-[16px] text-white font-semibold">
+                      {item?.category} • {item?.createdAt}
+                    </h4>
+                  </div>
+                </div>
+                <div id="hot-topic-sum" className="hidden lg:block">
+                  <p className="text-justify">
+                    <span className="text-[40px] font-bold">
+                      {item?.summary.split(" ")[0]}
+                    </span>{" "}
+                    {item?.summary.slice(item?.summary.split(" ")[0]?.length)}
+                    <br />
+                    <span className="text-link font-bold">read more</span>
+                  </p>
+                </div>
+              </div>
+            </SwiperSlide>
+          ))}
+        </Swiper>
+
+        <div
+          ref={navigationPrevRef}
+          className="hidden lg:block absolute -left-14 -translate-y-1/2 top-[55%] transform z-50 cursor-pointer shadow-lg flex items-center justify-center px-5 py-5 rounded-full"
+        >
+          <ChevronLeftIcon />
+        </div>
+        <div
+          ref={navigationPrevRef}
+          className="hidden lg:block absolute -right-14 -translate-y-1/2 top-[55%] transform z-50 cursor-pointer shadow-lg flex items-center justify-center px-5 py-5 rounded-full"
+        >
+          <ChevronRightIcon />
         </div>
       </div>
 
