@@ -158,37 +158,39 @@ export function AboutContent() {
               </div>
             ))}
           </div>
-          <Swiper
-            className="block lg:hidden mt-4 mb-12"
-            modules={[Navigation]}
-            spaceBetween={4}
-            slidesPerView={1.25}
-            centeredSlides
-            navigation={{
-              prevEl: navigationPrevRef.current,
-              nextEl: navigationNextRef.current,
-            }}
-            onBeforeInit={(swiper: any) => {
-              swiper.params.navigation.prevEl = navigationPrevRef.current;
-              swiper.params.navigation.nextEl = navigationNextRef.current;
-            }}
-          >
-            {Array.from({ length: 4 }).map(() => (
-              <SwiperSlide>
-                <Image
-                  src="/assets/images/team-1.jpg"
-                  width={276}
-                  height={329}
-                  alt="team-1"
-                  className="rounded-[12px] w-full object-cover h-[400px]"
-                />
-                <div className="mt-2">
-                  <h4 className="text-[24px] font-bold">Brandon Shaw</h4>
-                  <h5 className="text-base">Founder {"&"} CEO</h5>
-                </div>
-              </SwiperSlide>
-            ))}
-          </Swiper>
+          <div className="block lg:hidden">
+            <Swiper
+              className="block lg:hidden mt-4 mb-12"
+              modules={[Navigation]}
+              spaceBetween={4}
+              slidesPerView={1.25}
+              centeredSlides
+              navigation={{
+                prevEl: navigationPrevRef.current,
+                nextEl: navigationNextRef.current,
+              }}
+              onBeforeInit={(swiper: any) => {
+                swiper.params.navigation.prevEl = navigationPrevRef.current;
+                swiper.params.navigation.nextEl = navigationNextRef.current;
+              }}
+            >
+              {Array.from({ length: 4 }).map(() => (
+                <SwiperSlide>
+                  <Image
+                    src="/assets/images/team-1.jpg"
+                    width={276}
+                    height={329}
+                    alt="team-1"
+                    className="rounded-[12px] w-full object-cover h-[400px]"
+                  />
+                  <div className="mt-2">
+                    <h4 className="text-[24px] font-bold">Brandon Shaw</h4>
+                    <h5 className="text-base">Founder {"&"} CEO</h5>
+                  </div>
+                </SwiperSlide>
+              ))}
+            </Swiper>
+          </div>
         </div>
       </div>
     </div>
