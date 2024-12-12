@@ -13,7 +13,7 @@ export function CareerDetailContent() {
           </h2>
         </div>
       </div>
-      <div className={twMerge("p-8 lg:p-16 mt-8", maxWidthContainer)}>
+      <div className={twMerge("p-4 lg:p-16 mt-8", maxWidthContainer)}>
         <div className="lg:w-[50%] mx-auto">
           <h3 className="font-bold text-[24px]">
             As an Engineering Manager what you’ll do?

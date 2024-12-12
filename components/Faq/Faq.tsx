@@ -40,7 +40,7 @@ export function Faq() {
   return (
     <div
       id="testimoni"
-      className={twMerge("p-8 lg:p-16 mt-16 lg:mt-32", maxWidthContainer)}
+      className={twMerge("p-4 lg:p-16 mt-16 lg:mt-32", maxWidthContainer)}
     >
       <div className="flex flex-col lg:flex-row lg:items-center justify-between lg:mx-14">
         <h2 className="text-[32px] font-bold">

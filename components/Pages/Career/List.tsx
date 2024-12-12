@@ -60,7 +60,7 @@ export function CareerList() {
   return (
     <div
       id="career-list"
-      className={twMerge("my-24 p-8 lg:p-16", maxWidthContainer)}
+      className={twMerge("my-24 p-4 lg:p-16", maxWidthContainer)}
     >
       <h2 className="text-[32px] font-bold text-center">
         Discover the best job

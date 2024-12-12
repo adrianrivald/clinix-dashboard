@@ -15,7 +15,7 @@ export function ArticleDetailContent() {
   const router = useRouter();
 
   return (
-    <div className={twMerge("p-8 lg:p-16", maxWidthContainer)}>
+    <div className={twMerge("p-4 lg:p-16", maxWidthContainer)}>
       {/* Article Detail */}
       <div id="article-detail" className="mx-36">
         {/* Article Title */}

@@ -8,7 +8,7 @@ export function WhyUs() {
     <div
       id="why-us"
       className={twMerge(
-        "bg-[url('/assets/images/why-us.png')] p-8 lg:p-16 mt-8 lg:mt-32 bg-no-repeat bg-left-bottom bg-auto",
+        "bg-[url('/assets/images/why-us.png')] p-4 lg:p-16 mt-8 lg:mt-32 bg-no-repeat bg-left-bottom bg-auto",
         maxWidthContainer
       )}
     >

@@ -9,7 +9,7 @@ export function Contact() {
     <div
       id="why-us"
       className={twMerge(
-        "bg-[url('/assets/images/why-us.png')] p-8 lg:p-16 mt-8 lg:mt-24 bg-no-repeat bg-left bg-auto",
+        "bg-[url('/assets/images/why-us.png')] p-4 lg:p-16 mt-8 lg:mt-24 bg-no-repeat bg-left bg-auto",
         maxWidthContainer
       )}
     >

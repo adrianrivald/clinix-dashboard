@@ -98,7 +98,7 @@ export function LatestNewsContent() {
     router.push(`/article/${uri}`);
   };
   return (
-    <div className={twMerge("p-8 lg:p-16", maxWidthContainer)}>
+    <div className={twMerge("p-4 lg:p-16", maxWidthContainer)}>
       {/* Latest News */}
 
       <div

@@ -24,7 +24,7 @@ function NavMenuMobile({
 }: NavMenuMobileProps) {
   return (
     <div className="fixed w-full top-0 bg-white z-50 xl:hidden">
-      <header className="xl:hidden w-full bg-white shadow-md  justify-between border-neutral-300 py-4 flex items-center mx-auto max-w-[100%] px-8">
+      <header className="xl:hidden w-full bg-white shadow-md  justify-between border-neutral-300 py-4 flex items-center mx-auto max-w-[100%] px-4">
         {/* Logo */}
         <div id="logo">
           <Image
@@ -96,7 +96,7 @@ function NavMenuMobile({
         <div
           className={`transition-all ${
             isOpen ? "h-screen" : "h-0 hidden"
-          } bg-white px-8 py-4 mt-2 relative w-full`}
+          } bg-white px-4 py-4 mt-2 relative w-full`}
         >
           <nav id="menus" className="flex-col flex gap-8 text-base">
             <Link
@@ -145,16 +145,16 @@ function NavMenuMobile({
             </Link>
           </nav>
 
-          <div className="absolute -translate-x-1/2 left-1/2 transform m-4 bottom-32 flex flex-col items-center gap-4 px-8">
+          <div className="absolute -translate-x-1/2 left-1/2 transform w-full bottom-32 flex flex-col items-center gap-4 px-4 justify-center">
             <Button
               title="Coba Demo Gratis"
               isPrimary
-              className="w-full md:w-auto"
+              className="w-full xl:w-auto"
             />
             <Button
               title="Konsultasi Kebutuhan Anda"
               isPrimary={false}
-              className="w-full md:w-auto"
+              className="w-full xl:w-auto"
             />
           </div>
         </div>

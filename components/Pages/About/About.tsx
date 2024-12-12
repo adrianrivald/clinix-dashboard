@@ -16,22 +16,22 @@ export function AboutContent() {
 
   return (
     <div id="about">
-      <div className={twMerge("p-8 lg:p-16", maxWidthContainer)}>
+      <div className={twMerge("p-4 lg:p-16", maxWidthContainer)}>
         <div className="flex flex-col lg:flex-row justify-between gap-8 items-end">
-          <h2 className="text-center lg:text-left m-0 text-[32px] lg:text-[40px] font-bold w-full lg:w-1/2">
+          <h2 className="text-center lg:text-left m-0 text-[30px] lg:text-[32px] lg:text-[40px] font-bold w-full lg:w-1/2">
             we bridge the gap between healthcare providers and cutting-edge
             technology
           </h2>
-          <p className="text-center lg:text-left m-0 text-[14px] text-[20px] w-full lg:w-1/2">
+          <p className="text-center lg:text-left m-0 text-[20px] w-full lg:w-1/2">
             Our integrated solutions enhance hospital efficiency, simplify
             workflows for medical staff, and ensure faster, more accurate care
             for patients.
           </p>
         </div>
       </div>
-      <div className="mt-4 w-[95%] mx-auto">
+      <div className={twMerge("lg:mt-4 px-4 lg:p-16", maxWidthContainer)}>
         <Image
-          src="/assets/images/about-us.jpg"
+          src="/assets/images/about.png"
           width={1392}
           height={500}
           alt="about-us"
@@ -39,7 +39,7 @@ export function AboutContent() {
         />
       </div>
 
-      <div className={twMerge("mt-4 p-8 lg:p-16", maxWidthContainer)}>
+      <div className={twMerge("mt-4 p-4 lg:p-16", maxWidthContainer)}>
         <div className="flex flex-col lg:flex-row justify-between gap-8">
           {/* Founded */}
           <div className="flex flex-col lg:flex-row gap-4 lg:gap-16 w-full lg:w-1/2">
@@ -68,7 +68,7 @@ export function AboutContent() {
                 Our Vision
               </h3>
               <p className="mt-2 text-[20px]">
-                to be the pioneer of integrated system providers that optimize
+                To be the pioneer of integrated system providers that optimize
                 hospital operations by caring for and facilitating every medical
                 personnel without exception.
               </p>
@@ -101,14 +101,49 @@ export function AboutContent() {
             </div>
           </div>
         </div>
+      </div>
 
-        <div className="mt-16">
-          <h2 className="text-[40px] font-bold text-center">
-            Meet our amazing team
-          </h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mt-16">
-            {Array.from({ length: 8 }).map(() => (
-              <div>
+      <div className="mt-44">
+        <div
+          className={twMerge(
+            "flex flex-col lg:flex-row justify-between gap-8 p-4 lg:p-16",
+            maxWidthContainer
+          )}
+        >
+          <div className="w-full lg:w-1/3">
+            <h2 className="text-[40px] font-bold">
+              Meet our <br />
+              amazing team
+            </h2>
+          </div>
+          <div className="w-full lg:w-1/3 flex flex-col justify-center items-center">
+            <Image
+              src="/assets/images/team-1.jpg"
+              width={276}
+              height={329}
+              alt="team-1"
+              className="rounded-[12px] w-full object-cover w-[276px] h-[329px]"
+            />
+            <div className="mt-2 text-center">
+              <h4 className="text-[24px] font-bold">Brandon Shaw</h4>
+              <h5 className="text-base">Founder {"&"} CEO</h5>
+            </div>
+          </div>
+
+          <div className="relative p-4 w-3/4 mx-auto lg:w-1/3 flex items-center">
+            <p className="text-[20px]">
+              Our integrated solutions enhance hospital efficiency, simplify
+              workflows for medical staff, and ensure faster, more accurate care
+              for patients.
+            </p>
+          </div>
+        </div>
+        <div
+          className={twMerge("mt-4 lg:p-16", `lg:max-w-[100rem] lg:mx-auto`)}
+        >
+          <div className="hidden lg:flex justify-between gap-4 items-center">
+            {Array.from({ length: 4 }).map(() => (
+              <div className="w-1/4">
                 <Image
                   src="/assets/images/team-1.jpg"
                   width={276}
@@ -123,12 +158,12 @@ export function AboutContent() {
               </div>
             ))}
           </div>
-
-          {/* <Swiper
-            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mt-16"
+          <Swiper
+            className="block lg:hidden mt-4 mb-12"
             modules={[Navigation]}
-            spaceBetween={12}
-            slidesPerView={8}
+            spaceBetween={4}
+            slidesPerView={1.25}
+            centeredSlides
             navigation={{
               prevEl: navigationPrevRef.current,
               nextEl: navigationNextRef.current,
@@ -137,17 +172,9 @@ export function AboutContent() {
               swiper.params.navigation.prevEl = navigationPrevRef.current;
               swiper.params.navigation.nextEl = navigationNextRef.current;
             }}
-            breakpoints={{
-              1024: {
-                slidesPerView: 2,
-              },
-              0: {
-                slidesPerView: 1,
-              },
-            }}
           >
-            {Array.from({ length: 18 }).map(() => (
-              <div>
+            {Array.from({ length: 4 }).map(() => (
+              <SwiperSlide>
                 <Image
                   src="/assets/images/team-1.jpg"
                   width={276}
@@ -159,9 +186,9 @@ export function AboutContent() {
                   <h4 className="text-[24px] font-bold">Brandon Shaw</h4>
                   <h5 className="text-base">Founder {"&"} CEO</h5>
                 </div>
-              </div>
+              </SwiperSlide>
             ))}
-          </Swiper> */}
+          </Swiper>
         </div>
       </div>
     </div>

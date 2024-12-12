@@ -9,7 +9,7 @@ export function Hero() {
     <div
       id="hero"
       className={twMerge(
-        "flex flex-col lg:flex-row flex-col-reverse items-center min-h-[400px] gap-16 p-8 lg:p-0",
+        "flex flex-col lg:flex-row flex-col-reverse items-center min-h-[400px] gap-4 lg:gap-16 p-8 lg:p-0",
         maxWidthContainer
       )}
     >
@@ -19,15 +19,15 @@ export function Hero() {
         width={591}
         height={620}
         alt="doctor"
-        className="w-full px-8 lg:px-0 lg:w-1/2"
+        className="w-full lg:w-1/2"
       />
 
       {/* Our Words */}
       <div
         id="our-words"
-        className="mt-0 lg:mt-36 lg:mt-0 px-8 lg:px-16 lg:px-0 lg:max-w-[40rem]"
+        className="mt-0 lg:mt-36 lg:mt-0 lg:px-16 lg:max-w-[40rem]"
       >
-        <h1 className="text-[32px] font-bold">
+        <h1 className="text-[32px] font-bold text-center lg:text-left">
           Keunggulan Medis Dimulai dari Sistem yang Memahami Anda
         </h1>
         <p className="mt-4 text-base">

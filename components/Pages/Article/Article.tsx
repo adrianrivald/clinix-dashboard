@@ -62,7 +62,7 @@ export function ArticleContent() {
   };
 
   return (
-    <div className={twMerge("p-8 lg:p-16", maxWidthContainer)}>
+    <div className={twMerge("p-4 lg:p-16", maxWidthContainer)}>
       {/* Hot Topics */}
       <div id="hot-topics">
         <h1 className="text-[32px] lg:text-[50px] font-bold">Hot Topics</h1>

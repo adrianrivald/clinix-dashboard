@@ -52,7 +52,7 @@ export function Testimoni() {
     <div
       id="testimoni"
       className={twMerge(
-        "bg-[url('/assets/images/testi.png')] p-8 lg:p-16 mt-16 lg:mt-32 bg-no-repeat bg-right-top bg-auto",
+        "bg-[url('/assets/images/testi.png')] p-4 lg:p-16 mt-16 lg:mt-32 bg-no-repeat bg-right-top bg-auto",
         maxWidthContainer
       )}
     >
