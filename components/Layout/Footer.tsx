@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 import { twMerge } from "tailwind-merge";
 import { maxWidthContainer } from "../../constants/class";
@@ -47,7 +48,7 @@ export function Footer() {
         {/* Perusahaan */}
         <div className="flex flex-col gap-4 flex-none ">
           <div className="font-bold">Perusahaan</div>
-          <div>Tentang Kami</div>
+          <Link href="/about">Tentang Kami</Link>
           <div>Value Kami</div>
           <div>Karir</div>
         </div>

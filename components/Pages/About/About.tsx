@@ -8,6 +8,7 @@ import "swiper/css";
 import "swiper/css/navigation";
 import { twMerge } from "tailwind-merge";
 import { maxWidthContainer } from "../../../constants/class";
+import { QuoteIcon } from "../../Icons";
 
 export function AboutContent() {
   const router = useRouter();
@@ -116,22 +117,25 @@ export function AboutContent() {
               amazing team
             </h2>
           </div>
-          <div className="w-full lg:w-1/3 flex flex-col justify-center items-center">
-            <Image
-              src="/assets/images/team-1.jpg"
-              width={276}
-              height={329}
-              alt="team-1"
-              className="rounded-[12px] w-full object-cover w-[276px] h-[329px]"
-            />
-            <div className="mt-2 text-center">
-              <h4 className="text-[24px] font-bold">Brandon Shaw</h4>
-              <h5 className="text-base">Founder {"&"} CEO</h5>
+          <div className="w-full lg:w-1/3 flex justify-center">
+            <div className="w-[276px] flex flex-col justify-center items-center">
+              <Image
+                src="/assets/images/team-1.jpg"
+                width={276}
+                height={329}
+                alt="team-1"
+                className="rounded-[12px] w-full object-cover w-[276px] h-[329px]"
+              />
+              <div className="mt-2 text-center">
+                <h4 className="text-[24px] font-bold">Brandon Shaw</h4>
+                <h5 className="text-base">Founder {"&"} CEO</h5>
+              </div>
             </div>
           </div>
 
-          <div className="relative p-4 w-3/4 mx-auto lg:w-1/3 flex items-center">
-            <p className="text-[20px]">
+          <div className="relative p-4 w-3/4 mx-auto lg:w-1/3 flex">
+            <QuoteIcon className="absolute top-2 lg:top-8 -left-8 lg:left-0" />
+            <p className="text-[20px] z-10 mt-5 lg:mt-16">
               Our integrated solutions enhance hospital efficiency, simplify
               workflows for medical staff, and ensure faster, more accurate care
               for patients.

@@ -4,6 +4,7 @@ import { Fragment, useEffect, useRef, useState } from "react";
 import {
   ArrowDownIcon,
   EnglishRoundedIcon,
+  GlobeIcon,
   IndonesiaRoundedIcon,
 } from "../Icons";
 
@@ -16,9 +17,16 @@ export function Dropdown({ title }: DropdownProps) {
     <Menu as="div" className="relative inline-block text-left">
       <div>
         <Menu.Button className="rounded-md px-4 py-2 bg-neutral-200 flex items-center gap-6 min-h-12 focus:outline-none">
-          <IndonesiaRoundedIcon />
-          {title}
-          <ArrowDownIcon />
+          {({ open }) => (
+            <>
+              <GlobeIcon />
+
+              <span className="hidden xl:block">{title}</span>
+              <ArrowDownIcon
+                className={`transition-all ${open ? "rotate-180" : "rotate-0"}`}
+              />
+            </>
+          )}
         </Menu.Button>
       </div>
       <Transition

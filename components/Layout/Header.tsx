@@ -4,16 +4,78 @@ import { Squash as Hamburger } from "hamburger-react";
 
 import { useRouter } from "next/router";
 import React, { Dispatch } from "react";
-import { Button, Dropdown } from "..";
-{
-  /* <Hamburger toggled={isOpen} toggle={setOpen} /> */
-}
+import { Button, Dropdown, SearchBox } from "..";
+import { ChevronRightIcon } from "../Icons";
+import { useSearchDebounce } from "../../hooks";
+
+const languageList = [
+  {
+    id: "sa",
+    label: "Arabian",
+  },
+  {
+    id: "al",
+    label: "Albanian",
+  },
+  {
+    id: "az",
+    label: "Azerbaijani",
+  },
+  {
+    id: "ba",
+    label: "Baluchi",
+  },
+  {
+    id: "ph",
+    label: "Filipino",
+  },
+  {
+    id: "fr",
+    label: "French",
+  },
+  {
+    id: "gr",
+    label: "German",
+  },
+  {
+    id: "gk",
+    label: "Greek",
+  },
+  {
+    id: "id",
+    label: "Indonesia",
+  },
+  {
+    id: "li",
+    label: "Lithuanian",
+  },
+  {
+    id: "my",
+    label: "Malay",
+  },
+  {
+    id: "se",
+    label: "Serbian",
+  },
+  {
+    id: "sp",
+    label: "Spanish",
+  },
+  {
+    id: "sh",
+    label: "Swahili",
+  },
+];
 
 interface NavMenuMobileProps {
   isOpen: boolean;
   setOpen: Dispatch<React.SetStateAction<boolean>>;
   onClickLogo: () => void;
+  onClickLanguage: () => void;
   pathname: string;
+  isChangeLanguageMode: boolean;
+  onSearchLanguage: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  searchTerm: string;
 }
 
 function NavMenuMobile({
@@ -21,6 +83,10 @@ function NavMenuMobile({
   setOpen,
   onClickLogo,
   pathname,
+  onClickLanguage,
+  isChangeLanguageMode,
+  onSearchLanguage,
+  searchTerm,
 }: NavMenuMobileProps) {
   return (
     <div className="fixed w-full top-0 bg-white z-50 lg:hidden">
@@ -38,61 +104,8 @@ function NavMenuMobile({
         </div>
 
         <Hamburger toggled={isOpen} toggle={setOpen} />
-
-        {/* Navigation menus */}
-        <nav
-          id="menus"
-          className="hidden lg:flex items-center gap-16 text-base"
-        >
-          <Link
-            href="/"
-            className={`hover:text-primary-500 cursor-pointer ${
-              pathname === "/" ? "font-bold text-primary-500" : ""
-            }`}
-          >
-            Home
-          </Link>
-          <Link
-            href="/about"
-            className={`hover:text-primary-500 cursor-pointer ${
-              pathname.includes("/about") ? "font-bold text-primary-500" : ""
-            }`}
-          >
-            Perusahaan
-          </Link>
-          <Link
-            href="/product"
-            className={`hover:text-primary-500 cursor-pointer ${
-              pathname.includes("/product") ? "font-bold text-primary-500" : ""
-            }`}
-          >
-            Produk
-          </Link>
-          <Link
-            href="/career"
-            className={`hover:text-primary-500 cursor-pointer ${
-              pathname.includes("/career") ? "font-bold text-primary-500" : ""
-            }`}
-          >
-            Karir
-          </Link>
-          <Link
-            href="/article"
-            className={`hover:text-primary-500 cursor-pointer ${
-              pathname.includes("/article") ? "font-bold text-primary-500" : ""
-            }`}
-          >
-            Artikel
-          </Link>
-        </nav>
-
-        {/* Right section */}
-        <div id="right" className="hidden lg:flex gap-3">
-          <Dropdown title="ID" />
-          <Button title="Coba Demo Gratis" isPrimary />
-        </div>
       </header>
-      {
+      {!isChangeLanguageMode ? (
         <div
           className={`transition-all ${
             isOpen ? "h-screen" : "h-0 hidden"
@@ -143,6 +156,14 @@ function NavMenuMobile({
             >
               Artikel
             </Link>
+
+            <div
+              onClick={onClickLanguage}
+              className="hover:text-primary-500 cursor-pointer flex justify-between items-center"
+            >
+              Bahasa Indonesia
+              <ChevronRightIcon className="w-3 h-3" />
+            </div>
           </nav>
 
           <div className="absolute -translate-x-1/2 left-1/2 transform w-full bottom-32 flex flex-col items-center gap-4 px-4 justify-center">
@@ -158,7 +179,24 @@ function NavMenuMobile({
             />
           </div>
         </div>
-      }
+      ) : (
+        <div
+          className={`transition-all ${
+            isOpen ? "h-screen" : "h-0 hidden"
+          } bg-white px-4 py-4 mt-2 relative w-full`}
+        >
+          <SearchBox onSearch={onSearchLanguage} />
+          <ul className="h-[75%] overflow-x-auto mt-4">
+            {languageList
+              ?.filter((item) => item?.label.toLowerCase().includes(searchTerm))
+              .map((language) => (
+                <li className="py-3 w-full" key={language?.id}>
+                  {language?.label}
+                </li>
+              ))}
+          </ul>
+        </div>
+      )}
     </div>
   );
 }
@@ -177,7 +215,7 @@ function NavMenuDesktop({
   return (
     <>
       {isHome ? (
-        <header className="hidden lg:flex w-full backdrop-blur-lg absolute justify-between border-neutral-100 py-4 left-1/2 -translate-x-1/2 transform top-10 items-center mx-auto max-w-[85%] px-16 border border-2 border-white rounded-xl shadow-xl">
+        <header className="hidden lg:flex gap-4 w-full backdrop-blur-lg absolute justify-between border-neutral-100 py-4 left-1/2 -translate-x-1/2 transform top-10 items-center mx-auto max-w-[85%] px-6 border border-2 border-white rounded-xl shadow-xl">
           {/* Logo */}
           <div id="logo">
             <Image
@@ -328,6 +366,8 @@ export function Header() {
   const { asPath, pathname } = router;
   const isHome = asPath === "/";
   const [isOpen, setOpen] = React.useState(false);
+  const [isChangeLanguageMode, setIsChangeLanguageMode] = React.useState(false);
+  const [searchTerm, setSearchTerm] = useSearchDebounce();
   const onClickLogo = () => {
     router.push("/");
   };
@@ -335,6 +375,15 @@ export function Header() {
   React.useEffect(() => {
     setOpen(false);
   }, [pathname]);
+
+  const onClickLanguage = () => {
+    setIsChangeLanguageMode(true);
+  };
+
+  const onSearchLanguage = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const value: string = e.target.value;
+    setSearchTerm(value);
+  };
 
   return (
     <>
@@ -348,6 +397,10 @@ export function Header() {
         setOpen={setOpen}
         onClickLogo={onClickLogo}
         pathname={pathname}
+        onClickLanguage={onClickLanguage}
+        isChangeLanguageMode={isChangeLanguageMode}
+        onSearchLanguage={onSearchLanguage}
+        searchTerm={searchTerm as string}
       />
     </>
   );

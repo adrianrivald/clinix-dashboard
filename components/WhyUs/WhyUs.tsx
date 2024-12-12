@@ -2,6 +2,7 @@ import Image from "next/image";
 import React from "react";
 import { twMerge } from "tailwind-merge";
 import { maxWidthContainer } from "../../constants/class";
+import { LayananIcon, SolusiIcon, UspIcon } from "../Icons";
 
 export function WhyUs() {
   return (
@@ -25,13 +26,7 @@ export function WhyUs() {
         </div>
         <div className="lg:absolute lg:-top-16 flex flex-col lg:-right-10 lg:w-[60%] gap-4 mt-8 lg:mt-0">
           <div className="p-8 bg-white shadow-md flex flex-col lg:flex-row items-start lg:items-center gap-4 rounded-md">
-            <Image
-              src="/assets/images/usp.png"
-              width={120}
-              height={96}
-              alt="usplogo"
-              className="lg:w-[15%] flex-none"
-            />
+            <UspIcon className="lg:w-[15%] flex-none" />
             <div id="item-1">
               <h3 className="text-[20px] font-bold">
                 Integrasi Tanpa Hambatan
@@ -44,13 +39,7 @@ export function WhyUs() {
             </div>
           </div>
           <div className="p-8 bg-white shadow-md flex flex-col lg:flex-row items-start lg:items-center gap-4 rounded-md">
-            <Image
-              src="/assets/images/layanan.png"
-              width={64}
-              height={56}
-              alt="siap-pakai"
-              className="lg:w-[15%] flex-none"
-            />
+            <LayananIcon className="lg:w-[15%] flex-none" />
             <div id="item-1">
               <h3 className="text-[20px] font-bold">
                 Layanan Siap Pakai, Praktis dan Cepat
@@ -63,13 +52,7 @@ export function WhyUs() {
             </div>
           </div>
           <div className="p-8 bg-white shadow-md flex flex-col lg:flex-row items-start lg:items-center gap-4 rounded-md">
-            <Image
-              src="/assets/images/solusi.png"
-              width={64}
-              height={56}
-              alt="solusi"
-              className="lg:w-[15%] flex-none"
-            />
+            <SolusiIcon className="lg:w-[15%] flex-none" />
             <div id="item-1">
               <h3 className="text-[20px] font-bold">
                 Solusi Spesifik untuk Setiap Spesialis
