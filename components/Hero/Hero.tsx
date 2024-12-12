@@ -9,7 +9,7 @@ export function Hero() {
     <div
       id="hero"
       className={twMerge(
-        "flex flex-col lg:flex-row flex-col-reverse items-center min-h-[400px] gap-4 lg:gap-16 p-8 lg:p-0",
+        "flex flex-col lg:flex-row flex-col-reverse items-center min-h-[400px] gap-4 lg:gap-16 p-4 lg:p-0",
         maxWidthContainer
       )}
     >
