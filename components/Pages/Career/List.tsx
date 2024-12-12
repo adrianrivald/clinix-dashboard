@@ -65,7 +65,7 @@ export function CareerList() {
       <h2 className="text-[32px] font-bold text-center">
         Discover the best job
       </h2>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mt-16 gap-8">
+      <div className="grid grid-cols-1 lg:grid-cols-2 lg:grid-cols-3 mt-16 gap-8">
         {careerListData?.map((career, index) => (
           <div
             onClick={() => onClickItem(career?.id)}

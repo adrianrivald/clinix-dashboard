@@ -35,16 +35,16 @@ export function Hero() {
           mengintegrasikan berbagai aspek operasional kesehatan ke dalam satu
           platform yang intuitif dan mudah digunakan
         </p>
-        <div className="flex flex-col md:flex-row items-center gap-4 mt-8">
+        <div className="flex flex-col lg:flex-row items-center gap-4 mt-8">
           <Button
             title="Coba Demo Gratis"
             isPrimary
-            className="w-full md:w-auto"
+            className="w-full lg:w-auto"
           />
           <Button
             title="Konsultasi Kebutuhan Anda"
             isPrimary={false}
-            className="w-full md:w-auto"
+            className="w-full lg:w-auto"
           />
         </div>
       </div>

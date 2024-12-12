@@ -109,7 +109,7 @@ export function LatestNewsContent() {
           <h2 className="text-[32px] font-bold">Latest News</h2>
           <h3 className="mt-2">Info buat kamu</h3>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mt-14 gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 lg:grid-cols-3 mt-14 gap-8">
           {newsData?.map((news, index) => (
             <div
               onClick={() => onClickItem(news?.uri)}

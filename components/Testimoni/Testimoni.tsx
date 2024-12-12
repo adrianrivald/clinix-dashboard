@@ -105,7 +105,7 @@ export function Testimoni() {
             testimoniData?.map((data) => (
               <SwiperSlide>
                 <div className="bg-primary-100 rounded-md p-4 w-full">
-                  <div className="flex flex-col md:flex-row lg:items-center justify-between">
+                  <div className="flex flex-col lg:flex-row lg:items-center justify-between">
                     <div className="flex gap-3 items-center">
                       <Image
                         src={data?.photo}
@@ -118,7 +118,7 @@ export function Testimoni() {
                         <p>{data?.occupation}</p>
                       </div>
                     </div>
-                    <div className="flex gap-2 ml-3 md:ml-0 mt-2 md:mt-0">
+                    <div className="flex gap-2 ml-3 lg:ml-0 mt-2 lg:mt-0">
                       <StarIcon />
                       <StarIcon />
                       <StarIcon />

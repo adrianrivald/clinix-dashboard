@@ -23,8 +23,8 @@ function NavMenuMobile({
   pathname,
 }: NavMenuMobileProps) {
   return (
-    <div className="fixed w-full top-0 bg-white z-50 xl:hidden">
-      <header className="xl:hidden w-full bg-white shadow-md  justify-between border-neutral-300 py-4 flex items-center mx-auto max-w-[100%] px-4">
+    <div className="fixed w-full top-0 bg-white z-50 lg:hidden">
+      <header className="lg:hidden w-full bg-white shadow-md  justify-between border-neutral-300 py-4 flex items-center mx-auto max-w-[100%] px-4">
         {/* Logo */}
         <div id="logo">
           <Image
@@ -42,7 +42,7 @@ function NavMenuMobile({
         {/* Navigation menus */}
         <nav
           id="menus"
-          className="hidden xl:flex items-center gap-16 text-base"
+          className="hidden lg:flex items-center gap-16 text-base"
         >
           <Link
             href="/"
@@ -87,7 +87,7 @@ function NavMenuMobile({
         </nav>
 
         {/* Right section */}
-        <div id="right" className="hidden xl:flex gap-3">
+        <div id="right" className="hidden lg:flex gap-3">
           <Dropdown title="ID" />
           <Button title="Coba Demo Gratis" isPrimary />
         </div>
@@ -149,12 +149,12 @@ function NavMenuMobile({
             <Button
               title="Coba Demo Gratis"
               isPrimary
-              className="w-full xl:w-auto"
+              className="w-full lg:w-auto"
             />
             <Button
               title="Konsultasi Kebutuhan Anda"
               isPrimary={false}
-              className="w-full xl:w-auto"
+              className="w-full lg:w-auto"
             />
           </div>
         </div>
@@ -177,7 +177,7 @@ function NavMenuDesktop({
   return (
     <>
       {isHome ? (
-        <header className="hidden xl:flex w-full backdrop-blur-lg absolute justify-between border-neutral-100 py-4 left-1/2 -translate-x-1/2 transform top-10 items-center mx-auto max-w-[85%] px-16 border border-2 border-white rounded-xl shadow-xl">
+        <header className="hidden lg:flex w-full backdrop-blur-lg absolute justify-between border-neutral-100 py-4 left-1/2 -translate-x-1/2 transform top-10 items-center mx-auto max-w-[85%] px-16 border border-2 border-white rounded-xl shadow-xl">
           {/* Logo */}
           <div id="logo">
             <Image
@@ -193,7 +193,7 @@ function NavMenuDesktop({
           {/* Navigation menus */}
           <nav
             id="menus"
-            className="hidden xl:flex items-center gap-16 text-base"
+            className="hidden lg:flex items-center gap-16 text-base"
           >
             <Link
               href="/"
@@ -242,13 +242,13 @@ function NavMenuDesktop({
           </nav>
 
           {/* Right section */}
-          <div id="right" className="hidden xl:flex gap-3">
+          <div id="right" className="hidden lg:flex gap-3">
             <Dropdown title="ID" />
             <Button title="Coba Demo Gratis" isPrimary />
           </div>
         </header>
       ) : (
-        <header className="hidden xl:flex w-full bg-white shadow-md  justify-between border-neutral-300 py-4 items-center mx-auto max-w-[100%] px-8">
+        <header className="hidden lg:flex w-full bg-white shadow-md  justify-between border-neutral-300 py-4 items-center mx-auto max-w-[100%] px-8">
           {/* Logo */}
           <div id="logo">
             <Image
@@ -264,7 +264,7 @@ function NavMenuDesktop({
           {/* Navigation menus */}
           <nav
             id="menus"
-            className="hidden xl:flex items-center gap-16 text-base"
+            className="hidden lg:flex items-center gap-16 text-base"
           >
             <Link
               href="/"
@@ -313,7 +313,7 @@ function NavMenuDesktop({
           </nav>
 
           {/* Right section */}
-          <div id="right" className="hidden xl:flex gap-3">
+          <div id="right" className="hidden lg:flex gap-3">
             <Dropdown title="ID" />
             <Button title="Coba Demo Gratis" isPrimary />
           </div>

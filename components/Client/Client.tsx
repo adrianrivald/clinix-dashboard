@@ -12,8 +12,10 @@ export function Client() {
         maxWidthContainer
       )}
     >
-      <h2 className="text-[32px] font-bold">Telah Beroperasi dan Dipercaya</h2>
-      <p className="w-full lg:w-1/2 text-center text-base">
+      <h2 className="text-[24px] lg:text-[32px] font-bold text-center lg:text-left">
+        Telah Beroperasi dan Dipercaya
+      </h2>
+      <p className="w-full lg:w-1/2 text-center text-[20px] lg:text-base">
         Sistem kami telah dipercaya untuk beroperasi pada klien kami. Utilisasi
         dari sistem kami terbukti meningkatkan efisiensi operasional pelayanan
         dan administrasi klien kami

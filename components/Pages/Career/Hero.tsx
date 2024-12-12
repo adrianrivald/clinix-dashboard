@@ -19,7 +19,7 @@ export function HeroCareer() {
         </h2>
       </div>
       <div className="flex justify-center absolute left-1/2 -translate-x-1/2 transform -bottom-10 w-full">
-        <div className="flex items-center gap-4 w-[80%] md:w-[60%] lg:w-[50%] px-4 py-4 bg-white border border-neutral-200 rounded-xl shadow-xl">
+        <div className="flex items-center gap-4 w-[80%] lg:w-[60%] lg:w-[50%] px-4 py-4 bg-white border border-neutral-200 rounded-xl shadow-xl">
           <SearchIcon className="w-5 h-5" />
           <input
             placeholder="Search your dream job.."

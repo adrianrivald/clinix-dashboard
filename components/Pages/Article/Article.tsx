@@ -101,7 +101,7 @@ export function ArticleContent() {
                     width={870}
                     height={400}
                     alt="featured-1"
-                    className="object-cover rounded-lg w-full h-[200px] md:h-[300px] lg:h-[400px]"
+                    className="object-cover rounded-lg w-full h-[200px] lg:h-[300px] lg:h-[400px]"
                   />
                   <div className="absolute left-4 lg:left-10 bottom-4 lg:bottom-10">
                     <h2 className="lg:w-[60%] font-bold text-[16px] lg:text-[32px] text-white">
@@ -151,7 +151,7 @@ export function ArticleContent() {
           <h2 className="text-[32px] font-bold">Latest News</h2>
           <h3 className="mt-2">Info buat kamu</h3>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mt-14 gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 lg:grid-cols-3 mt-14 gap-8">
           {newsData?.map((news, index) => (
             <div
               onClick={() => onClickItem(news?.uri)}
@@ -194,7 +194,7 @@ export function ArticleContent() {
           <h2 className="text-[32px] font-bold">Info Buat Kamu</h2>
           <h3 className="mt-2">Info buat kamu</h3>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mt-14 gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 lg:grid-cols-3 mt-14 gap-8">
           {newsData?.slice(0, 3).map((news, index) => (
             <div
               onClick={() => onClickItem(news?.uri)}

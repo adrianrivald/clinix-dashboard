@@ -29,6 +29,9 @@ module.exports = {
         "middle-top": "0px -100px",
         "middle-top-80": "0px -300px",
       },
+      top: {
+        55: "calc(100% - 55rem)",
+      },
     },
   },
   plugins: [],

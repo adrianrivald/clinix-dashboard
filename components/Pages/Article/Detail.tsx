@@ -19,12 +19,12 @@ export function ArticleDetailContent() {
       {/* Article Detail */}
       <div id="article-detail" className="lg:mx-36">
         {/* Article Title */}
-        <h1 className="text-[32px] lg:text-[50px] font-bold">
+        <h1 className="text-[20px] text-center lg:text-left lg:text-[50px] font-bold">
           Studi Temukan Efek Buruk Bagi Mereka yang Pernah Kena COVID, Bikin
           Otak Jadi Gini
         </h1>
         {/* Date Post */}
-        <div className="flex flex-col lg:flex-row gap-4 justify-between items-center mt-8 py-6 border-t-2 border-b-2 border-dashed">
+        <div className="flex flex-col lg:flex-row gap-4 justify-between items-center mt-4 lg:mt-6 py-6 border-t-2 border-b-2 border-dashed">
           <span>Dipublish 24 September 2024</span>
           <div className="flex items-center gap-4">
             <WhatsappIcon />
@@ -36,7 +36,7 @@ export function ArticleDetailContent() {
         </div>
 
         {/* Content Post */}
-        <div className="mt-16">
+        <div className="mt-4 lg:mt-6">
           <Image
             src="/assets/images/hot-topic-1.jpg"
             width={824}
