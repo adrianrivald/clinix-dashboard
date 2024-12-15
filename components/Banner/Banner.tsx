@@ -2,7 +2,11 @@ import Image from "next/image";
 import React from "react";
 import { Button } from "../Ui";
 
-export function Banner() {
+interface BannerProps {
+  onClickToDemo: () => void;
+}
+
+export function Banner({ onClickToDemo }: BannerProps) {
   return (
     <div className="w-full h-[350px] bg-primary-500 mt-24 relative">
       <Image
@@ -20,7 +24,7 @@ export function Banner() {
           Lihat langsung bagaimana sistem kami membantu pekerjaan Anda lebih
           efisien
         </h2>
-        <Button isPrimary title="Coba Demo Gratis" />
+        <Button isPrimary title="Coba Demo Gratis" onClick={onClickToDemo} />
       </div>
     </div>
   );

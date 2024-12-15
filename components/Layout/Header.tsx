@@ -76,6 +76,8 @@ interface NavMenuMobileProps {
   isChangeLanguageMode: boolean;
   onSearchLanguage: (e: React.ChangeEvent<HTMLInputElement>) => void;
   searchTerm: string;
+  onClickToDemo: () => void;
+  visible: boolean;
 }
 
 function NavMenuMobile({
@@ -87,9 +89,15 @@ function NavMenuMobile({
   isChangeLanguageMode,
   onSearchLanguage,
   searchTerm,
+  onClickToDemo,
+  visible,
 }: NavMenuMobileProps) {
   return (
-    <div className="fixed w-full top-0 bg-white z-50 lg:hidden">
+    <div
+      className={`transition-all sticky ${
+        isOpen ? "top-0" : visible ? "top-0" : "-top-[6rem]"
+      } w-full bg-white z-50 lg:hidden`}
+    >
       <header className="lg:hidden w-full bg-white shadow-md  justify-between border-neutral-300 py-4 flex items-center mx-auto max-w-[100%] px-4">
         {/* Logo */}
         <div id="logo">
@@ -171,6 +179,7 @@ function NavMenuMobile({
               title="Coba Demo Gratis"
               isPrimary
               className="w-full lg:w-auto"
+              onClick={onClickToDemo}
             />
             <Button
               title="Konsultasi Kebutuhan Anda"
@@ -205,17 +214,27 @@ interface NavMenuDesktopProps {
   pathname: string;
   isHome: boolean;
   onClickLogo: () => void;
+  visible: boolean;
+  onClickToDemo: () => void;
 }
 
 function NavMenuDesktop({
   pathname,
   isHome,
   onClickLogo,
+  visible,
+  onClickToDemo,
 }: NavMenuDesktopProps) {
   return (
-    <>
+    <div
+      className={`transition-all sticky z-50 ${
+        visible
+          ? `${isHome ? "top-[3.75rem]" : "top-0"}`
+          : `${isHome ? "-top-[10rem]" : "-top-[6rem]"}`
+      }`}
+    >
       {isHome ? (
-        <header className="hidden lg:flex gap-4 w-full backdrop-blur-lg absolute justify-between border-neutral-100 py-4 left-1/2 -translate-x-1/2 transform top-10 items-center mx-auto max-w-[85%] px-6 border border-2 border-white rounded-xl shadow-xl">
+        <header className="hidden lg:flex gap-4 w-full backdrop-blur-lg absolute justify-between border-neutral-100 py-4 left-1/2 -translate-x-1/2 transform -top-[3.5rem] items-center mx-auto max-w-[85%] px-6 border border-2 border-white rounded-xl shadow-xl">
           {/* Logo */}
           <div id="logo">
             <Image
@@ -282,7 +301,11 @@ function NavMenuDesktop({
           {/* Right section */}
           <div id="right" className="hidden lg:flex gap-3">
             <Dropdown title="ID" />
-            <Button title="Coba Demo Gratis" isPrimary />
+            <Button
+              title="Coba Demo Gratis"
+              isPrimary
+              onClick={onClickToDemo}
+            />
           </div>
         </header>
       ) : (
@@ -353,11 +376,15 @@ function NavMenuDesktop({
           {/* Right section */}
           <div id="right" className="hidden lg:flex gap-3">
             <Dropdown title="ID" />
-            <Button title="Coba Demo Gratis" isPrimary />
+            <Button
+              title="Coba Demo Gratis"
+              isPrimary
+              onClick={onClickToDemo}
+            />
           </div>
         </header>
       )}
-    </>
+    </div>
   );
 }
 
@@ -368,8 +395,15 @@ export function Header() {
   const [isOpen, setOpen] = React.useState(false);
   const [isChangeLanguageMode, setIsChangeLanguageMode] = React.useState(false);
   const [searchTerm, setSearchTerm] = useSearchDebounce();
+
+  const [prevScrollPos, setPrevScrollPos] = React.useState(0);
+  const [visible, setVisible] = React.useState(true);
   const onClickLogo = () => {
     router.push("/");
+  };
+
+  const onClickToDemo = () => {
+    router.push("/demo");
   };
 
   React.useEffect(() => {
@@ -385,14 +419,34 @@ export function Header() {
     setSearchTerm(value);
   };
 
+  const handleScroll = () => {
+    const currentScrollPos = window.scrollY;
+    console.log(currentScrollPos, "currentScrollPos");
+    if (currentScrollPos > prevScrollPos) {
+      setVisible(false);
+    } else {
+      setVisible(true);
+    }
+
+    setPrevScrollPos(currentScrollPos);
+  };
+
+  React.useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  });
   return (
     <>
       <NavMenuDesktop
         pathname={pathname}
         isHome={isHome}
         onClickLogo={onClickLogo}
+        visible={visible}
+        onClickToDemo={onClickToDemo}
       />
       <NavMenuMobile
+        visible={visible}
         isOpen={isOpen}
         setOpen={setOpen}
         onClickLogo={onClickLogo}
@@ -401,6 +455,7 @@ export function Header() {
         isChangeLanguageMode={isChangeLanguageMode}
         onSearchLanguage={onSearchLanguage}
         searchTerm={searchTerm as string}
+        onClickToDemo={onClickToDemo}
       />
     </>
   );

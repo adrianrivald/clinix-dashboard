@@ -1,4 +1,5 @@
 import Head from "next/head";
+import { useRouter } from "next/router";
 import {
   Client,
   Contact,
@@ -11,6 +12,10 @@ import {
 } from "../components";
 
 export default function HomePage() {
+  const router = useRouter();
+  const onClickToDemo = () => {
+    router.push("/demo");
+  };
   return (
     <div>
       <Head>
@@ -20,14 +25,14 @@ export default function HomePage() {
       </Head>
 
       <main className="mt-[5.5rem]">
-        <Hero />
+        <Hero onClickToDemo={onClickToDemo} />
         <WhyUs />
         <Products />
         <Client />
         <Testimoni />
         <Faq />
         <Contact />
-        <Banner />
+        <Banner onClickToDemo={onClickToDemo} />
       </main>
     </div>
   );

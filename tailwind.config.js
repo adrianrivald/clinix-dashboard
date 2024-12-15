@@ -13,16 +13,19 @@ module.exports = {
       colors: {
         primary: {
           100: "#FEE7E7",
+          200: "#FDCECE",
           500: "#F75252",
         },
         neutral: {
           100: "#DAE0E7",
           200: "#F3F5F7",
+          250: "#EAEDF1",
           300: "#677A8E",
           400: "#ACB8C3",
           500: "#31475E",
         },
         link: "#3080E2",
+        warning: "#E40044",
         blue: {
           500: "#6694C4",
         },

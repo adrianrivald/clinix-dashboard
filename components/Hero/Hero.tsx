@@ -4,7 +4,11 @@ import { twMerge } from "tailwind-merge";
 import { maxWidthContainer } from "../../constants/class";
 import { Button } from "../Ui";
 
-export function Hero() {
+interface HeroProps {
+  onClickToDemo: () => void;
+}
+
+export function Hero({ onClickToDemo }: HeroProps) {
   return (
     <div
       id="hero"
@@ -40,6 +44,7 @@ export function Hero() {
             title="Coba Demo Gratis"
             isPrimary
             className="w-full lg:w-auto"
+            onClick={onClickToDemo}
           />
           <Button
             title="Konsultasi Kebutuhan Anda"

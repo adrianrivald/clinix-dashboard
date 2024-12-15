@@ -1,14 +1,22 @@
-import React from "react";
+import React, { ButtonHTMLAttributes } from "react";
 import { twMerge } from "tailwind-merge";
 
-interface ButtonProps {
+interface ButtonParams {
   title: string;
   onClick?: () => void;
   isPrimary?: boolean;
   className?: string;
 }
 
-export function Button({ title, isPrimary, className, onClick }: ButtonProps) {
+type ButtonProps = ButtonParams & ButtonHTMLAttributes<HTMLButtonElement>;
+
+export function Button({
+  title,
+  isPrimary,
+  className,
+  onClick,
+  ...rest
+}: ButtonProps) {
   return (
     <button
       onClick={onClick}
@@ -19,6 +27,7 @@ export function Button({ title, isPrimary, className, onClick }: ButtonProps) {
           : "bg-white border-primary-500 text-primary-500",
         className
       )}
+      {...rest}
     >
       {title}
     </button>
