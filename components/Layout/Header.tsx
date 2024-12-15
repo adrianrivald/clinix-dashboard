@@ -3,7 +3,7 @@ import Link from "next/link";
 import { Squash as Hamburger } from "hamburger-react";
 
 import { useRouter } from "next/router";
-import React, { Dispatch } from "react";
+import React, { Dispatch, SetStateAction } from "react";
 import { Button, Dropdown, SearchBox } from "..";
 import { ChevronRightIcon } from "../Icons";
 import { useSearchDebounce } from "../../hooks";
@@ -78,6 +78,7 @@ interface NavMenuMobileProps {
   searchTerm: string;
   onClickToDemo: () => void;
   visible: boolean;
+  setIsChangeLanguageMode: Dispatch<SetStateAction<boolean>>;
 }
 
 function NavMenuMobile({
@@ -91,6 +92,7 @@ function NavMenuMobile({
   searchTerm,
   onClickToDemo,
   visible,
+  setIsChangeLanguageMode,
 }: NavMenuMobileProps) {
   return (
     <div
@@ -111,7 +113,13 @@ function NavMenuMobile({
           />
         </div>
 
-        <Hamburger toggled={isOpen} toggle={setOpen} />
+        <Hamburger
+          toggled={isOpen}
+          onToggle={() => {
+            setOpen(!isOpen);
+            setIsChangeLanguageMode(false);
+          }}
+        />
       </header>
       {!isChangeLanguageMode ? (
         <div
@@ -456,6 +464,7 @@ export function Header() {
         onSearchLanguage={onSearchLanguage}
         searchTerm={searchTerm as string}
         onClickToDemo={onClickToDemo}
+        setIsChangeLanguageMode={setIsChangeLanguageMode}
       />
     </>
   );

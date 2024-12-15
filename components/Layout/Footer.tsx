@@ -15,7 +15,7 @@ import {
 
 export function Footer() {
   return (
-    <footer className="mb-4 border-t">
+    <footer className="mb-4 border-t mt-24">
       <div
         id="footer"
         className={twMerge(
@@ -37,10 +37,34 @@ export function Footer() {
           <div className="font-bold text-neutral-500">
             Sosial Media Kami
             <div className="flex items-center gap-4 mt-2">
-              <FacebookRoundedIcon />
-              <InstagramRoundedIcon />
-              <LinkedInRoundedIcon />
-              <TwitterRoundedIcon />
+              <Link
+                href="https://facebook.com"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <FacebookRoundedIcon />
+              </Link>
+              <Link
+                href="https://instagram.com"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <InstagramRoundedIcon />
+              </Link>
+              <Link
+                href="https://linkedin.com"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <LinkedInRoundedIcon />
+              </Link>
+              <Link
+                href="https://x.com"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <TwitterRoundedIcon />
+              </Link>
             </div>
           </div>
         </div>
@@ -49,26 +73,26 @@ export function Footer() {
         <div className="flex flex-col gap-4 flex-none ">
           <div className="font-bold">Perusahaan</div>
           <Link href="/about">Tentang Kami</Link>
-          <div>Value Kami</div>
-          <div>Karir</div>
+          <Link href="/">Value Kami</Link>
+          <Link href="/">Karir</Link>
         </div>
 
         {/* Produk */}
         <div className="flex flex-col gap-4 flex-none ">
           <div className="font-bold">Produk</div>
-          <div>Notes</div>
-          <div>Memos</div>
-          <div>Bitme</div>
-          <div>Timeflow</div>
+          <Link href="/">Notes</Link>
+          <Link href="/">Memos</Link>
+          <Link href="/">Bitme</Link>
+          <Link href="/">Timeflow</Link>
         </div>
 
         {/* Pengetahuan */}
         <div className="flex flex-col gap-4 flex-none ">
           <div className="font-bold">Pengetahuan</div>
-          <div>Artikel</div>
-          <div>Pertanyaan Populer</div>
-          <div>Pernyataan Privasi</div>
-          <div>Ketentuan Layanan</div>
+          <Link href="/">Artikel</Link>
+          <Link href="/">Pertanyaan Populer</Link>
+          <Link href="/">Pernyataan Privasi</Link>
+          <Link href="/">Ketentuan Layanan</Link>
         </div>
 
         {/* Kontak */}
