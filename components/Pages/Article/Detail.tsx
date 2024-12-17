@@ -1,3 +1,4 @@
+import { TFunction } from "i18next";
 import Image from "next/image";
 import { useRouter } from "next/router";
 import React from "react";
@@ -11,7 +12,11 @@ import {
   WhatsappIcon,
 } from "../../Icons";
 
-export function ArticleDetailContent() {
+interface ArticleDetailContentProps {
+  t: TFunction<"common", undefined>;
+}
+
+export function ArticleDetailContent({ t }: ArticleDetailContentProps) {
   const router = useRouter();
 
   return (
@@ -25,7 +30,7 @@ export function ArticleDetailContent() {
         </h1>
         {/* Date Post */}
         <div className="flex flex-col lg:flex-row gap-4 justify-between items-center mt-4 lg:mt-6 py-6 border-t-2 border-b-2 border-dashed">
-          <span>Dipublish 24 September 2024</span>
+          <span>{t("article.publishedAt")} 24 September 2024</span>
           <div className="flex items-center gap-4">
             <WhatsappIcon />
             <FacebookIcon />

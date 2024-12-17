@@ -1,3 +1,4 @@
+import { TFunction } from "i18next";
 import Image from "next/image";
 import { useRouter } from "next/router";
 import React from "react";
@@ -91,8 +92,11 @@ const newsData = [
     title: "Understanding diabetes and its impact on public health..",
   },
 ];
+interface LatestNewsContentProps {
+  t: TFunction<"common", undefined>;
+}
 
-export function LatestNewsContent() {
+export function LatestNewsContent({ t }: LatestNewsContentProps) {
   const router = useRouter();
   const onClickItem = (uri: string) => {
     router.push(`/article/${uri}`);
@@ -106,8 +110,8 @@ export function LatestNewsContent() {
         className={twMerge("mb-24", maxWidthContainer)}
       >
         <div className="text-center">
-          <h2 className="text-[32px] font-bold">Latest News</h2>
-          <h3 className="mt-2">Info buat kamu</h3>
+          <h2 className="text-[32px] font-bold">{t("article.latestNews")}</h2>
+          <h3 className="mt-2">{t("article.forYou")}</h3>
         </div>
         <div className="grid grid-cols-1 lg:grid-cols-2 lg:grid-cols-3 mt-14 gap-8">
           {newsData?.map((news, index) => (
