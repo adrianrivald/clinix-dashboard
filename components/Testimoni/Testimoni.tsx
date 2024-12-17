@@ -8,6 +8,7 @@ import "swiper/css/navigation";
 import { twMerge } from "tailwind-merge";
 import { maxWidthContainer } from "../../constants/class";
 import { ArrowLeftIcon, ArrowRightIcon, StarIcon } from "../Icons";
+import { TFunction } from "i18next";
 
 const testimoniData = [
   {
@@ -44,7 +45,11 @@ const testimoniData = [
   },
 ];
 
-export function Testimoni() {
+interface TestimoniProps {
+  t: TFunction<"common", undefined>;
+}
+
+export function Testimoni({ t }: TestimoniProps) {
   const navigationPrevRef = React.useRef(null);
   const navigationNextRef = React.useRef(null);
 
@@ -82,9 +87,7 @@ export function Testimoni() {
         >
           <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between lg:mx-16 gap-2 mb-4">
             <h2 className="font-bold text-[32px] ">
-              Apa kata
-              <br />
-              Klien Kami
+              {t("home.testimoniHeading")}
             </h2>
             <div className="flex gap-2">
               <div

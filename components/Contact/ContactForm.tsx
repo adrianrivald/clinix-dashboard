@@ -3,8 +3,13 @@ import { SubmitHandler, useForm } from "react-hook-form";
 import { Button } from "../Ui";
 import emailjs from "@emailjs/browser";
 import { ToastContainer, toast } from "react-toastify";
+import { TFunction } from "i18next";
 
-export function ContactForm() {
+interface ContactForm {
+  t: TFunction<"common", undefined>;
+}
+
+export function ContactForm({ t }: ContactForm) {
   const form = React.useRef() as any;
   const { register, handleSubmit, watch, reset } = useForm<any>();
   const [isSubmitted, setIsSubmitted] = React.useState(false);
@@ -48,43 +53,43 @@ export function ContactForm() {
     >
       <div className="flex flex-col gap-2">
         <label className="text-[14px]" htmlFor="name">
-          Nama
+          {t("home.contactFieldName")}
         </label>
         <input
           id="name"
           {...register("name", { required: true })}
           type="text"
           className="rounded-md p-4 border border-neutral-100 focus:outline-none"
-          placeholder="Ketik Nama Anda"
+          placeholder={t("home.contactFieldNamePh")}
         />
       </div>
       <div className="flex flex-col gap-2">
         <label className="text-[14px]" htmlFor="email">
-          Alamat Email
+          {t("home.contactFieldEmail")}
         </label>
         <input
           id="email"
           {...register("email", { required: true })}
           type="email"
           className="rounded-md p-4 border border-neutral-100 focus:outline-none"
-          placeholder="nama@email.com"
+          placeholder={t("home.contactFieldEmailPh")}
         />
       </div>
       <div className="flex flex-col gap-2">
         <label className="text-[14px]" htmlFor="message">
-          Pertanyaan Anda
+          {t("home.contactFieldQuestion")}
         </label>
         <textarea
           id="message"
           {...register("message", { required: true })}
           className="rounded-md p-4 border border-neutral-100 focus:outline-none"
-          placeholder="Bagaimana cara saya bisa mendapat produk Memos?"
+          placeholder={t("home.contactFieldQuestionPh")}
           rows={4}
         />
       </div>
       <Button
         isPrimary
-        title="Kirim Pertanyaan Anda"
+        title={t("home.contactSubmit")}
         className="lg:w-[250px]"
       />
       <ToastContainer />

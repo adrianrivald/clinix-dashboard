@@ -30,13 +30,13 @@ export default function HomePage() {
 
       <main className="mt-[5.5rem]">
         <Hero t={t} onClickToDemo={onClickToDemo} />
-        <WhyUs />
-        <Products />
-        <Client />
-        <Testimoni />
-        <Faq />
-        <Contact />
-        <Banner onClickToDemo={onClickToDemo} />
+        <WhyUs t={t} />
+        <Products t={t} />
+        <Client t={t} />
+        <Testimoni t={t} />
+        <Faq t={t} />
+        <Contact t={t} />
+        <Banner t={t} onClickToDemo={onClickToDemo} />
       </main>
     </div>
   );

@@ -36,20 +36,16 @@ export function Hero({ onClickToDemo, t }: HeroProps) {
         <h1 className="text-[32px] font-bold text-center lg:text-left">
           {t("home.heroHeadline")}
         </h1>
-        <p className="mt-4 text-base">
-          Sistem kami dirancang untuk beradaptasi dengan cara Anda bekerja,
-          mengintegrasikan berbagai aspek operasional kesehatan ke dalam satu
-          platform yang intuitif dan mudah digunakan
-        </p>
+        <p className="mt-4 text-base">{t("home.heroSubHeadline")}</p>
         <div className="flex flex-col lg:flex-row items-center gap-4 mt-8">
           <Button
-            title="Coba Demo Gratis"
+            title={t("home.tryDemo")}
             isPrimary
             className="w-full lg:w-auto"
             onClick={onClickToDemo}
           />
           <Button
-            title="Konsultasi Kebutuhan Anda"
+            title={t("home.consultYourNeeds")}
             isPrimary={false}
             className="w-full lg:w-auto"
           />

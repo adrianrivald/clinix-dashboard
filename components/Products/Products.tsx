@@ -1,8 +1,13 @@
+import { TFunction } from "i18next";
 import Image from "next/image";
 import React from "react";
 import { ArrowRightUpIcon } from "../Icons";
 
-export function Products() {
+interface ProductsProps {
+  t: TFunction<"common", undefined>;
+}
+
+export function Products({ t }: ProductsProps) {
   return (
     <div
       id="products"
@@ -18,7 +23,7 @@ export function Products() {
         />
       </div>
       <div className="w-full px-8 text-left lg:text-center pt-4 lg:pt-12 flex justify-center text-white text-[32px] font-bold">
-        Menyediakan Solusi Untuk Berbagai Praktisi
+        {t("home.providingSolutions")}
       </div>
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mt-4 lg:mt-16 justify-between items-center max-w-[100rem] mx-auto px-8 lg:px-32">
         <div className="bg-white rounded-md p-8 hover:bg-primary-100 hover:text-primary-500 cursor-pointer">
@@ -31,7 +36,7 @@ export function Products() {
                 alt="memos"
               />
 
-              <div>Sistem Encounter Rumah Sakit</div>
+              <div>{t("home.memosSolution")}</div>
             </div>
             <ArrowRightUpIcon />
           </div>
@@ -46,7 +51,7 @@ export function Products() {
                 alt="notes"
               />
 
-              <div>Sistem Encounter Rumah Sakit</div>
+              <div>{t("home.notesSolution")}</div>
             </div>
             <ArrowRightUpIcon />
           </div>
@@ -61,7 +66,7 @@ export function Products() {
                 alt="clinix"
               />
 
-              <div>Sistem Encounter Rumah Sakit</div>
+              <div>{t("home.clinixSolution")}</div>
             </div>
             <ArrowRightUpIcon />
           </div>

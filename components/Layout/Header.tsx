@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Squash as Hamburger } from "hamburger-react";
+import { useTranslation } from "next-i18next";
 
 import { useRouter } from "next/router";
 import React, { Dispatch, SetStateAction } from "react";
@@ -8,6 +9,7 @@ import { Button, Dropdown, SearchBox } from "..";
 import { ChevronRightIcon } from "../Icons";
 import { useSearchDebounce } from "../../hooks";
 import type { Language } from "../Ui/Dropdown";
+import { TFunction } from "i18next";
 
 const languageList = [
   {
@@ -80,6 +82,7 @@ interface NavMenuMobileProps {
   onClickToDemo: () => void;
   visible: boolean;
   setIsChangeLanguageMode: Dispatch<SetStateAction<boolean>>;
+  t: TFunction<"common", undefined>;
 }
 
 function NavMenuMobile({
@@ -94,6 +97,7 @@ function NavMenuMobile({
   onClickToDemo,
   visible,
   setIsChangeLanguageMode,
+  t,
 }: NavMenuMobileProps) {
   return (
     <div
@@ -135,7 +139,7 @@ function NavMenuMobile({
                 pathname === "/" ? "font-bold text-primary-500" : ""
               }`}
             >
-              Home
+              {t("navbar.home")}
             </Link>
             <Link
               href="/about"
@@ -143,7 +147,7 @@ function NavMenuMobile({
                 pathname.includes("/about") ? "font-bold text-primary-500" : ""
               }`}
             >
-              Perusahaan
+              {t("navbar.company")}
             </Link>
             <Link
               href="/product"
@@ -153,7 +157,7 @@ function NavMenuMobile({
                   : ""
               }`}
             >
-              Produk
+              {t("navbar.product")}
             </Link>
             <Link
               href="/career"
@@ -161,7 +165,7 @@ function NavMenuMobile({
                 pathname.includes("/career") ? "font-bold text-primary-500" : ""
               }`}
             >
-              Karir
+              {t("navbar.career")}
             </Link>
             <Link
               href="/article"
@@ -171,7 +175,7 @@ function NavMenuMobile({
                   : ""
               }`}
             >
-              Artikel
+              {t("navbar.article")}
             </Link>
 
             <div
@@ -185,13 +189,13 @@ function NavMenuMobile({
 
           <div className="absolute -translate-x-1/2 left-1/2 transform w-full bottom-32 flex flex-col items-center gap-4 px-4 justify-center">
             <Button
-              title="Coba Demo Gratis"
+              title={t("navbar.tryDemo")}
               isPrimary
               className="w-full lg:w-auto"
               onClick={onClickToDemo}
             />
             <Button
-              title="Konsultasi Kebutuhan Anda"
+              title={t("navbar.consultYourNeeds")}
               isPrimary={false}
               className="w-full lg:w-auto"
             />
@@ -228,6 +232,7 @@ interface NavMenuDesktopProps {
   onChangeLanguage: (lang: string) => void;
   locale: string | undefined;
   languages: Language[];
+  t: TFunction<"common", undefined>;
 }
 
 function NavMenuDesktop({
@@ -239,6 +244,7 @@ function NavMenuDesktop({
   onChangeLanguage,
   locale,
   languages,
+  t,
 }: NavMenuDesktopProps) {
   return (
     <div
@@ -273,7 +279,7 @@ function NavMenuDesktop({
                 pathname === "/" ? "font-bold text-primary-500" : ""
               }`}
             >
-              Home
+              {t("navbar.home")}
             </Link>
             <Link
               href="/about"
@@ -281,7 +287,7 @@ function NavMenuDesktop({
                 pathname.includes("/about") ? "font-bold text-primary-500" : ""
               }`}
             >
-              Perusahaan
+              {t("navbar.company")}
             </Link>
             <Link
               href="/product"
@@ -291,7 +297,7 @@ function NavMenuDesktop({
                   : ""
               }`}
             >
-              Produk
+              {t("navbar.product")}
             </Link>
             <Link
               href="/career"
@@ -299,7 +305,7 @@ function NavMenuDesktop({
                 pathname.includes("/career") ? "font-bold text-primary-500" : ""
               }`}
             >
-              Karir
+              {t("navbar.career")}
             </Link>
             <Link
               href="/article"
@@ -309,19 +315,19 @@ function NavMenuDesktop({
                   : ""
               }`}
             >
-              Artikel
+              {t("navbar.article")}
             </Link>
           </nav>
 
           {/* Right section */}
           <div id="right" className="hidden lg:flex gap-3">
             <Dropdown
-              currentLanguage={locale ?? ""}
+              currentLanguage={locale?.toUpperCase() ?? ""}
               languages={languages}
               onChangeLanguage={onChangeLanguage}
             />
             <Button
-              title="Coba Demo Gratis"
+              title={t("navbar.tryDemo")}
               isPrimary
               onClick={onClickToDemo}
             />
@@ -360,7 +366,7 @@ function NavMenuDesktop({
                 pathname.includes("/about") ? "font-bold text-primary-500" : ""
               }`}
             >
-              Perusahaan
+              {t("navbar.company")}
             </Link>
             <Link
               href="/product"
@@ -370,7 +376,7 @@ function NavMenuDesktop({
                   : ""
               }`}
             >
-              Produk
+              {t("navbar.product")}
             </Link>
             <Link
               href="/career"
@@ -378,7 +384,7 @@ function NavMenuDesktop({
                 pathname.includes("/career") ? "font-bold text-primary-500" : ""
               }`}
             >
-              Karir
+              {t("navbar.career")}
             </Link>
             <Link
               href="/article"
@@ -388,19 +394,19 @@ function NavMenuDesktop({
                   : ""
               }`}
             >
-              Artikel
+              {t("navbar.article")}
             </Link>
           </nav>
 
           {/* Right section */}
           <div id="right" className="hidden lg:flex gap-3">
             <Dropdown
-              currentLanguage={locale ?? ""}
+              currentLanguage={locale?.toUpperCase() ?? ""}
               languages={languages}
               onChangeLanguage={onChangeLanguage}
             />
             <Button
-              title="Coba Demo Gratis"
+              title={t("navbar.tryDemo")}
               isPrimary
               onClick={onClickToDemo}
             />
@@ -422,7 +428,7 @@ export function Header() {
 
   const [prevScrollPos, setPrevScrollPos] = React.useState(0);
   const [visible, setVisible] = React.useState(true);
-
+  const { t } = useTranslation("common");
   const languages = [
     {
       id: "id",
@@ -511,6 +517,7 @@ export function Header() {
         onChangeLanguage={onChangeLanguage}
         languages={languages}
         locale={locale}
+        t={t}
       />
       <NavMenuMobile
         visible={visible}
@@ -524,6 +531,7 @@ export function Header() {
         searchTerm={searchTerm as string}
         onClickToDemo={onClickToDemo}
         setIsChangeLanguageMode={setIsChangeLanguageMode}
+        t={t}
       />
     </>
   );

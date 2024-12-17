@@ -1,9 +1,14 @@
+import { TFunction } from "i18next";
 import Image from "next/image";
 import React from "react";
 import { twMerge } from "tailwind-merge";
 import { maxWidthContainer } from "../../constants/class";
 
-export function Client() {
+interface ClientProps {
+  t: TFunction<"common", undefined>;
+}
+
+export function Client({ t }: ClientProps) {
   return (
     <div
       id="client"
@@ -13,12 +18,10 @@ export function Client() {
       )}
     >
       <h2 className="text-[24px] lg:text-[32px] font-bold text-center lg:text-left">
-        Telah Beroperasi dan Dipercaya
+        {t("home.provenTrusted")}
       </h2>
       <p className="w-full lg:w-1/2 text-center text-[20px] lg:text-base">
-        Sistem kami telah dipercaya untuk beroperasi pada klien kami. Utilisasi
-        dari sistem kami terbukti meningkatkan efisiensi operasional pelayanan
-        dan administrasi klien kami
+        {t("home.provenTrustedContent")}
       </p>
       <div className="flex flex-col lg:flex-row items-center justify-between">
         <Image
