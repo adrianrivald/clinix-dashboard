@@ -1,8 +1,9 @@
 import { Listbox, Transition } from "@headlessui/react";
-import Image from "next/image";
+import emailjs from "@emailjs/browser";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import React, { Fragment } from "react";
+import React, { Fragment, useRef } from "react";
+import { SubmitHandler, useForm } from "react-hook-form";
 import { twMerge } from "tailwind-merge";
 import { maxWidthContainer } from "../../../constants/class";
 import { useSearchDebounce } from "../../../hooks";
@@ -119,16 +120,42 @@ export function DemoContent() {
   const [selectedCompany, setSelectedCompany] = React.useState<SelectProps>();
   const [selectedInterest, setSelectedInterest] = React.useState<SelectProps>();
   const [searchTerm, setSearchTerm] = useSearchDebounce();
+  const { register, handleSubmit, watch } = useForm<any>();
+  const form = useRef() as any;
+
+  React.useEffect(() => {
+    setIsSubmitted(false);
+  }, []);
 
   const onSearchCountry = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value;
     setSearchTerm(value);
   };
 
-  const handleSubmit = (e: any) => {
-    e.preventDefault();
-    console.log("submitted");
-    setIsSubmitted(true);
+  const formValues = {
+    name: watch("name"),
+    email: watch("email"),
+    company_name: watch("company_name"),
+    phone: watch("phone"),
+    country: selectedCountry?.label,
+    langauge: selectedLanguage?.label,
+    company_size: selectedCompany?.label,
+    interest: selectedInterest?.label,
+  };
+
+  const onSubmit: SubmitHandler<any> = async () => {
+    await emailjs
+      .send("service_le33abk", "template_n1eho2g", formValues, {
+        publicKey: "-bHdy_Fu3An8fq6Av",
+      })
+      .then(
+        () => {
+          setIsSubmitted(true);
+        },
+        (error) => {
+          console.log(error);
+        }
+      );
   };
 
   const onClickHome = () => {
@@ -142,7 +169,7 @@ export function DemoContent() {
     >
       <div className="lg:mx-36">
         {!isSubmitted ? (
-          <form onSubmit={handleSubmit}>
+          <form ref={form} onSubmit={handleSubmit(onSubmit)}>
             <div className="shadow-md w-full p-8 rounded-lg border border-neutral-250">
               <h2 className="font-bold">Talk with our sales team</h2>
               <h3 className="mt-2">
@@ -159,7 +186,7 @@ export function DemoContent() {
                       </label>
                       <input
                         id="name"
-                        name="name"
+                        {...register("name", { required: true })}
                         type="text"
                         className="rounded-md p-4 border border-neutral-100 focus:outline-none"
                         placeholder="Input Name"
@@ -175,7 +202,7 @@ export function DemoContent() {
                       </label>
                       <input
                         id="email"
-                        name="email"
+                        {...register("email", { required: true })}
                         type="email"
                         className="rounded-md p-4 border border-neutral-100 focus:outline-none"
                         placeholder="Input Email"
@@ -194,7 +221,7 @@ export function DemoContent() {
                       </label>
                       <input
                         id="company_name"
-                        name="company_name"
+                        {...register("company_name", { required: true })}
                         type="text"
                         className="rounded-md p-4 border border-neutral-100 focus:outline-none"
                         placeholder="Input Company Name"
@@ -210,7 +237,7 @@ export function DemoContent() {
                       </label>
                       <input
                         id="phone"
-                        name="phone"
+                        {...register("phone", { required: true })}
                         type="number"
                         className="rounded-md p-4 border border-neutral-100 focus:outline-none"
                         placeholder="Input Phone Number"
