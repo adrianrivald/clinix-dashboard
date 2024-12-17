@@ -1,3 +1,4 @@
+import { TFunction } from "i18next";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
@@ -6,9 +7,11 @@ import { twMerge } from "tailwind-merge";
 import { maxWidthContainer } from "../../../constants/class";
 import { ArrowRightBlueIcon } from "../../Icons";
 
-export function ProductContent() {
-  const router = useRouter();
+interface ProductContentProps {
+  t: TFunction<"common", undefined>;
+}
 
+export function ProductContent({ t }: ProductContentProps) {
   return (
     <div
       id="product-list"
@@ -16,12 +19,11 @@ export function ProductContent() {
     >
       <div className="lg:mx-36">
         <h2 className="text-[32px] font-bold text-center">
-          Our Healthcare <br />
-          Management Solutions
+          {t("product.productHeading")}
         </h2>
         <div className="mt-12 flex flex-col lg:flex-row justify-center items-center gap-4">
           <Link
-            href="https://notes.co.id"
+            href="https://notes-landing.vercel.app"
             rel="noopener noreferrer"
             target="_blank"
             className="w-full lg:w-1/2 p-3 pb-8 rounded-lg flex flex-col gap-6 cursor-pointer border border-neutral-250 hover:border-primary-200"
@@ -35,15 +37,15 @@ export function ProductContent() {
             />
             <div className="mx-4">
               <h2 className="text-neutral-500 text-[20px] font-bold">Notes</h2>
-              <h3>Transformasi digital untuk rumah sakit Anda</h3>
+              <h3>{t("product.notesDesc")}</h3>
               <div className="mt-8 flex justify-between items-center">
-                <h5 className="text-link">Learn More</h5>
+                <h5 className="text-link">{t("product.learnMore")}</h5>
                 <ArrowRightBlueIcon />
               </div>
             </div>
           </Link>
           <Link
-            href="https://clinix.co.id"
+            href="https://clinix-landing.vercel.app"
             rel="noopener noreferrer"
             target="_blank"
             className="w-full lg:w-1/2 p-3 pb-8 rounded-lg flex flex-col gap-6 cursor-pointer border border-neutral-250 hover:border-primary-200"
@@ -57,9 +59,9 @@ export function ProductContent() {
             />
             <div className="mx-4">
               <h2 className="text-neutral-500 text-[20px] font-bold">Clinix</h2>
-              <h3>Transformasi digital untuk klinik Anda</h3>
+              <h3>{t("product.clinixDesc")}</h3>
               <div className="mt-8 flex justify-between items-center">
-                <h5 className="text-link">Learn More</h5>
+                <h5 className="text-link">{t("product.learnMore")}</h5>
                 <ArrowRightBlueIcon />
               </div>
             </div>

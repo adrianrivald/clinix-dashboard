@@ -1,10 +1,14 @@
+import { TFunction } from "i18next";
 import Image from "next/image";
 import React from "react";
 import { SearchIcon } from "../../Icons";
 import { SearchBox } from "../../SearchBox/SearchBox";
 import { Button } from "../../Ui";
 
-export function HeroCareer() {
+interface HeroCareerProps {
+  t: TFunction<"common", undefined>;
+}
+export function HeroCareer({ t }: HeroCareerProps) {
   const onSearchJob = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value;
     console.log("search job:", value);
@@ -20,11 +24,11 @@ export function HeroCareer() {
       />
       <div className="w-full px-4 lg:px-0 absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 transform z-10 flex flex-col justify-center items-center gap-4">
         <h2 className="w-full text-[36px] lg:text-[40px] text-white text-center font-bold">
-          Explore Your Future <br /> Career Destination
+          {t("career.careerHeading1")} <br /> {t("career.careerHeading2")}
         </h2>
         <SearchBox
           onSearch={onSearchJob}
-          placeholder="Search your dream job..."
+          placeholder={t("career.searchYourJob")}
           className="blogk lg:hidden w-full"
         />
       </div>
@@ -32,7 +36,7 @@ export function HeroCareer() {
         <div className="flex items-center gap-4 w-[80%] lg:w-[60%] lg:w-[50%] px-4 py-4 bg-white border border-neutral-200 rounded-xl shadow-xl">
           <SearchIcon className="w-5 h-5" />
           <input
-            placeholder="Search your dream job..."
+            placeholder={t("career.searchYourJob")}
             type="search"
             className="focus:outline-none w-full h-8"
           />

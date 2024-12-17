@@ -11,6 +11,7 @@ import { maxWidthContainer } from "../../../constants/class";
 import { Button } from "../../Ui";
 import { ChevronLeftIcon, ChevronRightIcon } from "../../Icons";
 import { hotTopics } from "./data";
+import { TFunction } from "i18next";
 
 const newsData = [
   {
@@ -57,7 +58,11 @@ const newsData = [
   },
 ];
 
-export function ArticleContent() {
+interface ArticleContentProps {
+  t: TFunction<"common", undefined>;
+}
+
+export function ArticleContent({ t }: ArticleContentProps) {
   const router = useRouter();
   const navigationPrevRef = React.useRef(null);
   const navigationNextRef = React.useRef(null);
@@ -75,7 +80,9 @@ export function ArticleContent() {
       {/* Hot Topics */}
 
       <div id="hot-topics" className="relative">
-        <h1 className="text-[32px] lg:text-[50px] font-bold">Hot Topics</h1>
+        <h1 className="text-[32px] lg:text-[50px] font-bold">
+          {t("article.hotTopic")}
+        </h1>
         <Swiper
           className="mySwiper"
           pagination={{
@@ -148,8 +155,8 @@ export function ArticleContent() {
         className={twMerge("my-24", maxWidthContainer)}
       >
         <div className="text-center">
-          <h2 className="text-[32px] font-bold">Latest News</h2>
-          <h3 className="mt-2">Info buat kamu</h3>
+          <h2 className="text-[32px] font-bold">{t("article.latestNews")}</h2>
+          <h3 className="mt-2">{t("article.forYou")}</h3>
         </div>
         <div className="grid grid-cols-1 lg:grid-cols-2 lg:grid-cols-3 mt-14 gap-8">
           {newsData?.map((news, index) => (
@@ -178,7 +185,7 @@ export function ArticleContent() {
           <Button
             onClick={onClickMoreLatestNews}
             isPrimary={false}
-            title="Lihat Semua"
+            title={t("article.seeAll")}
             className="w-36"
           />
         </div>
@@ -191,8 +198,8 @@ export function ArticleContent() {
         className={twMerge("mt-36 mb-24", maxWidthContainer)}
       >
         <div className="text-center">
-          <h2 className="text-[32px] font-bold">Info Buat Kamu</h2>
-          <h3 className="mt-2">Info buat kamu</h3>
+          <h2 className="text-[32px] font-bold">{t("article.forYou")}</h2>
+          <h3 className="mt-2">{t("article.forYou")}</h3>
         </div>
         <div className="grid grid-cols-1 lg:grid-cols-2 lg:grid-cols-3 mt-14 gap-8">
           {newsData?.slice(0, 3).map((news, index) => (
@@ -218,7 +225,11 @@ export function ArticleContent() {
           ))}
         </div>
         <div className="flex justify-center mt-14">
-          <Button isPrimary={false} title="Lihat Semua" className="w-36" />
+          <Button
+            isPrimary={false}
+            title={t("article.seeAll")}
+            className="w-36"
+          />
         </div>
       </div>
     </div>

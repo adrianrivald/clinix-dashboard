@@ -1,6 +1,8 @@
+import { TFunction } from "i18next";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
+import { useTranslation } from "next-i18next";
 import { twMerge } from "tailwind-merge";
 import { maxWidthContainer } from "../../constants/class";
 import {
@@ -14,6 +16,7 @@ import {
 } from "../Icons";
 
 export function Footer() {
+  const { t } = useTranslation("common");
   return (
     <footer className="mb-4 border-t mt-24">
       <div
@@ -31,11 +34,9 @@ export function Footer() {
             height={28}
             alt="logo-memos-footer"
           />
-          <span className="text-neutral-300">
-            Keunggulan Medis Dimulai dari Sistem yang Memahami Anda
-          </span>
+          <span className="text-neutral-300">{t("footer.footerHeadline")}</span>
           <div className="font-bold text-neutral-500">
-            Sosial Media Kami
+            {t("footer.ourSocmed")}
             <div className="flex items-center gap-4 mt-2">
               <Link
                 href="https://facebook.com"
@@ -71,33 +72,33 @@ export function Footer() {
 
         {/* Perusahaan */}
         <div className="flex flex-col gap-4 flex-none ">
-          <div className="font-bold">Perusahaan</div>
-          <Link href="/about">Tentang Kami</Link>
-          <Link href="/">Value Kami</Link>
-          <Link href="/">Karir</Link>
+          <div className="font-bold">{t("footer.company")}</div>
+          <Link href="/about">{t("footer.about")}</Link>
+          <Link href="/">{t("footer.ourValue")}</Link>
+          <Link href="/career">{t("footer.career")}</Link>
         </div>
 
         {/* Produk */}
         <div className="flex flex-col gap-4 flex-none ">
-          <div className="font-bold">Produk</div>
-          <Link href="/">Notes</Link>
-          <Link href="/">Memos</Link>
-          <Link href="/">Bitme</Link>
-          <Link href="/">Timeflow</Link>
+          <div className="font-bold">{t("footer.product")}</div>
+          <Link href="/product">{t("footer.notes")}</Link>
+          <Link href="/">{t("footer.memos")}</Link>
+          <Link href="/">{t("footer.bitme")}</Link>
+          <Link href="/knowledge">{t("footer.timeflow")}</Link>
         </div>
 
         {/* Pengetahuan */}
         <div className="flex flex-col gap-4 flex-none ">
-          <div className="font-bold">Pengetahuan</div>
-          <Link href="/">Artikel</Link>
-          <Link href="/">Pertanyaan Populer</Link>
-          <Link href="/">Pernyataan Privasi</Link>
-          <Link href="/">Ketentuan Layanan</Link>
+          <div className="font-bold">{t("footer.knowledge")}</div>
+          <Link href="/article">{t("footer.article")}</Link>
+          <Link href="/">{t("footer.faq")}</Link>
+          <Link href="/">{t("footer.privacy")}</Link>
+          <Link href="/">{t("footer.terms")}</Link>
         </div>
 
         {/* Kontak */}
         <div className="flex flex-col gap-4 lg:w-[30%]">
-          <div className="font-bold">Kontak</div>
+          <div className="font-bold">{t("footer.contact")}</div>
           <div className="flex items-start gap-4">
             <PhoneIcon className="w-4 flex-none mt-1" />
             <span>+62 851-7315-0717</span>
@@ -122,10 +123,7 @@ export function Footer() {
           maxWidthContainer
         )}
       >
-        <span className="text-neutral-400">
-          © 2024 PT. Cipta Integrasi Nusantara | Terdaftar di Direktorat
-          Jenderal Kekayaan Intelektual Republik Indonesia.
-        </span>
+        <span className="text-neutral-400">{t("footer.copyright")}</span>
       </div>
     </footer>
   );

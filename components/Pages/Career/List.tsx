@@ -1,3 +1,4 @@
+import { TFunction } from "i18next";
 import Image from "next/image";
 import { useRouter } from "next/router";
 import React from "react";
@@ -51,7 +52,10 @@ const careerListData = [
   },
 ];
 
-export function CareerList() {
+interface CareerListProps {
+  t: TFunction<"common", undefined>;
+}
+export function CareerList({ t }: CareerListProps) {
   const router = useRouter();
   const onClickItem = (id: string) => {
     router.push(`/career/${id}`);
@@ -63,7 +67,7 @@ export function CareerList() {
       className={twMerge("my-24 p-4 lg:p-16", maxWidthContainer)}
     >
       <h2 className="text-[32px] font-bold text-center">
-        Discover the best job
+        {t("career.discoverTheBestJob")}
       </h2>
       <div className="grid grid-cols-1 lg:grid-cols-2 lg:grid-cols-3 mt-16 gap-8">
         {careerListData?.map((career, index) => (
