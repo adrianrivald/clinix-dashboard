@@ -12,62 +12,66 @@ import type { Language } from "../Ui/Dropdown";
 import { TFunction } from "i18next";
 
 const languageList = [
+  // {
+  //   id: "sa",
+  //   label: "Arabian",
+  // },
+  // {
+  //   id: "al",
+  //   label: "Albanian",
+  // },
+  // {
+  //   id: "az",
+  //   label: "Azerbaijani",
+  // },
+  // {
+  //   id: "ba",
+  //   label: "Baluchi",
+  // },
   {
-    id: "sa",
-    label: "Arabian",
+    id: "en",
+    label: "English",
   },
-  {
-    id: "al",
-    label: "Albanian",
-  },
-  {
-    id: "az",
-    label: "Azerbaijani",
-  },
-  {
-    id: "ba",
-    label: "Baluchi",
-  },
-  {
-    id: "ph",
-    label: "Filipino",
-  },
-  {
-    id: "fr",
-    label: "French",
-  },
-  {
-    id: "gr",
-    label: "German",
-  },
-  {
-    id: "gk",
-    label: "Greek",
-  },
+  // {
+  //   id: "ph",
+  //   label: "Filipino",
+  // },
+  // {
+  //   id: "fr",
+  //   label: "French",
+  // },
+  // {
+  //   id: "gr",
+  //   label: "German",
+  // },
+  // {
+  //   id: "gk",
+  //   label: "Greek",
+  // },
   {
     id: "id",
     label: "Indonesia",
   },
-  {
-    id: "li",
-    label: "Lithuanian",
-  },
-  {
-    id: "my",
-    label: "Malay",
-  },
-  {
-    id: "se",
-    label: "Serbian",
-  },
-  {
-    id: "sp",
-    label: "Spanish",
-  },
-  {
-    id: "sh",
-    label: "Swahili",
-  },
+  // {
+  //   id: "li",
+  //   label: "Lithuanian",
+  // },
+  // {
+  //   id: "my",
+  //   label: "Malay",
+  // },
+  // {
+  //   id: "se",
+  //   label: "Serbian",
+  // },
+  // {
+  //   id: "sp",
+  //   label: "Spanish",
+  // },
+  // {
+  //   id: "sh",
+  //   label: "Swahili",
+  // },
 ];
 
 interface NavMenuMobileProps {
@@ -83,6 +87,8 @@ interface NavMenuMobileProps {
   visible: boolean;
   setIsChangeLanguageMode: Dispatch<SetStateAction<boolean>>;
   t: TFunction<"common", undefined>;
+  onChangeLanguage: (lang: string) => void;
+  locale: string | undefined;
 }
 
 function NavMenuMobile({
@@ -98,6 +104,8 @@ function NavMenuMobile({
   visible,
   setIsChangeLanguageMode,
   t,
+  onChangeLanguage,
+  locale,
 }: NavMenuMobileProps) {
   return (
     <div
@@ -182,7 +190,7 @@ function NavMenuMobile({
               onClick={onClickLanguage}
               className="hover:text-primary-500 cursor-pointer flex justify-between items-center"
             >
-              Bahasa Indonesia
+              {locale === "id" ? "Bahasa Indonesia" : "English"}
               <ChevronRightIcon className="w-3 h-3" />
             </div>
           </nav>
@@ -208,12 +216,18 @@ function NavMenuMobile({
           } bg-white px-4 py-4 mt-2 relative w-full`}
         >
           <SearchBox onSearch={onSearchLanguage} />
-          <ul className="h-[75%] overflow-x-auto mt-4">
+          <ul className="h-[75%] overflow-x-auto mt-4 flex flex-col gap-2">
             {languageList
               ?.filter((item) => item?.label.toLowerCase().includes(searchTerm))
               .map((language) => (
-                <li className="py-3 w-full" key={language?.id}>
-                  {language?.label}
+                <li
+                  onClick={() => onChangeLanguage(language?.id)}
+                  className={`w-full py-3 ${
+                    locale === language?.id ? "bg-primary-100 rounded-full" : ""
+                  }`}
+                  key={language?.id}
+                >
+                  <div className="mx-3 rounded-lg">{language?.label}</div>
                 </li>
               ))}
           </ul>
@@ -532,6 +546,8 @@ export function Header() {
         onClickToDemo={onClickToDemo}
         setIsChangeLanguageMode={setIsChangeLanguageMode}
         t={t}
+        onChangeLanguage={onChangeLanguage}
+        locale={locale}
       />
     </>
   );
