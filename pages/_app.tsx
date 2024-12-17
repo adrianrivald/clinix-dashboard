@@ -1,8 +1,9 @@
 import "../styles/globals.css";
 import type { AppProps } from "next/app";
 import { Header, Footer } from "../components";
+import { appWithTranslation } from "next-i18next";
 
-export default function App({ Component, pageProps }: AppProps) {
+export function App({ Component, pageProps }: AppProps) {
   return (
     // max-w-[100rem]
     <section className="w-full mx-auto text-neutral-500">
@@ -14,3 +15,5 @@ export default function App({ Component, pageProps }: AppProps) {
     </section>
   );
 }
+
+export default appWithTranslation(App);

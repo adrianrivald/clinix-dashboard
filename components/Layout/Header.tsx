@@ -7,6 +7,7 @@ import React, { Dispatch, SetStateAction } from "react";
 import { Button, Dropdown, SearchBox } from "..";
 import { ChevronRightIcon } from "../Icons";
 import { useSearchDebounce } from "../../hooks";
+import type { Language } from "../Ui/Dropdown";
 
 const languageList = [
   {
@@ -224,6 +225,9 @@ interface NavMenuDesktopProps {
   onClickLogo: () => void;
   visible: boolean;
   onClickToDemo: () => void;
+  onChangeLanguage: (lang: string) => void;
+  locale: string | undefined;
+  languages: Language[];
 }
 
 function NavMenuDesktop({
@@ -232,6 +236,9 @@ function NavMenuDesktop({
   onClickLogo,
   visible,
   onClickToDemo,
+  onChangeLanguage,
+  locale,
+  languages,
 }: NavMenuDesktopProps) {
   return (
     <div
@@ -308,7 +315,11 @@ function NavMenuDesktop({
 
           {/* Right section */}
           <div id="right" className="hidden lg:flex gap-3">
-            <Dropdown title="ID" />
+            <Dropdown
+              currentLanguage={locale ?? ""}
+              languages={languages}
+              onChangeLanguage={onChangeLanguage}
+            />
             <Button
               title="Coba Demo Gratis"
               isPrimary
@@ -383,7 +394,11 @@ function NavMenuDesktop({
 
           {/* Right section */}
           <div id="right" className="hidden lg:flex gap-3">
-            <Dropdown title="ID" />
+            <Dropdown
+              currentLanguage={locale ?? ""}
+              languages={languages}
+              onChangeLanguage={onChangeLanguage}
+            />
             <Button
               title="Coba Demo Gratis"
               isPrimary
@@ -398,14 +413,27 @@ function NavMenuDesktop({
 
 export function Header() {
   const router = useRouter();
-  const { asPath, pathname } = router;
+  const { asPath, pathname, locale } = router;
   const isHome = asPath === "/";
+  const [language, setLanguage] = React.useState(locale);
   const [isOpen, setOpen] = React.useState(false);
   const [isChangeLanguageMode, setIsChangeLanguageMode] = React.useState(false);
   const [searchTerm, setSearchTerm] = useSearchDebounce();
 
   const [prevScrollPos, setPrevScrollPos] = React.useState(0);
   const [visible, setVisible] = React.useState(true);
+
+  const languages = [
+    {
+      id: "id",
+      label: "ID",
+    },
+    {
+      id: "en",
+      label: "ENG",
+    },
+  ];
+
   const onClickLogo = () => {
     router.push("/");
   };
@@ -439,6 +467,34 @@ export function Header() {
     setPrevScrollPos(currentScrollPos);
   };
 
+  const onSubmitLanguage = () => {
+    const url = window.location.href;
+    const origin = window.location.origin;
+    let sliced = url.split(origin)[1];
+
+    if (language !== "en") {
+      sliced = sliced.replace("/en", "");
+    } else {
+      sliced = "/en" + sliced;
+    }
+
+    window.location.href = origin + sliced;
+  };
+
+  const onChangeLanguage = (lang: string) => {
+    const url = window.location.href;
+    const origin = window.location.origin;
+    let sliced = url.split(origin)[1];
+    if (locale !== "id") {
+      console.log("ke id");
+      sliced = sliced.replace(`/${locale}`, "");
+    } else {
+      sliced = `/${lang}` + sliced;
+    }
+
+    window.location.href = origin + sliced;
+  };
+
   React.useEffect(() => {
     window.addEventListener("scroll", handleScroll);
 
@@ -452,6 +508,9 @@ export function Header() {
         onClickLogo={onClickLogo}
         visible={visible}
         onClickToDemo={onClickToDemo}
+        onChangeLanguage={onChangeLanguage}
+        languages={languages}
+        locale={locale}
       />
       <NavMenuMobile
         visible={visible}

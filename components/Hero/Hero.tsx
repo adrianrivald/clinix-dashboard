@@ -3,12 +3,14 @@ import React from "react";
 import { twMerge } from "tailwind-merge";
 import { maxWidthContainer } from "../../constants/class";
 import { Button } from "../Ui";
+import { TFunction } from "i18next";
 
 interface HeroProps {
   onClickToDemo: () => void;
+  t: TFunction<"common", undefined>;
 }
 
-export function Hero({ onClickToDemo }: HeroProps) {
+export function Hero({ onClickToDemo, t }: HeroProps) {
   return (
     <div
       id="hero"
@@ -32,7 +34,7 @@ export function Hero({ onClickToDemo }: HeroProps) {
         className="mt-0 lg:mt-36 lg:mt-0 lg:px-16 lg:max-w-[40rem]"
       >
         <h1 className="text-[32px] font-bold text-center lg:text-left">
-          Keunggulan Medis Dimulai dari Sistem yang Memahami Anda
+          {t("home.heroHeadline")}
         </h1>
         <p className="mt-4 text-base">
           Sistem kami dirancang untuk beradaptasi dengan cara Anda bekerja,

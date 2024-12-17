@@ -1,5 +1,6 @@
 import Head from "next/head";
 import { useRouter } from "next/router";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import {
   Client,
   Contact,
@@ -10,8 +11,11 @@ import {
   WhyUs,
   Banner,
 } from "../components";
+import { useTranslation } from "next-i18next";
+import { GetStaticProps } from "next";
 
 export default function HomePage() {
+  const { t } = useTranslation("common");
   const router = useRouter();
   const onClickToDemo = () => {
     router.push("/demo");
@@ -25,7 +29,7 @@ export default function HomePage() {
       </Head>
 
       <main className="mt-[5.5rem]">
-        <Hero onClickToDemo={onClickToDemo} />
+        <Hero t={t} onClickToDemo={onClickToDemo} />
         <WhyUs />
         <Products />
         <Client />
@@ -37,3 +41,10 @@ export default function HomePage() {
     </div>
   );
 }
+
+export const getStaticProps: GetStaticProps<any> = async ({ locale }) => ({
+  props: {
+    locale,
+    ...(await serverSideTranslations(locale ?? "id", ["common"])),
+  },
+});
