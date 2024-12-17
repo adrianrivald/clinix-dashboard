@@ -26,7 +26,7 @@ export function Products({ t }: ProductsProps) {
         {t("home.providingSolutions")}
       </div>
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mt-4 lg:mt-16 justify-between items-center max-w-[100rem] mx-auto px-8 lg:px-32">
-        <div className="bg-white rounded-md p-8 hover:bg-primary-100 hover:text-primary-500 cursor-pointer">
+        <div className="min-h-[200px] bg-white rounded-md p-8 hover:bg-primary-100 hover:text-primary-500 cursor-pointer">
           <div className="flex justify-between">
             <div className="flex flex-col gap-4 w-3/4">
               <Image
@@ -41,7 +41,7 @@ export function Products({ t }: ProductsProps) {
             <ArrowRightUpIcon />
           </div>
         </div>
-        <div className="bg-white rounded-md p-8 hover:bg-primary-100 hover:text-primary-500 cursor-pointer">
+        <div className="min-h-[200px] bg-white rounded-md p-8 hover:bg-primary-100 hover:text-primary-500 cursor-pointer">
           <div className="flex justify-between">
             <div className="flex flex-col gap-4 w-3/4">
               <Image
@@ -56,7 +56,7 @@ export function Products({ t }: ProductsProps) {
             <ArrowRightUpIcon />
           </div>
         </div>
-        <div className="bg-white rounded-md p-8 hover:bg-primary-100 hover:text-primary-500 cursor-pointer">
+        <div className="min-h-[200px] bg-white rounded-md p-8 hover:bg-primary-100 hover:text-primary-500 cursor-pointer">
           <div className="flex justify-between">
             <div className="flex flex-col gap-4 w-3/4">
               <Image
