@@ -143,7 +143,7 @@ export function DemoContent({ t }: DemoContentProps) {
     company_name: watch("company_name"),
     phone: watch("phone"),
     country: selectedCountry?.label,
-    langauge: selectedLanguage?.label,
+    language: selectedLanguage?.label,
     company_size: `${selectedCompany?.label} ${t("demo.employee")}`,
     interest: t(`demo.${selectedInterest?.label}`),
   };
