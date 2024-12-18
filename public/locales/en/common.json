@@ -99,7 +99,10 @@
     "interestOpt2": "Offer Memos services to other companies",
     "interestOpt3": "I am a Doctor",
     "cancel": "Cancel",
-    "request": "Request"
+    "request": "Request",
+    "successDemoHeading" : "Your request has been sent to Memos Team!",
+    "successDemoSubHeading": "You'll be notified if someone in Memos Team replies it",
+    "backToHome": "Back to home"
   },
   "product": {
     "productHeading": "Our Healthcare Management Solutions",

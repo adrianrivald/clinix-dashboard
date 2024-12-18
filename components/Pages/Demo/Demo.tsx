@@ -415,7 +415,9 @@ export function DemoContent({ t }: DemoContentProps) {
                           <Listbox.Button className="border border-neutral-100 relative w-full cursor-default rounded-md bg-white py-4 pl-4 pr-10 text-left focus:outline-none">
                             <span className="block truncate">
                               {selectedCompany ? (
-                                selectedCompany?.label
+                                `${selectedCompany?.label} ${t(
+                                  "demo.employee"
+                                )}`
                               ) : (
                                 <span className="text-neutral-400">
                                   {t("demo.demoFieldCompanySizePh")}
@@ -480,7 +482,7 @@ export function DemoContent({ t }: DemoContentProps) {
                           <Listbox.Button className="border border-neutral-100 relative w-full cursor-default rounded-md bg-white py-4 pl-4 pr-10 text-left focus:outline-none">
                             <span className="block truncate">
                               {selectedInterest ? (
-                                selectedInterest?.label
+                                t(`demo.${selectedInterest?.label}`)
                               ) : (
                                 <span className="text-neutral-400">
                                   {t("demo.demoFieldInterestPh")}
@@ -563,16 +565,12 @@ export function DemoContent({ t }: DemoContentProps) {
           <div className="flex flex-col items-center justify-center gap-4">
             <SuccessDemo />
             <div className="text-center">
-              <h3 className="font-bold">
-                Your request has been sent to memos team!
-              </h3>
-              <h4 className="mt-1">
-                You{`’`}ll be notified when someone at memos team will open it
-              </h4>
+              <h3 className="font-bold">{t("demo.successDemoHeading")}</h3>
+              <h4 className="mt-1">{t("demo.successDemoSubHeading")}</h4>
             </div>
             <Button
               isPrimary
-              title="Kembali ke halaman utama"
+              title={t("demo.backToHome")}
               onClick={onClickHome}
               className="mt-4"
             />

@@ -99,7 +99,10 @@
     "interestOpt2": "Tawarkan layanan Memo ke perusahaan lain",
     "interestOpt3": "Saya seorang Dokter",
     "cancel": "Batal",
-    "request": "Permintaan"
+    "request": "Permintaan",
+    "successDemoHeading" : "Terima kasih, permintaan Anda telah dikirim!",
+    "successDemoSubHeading": "Kami telah menerima permintaan demo Anda, dan Tim Memos akan segera menghubungi Anda.",
+    "backToHome": "Kembali ke halaman utama"
   },
   "product": {
     "productHeading": "Solusi Manajemen Kesehatan Kami",
