@@ -197,8 +197,7 @@ export function DemoContent({ t }: DemoContentProps) {
                     </div>
                     <div className="w-full flex flex-col gap-2">
                       <label
-                        className="text-[14px]"
-                        font-medium
+                        className="text-[14px] font-medium"
                         htmlFor="email"
                       >
                         {t("demo.demoFieldEmail")}{" "}
@@ -234,8 +233,7 @@ export function DemoContent({ t }: DemoContentProps) {
                     </div>
                     <div className="w-full flex flex-col gap-2">
                       <label
-                        className="text-[14px]"
-                        font-medium
+                        className="text-[14px] font-medium"
                         htmlFor="phone"
                       >
                         {t("demo.demoFieldPhone")}{" "}
@@ -331,8 +329,7 @@ export function DemoContent({ t }: DemoContentProps) {
                     </div>
                     <div className="w-full flex flex-col gap-2">
                       <label
-                        className="text-[14px]"
-                        font-medium
+                        className="text-[14px] font-medium"
                         htmlFor="language"
                       >
                         {t("demo.demoFieldLanguage")}{" "}
@@ -400,8 +397,7 @@ export function DemoContent({ t }: DemoContentProps) {
                   <div className="flex flex-col lg:flex-row justify-between gap-4">
                     <div className="w-full flex flex-col gap-2">
                       <label
-                        className="text-[14px]"
-                        font-medium
+                        className="text-[14px] font-medium"
                         htmlFor="company_size"
                       >
                         {t("demo.demoFieldCompanySize")}{" "}
@@ -467,8 +463,7 @@ export function DemoContent({ t }: DemoContentProps) {
                     </div>
                     <div className="w-full flex flex-col gap-2">
                       <label
-                        className="text-[14px]"
-                        font-medium
+                        className="text-[14px] font-medium"
                         htmlFor="interest"
                       >
                         {t("demo.demoFieldInterest")}{" "}
