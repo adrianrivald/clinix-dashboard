@@ -74,17 +74,33 @@ export function Footer() {
         <div className="flex flex-col gap-4 flex-none ">
           <div className="font-bold">{t("footer.company")}</div>
           <Link href="/about">{t("footer.about")}</Link>
-          <Link href="/">{t("footer.ourValue")}</Link>
           <Link href="/career">{t("footer.career")}</Link>
         </div>
 
         {/* Produk */}
         <div className="flex flex-col gap-4 flex-none ">
           <div className="font-bold">{t("footer.product")}</div>
-          <Link href="/product">{t("footer.notes")}</Link>
-          <Link href="/">{t("footer.memos")}</Link>
-          <Link href="/">{t("footer.bitme")}</Link>
-          <Link href="/knowledge">{t("footer.timeflow")}</Link>
+          <Link
+            href="https://memos-landing.vercel.app"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Memos
+          </Link>
+          <Link
+            href="https://notes-landing.vercel.app"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Notes
+          </Link>
+          <Link
+            href="https://clinix-landing.vercel.app"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Clinix
+          </Link>
         </div>
 
         {/* Pengetahuan */}
