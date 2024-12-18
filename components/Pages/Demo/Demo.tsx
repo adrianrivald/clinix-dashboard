@@ -144,11 +144,12 @@ export function DemoContent({ t }: DemoContentProps) {
     phone: watch("phone"),
     country: selectedCountry?.label,
     langauge: selectedLanguage?.label,
-    company_size: selectedCompany?.label,
-    interest: selectedInterest?.label,
+    company_size: `${selectedCompany?.label} ${t("demo.employee")}`,
+    interest: t(`demo.${selectedInterest?.label}`),
   };
 
   const onSubmit: SubmitHandler<any> = async () => {
+    console.log(formValues, "formvalue");
     await emailjs
       .send("service_le33abk", "template_n1eho2g", formValues, {
         publicKey: "-bHdy_Fu3An8fq6Av",
@@ -294,7 +295,7 @@ export function DemoContent({ t }: DemoContentProps) {
                                   ?.filter((item) =>
                                     item?.label
                                       .toLowerCase()
-                                      .includes(searchTerm)
+                                      .includes(searchTerm.toLowerCase())
                                   )
                                   .map((language, idx) => (
                                     <Listbox.Option
