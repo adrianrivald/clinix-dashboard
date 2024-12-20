@@ -21,7 +21,7 @@ export function Banner({ onClickToDemo, t }: BannerProps) {
         //   objectPosition: "0px -210px",
         // }}
       />
-      <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 transform z-50 flex flex-col justify-center items-center gap-4">
+      <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 transform z-10 flex flex-col justify-center items-center gap-4">
         <h2 className="text-[24px] lg:text-[30px] text-white text-center font-bold">
           {t("home.bannerHeading")}
         </h2>

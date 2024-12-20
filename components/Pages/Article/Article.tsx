@@ -2,62 +2,18 @@ import Image from "next/image";
 import { useRouter } from "next/router";
 import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination } from "swiper/modules";
+import { Autoplay, Navigation, Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
+import "swiper/css/pagination";
+import "swiper/css/autoplay";
 
 import { twMerge } from "tailwind-merge";
 import { maxWidthContainer } from "../../../constants/class";
 import { Button } from "../../Ui";
 import { ChevronLeftIcon, ChevronRightIcon } from "../../Icons";
-import { hotTopics } from "./data";
 import { TFunction } from "i18next";
 import { articles } from "../../../constants/article";
-
-const newsData = [
-  {
-    uri: "understanding-diabetes",
-    image: "/assets/images/news-1.jpg",
-    category: "Article",
-    createdAt: "12 Jan 2024",
-    title: "Understanding diabetes and its impact on public health..",
-  },
-  {
-    uri: "understanding-diabetes-2",
-    image: "/assets/images/news-2.jpg",
-    category: "Article",
-    createdAt: "12 Jan 2024",
-    title: "Understanding diabetes and its impact on public health..",
-  },
-  {
-    uri: "understanding-diabetes-3",
-    image: "/assets/images/news-3.jpg",
-    category: "Article",
-    createdAt: "12 Jan 2024",
-    title: "Understanding diabetes and its impact on public health..",
-  },
-  {
-    uri: "understanding-diabetes",
-    image: "/assets/images/news-1.jpg",
-    category: "Article",
-    createdAt: "12 Jan 2024",
-    title: "Understanding diabetes and its impact on public health..",
-  },
-  {
-    uri: "understanding-diabetes-2",
-    image: "/assets/images/news-2.jpg",
-    category: "Article",
-    createdAt: "12 Jan 2024",
-    title: "Understanding diabetes and its impact on public health..",
-  },
-  {
-    uri: "understanding-diabetes-3",
-    image: "/assets/images/news-3.jpg",
-    category: "Article",
-    createdAt: "12 Jan 2024",
-    title: "Understanding diabetes and its impact on public health..",
-  },
-];
 
 interface ArticleContentProps {
   t: TFunction<"common", undefined>;
@@ -89,7 +45,12 @@ export function ArticleContent({ t }: ArticleContentProps) {
           pagination={{
             clickable: true,
           }}
-          modules={[Navigation, Pagination]}
+          dots
+          autoplay={{
+            delay: 4000,
+            pauseOnMouseEnter: true,
+          }}
+          modules={[Navigation, Pagination, Autoplay]}
           slidesPerView={1}
           navigation={{
             prevEl: navigationPrevRef.current,
@@ -100,12 +61,12 @@ export function ArticleContent({ t }: ArticleContentProps) {
             swiper.params.navigation.nextEl = navigationNextRef.current;
           }}
         >
-          {hotTopics.map((item) => (
+          {articles?.slice(0, 4).map((item) => (
             <SwiperSlide>
               <div className="flex flex-col lg:flex-row items-start gap-8 mt-4 ">
                 <div className="relative rounded-md w-full min-h-[200px] lg:min-h-[400px] lg:w-[70%] lg:flex-none">
                   <Image
-                    src={item?.thumbnail}
+                    src={item?.image}
                     width={870}
                     height={400}
                     alt="featured-1"
@@ -127,26 +88,30 @@ export function ArticleContent({ t }: ArticleContentProps) {
                     </span>{" "}
                     {item?.summary.slice(item?.summary.split(" ")[0]?.length)}
                     <br />
-                    <span className="text-link font-bold">read more</span>
+                    <span
+                      onClick={() => onClickItem(item?.slug)}
+                      className="text-link font-bold"
+                    >
+                      read more
+                    </span>
                   </p>
                 </div>
               </div>
             </SwiperSlide>
           ))}
         </Swiper>
-
-        <div
-          ref={navigationPrevRef}
-          className="hidden lg:block absolute -left-14 -translate-y-1/2 top-[55%] transform z-50 cursor-pointer shadow-lg flex items-center justify-center px-5 py-5 rounded-full"
-        >
-          <ChevronLeftIcon />
-        </div>
-        <div
-          ref={navigationPrevRef}
-          className="hidden lg:block absolute -right-14 -translate-y-1/2 top-[55%] transform z-50 cursor-pointer shadow-lg flex items-center justify-center px-5 py-5 rounded-full"
-        >
-          <ChevronRightIcon />
-        </div>
+      </div>
+      <div
+        ref={navigationPrevRef}
+        className="hidden lg:block absolute left-14 -translate-y-1/2 top-[55%] transform z-50 cursor-pointer shadow-lg flex items-center justify-center px-5 py-5 rounded-full"
+      >
+        <ChevronLeftIcon />
+      </div>
+      <div
+        ref={navigationPrevRef}
+        className="hidden lg:block absolute right-14 -translate-y-1/2 top-[55%] transform z-50 cursor-pointer shadow-lg flex items-center justify-center px-5 py-5 rounded-full"
+      >
+        <ChevronRightIcon />
       </div>
 
       {/* Latest News */}
