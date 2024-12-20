@@ -66,6 +66,7 @@ export function ArticleDetailContent({
                 ?.replaceAll("<h1", "<br/><h1")
                 ?.replaceAll("<h2", "<br/><h2")
                 ?.replaceAll("<h3", "<br/><h3")
+                ?.replaceAll("<h4", "<br/><h4")
                 ?.replaceAll(
                   "<ul",
                   `<ul style="list-style-type:disc;list-style-position:inside"`
@@ -76,6 +77,7 @@ export function ArticleDetailContent({
                 )
                 ?.replaceAll("<li><br/><p>", "<br/><li>")
                 ?.replaceAll("</p></li>", "</li>")
+                ?.replaceAll("</li><li", "</li><br/><li")
               // ?.replaceAll(
               //   "<h1",
               //   `<h1 style="font-size:3rem;font-weight:bold" `
