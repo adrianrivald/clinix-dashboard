@@ -3,6 +3,7 @@ import Image from "next/image";
 import { useRouter } from "next/router";
 import React from "react";
 import { twMerge } from "tailwind-merge";
+import { articles } from "../../../constants/article";
 import { maxWidthContainer } from "../../../constants/class";
 import { Button } from "../../Ui";
 
@@ -114,25 +115,25 @@ export function LatestNewsContent({ t }: LatestNewsContentProps) {
           <h3 className="mt-2">{t("article.forYou")}</h3>
         </div>
         <div className="grid grid-cols-1 lg:grid-cols-2 lg:grid-cols-3 mt-14 gap-8">
-          {newsData?.map((news, index) => (
+          {articles?.map((article, index) => (
             <div
-              onClick={() => onClickItem(news?.uri)}
+              onClick={() => onClickItem(article?.slug)}
               key={index}
               className="hover:shadow-xl p-3 pb-8 shadow-md rounded-lg flex flex-col gap-6 cursor-pointer"
             >
               <Image
-                src={news.image}
+                src={article.image}
                 width={360}
                 height={200}
-                alt={news.uri}
+                alt={article.slug}
                 className="w-full rounded-lg"
               />
               <div className="mx-4">
                 <span className="text-neutral-300 font-bold">
-                  {news?.category} • {news?.createdAt}
+                  {article?.category} • {article?.createdAt}
                 </span>
               </div>
-              <h3 className="mx-4 font-bold text-[24px]">{news?.title}</h3>
+              <h3 className="mx-4 font-bold text-[24px]">{article?.title}</h3>
             </div>
           ))}
         </div>

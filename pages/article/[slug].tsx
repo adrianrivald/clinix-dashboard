@@ -5,22 +5,27 @@ import { GetServerSideProps, GetStaticPaths, GetStaticProps } from "next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { ArticleDetailContent } from "../../components";
 import { useRouter } from "next/router";
+import { articles } from "../../constants/article";
 
 export default function CareerDetailPage() {
   const { t } = useTranslation("common");
   const router = useRouter();
-  const { slug } = router.query;
+  const { query } = router;
+  const articleSlug = query?.slug ?? "";
+  const articleData = articles?.find(
+    (article) => article?.slug === articleSlug
+  );
 
   return (
     <div>
       <Head>
-        <title>Detail Article - Memos</title>
-        <meta name="description" content="Detail Article Page of Memos" />
+        <title>{articleData?.title} - Memos</title>
+        <meta name="description" content={articleData?.meta_desc} />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
       <main>
-        <ArticleDetailContent t={t} />
+        <ArticleDetailContent articleData={articleData} t={t} />
       </main>
     </div>
   );

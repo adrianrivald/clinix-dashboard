@@ -12,25 +12,31 @@ import {
   WhatsappIcon,
 } from "../../Icons";
 
+import parse from "html-react-parser";
+import DOMPurify from "dompurify";
+import { articles } from "../../../constants/article";
 interface ArticleDetailContentProps {
   t: TFunction<"common", undefined>;
+  articleData: any;
 }
 
-export function ArticleDetailContent({ t }: ArticleDetailContentProps) {
-  const router = useRouter();
-
+export function ArticleDetailContent({
+  t,
+  articleData,
+}: ArticleDetailContentProps) {
   return (
     <div className={twMerge("p-4 lg:p-16 mb-12", maxWidthContainer)}>
       {/* Article Detail */}
       <div id="article-detail" className="lg:mx-36">
         {/* Article Title */}
         <h1 className="text-[20px] text-center lg:text-left lg:text-[50px] font-bold">
-          Studi Temukan Efek Buruk Bagi Mereka yang Pernah Kena COVID, Bikin
-          Otak Jadi Gini
+          {articleData?.title}
         </h1>
         {/* Date Post */}
         <div className="flex flex-col lg:flex-row gap-4 justify-between items-center mt-4 lg:mt-6 py-6 border-t-2 border-b-2 border-dashed">
-          <span>{t("article.publishedAt")} 24 September 2024</span>
+          <span>
+            {t("article.publishedAt")} {articleData?.createdAt}
+          </span>
           <div className="flex items-center gap-4">
             <WhatsappIcon />
             <FacebookIcon />
@@ -43,58 +49,46 @@ export function ArticleDetailContent({ t }: ArticleDetailContentProps) {
         {/* Content Post */}
         <div className="mt-4 lg:mt-6">
           <Image
-            src="/assets/images/hot-topic-1.jpg"
+            src={articleData?.image}
             width={824}
             height={450}
             alt="pic"
             className="w-full rounded-xl"
           />
           <div id="content" className="mt-8 text-justify">
-            <p className="mt-4">
-              Jakarta - SARS-CoV-2, virus di balik pandemi COVID-19, ternyata
-              bertahan di dalam tengkorak dan meningen selama bertahun-tahun
-              setelah infeksi. Hal ini memicu efek jangka panjang pada otak
-              menurut sebuah studi besar di Jerman.
-            </p>
-            <p className="mt-4">
-              Para peneliti dari Helmholtz Munich dan
-              Ludwig-Maximilians-Universitat (LMU) menemukan bahwa protein
-              lonjakan SARS-CoV-2 tetap berada di lapisan pelindung otak atau
-              disebut meningen, dan sumsum tulang tengkorak hingga empat tahun
-              setelah infeksi.
-            </p>
-            <p className="mt-4">
-              Protein lonjakan ini bertanggung jawab untuk memicu peradangan
-              kronis pada individu yang terkena COVID dan meningkatkan risiko
-              penyakit neurodegeneratif.
-            </p>
-            <p className="mt-4">
-              Studi yang diterbitkan dalam jurnal Cell Host & Microbe ini juga
-              mungkin memiliki gejala neurologis COVID jangka panjang seperti
-              sakit kepala, gangguan tidur, dan kabut otak atau brain fog, serta
-              gangguan kognitif.
-            </p>
-            <p className="mt-4">
-              Sekitar lima hingga 10 persen orang yang terinfeksi COVID
-              kemungkinan akan mengalami long COVID atau gejala jangka panjang.
-              Penelitian tersebut mengungkapkan sekitar 400 juta orang mungkin
-              membawa sejumlah besar protein lonjakan.
-            </p>
-            <p className="mt-4">
-              "Khususnya, vaksin terhadap virus mematikan tersebut secara
-              signifikan mengurangi akumulasi protein lonjakan di otak," kata
-              para peneliti, dikutip dari NDTV.
-            </p>
-            <p className="mt-4">
-              "Namun, pengurangannya hanya sekitar 50 persen pada tikus,
-              meninggalkan sisa protein lonjakan yang terus menimbulkan risiko
-              toksik pada otak," lanjut peneliti.
-            </p>
-            <p className="mt-4">
-              Untuk penelitian tersebut, tim mengembangkan teknik pencitraan
-              bertenaga AI baru untuk memahami bagaimana protein lonjakan
-              SARS-CoV-2 memengaruhi otak.
-            </p>
+            {parse(
+              (articleData?.content ?? "")
+                ?.replaceAll(`<a `, `<a target="_blank" style="color:blue"`)
+                ?.replaceAll("<p", "<br/><p")
+                ?.replaceAll("<img", "<br/><img")
+                ?.replaceAll("<ol", "<br/><ol")
+                ?.replaceAll("<hr", "<br/><hr")
+                ?.replaceAll("<h1", "<br/><h1")
+                ?.replaceAll("<h2", "<br/><h2")
+                ?.replaceAll("<h3", "<br/><h3")
+                ?.replaceAll(
+                  "<ul",
+                  `<ul style="list-style-type:disc;list-style-position:inside"`
+                )
+                ?.replaceAll(
+                  "<ol",
+                  `<ol style="list-style-type:decimal;list-style-position:inside"`
+                )
+                ?.replaceAll("<li><br/><p>", "<br/><li>")
+                ?.replaceAll("</p></li>", "</li>")
+              // ?.replaceAll(
+              //   "<h1",
+              //   `<h1 style="font-size:3rem;font-weight:bold" `
+              // )
+              // ?.replaceAll(
+              //   "<h2",
+              //   `<h2 style="font-size:1.875rem;font-weight:bold" `
+              // )
+              // ?.replaceAll(
+              //   "<h3",
+              //   `<h3 style="font-size:1.5rem;font-weight:bold" `
+              // )
+            )}
           </div>
         </div>
       </div>
