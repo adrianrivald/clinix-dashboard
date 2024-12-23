@@ -1,4 +1,3 @@
-import { TFunction } from "i18next";
 import Image from "next/image";
 import Link from "next/link";
 import React, { useEffect } from "react";
@@ -36,7 +35,6 @@ export function Footer() {
   };
 
   useEffect(() => {
-    console.log(router, "router");
     if (router.query?.section === "faq") {
       scrollIntoFaq();
     }
