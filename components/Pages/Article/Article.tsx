@@ -76,7 +76,7 @@ export function ArticleContent({ t }: ArticleContentProps) {
                     width={870}
                     height={400}
                     alt="featured-1"
-                    className="object-cover rounded-lg w-full h-[200px] lg:h-[300px] lg:h-[400px]"
+                    className="object-cover rounded-lg w-full h-[200px] md:h-[300px] lg:h-[400px]"
                   />
                   <div className="absolute left-4 lg:left-10 bottom-4 lg:bottom-10">
                     <h2 className="lg:w-[60%] font-bold text-[16px] lg:text-[32px] text-white">
