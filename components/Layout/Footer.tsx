@@ -1,7 +1,7 @@
 import { TFunction } from "i18next";
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
+import React, { useEffect } from "react";
 import { useTranslation } from "next-i18next";
 import { twMerge } from "tailwind-merge";
 import { maxWidthContainer } from "../../constants/class";
@@ -14,9 +14,34 @@ import {
   PinMapIcon,
   TwitterRoundedIcon,
 } from "../Icons";
+import { useRouter } from "next/router";
 
 export function Footer() {
   const { t } = useTranslation("common");
+  const router = useRouter();
+  const scrollIntoFaq = () => {
+    if (document !== undefined) {
+      const element = document.getElementById("faq");
+      element?.scrollIntoView({
+        behavior: "smooth",
+      });
+    }
+  };
+  const onClickToFaq = () => {
+    if (router.asPath === "/") {
+      scrollIntoFaq();
+    } else {
+      router.push("/?section=faq");
+    }
+  };
+
+  useEffect(() => {
+    console.log(router, "router");
+    if (router.query?.section === "faq") {
+      scrollIntoFaq();
+    }
+  }, [router]);
+
   return (
     <footer className="mb-4 border-t mt-24">
       <div
@@ -67,7 +92,7 @@ export function Footer() {
         <div className="flex flex-col gap-4 flex-none ">
           <div className="font-bold">{t("footer.company")}</div>
           <Link href="/about">{t("footer.about")}</Link>
-          <Link href="/career">{t("footer.career")}</Link>
+          {/* <Link href="/career">{t("footer.career")}</Link> */}
         </div>
 
         {/* Produk */}
@@ -100,9 +125,11 @@ export function Footer() {
         <div className="flex flex-col gap-4 flex-none ">
           <div className="font-bold">{t("footer.knowledge")}</div>
           <Link href="/article">{t("footer.article")}</Link>
-          <Link href="/">{t("footer.faq")}</Link>
-          <Link href="/">{t("footer.privacy")}</Link>
-          <Link href="/">{t("footer.terms")}</Link>
+          <div onClick={onClickToFaq} className="cursor-pointer">
+            {t("footer.faq")}
+          </div>
+          {/* <Link href="/">{t("footer.privacy")}</Link>
+          <Link href="/">{t("footer.terms")}</Link> */}
         </div>
 
         {/* Kontak */}

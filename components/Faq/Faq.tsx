@@ -37,7 +37,7 @@ interface FaqProps {
 export function Faq({ t }: FaqProps) {
   return (
     <div
-      id="testimoni"
+      id="faq"
       className={twMerge("p-4 lg:p-16 mt-16 lg:mt-32", maxWidthContainer)}
     >
       <div className="flex flex-col lg:flex-row lg:items-center justify-between lg:mx-14">

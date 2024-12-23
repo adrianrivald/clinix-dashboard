@@ -4,13 +4,15 @@ import { twMerge } from "tailwind-merge";
 import { maxWidthContainer } from "../../constants/class";
 import { Button } from "../Ui";
 import { TFunction } from "i18next";
+import Link from "next/link";
 
 interface HeroProps {
   onClickToDemo: () => void;
+  onClickMailTo: () => void;
   t: TFunction<"common", undefined>;
 }
 
-export function Hero({ onClickToDemo, t }: HeroProps) {
+export function Hero({ onClickToDemo, onClickMailTo, t }: HeroProps) {
   return (
     <div
       id="hero"
@@ -21,9 +23,9 @@ export function Hero({ onClickToDemo, t }: HeroProps) {
     >
       {/* Hero image */}
       <Image
-        src="/assets/images/doctor.png"
-        width={591}
-        height={620}
+        src="/assets/images/doctor-3.png"
+        width={840}
+        height={980}
         alt="doctor"
         className="w-full lg:w-1/2"
       />
@@ -44,11 +46,16 @@ export function Hero({ onClickToDemo, t }: HeroProps) {
             className="w-full lg:w-auto"
             onClick={onClickToDemo}
           />
-          <Button
-            title={t("home.consultYourNeeds")}
-            isPrimary={false}
-            className="w-full lg:w-auto"
-          />
+          {/* <Link href=""> */}
+          <a href="mailto:info@notes.co.id">
+            <Button
+              title={t("home.consultYourNeeds")}
+              isPrimary={false}
+              className="w-full lg:w-auto"
+              // onClick={onClickMailTo}
+            />
+          </a>
+          {/* </Link> */}
         </div>
       </div>
     </div>

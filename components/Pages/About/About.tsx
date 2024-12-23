@@ -96,7 +96,7 @@ export function AboutContent({ t }: AboutContentProps) {
           <div className="w-full lg:w-1/3">
             <h2 className="text-[40px] font-bold">{t("about.ourTeam")}</h2>
           </div>
-          <div className="w-full lg:w-1/3 flex justify-center">
+          {/* <div className="w-full lg:w-1/3 flex justify-center">
             <div className="w-[276px] flex flex-col justify-center items-center">
               <Image
                 src="/assets/images/team-1.jpg"
@@ -119,10 +119,13 @@ export function AboutContent({ t }: AboutContentProps) {
               workflows for medical staff, and ensure faster, more accurate care
               for patients.
             </p>
-          </div>
+          </div> */}
         </div>
         <div
-          className={twMerge("mt-4 lg:p-16", `lg:max-w-[100rem] lg:mx-auto`)}
+          className={twMerge(
+            "mt-4 lg:px-16 lg:pb-16 lg:pt-0",
+            `lg:max-w-[100rem] lg:mx-auto`
+          )}
         >
           <div className="hidden lg:flex justify-between gap-4 items-center">
             {Array.from({ length: 4 }).map(() => (

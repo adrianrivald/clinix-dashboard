@@ -3,7 +3,7 @@ export const articles = [
         id: 1,
         image: "/assets/images/articles/1.jpg",
         category: "Article",
-        createdAt: "12 Jan 2024",
+        createdAt: "21 Dec 2024",
         language: {
             en : {
                 title: "Medication Reconciliation: Why It Matters for All Patients",
@@ -63,7 +63,7 @@ export const articles = [
         id:2,
         image: "/assets/images/articles/2.jpg",
         category: "Article",
-        createdAt: "12 Jan 2024",
+        createdAt: "21 Dec 2024",
         language: {
             en: {
                 title: "The Role of Medical Records in Health Information Systems",
@@ -97,7 +97,7 @@ export const articles = [
         id: 3,
         image: "/assets/images/articles/3.jpg",
         category: "Article",
-        createdAt: "12 Jan 2024",
+        createdAt: "21 Dec 2024",
         language: {
             en: {
                 title: "Notes, The Best CRM System for Healthcare",
@@ -139,7 +139,7 @@ export const articles = [
         id: 4,
         image: "/assets/images/articles/4.jpg",
         category: "Article",
-        createdAt: "12 Jan 2024",
+        createdAt: "21 Dec 2024",
         language: {
             en: {
                 title: "Customer Relationship: Definition, Goals, and Benefits in Business",
@@ -189,7 +189,7 @@ export const articles = [
         id: 5,
         image: "/assets/images/articles/5.jpg",
         category: "Article",
-        createdAt: "12 Jan 2024",
+        createdAt: "21 Dec 2024",
         language: {
             en: {
                 title: "Strategies for Improving Customer Relationships",
@@ -239,7 +239,7 @@ export const articles = [
         id: 6,
         image: "/assets/images/articles/6.jpg",
         category: "Article",
-        createdAt: "12 Jan 2024",
+        createdAt: "21 Dec 2024",
         language: {
             en: {
                 title: "Clinix: The Best Medical CRM for Your Clinic",
@@ -284,7 +284,7 @@ export const articles = [
         id: 7,
         image: "/assets/images/articles/7.jpg",
         category: "Article",
-        createdAt: "12 Jan 2024",
+        createdAt: "21 Dec 2024",
         language: {
             en: {
                 title: "Memos: The Super App for Integrated Health Data Management",
@@ -334,7 +334,7 @@ export const articles = [
         id: 8,
         image: "/assets/images/articles/8.jpg",
         category: "Article",
-        createdAt: "12 Jan 2024",
+        createdAt: "21 Dec 2024",
         language: {
             en: {
                 title: "Important! How to Manage Customer Databases",
@@ -416,7 +416,7 @@ export const articles = [
     //     title: "",
     //     image: "/assets/images/articles/1.jpg",
     //     category: "Article",
-    //     createdAt: "12 Jan 2024",
+    //     createdAt: "21 Dec 2024",
     //     slug: "",
     //     meta_desc: "",
     //     content: ``

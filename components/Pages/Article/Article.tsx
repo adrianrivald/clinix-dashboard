@@ -34,15 +34,21 @@ export function ArticleContent({ t }: ArticleContentProps) {
   };
 
   return (
-    <div className={twMerge("p-4 lg:p-16", maxWidthContainer)}>
+    <div
+    // className={twMerge("p-4 lg:p-16", maxWidthContainer)}>
+    >
       {/* Hot Topics */}
-
-      <div id="hot-topics" className="relative">
-        <h1 className="text-[32px] lg:text-[50px] font-bold">
+      <div id="hot-topics">
+        <h1
+          className={twMerge(
+            "text-[32px] lg:text-[50px] font-bold px-4 lg:px-16 mt-8",
+            maxWidthContainer
+          )}
+        >
           {t("article.hotTopic")}
         </h1>
         <Swiper
-          className="mySwiper"
+          className={twMerge(maxWidthContainer)}
           pagination={{
             clickable: true,
           }}
@@ -63,7 +69,7 @@ export function ArticleContent({ t }: ArticleContentProps) {
         >
           {articles?.slice(0, 4).map((item) => (
             <SwiperSlide>
-              <div className="flex flex-col lg:flex-row items-start gap-8 mt-4 ">
+              <div className="flex flex-col lg:flex-row items-start gap-8 mt-4 px-4 pb-4 lg:pb-16 lg:px-16">
                 <div className="relative rounded-md w-full min-h-[200px] lg:min-h-[400px] lg:w-[70%] lg:flex-none">
                   <Image
                     src={item?.image}
@@ -106,7 +112,7 @@ export function ArticleContent({ t }: ArticleContentProps) {
                             : item?.language?.en?.slug
                         )
                       }
-                      className="text-link font-bold"
+                      className="text-link font-bold cursor-pointer"
                     >
                       read more
                     </span>
@@ -115,26 +121,26 @@ export function ArticleContent({ t }: ArticleContentProps) {
               </div>
             </SwiperSlide>
           ))}
+          <div
+            ref={navigationPrevRef}
+            className="hidden lg:block absolute bg-white left-0 -translate-y-1/2 top-[55%] transform z-50 cursor-pointer shadow-lg flex items-center justify-center px-5 py-5 rounded-full"
+          >
+            <ChevronLeftIcon />
+          </div>
+          <div
+            ref={navigationNextRef}
+            className="hidden lg:block absolute bg-white right-0 -translate-y-1/2 top-[55%] transform z-50 cursor-pointer shadow-lg flex items-center justify-center px-5 py-5 rounded-full"
+          >
+            <ChevronRightIcon />
+          </div>
         </Swiper>
-      </div>
-      <div
-        ref={navigationPrevRef}
-        className="hidden lg:block absolute left-14 -translate-y-1/2 top-[55%] transform z-50 cursor-pointer shadow-lg flex items-center justify-center px-5 py-5 rounded-full"
-      >
-        <ChevronLeftIcon />
-      </div>
-      <div
-        ref={navigationPrevRef}
-        className="hidden lg:block absolute right-14 -translate-y-1/2 top-[55%] transform z-50 cursor-pointer shadow-lg flex items-center justify-center px-5 py-5 rounded-full"
-      >
-        <ChevronRightIcon />
       </div>
 
       {/* Latest News */}
 
       <div
         id="latest-news-list"
-        className={twMerge("my-24", maxWidthContainer)}
+        className={twMerge("p-4 lg:p-16 my-8", maxWidthContainer)}
       >
         <div className="text-center">
           <h2 className="text-[32px] font-bold">{t("article.latestNews")}</h2>
@@ -191,7 +197,7 @@ export function ArticleContent({ t }: ArticleContentProps) {
 
       <div
         id="latest-news-list"
-        className={twMerge("mt-36 mb-24", maxWidthContainer)}
+        className={twMerge("p-4 lg:p-16 mt-20 mb-24", maxWidthContainer)}
       >
         <div className="text-center">
           <h2 className="text-[32px] font-bold">{t("article.forYou")}</h2>

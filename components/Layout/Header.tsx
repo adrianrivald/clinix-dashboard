@@ -434,7 +434,7 @@ function NavMenuDesktop({
 export function Header() {
   const router = useRouter();
   const { asPath, pathname, locale } = router;
-  const isHome = asPath === "/";
+  const isHome = pathname === "/";
   const [language, setLanguage] = React.useState(locale);
   const [isOpen, setOpen] = React.useState(false);
   const [isChangeLanguageMode, setIsChangeLanguageMode] = React.useState(false);
