@@ -21,6 +21,7 @@ interface ArticleContentProps {
 
 export function ArticleContent({ t }: ArticleContentProps) {
   const router = useRouter();
+  const { locale } = router;
   const navigationPrevRef = React.useRef(null);
   const navigationNextRef = React.useRef(null);
 
@@ -74,7 +75,9 @@ export function ArticleContent({ t }: ArticleContentProps) {
                   />
                   <div className="absolute left-4 lg:left-10 bottom-4 lg:bottom-10">
                     <h2 className="lg:w-[60%] font-bold text-[16px] lg:text-[32px] text-white">
-                      {item?.title}
+                      {locale === "id"
+                        ? item?.language?.id?.title
+                        : item?.language?.en?.title}
                     </h2>
                     <h4 className="text-[12px] lg:text-[16px] text-white font-semibold">
                       {item?.category} • {item?.createdAt}
@@ -84,12 +87,26 @@ export function ArticleContent({ t }: ArticleContentProps) {
                 <div id="hot-topic-sum" className="hidden lg:block">
                   <p className="text-justify">
                     <span className="text-[40px] font-bold">
-                      {item?.summary.split(" ")[0]}
+                      {locale === "id"
+                        ? item?.language?.id?.summary.split(" ")[0]
+                        : item?.language?.en?.summary.split(" ")[0]}
                     </span>{" "}
-                    {item?.summary.slice(item?.summary.split(" ")[0]?.length)}
+                    {locale === "id"
+                      ? item?.language?.id?.summary.slice(
+                          item?.language?.id?.summary.split(" ")[0]?.length
+                        )
+                      : item?.language?.en?.summary.slice(
+                          item?.language?.en?.summary.split(" ")[0]?.length
+                        )}
                     <br />
                     <span
-                      onClick={() => onClickItem(item?.slug)}
+                      onClick={() =>
+                        onClickItem(
+                          locale === "id"
+                            ? item?.language?.id?.slug
+                            : item?.language?.en?.slug
+                        )
+                      }
                       className="text-link font-bold"
                     >
                       read more
@@ -127,7 +144,13 @@ export function ArticleContent({ t }: ArticleContentProps) {
         <div className="grid grid-cols-1 lg:grid-cols-2 lg:grid-cols-3 mt-14 gap-8">
           {articles?.slice(0, 6).map((article, index) => (
             <div
-              onClick={() => onClickItem(article?.slug)}
+              onClick={() =>
+                onClickItem(
+                  locale === "id"
+                    ? article?.language?.id?.slug
+                    : article?.language?.en?.slug
+                )
+              }
               key={index}
               className="hover:shadow-xl p-3 pb-8 shadow-md rounded-lg flex flex-col gap-6 cursor-pointer"
             >
@@ -135,7 +158,11 @@ export function ArticleContent({ t }: ArticleContentProps) {
                 src={article.image}
                 width={360}
                 height={200}
-                alt={article.slug}
+                alt={
+                  locale === "id"
+                    ? article?.language?.id?.slug
+                    : article?.language?.en?.slug
+                }
                 className="w-full rounded-lg"
               />
               <div className="mx-4">
@@ -143,7 +170,11 @@ export function ArticleContent({ t }: ArticleContentProps) {
                   {article?.category} • {article?.createdAt}
                 </span>
               </div>
-              <h3 className="mx-4 font-bold text-[24px]">{article?.title}</h3>
+              <h3 className="mx-4 font-bold text-[24px]">
+                {locale === "id"
+                  ? article?.language?.id?.title
+                  : article?.language?.en?.title}
+              </h3>
             </div>
           ))}
         </div>
@@ -170,7 +201,13 @@ export function ArticleContent({ t }: ArticleContentProps) {
         <div className="grid grid-cols-1 lg:grid-cols-2 lg:grid-cols-3 mt-14 gap-8">
           {articles?.slice(6).map((article, index) => (
             <div
-              onClick={() => onClickItem(article?.slug)}
+              onClick={() =>
+                onClickItem(
+                  locale === "id"
+                    ? article?.language?.id?.slug
+                    : article?.language?.en?.slug
+                )
+              }
               key={index}
               className="hover:shadow-xl p-3 pb-8 shadow-md rounded-lg flex flex-col gap-6 cursor-pointer"
             >
@@ -178,7 +215,11 @@ export function ArticleContent({ t }: ArticleContentProps) {
                 src={article.image}
                 width={360}
                 height={200}
-                alt={article.slug}
+                alt={
+                  locale === "id"
+                    ? article?.language?.id?.slug
+                    : article?.language?.en?.slug
+                }
                 className="w-full rounded-lg"
               />
               <div className="mx-4">
@@ -186,7 +227,11 @@ export function ArticleContent({ t }: ArticleContentProps) {
                   {article?.category} • {article?.createdAt}
                 </span>
               </div>
-              <h3 className="mx-4 font-bold text-[24px]">{article?.title}</h3>
+              <h3 className="mx-4 font-bold text-[24px]">
+                {locale === "id"
+                  ? article?.language?.id?.title
+                  : article?.language?.en?.title}
+              </h3>
             </div>
           ))}
         </div>

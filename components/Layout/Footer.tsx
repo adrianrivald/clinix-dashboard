@@ -46,25 +46,18 @@ export function Footer() {
                 <FacebookRoundedIcon />
               </Link>
               <Link
-                href="https://instagram.com"
+                href="https://www.instagram.com/notes_idn?igsh=MTh2dHZjeGFkc252dQ=="
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 <InstagramRoundedIcon />
               </Link>
               <Link
-                href="https://linkedin.com"
+                href="https://id.linkedin.com/company/pt-cipta-integrasi-nusantara"
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 <LinkedInRoundedIcon />
-              </Link>
-              <Link
-                href="https://x.com"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <TwitterRoundedIcon />
               </Link>
             </div>
           </div>

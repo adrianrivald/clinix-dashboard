@@ -10,22 +10,36 @@ import { articles } from "../../constants/article";
 export default function CareerDetailPage() {
   const { t } = useTranslation("common");
   const router = useRouter();
-  const { query } = router;
+  const { query, locale } = router;
   const articleSlug = query?.slug ?? "";
-  const articleData = articles?.find(
-    (article) => article?.slug === articleSlug
+  const articleData = articles?.find((article) =>
+    locale === "id"
+      ? article?.language?.id?.slug
+      : article?.language?.en?.slug === articleSlug
   );
 
   return (
     <div>
       <Head>
-        <title>{articleData?.title} - Memos</title>
-        <meta name="description" content={articleData?.meta_desc} />
+        <title>
+          {locale === "id"
+            ? articleData?.language?.id?.title
+            : articleData?.language?.en?.title}{" "}
+          - Memos
+        </title>
+        <meta
+          name="description"
+          content={
+            locale === "id"
+              ? articleData?.language?.id?.meta_desc
+              : articleData?.language?.en?.meta_desc
+          }
+        />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
       <main>
-        <ArticleDetailContent articleData={articleData} t={t} />
+        <ArticleDetailContent locale={locale} articleData={articleData} t={t} />
       </main>
     </div>
   );

@@ -18,11 +18,13 @@ import { articles } from "../../../constants/article";
 interface ArticleDetailContentProps {
   t: TFunction<"common", undefined>;
   articleData: any;
+  locale: string | undefined;
 }
 
 export function ArticleDetailContent({
   t,
   articleData,
+  locale,
 }: ArticleDetailContentProps) {
   return (
     <div className={twMerge("p-4 lg:p-16 mb-12", maxWidthContainer)}>
@@ -30,7 +32,9 @@ export function ArticleDetailContent({
       <div id="article-detail" className="lg:mx-36">
         {/* Article Title */}
         <h1 className="text-[20px] text-center lg:text-left lg:text-[50px] font-bold">
-          {articleData?.title}
+          {locale === "id"
+            ? articleData?.language?.id?.title
+            : articleData?.language?.en?.title}
         </h1>
         {/* Date Post */}
         <div className="flex flex-col lg:flex-row gap-4 justify-between items-center mt-4 lg:mt-6 py-6 border-t-2 border-b-2 border-dashed">
@@ -57,7 +61,10 @@ export function ArticleDetailContent({
           />
           <div id="content" className="mt-8 text-justify">
             {parse(
-              (articleData?.content ?? "")
+              (locale === "id"
+                ? articleData?.language?.id?.content
+                : articleData?.language?.en?.content ?? ""
+              )
                 ?.replaceAll(`<a `, `<a target="_blank" style="color:blue"`)
                 ?.replaceAll("<p", "<br/><p")
                 ?.replaceAll("<img", "<br/><img")
