@@ -46,7 +46,6 @@ export function ArticleContent({ t }: ArticleContentProps) {
           pagination={{
             clickable: true,
           }}
-          dots
           autoplay={{
             delay: 4000,
             pauseOnMouseEnter: true,
@@ -237,6 +236,7 @@ export function ArticleContent({ t }: ArticleContentProps) {
         </div>
         <div className="flex justify-center mt-14">
           <Button
+            onClick={onClickMoreLatestNews}
             isPrimary={false}
             title={t("article.seeAll")}
             className="w-36"

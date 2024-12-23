@@ -14,9 +14,11 @@ export default function CareerDetailPage() {
   const articleSlug = query?.slug ?? "";
   const articleData = articles?.find((article) =>
     locale === "id"
-      ? article?.language?.id?.slug
+      ? article?.language?.id?.slug === articleSlug
       : article?.language?.en?.slug === articleSlug
   );
+
+  console.log(articleData, "articleData");
 
   return (
     <div>

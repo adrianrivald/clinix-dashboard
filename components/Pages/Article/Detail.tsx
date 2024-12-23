@@ -72,7 +72,7 @@ export function ArticleDetailContent({
                 ?.replaceAll("<hr", "<br/><hr")
                 ?.replaceAll("<h1", "<br/><h1")
                 ?.replaceAll("<h2", "<br/><h2")
-                ?.replaceAll("<h3", "<br/><h3")
+                // ?.replaceAll("<h3", "<br/><h3")
                 ?.replaceAll("<h4", "<br/><h4")
                 ?.replaceAll(
                   "<ul",
@@ -82,9 +82,9 @@ export function ArticleDetailContent({
                   "<ol",
                   `<ol style="list-style-type:decimal;list-style-position:inside"`
                 )
-                ?.replaceAll("<li><br/><p>", "<br/><li>")
-                ?.replaceAll("</p></li>", "</li>")
-                ?.replaceAll("</li><li", "</li><br/><li")
+              // ?.replaceAll("<li><br/><p>", "<br/><li>")
+              // ?.replaceAll("</p></li>", "</li>")
+              // ?.replaceAll("</li><li", "</li><br/><li")
               // ?.replaceAll(
               //   "<h1",
               //   `<h1 style="font-size:3rem;font-weight:bold" `

@@ -4,8 +4,11 @@ import { useTranslation } from "next-i18next";
 import { GetStaticProps } from "next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { LatestNewsContent } from "../../../components";
+import { useRouter } from "next/router";
 
 export default function LatestNewsPage() {
+  const router = useRouter();
+  const { locale } = router;
   const { t } = useTranslation("common");
   return (
     <div>
@@ -16,7 +19,7 @@ export default function LatestNewsPage() {
       </Head>
 
       <main>
-        <LatestNewsContent t={t} />
+        <LatestNewsContent t={t} locale={locale} />
       </main>
     </div>
   );
