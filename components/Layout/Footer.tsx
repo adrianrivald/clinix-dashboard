@@ -38,13 +38,13 @@ export function Footer() {
           <div className="font-bold text-neutral-500">
             {t("footer.ourSocmed")}
             <div className="flex items-center gap-4 mt-2">
-              <Link
+              {/* <Link
                 href="https://facebook.com"
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 <FacebookRoundedIcon />
-              </Link>
+              </Link> */}
               <Link
                 href="https://www.instagram.com/memos_idn?igsh=bjdrZTZnMG56c2cy"
                 target="_blank"
