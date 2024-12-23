@@ -46,7 +46,7 @@ export function Footer() {
                 <FacebookRoundedIcon />
               </Link>
               <Link
-                href="https://www.instagram.com/notes_idn?igsh=MTh2dHZjeGFkc252dQ=="
+                href="https://www.instagram.com/memos_idn?igsh=bjdrZTZnMG56c2cy"
                 target="_blank"
                 rel="noopener noreferrer"
               >
