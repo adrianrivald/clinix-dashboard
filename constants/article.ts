@@ -338,7 +338,7 @@ export const articles = [
         language: {
             en: {
                 title: "Important! How to Manage Customer Databases",
-                slug: "Important-How-to-Manag-Customer-Databases",
+                slug: "Important-How-to-Manage-Customer-Databases",
                 meta_desc: "Managing a customer database is the process of systematically collecting, storing, organizing, and analyzing customer information to support marketing strategies, improve service, and build long-term relationships with customers.",
                 summary: "Managing a customer database is the process of systematically collecting, storing, organizing, and analyzing customer information to support marketing strategies, improve service, and build long-term relationships with customers.",
                 content: `<p><span style="font-size:16pt;font-family:Calibri,sans-serif;">Managing a customer database is the process of systematically collecting, storing, organizing, and analyzing customer information to support marketing strategies, improve service, and build long-term relationships with customers. A customer database includes various important data such as personal information (name, address, contact details), purchase history, preferences, and previous interactions with the company.</span></p>
