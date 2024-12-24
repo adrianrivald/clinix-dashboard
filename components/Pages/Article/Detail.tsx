@@ -71,9 +71,9 @@ export function ArticleDetailContent({
                 ?.replaceAll("<ol", "<br/><ol")
                 ?.replaceAll("<hr", "<br/><hr")
                 ?.replaceAll("<h1", "<br/><h1")
-                ?.replaceAll("<h2", "<br/><h2")
+                // ?.replaceAll("<h2", "<br/><h2")
                 // ?.replaceAll("<h3", "<br/><h3")
-                ?.replaceAll("<h4", "<br/><h4")
+                // ?.replaceAll("<h4", "<br/><h4")
                 ?.replaceAll(
                   "<ul",
                   `<ul style="list-style-type:disc;list-style-position:inside"`
