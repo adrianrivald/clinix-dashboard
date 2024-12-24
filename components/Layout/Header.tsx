@@ -167,14 +167,14 @@ function NavMenuMobile({
             >
               {t("navbar.product")}
             </Link>
-            <Link
+            {/* <Link
               href="/career"
               className={`hover:text-primary-500 cursor-pointer ${
                 pathname.includes("/career") ? "font-bold text-primary-500" : ""
               }`}
             >
               {t("navbar.career")}
-            </Link>
+            </Link> */}
             <Link
               href="/article"
               className={`hover:text-primary-500 cursor-pointer ${
@@ -313,14 +313,14 @@ function NavMenuDesktop({
             >
               {t("navbar.product")}
             </Link>
-            <Link
+            {/* <Link
               href="/career"
               className={`hover:text-primary-500 cursor-pointer ${
                 pathname.includes("/career") ? "font-bold text-primary-500" : ""
               }`}
             >
               {t("navbar.career")}
-            </Link>
+            </Link> */}
             <Link
               href="/article"
               className={`hover:text-primary-500 cursor-pointer ${
@@ -392,14 +392,14 @@ function NavMenuDesktop({
             >
               {t("navbar.product")}
             </Link>
-            <Link
+            {/* <Link
               href="/career"
               className={`hover:text-primary-500 cursor-pointer ${
                 pathname.includes("/career") ? "font-bold text-primary-500" : ""
               }`}
             >
               {t("navbar.career")}
-            </Link>
+            </Link> */}
             <Link
               href="/article"
               className={`hover:text-primary-500 cursor-pointer ${
