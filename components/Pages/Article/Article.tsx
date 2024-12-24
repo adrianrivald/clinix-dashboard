@@ -123,13 +123,13 @@ export function ArticleContent({ t }: ArticleContentProps) {
           ))}
           <div
             ref={navigationPrevRef}
-            className="hidden lg:block absolute bg-white left-0 -translate-y-1/2 top-[55%] transform z-50 cursor-pointer shadow-lg flex items-center justify-center px-5 py-5 rounded-full"
+            className="hidden lg:block absolute bg-white left-0 -translate-y-1/2 top-[45%] transform z-50 cursor-pointer shadow-lg flex items-center justify-center px-5 py-5 rounded-full"
           >
             <ChevronLeftIcon />
           </div>
           <div
             ref={navigationNextRef}
-            className="hidden lg:block absolute bg-white right-0 -translate-y-1/2 top-[55%] transform z-50 cursor-pointer shadow-lg flex items-center justify-center px-5 py-5 rounded-full"
+            className="hidden lg:block absolute bg-white right-0 -translate-y-1/2 top-[45%] transform z-50 cursor-pointer shadow-lg flex items-center justify-center px-5 py-5 rounded-full"
           >
             <ChevronRightIcon />
           </div>
