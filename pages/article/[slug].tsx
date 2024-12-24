@@ -48,12 +48,10 @@ export default function CareerDetailPage() {
 }
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
-  const { query, locale } = context;
-  const slug = query.slug as string;
+  const { locale } = context;
 
   return {
     props: {
-      slug: slug,
       locale: locale,
       ...(await serverSideTranslations(locale ?? "id", ["common"])),
     },
