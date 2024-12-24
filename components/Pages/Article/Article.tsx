@@ -69,7 +69,7 @@ export function ArticleContent({ t }: ArticleContentProps) {
         >
           {articles?.slice(0, 4).map((item) => (
             <SwiperSlide>
-              <div className="flex flex-col lg:flex-row items-start gap-8 mt-4 px-4 pb-4 lg:pb-16 lg:px-16">
+              <div className="flex flex-col lg:flex-row items-start gap-8 mt-4 px-4 pb-10 lg:pb-16 lg:px-16">
                 <div className="relative rounded-md w-full min-h-[200px] lg:min-h-[400px] lg:w-[70%] lg:flex-none">
                   <Image
                     src={item?.image}
@@ -146,7 +146,7 @@ export function ArticleContent({ t }: ArticleContentProps) {
           <h2 className="text-[32px] font-bold">{t("article.latestNews")}</h2>
           <h3 className="mt-2">{t("article.forYou")}</h3>
         </div>
-        <div className="grid grid-cols-1 lg:grid-cols-2 lg:grid-cols-3 mt-14 gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 lg:grid-cols-3 mt-2 lg:mt-14 gap-8">
           {articles?.slice(0, 6).map((article, index) => (
             <div
               onClick={() =>
@@ -157,7 +157,7 @@ export function ArticleContent({ t }: ArticleContentProps) {
                 )
               }
               key={index}
-              className="hover:shadow-xl p-3 pb-8 shadow-md rounded-lg flex flex-col gap-6 cursor-pointer"
+              className="hover:shadow-xl p-3 pb-8 shadow-md rounded-lg flex flex-col gap-4 lg:gap-6 cursor-pointer"
             >
               <Image
                 src={article.image}
@@ -170,12 +170,12 @@ export function ArticleContent({ t }: ArticleContentProps) {
                 }
                 className="w-full rounded-lg"
               />
-              <div className="mx-4">
+              <div className="ml-0 lg:mx-4">
                 <span className="text-neutral-300 font-bold">
                   {article?.category} • {article?.createdAt}
                 </span>
               </div>
-              <h3 className="mx-4 font-bold text-[24px]">
+              <h3 className="ml-0 lg:mx-4 font-bold text-[16px] lg:text-[24px]">
                 {locale === "id"
                   ? article?.language?.id?.title
                   : article?.language?.en?.title}
