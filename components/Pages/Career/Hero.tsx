@@ -11,7 +11,6 @@ interface HeroCareerProps {
 export function HeroCareer({ t }: HeroCareerProps) {
   const onSearchJob = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value;
-    console.log("search job:", value);
   };
   return (
     <div className="w-full h-[300px] lg:h-[400px] bg-gradient-to-r from-neutral-500 to-blue-500 relative">

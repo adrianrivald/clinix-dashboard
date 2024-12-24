@@ -478,7 +478,6 @@ export function Header() {
 
   const handleScroll = () => {
     const currentScrollPos = window.scrollY;
-    console.log(currentScrollPos, "currentScrollPos");
     if (currentScrollPos > prevScrollPos) {
       setVisible(false);
     } else {
@@ -487,7 +486,6 @@ export function Header() {
 
     setPrevScrollPos(currentScrollPos);
   };
-  console.log(router, "routernya");
   const onSubmitLanguage = () => {
     const url = window.location.href;
     const origin = window.location.origin;
@@ -501,8 +499,6 @@ export function Header() {
 
     window.location.href = origin + sliced;
   };
-
-  console.log(locale, "localelocale");
 
   const onChangeLanguage = (lang: string) => {
     // if (pathname === "/article/[slug]") {
@@ -543,7 +539,6 @@ export function Header() {
     } else {
       sliced = `/${lang}` + sliced;
     }
-    console.log(idSlug, enSlug, "perslugan");
     if (pathname === "/article/[slug]") {
       window.location.href =
         origin +

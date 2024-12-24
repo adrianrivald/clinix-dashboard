@@ -149,7 +149,6 @@ export function DemoContent({ t }: DemoContentProps) {
   };
 
   const onSubmit: SubmitHandler<any> = async () => {
-    console.log(formValues, "formvalue");
     await emailjs
       .send("service_le33abk", "template_n1eho2g", formValues, {
         publicKey: "-bHdy_Fu3An8fq6Av",

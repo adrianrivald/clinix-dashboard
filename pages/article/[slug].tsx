@@ -18,8 +18,6 @@ export default function CareerDetailPage() {
       : article?.language?.en?.slug === articleSlug
   );
 
-  console.log(articleData, "articleData");
-
   return (
     <div>
       <Head>
