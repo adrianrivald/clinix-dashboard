@@ -70,13 +70,20 @@ export function ArticleContent({ t }: ArticleContentProps) {
           {articles?.slice(0, 4).map((item) => (
             <SwiperSlide>
               <div className="flex flex-col lg:flex-row items-start gap-8 mt-4 px-4 pb-10 lg:pb-16 lg:px-16">
-                <div className="relative rounded-md w-full min-h-[200px] lg:min-h-[400px] lg:w-[70%] lg:flex-none">
+                <div className="bg-[linear-gradient(rgba(255, 255, 255, 0) 0%, rgba(179, 179, 179, 0.9) 95%)] relative rounded-md w-full min-h-[200px] lg:min-h-[400px] lg:w-[70%] lg:flex-none">
                   <Image
                     src={item?.image}
                     width={870}
                     height={400}
                     alt="featured-1"
                     className="object-cover rounded-lg w-full h-[200px] md:h-[300px] lg:h-[400px]"
+                    onClick={() =>
+                      onClickItem(
+                        locale === "id"
+                          ? item?.language?.id?.slug
+                          : item?.language?.en?.slug
+                      )
+                    }
                   />
                   <div className="absolute left-4 lg:left-10 bottom-4 lg:bottom-10">
                     <h2 className="lg:w-[60%] font-bold text-[16px] lg:text-[32px] text-white">
