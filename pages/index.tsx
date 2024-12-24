@@ -32,7 +32,7 @@ export default function HomePage() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className="mt-[5.5rem]">
+      <main className="mt-[1.5rem]">
         <Hero
           t={t}
           onClickToDemo={onClickToDemo}

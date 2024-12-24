@@ -47,7 +47,7 @@ export function Hero({ onClickToDemo, onClickMailTo, t }: HeroProps) {
             onClick={onClickToDemo}
           />
           {/* <Link href=""> */}
-          <a href="mailto:info@notes.co.id">
+          <a href="mailto:info@notes.co.id" className="w-full lg:w-auto">
             <Button
               title={t("home.consultYourNeeds")}
               isPrimary={false}
