@@ -13,6 +13,30 @@ import { TFunction } from "i18next";
 interface AboutContentProps {
   t: TFunction<"common", undefined>;
 }
+
+const teamMembers = [
+  {
+    photo: "/assets/images/teams/Adrian.jpg",
+    name: "Adrian R.",
+    position: "Frontend Developer",
+  },
+  {
+    photo: "/assets/images/teams/Surya.jpg",
+    name: "Surya D.",
+    position: "Product Designer",
+  },
+  {
+    photo: "/assets/images/teams/Illona.jpg",
+    name: "Illona A.",
+    position: "Digital Marketing",
+  },
+  {
+    photo: "/assets/images/teams/Natalia.jpg",
+    name: "Natalia R.",
+    position: "Business Analyst",
+  },
+];
+
 export function AboutContent({ t }: AboutContentProps) {
   const router = useRouter();
   const navigationPrevRef = React.useRef(null);
@@ -128,18 +152,18 @@ export function AboutContent({ t }: AboutContentProps) {
           )}
         >
           <div className="hidden lg:flex justify-between gap-4 items-center">
-            {Array.from({ length: 4 }).map(() => (
+            {teamMembers?.map((item) => (
               <div className="w-1/4">
                 <Image
-                  src="/assets/images/team-1.jpg"
+                  src={item?.photo}
                   width={276}
                   height={329}
                   alt="team-1"
                   className="rounded-[12px] w-full object-cover h-[400px]"
                 />
                 <div className="mt-2">
-                  <h4 className="text-[24px] font-bold">Brandon Shaw</h4>
-                  <h5 className="text-base">Founder {"&"} CEO</h5>
+                  <h4 className="text-[24px] font-bold">{item?.name}</h4>
+                  <h5 className="text-base">{item?.position}</h5>
                 </div>
               </div>
             ))}
@@ -160,18 +184,18 @@ export function AboutContent({ t }: AboutContentProps) {
                 swiper.params.navigation.nextEl = navigationNextRef.current;
               }}
             >
-              {Array.from({ length: 4 }).map(() => (
+              {teamMembers?.map((item) => (
                 <SwiperSlide>
                   <Image
-                    src="/assets/images/team-1.jpg"
+                    src={item?.photo}
                     width={276}
                     height={329}
                     alt="team-1"
                     className="rounded-[12px] w-full object-cover h-[400px]"
                   />
                   <div className="mt-2">
-                    <h4 className="text-[24px] font-bold">Brandon Shaw</h4>
-                    <h5 className="text-base">Founder {"&"} CEO</h5>
+                    <h4 className="text-[24px] font-bold">{item?.name}</h4>
+                    <h5 className="text-base">{item?.position}</h5>
                   </div>
                 </SwiperSlide>
               ))}
