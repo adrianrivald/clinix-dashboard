@@ -21,14 +21,14 @@ const teamMembers = [
     position: "Frontend Developer",
   },
   {
-    photo: "/assets/images/teams/Surya.jpg",
-    name: "Surya D.",
-    position: "Product Designer",
-  },
-  {
     photo: "/assets/images/teams/Illona.jpg",
     name: "Illona A.",
     position: "Digital Marketing",
+  },
+  {
+    photo: "/assets/images/teams/Surya.jpg",
+    name: "Surya D.",
+    position: "Product Designer",
   },
   {
     photo: "/assets/images/teams/Natalia.jpg",
