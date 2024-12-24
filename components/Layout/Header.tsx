@@ -505,41 +505,56 @@ export function Header() {
   console.log(locale, "localelocale");
 
   const onChangeLanguage = (lang: string) => {
-    if (pathname === "/article/[slug]") {
-      const url = window.location.href;
-      const origin = window.location.origin;
-      let sliced = url.split(origin)[1];
+    // if (pathname === "/article/[slug]") {
+    //   const url = window.location.href;
+    //   const origin = window.location.origin;
+    //   let sliced = url.split(origin)[1];
 
-      let slug = url.split("article/")[1];
-      const enSlug = articles?.find((item) => item?.language?.id?.slug === slug)
-        ?.language?.en?.slug;
-      const idSlug = articles?.find((item) => item?.language?.en?.slug === slug)
-        ?.language?.id?.slug;
-      console.log(slug, "slug");
-      console.log(idSlug, "idSlug");
-      if (locale !== "id") {
-        sliced = sliced.replace(`/${locale}`, "");
-        slug = idSlug ?? "";
-        console.log(slug, "slugindo");
-        window.location.href = origin + "/article/" + slug;
-      } else {
-        sliced = `/${lang}` + sliced;
-        slug = enSlug ?? "";
-        window.location.href = origin + "/en/article/" + slug;
-      }
+    //   let slug = url.split("article/")[1];
+    //   const enSlug = articles?.find((item) => item?.language?.id?.slug === slug)
+    //     ?.language?.en?.slug;
+    //   const idSlug = articles?.find((item) => item?.language?.en?.slug === slug)
+    //     ?.language?.id?.slug;
+    //   console.log(slug, "slug");
+    //   console.log(idSlug, "idSlug");
+    //   if (locale !== "id") {
+    //     sliced = sliced.replace(`/${locale}`, "");
+    //     slug = idSlug ?? "";
+    //     console.log(slug, "slugindo");
+    //     window.location.href = origin + "/article/" + slug;
+    //   } else {
+    //     sliced = `/${lang}` + sliced;
+    //     slug = enSlug ?? "";
+    //     window.location.href = origin + "/en/article/" + slug;
+    //   }
+    // } else {
+    const url = window.location.href;
+    const origin = window.location.origin;
+    let sliced = url.split(origin)[1];
+    const enSlug = articles?.find(
+      (item) => item?.language?.id?.slug === sliced?.split("article/")[1]
+    )?.language?.en?.slug;
+    const idSlug = articles?.find(
+      (item) => item?.language?.en?.slug === sliced?.split("article/")[1]
+    )?.language?.id?.slug;
+
+    if (locale !== "id") {
+      sliced = sliced.replace(`/${locale}`, "");
     } else {
-      const url = window.location.href;
-      const origin = window.location.origin;
-      let sliced = url.split(origin)[1];
-
-      if (locale !== "id") {
-        sliced = sliced.replace(`/${locale}`, "");
-      } else {
-        sliced = `/${lang}` + sliced;
-      }
-
+      sliced = `/${lang}` + sliced;
+    }
+    console.log(idSlug, enSlug, "perslugan");
+    if (pathname === "/article/[slug]") {
+      window.location.href =
+        origin +
+        sliced?.replace(
+          `${sliced?.split("article/")[1]}`,
+          `${locale === "id" ? enSlug : idSlug}`
+        );
+    } else {
       window.location.href = origin + sliced;
     }
+    // }
 
     // let slug = url.split("article/")[1];
     // const enSlug = articles?.find((item) => item?.language?.id?.slug === slug)
