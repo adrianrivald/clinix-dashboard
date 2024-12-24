@@ -511,11 +511,11 @@ export function Header() {
       ?.language?.en?.slug;
     const idSlug = articles?.find((item) => item?.language?.en?.slug === slug)
       ?.language?.id?.slug;
-    console.log(sliced, "sliced");
     if (pathname === "/article/[slug]") {
       if (locale !== "id") {
         sliced = sliced.replace(`/${locale}`, "");
         slug = idSlug ?? "";
+        console.log(slug, "slugindo");
         window.location.href = origin + "/article/" + slug;
       } else {
         sliced = `/${lang}` + sliced;

@@ -7,7 +7,7 @@ export const articles = [
         language: {
             en : {
                 title: "Medication Reconciliation: Why It Matters for All Patients",
-                slug: "Medication-Reconciliation-Why-It-Matters-for-All Patients",
+                slug: "Medication-Reconciliation-Why-It-Matters-for-All-Patients",
                 meta_desc: "Medication reconciliation is a process in which doctors or nurses collaborate with patients and their families to adjust prescriptions to the medications being administered",
                 summary: "Medication reconciliation is a process in which doctors or nurses collaborate with patients and their families to adjust prescriptions to the medications being administered, ensuring that medication errors do not occur.",
                 content: `<p><span style="font-size:16pt;font-family:Calibri,sans-serif;">Medication reconciliation is a process in which doctors or nurses collaborate with patients and their families to adjust prescriptions to the medications being administered, ensuring that medication errors do not occur.</span></p>
@@ -67,7 +67,7 @@ export const articles = [
         language: {
             en: {
                 title: "The Role of Medical Records in Health Information Systems",
-                slug: "The-Role-of-Medical-Record- in-Health-Information-Systems",
+                slug: "The-Role-of-Medical-Record-in-Health-Information-Systems",
                 meta_desc: "Medical records are a collection of documents that include patient identification, examination results, treatment, medical procedures, and other services provided to the patient",
                 summary: "Medical records are a collection of documents that include patient identification, examination results, treatment, medical procedures, and other services provided to the patient.",
                 content: `<p><span style="font-size:16pt;font-family:Calibri,sans-serif;">Medical records are a collection of documents that include patient identification, examination results, treatment, medical procedures, and other services provided to the patient. Medical records must be accurate, complete, and accountable. They play a vital role for hospitals, doctors, patients, and their families. Here are the key roles of medical records:</span></p>
@@ -338,7 +338,7 @@ export const articles = [
         language: {
             en: {
                 title: "Important! How to Manage Customer Databases",
-                slug: "Important-How-to-Manag- Customer-Databases",
+                slug: "Important-How-to-Manag-Customer-Databases",
                 meta_desc: "Managing a customer database is the process of systematically collecting, storing, organizing, and analyzing customer information to support marketing strategies, improve service, and build long-term relationships with customers.",
                 summary: "Managing a customer database is the process of systematically collecting, storing, organizing, and analyzing customer information to support marketing strategies, improve service, and build long-term relationships with customers.",
                 content: `<p><span style="font-size:16pt;font-family:Calibri,sans-serif;">Managing a customer database is the process of systematically collecting, storing, organizing, and analyzing customer information to support marketing strategies, improve service, and build long-term relationships with customers. A customer database includes various important data such as personal information (name, address, contact details), purchase history, preferences, and previous interactions with the company.</span></p>
