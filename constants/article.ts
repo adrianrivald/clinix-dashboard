@@ -143,7 +143,7 @@ export const articles = [
         language: {
             en: {
                 title: "Customer Relationship: Definition, Goals, and Benefits in Business",
-                slug: "Customer-Relationship-Definition-Goals-and-Benefits-in-Business  ",
+                slug: "Customer-Relationship-Definition-Goals-and-Benefits-in-Business",
                 meta_desc: "Customer Relationship refers to the efforts made by companies to build and maintain strong connections with their customers.",
                 summary: "Customer Relationship refers to the efforts made by companies to build and maintain strong connections with their customers. It is often considered one of the best marketing strategies within a business.",
                 content: `<p><span style="font-size:16pt;font-family:Calibri,sans-serif;">Customer Relationship refers to the efforts made by companies to build and maintain strong connections with their customers. It is often considered one of the best marketing strategies within a business.</span></p>
