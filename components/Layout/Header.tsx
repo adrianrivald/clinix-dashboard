@@ -10,6 +10,7 @@ import { ChevronRightIcon } from "../Icons";
 import { useSearchDebounce } from "../../hooks";
 import type { Language } from "../Ui/Dropdown";
 import { TFunction } from "i18next";
+import { articles } from "../../constants/article";
 
 const languageList = [
   // {
@@ -486,7 +487,7 @@ export function Header() {
 
     setPrevScrollPos(currentScrollPos);
   };
-
+  console.log(router, "routernya");
   const onSubmitLanguage = () => {
     const url = window.location.href;
     const origin = window.location.origin;
@@ -505,14 +506,31 @@ export function Header() {
     const url = window.location.href;
     const origin = window.location.origin;
     let sliced = url.split(origin)[1];
-    if (locale !== "id") {
-      console.log("ke id");
-      sliced = sliced.replace(`/${locale}`, "");
+    let slug = url.split("article/")[1];
+    const enSlug = articles?.find((item) => item?.language?.id?.slug === slug)
+      ?.language?.en?.slug;
+    const idSlug = articles?.find((item) => item?.language?.en?.slug === slug)
+      ?.language?.id?.slug;
+    console.log(sliced, "sliced");
+    if (pathname === "/article/[slug]") {
+      if (locale !== "id") {
+        sliced = sliced.replace(`/${locale}`, "");
+        slug = idSlug ?? "";
+        window.location.href = origin + "/article/" + slug;
+      } else {
+        sliced = `/${lang}` + sliced;
+        slug = enSlug ?? "";
+        window.location.href = origin + "/en/article/" + slug;
+      }
     } else {
-      sliced = `/${lang}` + sliced;
-    }
+      if (locale !== "id") {
+        sliced = sliced.replace(`/${locale}`, "");
+      } else {
+        sliced = `/${lang}` + sliced;
+      }
 
-    window.location.href = origin + sliced;
+      window.location.href = origin + sliced;
+    }
   };
 
   React.useEffect(() => {
