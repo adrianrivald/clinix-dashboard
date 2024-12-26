@@ -23,7 +23,7 @@ export function ProductContent({ t }: ProductContentProps) {
         </h2>
         <div className="mt-12 flex flex-col lg:flex-row justify-center items-center gap-4">
           <Link
-            href="https://notes-landing.vercel.app"
+            href="https://notes.co.id"
             rel="noopener noreferrer"
             target="_blank"
             className="w-full lg:w-1/2 p-3 pb-8 rounded-lg flex flex-col gap-6 cursor-pointer border border-neutral-250 hover:border-primary-200"
@@ -45,7 +45,7 @@ export function ProductContent({ t }: ProductContentProps) {
             </div>
           </Link>
           <Link
-            href="https://clinix-landing.vercel.app"
+            href="https://clinix.id"
             rel="noopener noreferrer"
             target="_blank"
             className="w-full lg:w-1/2 p-3 pb-8 rounded-lg flex flex-col gap-6 cursor-pointer border border-neutral-250 hover:border-primary-200"

@@ -1,5 +1,6 @@
 import { TFunction } from "i18next";
 import React from "react";
+import { Fade } from "react-awesome-reveal";
 import { twMerge } from "tailwind-merge";
 import { maxWidthContainer } from "../../constants/class";
 import { FaqIcon } from "../Icons";
@@ -40,22 +41,26 @@ export function Faq({ t }: FaqProps) {
       id="faq"
       className={twMerge("p-4 lg:p-16 mt-16 lg:mt-32", maxWidthContainer)}
     >
-      <div className="flex flex-col lg:flex-row lg:items-center justify-between lg:mx-14">
-        <h2 className="text-[32px] font-bold">{t("home.faqHeading")}</h2>
-        <p className="mt-4 lg:mt-0 lg:text-right text-[16px] lg:w-[30rem]">
-          {t("home.faqSubHeading")}
-        </p>
-      </div>
+      <Fade triggerOnce direction="up">
+        <div className="flex flex-col lg:flex-row lg:items-center justify-between lg:mx-14">
+          <h2 className="text-[32px] font-bold">{t("home.faqHeading")}</h2>
+          <p className="mt-4 lg:mt-0 lg:text-right text-[16px] lg:w-[30rem]">
+            {t("home.faqSubHeading")}
+          </p>
+        </div>
+      </Fade>
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mt-8 lg:mt-16">
-        {faqData?.map((faq) => {
+        {faqData?.map((faq, index) => {
           return (
-            <div className="bg-neutral-200 p-8">
-              <div className="flex items-center gap-3">
-                <FaqIcon />
-                <span className="font-bold">{t(faq?.question)}</span>
+            <Fade triggerOnce direction={index % 2 === 0 ? "left" : "right"}>
+              <div className="bg-neutral-200 p-8">
+                <div className="flex items-center gap-3">
+                  <FaqIcon />
+                  <span className="font-bold">{t(faq?.question)}</span>
+                </div>
+                <p className="mt-4">{t(faq?.answer)}</p>
               </div>
-              <p className="mt-4">{t(faq?.answer)}</p>
-            </div>
+            </Fade>
           );
         })}
       </div>

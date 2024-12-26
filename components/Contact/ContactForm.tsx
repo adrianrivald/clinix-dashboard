@@ -4,6 +4,7 @@ import { Button } from "../Ui";
 import emailjs from "@emailjs/browser";
 import { ToastContainer, toast } from "react-toastify";
 import { TFunction } from "i18next";
+import { Fade } from "react-awesome-reveal";
 
 interface ContactForm {
   t: TFunction<"common", undefined>;
@@ -46,53 +47,55 @@ export function ContactForm({ t }: ContactForm) {
       );
   };
   return (
-    <form
-      ref={form}
-      onSubmit={handleSubmit(onSubmit)}
-      className="flex flex-col gap-8"
-    >
-      <div className="flex flex-col gap-2">
-        <label className="text-[14px]" htmlFor="name">
-          {t("home.contactFieldName")}
-        </label>
-        <input
-          id="name"
-          {...register("name", { required: true })}
-          type="text"
-          className="rounded-md p-4 border border-neutral-100 focus:outline-none"
-          placeholder={t("home.contactFieldNamePh")}
+    <Fade triggerOnce direction="right">
+      <form
+        ref={form}
+        onSubmit={handleSubmit(onSubmit)}
+        className="flex flex-col gap-8"
+      >
+        <div className="flex flex-col gap-2">
+          <label className="text-[14px]" htmlFor="name">
+            {t("home.contactFieldName")}
+          </label>
+          <input
+            id="name"
+            {...register("name", { required: true })}
+            type="text"
+            className="rounded-md p-4 border border-neutral-100 focus:outline-none"
+            placeholder={t("home.contactFieldNamePh")}
+          />
+        </div>
+        <div className="flex flex-col gap-2">
+          <label className="text-[14px]" htmlFor="email">
+            {t("home.contactFieldEmail")}
+          </label>
+          <input
+            id="email"
+            {...register("email", { required: true })}
+            type="email"
+            className="rounded-md p-4 border border-neutral-100 focus:outline-none"
+            placeholder={t("home.contactFieldEmailPh")}
+          />
+        </div>
+        <div className="flex flex-col gap-2">
+          <label className="text-[14px]" htmlFor="message">
+            {t("home.contactFieldQuestion")}
+          </label>
+          <textarea
+            id="message"
+            {...register("message", { required: true })}
+            className="rounded-md p-4 border border-neutral-100 focus:outline-none"
+            placeholder={t("home.contactFieldQuestionPh")}
+            rows={4}
+          />
+        </div>
+        <Button
+          isPrimary
+          title={t("home.contactSubmit")}
+          className="lg:w-[250px]"
         />
-      </div>
-      <div className="flex flex-col gap-2">
-        <label className="text-[14px]" htmlFor="email">
-          {t("home.contactFieldEmail")}
-        </label>
-        <input
-          id="email"
-          {...register("email", { required: true })}
-          type="email"
-          className="rounded-md p-4 border border-neutral-100 focus:outline-none"
-          placeholder={t("home.contactFieldEmailPh")}
-        />
-      </div>
-      <div className="flex flex-col gap-2">
-        <label className="text-[14px]" htmlFor="message">
-          {t("home.contactFieldQuestion")}
-        </label>
-        <textarea
-          id="message"
-          {...register("message", { required: true })}
-          className="rounded-md p-4 border border-neutral-100 focus:outline-none"
-          placeholder={t("home.contactFieldQuestionPh")}
-          rows={4}
-        />
-      </div>
-      <Button
-        isPrimary
-        title={t("home.contactSubmit")}
-        className="lg:w-[250px]"
-      />
-      <ToastContainer />
-    </form>
+        <ToastContainer />
+      </form>
+    </Fade>
   );
 }
