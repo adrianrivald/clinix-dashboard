@@ -150,8 +150,8 @@ export function DemoContent({ t }: DemoContentProps) {
 
   const onSubmit: SubmitHandler<any> = async () => {
     await emailjs
-      .send("service_le33abk", "template_n1eho2g", formValues, {
-        publicKey: "-bHdy_Fu3An8fq6Av",
+      .send("service_88q7rha", "template_y2v0ioo", formValues, {
+        publicKey: "7jPcAfzPeqFQ_mf4c",
       })
       .then(
         () => {
