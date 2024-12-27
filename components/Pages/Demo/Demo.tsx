@@ -11,6 +11,7 @@ import { ArrowDownIcon, ArrowRightBlueIcon, SuccessDemo } from "../../Icons";
 import { SearchBox } from "../../SearchBox/SearchBox";
 import { Button } from "../../Ui";
 import { TFunction } from "i18next";
+import { ToastContainer, toast } from "react-toastify";
 
 interface SelectProps {
   label: string;
@@ -158,7 +159,17 @@ export function DemoContent({ t }: DemoContentProps) {
           setIsSubmitted(true);
         },
         (error) => {
-          console.log(error);
+          const errorMessage = error?.text ?? t("home.errorSubmitForm");
+          toast.error(errorMessage, {
+            position: "top-right",
+            autoClose: 3000,
+            hideProgressBar: true,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: false,
+            progress: undefined,
+            theme: "light",
+          });
         }
       );
   };
@@ -572,6 +583,7 @@ export function DemoContent({ t }: DemoContentProps) {
           </div>
         )}
       </div>
+      <ToastContainer />
     </div>
   );
 }

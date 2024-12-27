@@ -42,7 +42,17 @@ export function ContactForm({ t }: ContactForm) {
           reset();
         },
         (error) => {
-          console.log(error);
+          const errorMessage = error?.text ?? t("home.errorSubmitForm");
+          toast.success(errorMessage, {
+            position: "top-right",
+            autoClose: 3000,
+            hideProgressBar: true,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: false,
+            progress: undefined,
+            theme: "light",
+          });
         }
       );
   };

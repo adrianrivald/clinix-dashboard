@@ -43,6 +43,7 @@
     "contactFieldQuestion": "Your Question",
     "contactFieldQuestionPh": "How can i get the Memos product?",
     "contactSubmit": "Submit Your Question",
+    "errorSubmitForm": "Something error, please try again",
     "bannerHeading": "See firsthand how our system makes your work more efficient."
   },
   "navbar": {

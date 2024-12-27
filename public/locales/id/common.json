@@ -43,6 +43,7 @@
     "contactFieldQuestion": "Pertanyaan Anda",
     "contactFieldQuestionPh": "Bagaimana cara saya bisa mendapat produk Memos?",
     "contactSubmit": "Kirim Pertanyaan Anda",
+    "errorSubmitForm": "Terjadi error, silakan coba lagi",
     "bannerHeading": "Lihat langsung bagaimana sistem kami membantu pekerjaan Anda lebih efisien"
   },
   "navbar": {
