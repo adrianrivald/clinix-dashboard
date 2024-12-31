@@ -147,6 +147,7 @@ export function DemoContent({ t }: DemoContentProps) {
     language: selectedLanguage?.label,
     company_size: `${selectedCompany?.label} ${t("demo.employee")}`,
     interest: t(`demo.${selectedInterest?.label}`),
+    product: "Memos",
   };
 
   const onSubmit: SubmitHandler<any> = async () => {
