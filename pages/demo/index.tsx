@@ -10,8 +10,11 @@ export default function DemoPage() {
   return (
     <div>
       <Head>
-        <title>Demo - Memos</title>
-        <meta name="description" content="Demo Page of Memos" />
+        <title>Hubungi Kami, tim sales siap membantu! - Memos</title>
+        <meta
+          name="description"
+          content="Isi data diri Anda, dan tim kami akan segera memberikan informasi yang Anda butuhkan."
+        />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 

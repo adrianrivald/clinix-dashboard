@@ -10,8 +10,13 @@ export default function AboutPage() {
   return (
     <div>
       <Head>
-        <title>About - Memos</title>
-        <meta name="description" content="About Page of Memos" />
+        <title>
+          Penyedia layanan kesehatan dengan teknologi terkini - Memos
+        </title>
+        <meta
+          name="description"
+          content="CRM Healthcare, Inovasi untuk efisiensi kesehatan yang lebih baik, solusi terintegrasi kami meningkatkan efisiensi rumah sakit, memudahkan tenaga medis, dan memastikan perawatan yang lebih cepat dan tepat untuk pasien."
+        />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 

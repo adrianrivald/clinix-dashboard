@@ -10,8 +10,10 @@ export default function ProductPage() {
   return (
     <div>
       <Head>
-        <title>Product - Memos</title>
-        <meta name="description" content="Product Page of Memos" />
+        <title>
+          Produk Memos untuk kebutuhan Sistem CRM Healthcara Rumah sakit dan
+          Klinik anda - Memos
+        </title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 

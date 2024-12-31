@@ -10,8 +10,7 @@ export default function ArticlePage() {
   return (
     <div>
       <Head>
-        <title>Article - Memos</title>
-        <meta name="description" content="Article Page of Memos" />
+        <title>Topik Populer artikel memos - Memos</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
