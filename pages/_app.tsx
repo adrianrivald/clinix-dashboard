@@ -36,6 +36,22 @@ export function App({ Component, pageProps }: AppProps) {
          
            gtag('config', 'G-DE7E4C1K9Q');`}
       </Script>
+
+      <Script id="google-tag-manager" strategy="afterInteractive">
+        {`
+          (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+          new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+          j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+          'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+          })(window,document,'script','dataLayer','GTM-KWNGP2MC');
+        `}
+      </Script>
+
+      <noscript
+        dangerouslySetInnerHTML={{
+          __html: `<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KWNGP2MC" height="0" width="0" style="display: none; visibility: hidden;" />`,
+        }}
+      />
       <section className="w-full mx-auto text-neutral-500">
         <Header />
         <div className="mt-[1.5rem] lg:mt-0">
