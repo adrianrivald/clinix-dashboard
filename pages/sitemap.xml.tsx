@@ -32,7 +32,7 @@ function generateSitemap() {
       ?.map(
         (article) =>
           `<url>
-                <loc>${url}/article/${article?.language?.en?.slug}</loc>
+                <loc>${url}/en/article/${article?.language?.en?.slug}</loc>
             </url>`
       )
       .join("")}
