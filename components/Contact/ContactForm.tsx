@@ -23,7 +23,7 @@ export function ContactForm({ t }: ContactForm) {
 
   const onSubmit: SubmitHandler<any> = async () => {
     await emailjs
-      .send("service_88q7rha", "template_jfeaiof", formValues, {
+      .send("service_zf9cvp6", "template_jfeaiof", formValues, {
         publicKey: "7jPcAfzPeqFQ_mf4c",
       })
       .then(
