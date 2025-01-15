@@ -24,6 +24,12 @@ export function App({ Component, pageProps }: AppProps) {
 
   return (
     <>
+      <Head>
+        <meta
+          name="google-site-verification"
+          content="RMbsBIUpcLYYwPo4uGuQf1xftz_DMnhb87bv13cscGM"
+        />
+      </Head>
       <Script
         async
         src="https://www.googletagmanager.com/gtag/js?id=G-DE7E4C1K9Q"
