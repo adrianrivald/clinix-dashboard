@@ -1,4 +1,123 @@
 export const articles = [
+//     {
+//         id: 11,
+//         image: "/assets/images/articles/10.jpg",
+//         category: "Article",
+//         createdAt: "28 Jan 2025",
+//         language: {
+//             en: {
+//                 title: "Optimizing Health Services with SIMRS and CRM Healthcare Collaboration for Hospitals",
+//                 slug: "SIMRS-and-CRM-Healthcare-Collaboration-for-Hospitals",
+//                 meta_desc: "In the healthcare sector, two systems that are now widely implemented are Hospital Management Information System (SIMRS) and Health Customer Relationship Management (CRM).",
+//                 summary: "Manual systems are now considered less efficient in serving patients due to slow movement and frequent data invalidation. This encourages hospitals to continue to innovate in order to improve the quality of their health services. One solution that can be applied is the utilization of technology.",
+//                 content: `<p><span style="font-size:16pt;font-family:Calibri,sans-serif;">Manual systems are now considered less efficient in serving patients due to slow movement and frequent data invalidation. This encourages hospitals to continue to innovate in order to improve the quality of their health services. One solution that can be applied is the utilization of technology.</span></p>
+// <p><span style="font-size:16pt;font-family:Calibri,sans-serif;">Today, information technology plays an important role in determining the success of health services, especially in providing the best experience for patients. An effective system can support various aspects of service, including clinical obligations. In the healthcare sector, two systems that are now widely implemented are Hospital Management Information System (SIMRS) and Health Customer Relationship Management (CRM). The combination of the two has great potential to significantly improve the quality of hospital services.&nbsp;</span></p>
+// <p><span style="font-size:16pt;font-family:Calibri,sans-serif;">Therefore, this article will review how optimizing healthcare services through collaboration between SIMRS and CRM Healthcare can have a positive impact on hospitals.</span></p>
+// <p><strong><span style="font-size:16pt;font-family:Calibri,sans-serif;">Definition and Components of SIMRS (H2)</span></strong></p>
+// <p><span style="font-size:16pt;font-family:Calibri,sans-serif;">Hospital Management Information System (HIMS) is a technology-based system designed to manage various processes that occur in hospitals in an efficient and integrated manner. &nbsp;SIMRS serves to simplify and optimize various tasks involving patient care, administration, resource management, and more precise and data-based decision making. With this system, all hospital operations, both medical and non-medical, can run more coordinated and connected to each other.</span></p>
+// <p><span style="font-size:16pt;font-family:Calibri,sans-serif;">The main objective of SIMRS is to ensure fast and accurate information flow between various departments in the hospital, so that all medical, administrative, and managerial teams can access the data needed easily, on time, and can be used immediately for further action.&nbsp;</span></p>
+// <p><span style="font-size:16pt;font-family:Calibri,sans-serif;">This allows hospitals to provide better and more responsive services to patients, as well as minimize potential errors in administrative processes and medical services. SIMRS also plays an important role in improving the efficiency of hospital operations by integrating various functions, from patient registration, medical records, to hospital inventory and financial management, making it easier to manage resources and accelerate appropriate decision making.</span></p>
+// <p><strong><span style="font-size:16pt;font-family:Calibri,sans-serif;">Differences between SIMRS in general and existing SIMRS in Notes (H2)</span></strong></p>
+// <p><span style="font-size:16pt;font-family:Calibri,sans-serif;">SIMRS is generally used to manage various aspects of hospital operations, with the aim of improving efficiency and quality of service. However, the implementation of SIMRS may vary depending on the platform used.</span></p>
+// <p><span style="font-size:16pt;font-family:Calibri,sans-serif;">One of the SIMRS platforms, Notes, is already integrated with Healthcare CRM (Customer Relationship Management). Notes offers an approach that is more focused on the interaction and relationship with the patient as a customer. The main difference lies in the more personalized management of patient data, which aims to improve the overall patient experience.</span></p>
+// <p><span style="font-size:16pt;font-family:Calibri,sans-serif;">With the integration of SIMRS and CRM, patient management becomes more personalized and integrated. This allows hospitals to see patients not only as medical subjects, but also as customers with more specific and ongoing service needs.</span></p>
+// <p><strong><span style="font-size:16pt;font-family:Calibri,sans-serif;">Benefits of SIMRS for Hospitals (H2)</span></strong></p>
+// <ol>
+//     <strong><li style="list-style-type:decimal;font-size:16pt;font-family:Calibri,sans-serif;">
+//         <h3 style="display:inline-block"><span style="font-size:16pt;font-family:Calibri,sans-serif;">Improving Operational Efficiency (H3)</span></h3>
+//     </li></strong>
+// </ol>
+// <p><span style="font-size:16pt;font-family:Calibri,sans-serif;">SIMRS helps automate many administrative processes, such as patient registration, medication stock management, and medical record keeping, which reduces manual workload and speeds up workflow.</span></p>
+// <ol start="2">
+//     <strong><li style="list-style-type:decimal;font-size:16pt;font-family:Calibri,sans-serif;">
+//         <h3 style="display:inline-block"><span style="font-size:16pt;font-family:Calibri,sans-serif;">Improving Service Quality (H3)</span></h3>
+//     </li></strong>
+// </ol>
+// <p><span style="font-size:16pt;font-family:Calibri,sans-serif;">With an integrated system, doctors, nurses, and other hospital staff can access patient data quickly, allowing them to provide more precise and prompt treatment.</span></p>
+// <ol start="3">
+//     <strong><li style="list-style-type:decimal;font-size:16pt;font-family:Calibri,sans-serif;">
+//         <h3 style="display:inline-block"><span style="font-size:16pt;font-family:Calibri,sans-serif;">Improving Data Security (H3)</span></h3>
+//     </li></strong>
+// </ol>
+// <p><span style="font-size:16pt;font-family:Calibri,sans-serif;">SIMRS allows for more secure electronic storage of patient data, and provides better access control compared to manual medical records.</span></p>
+// <ol start="4">
+//     <strong><li style="list-style-type:decimal;font-size:16pt;font-family:Calibri,sans-serif;">
+//         <h3 style="display:inline-block"><span style="font-size:16pt;font-family:Calibri,sans-serif;">Improved Financial Management (H3)</span></h3>
+//     </li></strong>
+// </ol>
+// <p><span style="font-size:16pt;font-family:Calibri,sans-serif;">SIMRS makes it easier to manage billing, insurance claims, and other financial administration, which improves transparency and accuracy in hospital financial reports.</span></p>
+// <ol start="5">
+//     <strong><li style="list-style-type:decimal;font-size:16pt;font-family:Calibri,sans-serif;">
+//         <h3 style="display:inline-block"><span style="font-size:16pt;font-family:Calibri,sans-serif;">Supports Decision Making (H3)</span></h3>
+//     </li></strong>
+// </ol>
+// <p><span style="font-size:16pt;font-family:Calibri,sans-serif;">With more complete and accurate data, hospital management can make better decisions based on real-time reports and data analysis.</span></p>
+// <ol start="6">
+//     <strong><li style="list-style-type:decimal;font-size:16pt;font-family:Calibri,sans-serif;">
+//         <h3 style="display:inline-block"><span style="font-size:16pt;font-family:Calibri,sans-serif;">Improving Patient Experience (H3)</span></h3>
+//     </li></strong>
+// </ol>
+// <p><span style="font-size:16pt;font-family:Calibri,sans-serif;">With CRM integration, hospitals can provide more personalized services, understand patient preferences, and improve communication and patient satisfaction.</span></p>
+// <p><span style="font-size:16pt;font-family:Calibri,sans-serif;">Overall, SIMRS can help hospitals become more efficient, safe, and responsive to patient needs. However, to further improve service quality and operational efficiency, it is time for your hospital to adopt NOTES. With Healthcare CRM integration, NOTES not only helps manage patient data more securely and efficiently, but also enables hospitals to provide a more personalized and continuous service experience.</span></p>
+// <p><span style="font-size:16pt;font-family:Calibri,sans-serif;">Don&apos;t wait any longer, utilize technology to create a hospital that is more responsive, innovative and ready to face the healthcare challenges of tomorrow. Adopt NOTES now and realize a hospital that is better equipped to provide the best care for patients!</span></p>`
+//             },
+//             id: {
+//                 title: "Optimalisasi Pelayanan Kesehatan dengan Kolaborasi SIMRS dan CRM Healthcare Untuk Rumah Sakit",
+//                 slug: "Kolaborasi-SIMRS-dan-CRM-Healthcare-Untuk-Rumah-Sakit",
+//                 meta_desc: "Di bidang kesehatan, dua sistem yang kini banyak diterapkan adalah Sistem Informasi Manajemen Rumah Sakit (SIMRS) dan Customer Relationship Management (CRM) Kesehatan.",
+//                 summary: "Saat ini, teknologi informasi memegang peranan penting dalam menentukan kesuksesan layanan kesehatan, terutama dalam memberikan pengalaman terbaik bagi pasien. Sistem yang efektif mampu mendukung berbagai aspek pelayanan, termasuk kewajiban klinis. Di bidang kesehatan, dua sistem yang kini banyak diterapkan adalah Sistem Informasi Manajemen Rumah Sakit (SIMRS) dan Customer Relationship Management (CRM) Kesehatan. Kombinasi keduanya memiliki potensi besar untuk meningkatkan kualitas pelayanan rumah sakit secara signifikan.",
+//                 content: `<p><span style="font-size:16pt;font-family:Calibri,sans-serif;">Saat ini, teknologi informasi memegang peranan penting dalam menentukan kesuksesan layanan kesehatan, terutama dalam memberikan pengalaman terbaik bagi pasien. Sistem yang efektif mampu mendukung berbagai aspek pelayanan, termasuk kewajiban klinis. Di bidang kesehatan, dua sistem yang kini banyak diterapkan adalah Sistem Informasi Manajemen Rumah Sakit (SIMRS) dan Customer Relationship Management (CRM) Kesehatan. Kombinasi keduanya memiliki potensi besar untuk meningkatkan kualitas pelayanan rumah sakit secara signifikan.&nbsp;</span></p>
+// <p><span style="font-size:16pt;font-family:Calibri,sans-serif;">Oleh karena itu, artikel ini akan mengulas bagaimana optimalisasi pelayanan kesehatan melalui kolaborasi antara SIMRS dan CRM Healthcare dapat memberikan dampak positif bagi rumah sakit.</span></p>
+// <p><strong><span style="font-size:16pt;font-family:Calibri,sans-serif;">Definisi dan Komponen SIMRS (H2)</span></strong></p>
+// <p><span style="font-size:16pt;font-family:Calibri,sans-serif;">Sistem Informasi Manajemen Rumah Sakit (SIMRS) adalah sebuah sistem berbasis teknologi yang dirancang untuk mengelola berbagai proses yang terjadi di rumah sakit secara efisien dan terintegrasi. &nbsp;SIMRS berfungsi untuk menyederhanakan dan mengoptimalkan berbagai tugas yang melibatkan perawatan pasien, administrasi, manajemen sumber daya, hingga pengambilan keputusan yang lebih tepat dan berbasis data. Dengan adanya sistem ini, seluruh kegiatan operasional rumah sakit, baik yang bersifat medis maupun non-medis, dapat berjalan lebih terkoordinasi dan terhubung satu sama lain.</span></p>
+// <p><span style="font-size:16pt;font-family:Calibri,sans-serif;">Tujuan utama dari SIMRS adalah untuk memastikan aliran informasi yang cepat dan akurat antara berbagai departemen di rumah sakit, sehingga seluruh tim medis, administratif, dan manajerial dapat mengakses data yang dibutuhkan dengan mudah, tepat waktu, dan dapat langsung digunakan untuk tindakan lebih lanjut.&nbsp;</span></p>
+// <p><span style="font-size:16pt;font-family:Calibri,sans-serif;">Hal ini memungkinkan rumah sakit untuk memberikan layanan yang lebih baik dan responsif kepada pasien, serta meminimalkan potensi kesalahan dalam proses administrasi maupun pelayanan medis. SIMRS juga berperan penting dalam meningkatkan efisiensi operasional rumah sakit dengan cara mengintegrasikan berbagai fungsi, dari pendaftaran pasien, rekam medis, hingga pengelolaan inventaris dan keuangan rumah sakit, sehingga memudahkan pengelolaan sumber daya dan mempercepat pengambilan keputusan yang tepat.</span></p>
+// <p><span style="font-size:16pt;font-family:Calibri,sans-serif;">Perbedaan antara SIMRS pada umumnya dan SIMRS yang ada pada Notes (H2)</span></p>
+// <p><span style="font-size:16pt;font-family:Calibri,sans-serif;">SIMRS umumnya digunakan untuk mengelola berbagai aspek operasional rumah sakit, dengan tujuan meningkatkan efisiensi dan kualitas pelayanan. Namun, implementasi SIMRS bisa berbeda-beda tergantung pada platform yang digunakan.</span></p>
+// <p><span style="font-size:16pt;font-family:Calibri,sans-serif;">Salah satu platform SIMRS, yaitu Notes, sudah terintegrasi dengan CRM Kesehatan (Customer Relationship Management). Notes menawarkan pendekatan yang lebih fokus pada interaksi dan hubungan dengan pasien sebagai pelanggan. Perbedaan utamanya terletak pada pengelolaan data pasien yang lebih personal, yang bertujuan untuk meningkatkan pengalaman pasien secara keseluruhan.</span></p>
+// <p><span style="font-size:16pt;font-family:Calibri,sans-serif;">Dengan integrasi SIMRS dan CRM, pengelolaan pasien menjadi lebih terpersonalisasi dan terintegrasi. Hal ini memungkinkan rumah sakit untuk melihat pasien tidak hanya sebagai subjek medis, tetapi juga sebagai pelanggan dengan kebutuhan layanan yang lebih spesifik dan berkelanjutan.</span></p>
+// <p><strong><span style="font-size:16pt;font-family:Calibri,sans-serif;">Manfaat SIMRS bagi Rumah Sakit (H2)</span></strong></p>
+// <ol>
+//     <strong><li style="list-style-type:decimal;font-size:16pt;font-family:Calibri,sans-serif;">
+//         <h3 style="display:inline-block"><span style="font-size:16pt;font-family:Calibri,sans-serif;">Meningkatkan Efisiensi Operasional</span></h3>
+//     </li></strong>
+// </ol>
+// <p><span style="font-size:16pt;font-family:Calibri,sans-serif;">SIMRS membantu mengotomatiskan banyak proses administratif, seperti pendaftaran pasien, pengelolaan stok obat, dan pencatatan rekam medis, yang mengurangi beban kerja manual dan mempercepat alur kerja.</span></p>
+// <ol start="2">
+//     <strong><li style="list-style-type:decimal;font-size:16pt;font-family:Calibri,sans-serif;">
+//         <h3 style="display:inline-block"><span style="font-size:16pt;font-family:Calibri,sans-serif;">Memperbaiki Kualitas Layanan</span></h3>
+//     </li></strong>
+// </ol>
+// <p><span style="font-size:16pt;font-family:Calibri,sans-serif;">Dengan sistem yang terintegrasi, dokter, perawat, dan staf rumah sakit lainnya bisa mengakses data pasien dengan cepat, sehingga dapat memberikan perawatan yang lebih tepat dan cepat.</span></p>
+// <ol start="3">
+//     <strong><li style="list-style-type:decimal;font-size:16pt;font-family:Calibri,sans-serif;">
+//         <h3 style="display:inline-block"><span style="font-size:16pt;font-family:Calibri,sans-serif;">Meningkatkan Keamanan Data</span></h3>
+//     </li></strong>
+// </ol>
+// <p><span style="font-size:16pt;font-family:Calibri,sans-serif;">SIMRS memungkinkan penyimpanan data pasien secara elektronik yang lebih aman, serta memberikan kontrol akses yang lebih baik dibandingkan dengan catatan medis manual.</span></p>
+// <ol start="4">
+//     <strong><li style="list-style-type:decimal;font-size:16pt;font-family:Calibri,sans-serif;">
+//         <h3 style="display:inline-block"><span style="font-size:16pt;font-family:Calibri,sans-serif;">Peningkatan Pengelolaan Keuangan</span></h3>
+//     </li></strong>
+// </ol>
+// <p><span style="font-size:16pt;font-family:Calibri,sans-serif;">SIMRS mempermudah pengelolaan tagihan, klaim asuransi, dan administrasi keuangan lainnya, yang meningkatkan transparansi dan akurasi dalam laporan keuangan rumah sakit.</span></p>
+// <ol start="5">
+//     <strong><li style="list-style-type:decimal;font-size:16pt;font-family:Calibri,sans-serif;">
+//         <h3 style="display:inline-block"><span style="font-size:16pt;font-family:Calibri,sans-serif;">Mendukung Pengambilan Keputusan</span></h3>
+//     </li></strong>
+// </ol>
+// <p><span style="font-size:16pt;font-family:Calibri,sans-serif;">Dengan data yang lebih lengkap dan akurat, manajemen rumah sakit dapat membuat keputusan yang lebih baik berdasarkan laporan dan analisis data real-time.</span></p>
+// <ol start="6">
+//     <strong><li style="list-style-type:decimal;font-size:16pt;font-family:Calibri,sans-serif;">
+//         <h3 style="display:inline-block"><span style="font-size:16pt;font-family:Calibri,sans-serif;">Meningkatkan Pengalaman Pasien</span></h3>
+//     </li></strong>
+// </ol>
+// <p><span style="font-size:16pt;font-family:Calibri,sans-serif;">Dengan integrasi CRM, rumah sakit dapat memberikan layanan yang lebih personal, memahami preferensi pasien, dan meningkatkan komunikasi serta kepuasan pasien.</span></p>
+// <p><span style="font-size:16pt;font-family:Calibri,sans-serif;">Secara keseluruhan, SIMRS dapat membantu rumah sakit menjadi lebih efisien, aman, dan responsif terhadap kebutuhan pasien. Namun, untuk lebih meningkatkan kualitas pelayanan dan efisiensi operasional, kini saatnya rumah sakit Anda untuk mengadopsi NOTES. Dengan integrasi CRM Kesehatan, NOTES tidak hanya membantu mengelola data pasien dengan lebih aman dan efisien, tetapi juga memungkinkan rumah sakit memberikan pengalaman pelayanan yang lebih personal dan berkelanjutan.</span></p>
+// <p><span style="font-size:16pt;font-family:Calibri,sans-serif;">Jangan tunggu lebih lama, manfaatkan teknologi untuk menciptakan rumah sakit yang lebih responsif, inovatif, dan siap menghadapi tantangan kesehatan masa depan. Adopsi NOTES sekarang dan wujudkan rumah sakit yang lebih siap memberikan pelayanan terbaik untuk pasien!</span></p>`
+//             }
+//         }
+//     },
     {
         id: 10,
         image: "/assets/images/articles/10.jpg",
@@ -10,200 +129,200 @@ export const articles = [
                 slug: "The-Importance-of-CRM-for-the-Healthcare-Industry",
                 meta_desc: "Digitalization in Indonesia is growing rapidly, with various health applications continuing to be developed. One example of the results of technology products in the health sector is CRM.",
                 summary: "Digitalization in Indonesia is growing rapidly, with various health applications continuing to be developed. One example of the results of technology products in the health sector is CRM. This development aims to improve the quality of health services and their accessibility. In addition, with digitalization, hospitals can also improve the efficiency and effectiveness of the use of medical devices.",
-                content: `<p><span style="font-size:11pt;font-family:Arial,sans-serif;">Digitalization in Indonesia is growing rapidly, with various health applications continuing to be developed. One example of the results of technology products in the health sector is CRM. This development aims to improve the quality of health services and their accessibility. In addition, with digitalization, hospitals can also improve the efficiency and effectiveness of the use of medical devices.</span></p>
-<p><span style="font-size:11pt;font-family:Arial,sans-serif;">One example of the result of technology products in the health sector is CRM. The use of CRM in hospitals in Indonesia aims to improve the quality of customer service. CRM can also help hospitals manage patient data collect patient feedback, and increase customer loyalty. In this article, we will discuss the importance of CRM for today&apos;s healthcare industry.</span></p>
-<br/><h2><strong><span style="font-size:11pt;font-family:Arial,sans-serif;">What is CRM for Healthcare Industry?</span></strong></h2>
-<p><span style="font-size:11pt;font-family:Arial,sans-serif;">CRM or customer relationship management software in the healthcare industry is a system used by hospitals, clinics or other healthcare providers to manage relationships with patients, improve patient experience, and strengthen patient loyalty. It enables the collection, storage, and analysis of patient data to provide better and more professional services.&nbsp;</span></p>
-<h2><strong><span style="font-size:11pt;font-family:Arial,sans-serif;">Existing Challenges in the Healthcare Industry</span></strong></h2>
-<p><span style="font-size:11pt;font-family:Arial,sans-serif;">The healthcare industry faces various complex challenges. Here are some of the key challenges in the healthcare industry:&nbsp;</span></p>
+                content: `<p><span style="font-size:16pt;font-family:Calibri,sans-serif;">Digitalization in Indonesia is growing rapidly, with various health applications continuing to be developed. One example of the results of technology products in the health sector is CRM. This development aims to improve the quality of health services and their accessibility. In addition, with digitalization, hospitals can also improve the efficiency and effectiveness of the use of medical devices.</span></p>
+<p><span style="font-size:16pt;font-family:Calibri,sans-serif;">One example of the result of technology products in the health sector is CRM. The use of CRM in hospitals in Indonesia aims to improve the quality of customer service. CRM can also help hospitals manage patient data collect patient feedback, and increase customer loyalty. In this article, we will discuss the importance of CRM for today&apos;s healthcare industry.</span></p>
+<br/><h2><strong><span style="font-size:16pt;font-family:Calibri,sans-serif;">What is CRM for Healthcare Industry?</span></strong></h2>
+<p><span style="font-size:16pt;font-family:Calibri,sans-serif;">CRM or customer relationship management software in the healthcare industry is a system used by hospitals, clinics or other healthcare providers to manage relationships with patients, improve patient experience, and strengthen patient loyalty. It enables the collection, storage, and analysis of patient data to provide better and more professional services.&nbsp;</span></p>
+<br/><h2><strong><span style="font-size:16pt;font-family:Calibri,sans-serif;">Existing Challenges in the Healthcare Industry</span></strong></h2>
+<p><span style="font-size:16pt;font-family:Calibri,sans-serif;">The healthcare industry faces various complex challenges. Here are some of the key challenges in the healthcare industry:&nbsp;</span></p>
 <ol>
-    <li style="list-style-type:decimal;font-size:11pt;font-family:Arial,sans-serif;">
-        <strong><h3 style=  "display:inline-block"><span style="font-size:11pt;font-family:Arial,sans-serif;">Complex Patient Data Management</span></h3></strong>
-    </li>
+    <strong><li style="list-style-type:decimal;font-size:16pt;font-family:Calibri,sans-serif;">
+        <strong><h3 style=  "display:inline-block"><span style="font-size:16pt;font-family:Calibri,sans-serif;">Complex Patient Data Management</span></h3></strong>
+    </li></strong>
 </ol>
-<p><span style="font-size:11pt;font-family:Arial,sans-serif;">Patient data in the healthcare industry is diverse and growing, ranging from medical history, treatment schedules, to interactions with various providers. Poor data management can put quality of care and patient safety at risk.</span></p>
+<p><span style="font-size:16pt;font-family:Calibri,sans-serif;">Patient data in the healthcare industry is diverse and growing, ranging from medical history, treatment schedules, to interactions with various providers. Poor data management can put quality of care and patient safety at risk.</span></p>
 <p><br></p>
 <ol start="2">
-    <li style="list-style-type:decimal;font-size:11pt;font-family:Arial,sans-serif;">
-        <strong><h3 style="display:inline-block"><span style="font-size:11pt;font-family:Arial,sans-serif;">Inconsistent Patient Experience</span></h3></strong>
-    </li>
+    <strong><li style="list-style-type:decimal;font-size:16pt;font-family:Calibri,sans-serif;">
+        <strong><h3 style="display:inline-block"><span style="font-size:16pt;font-family:Calibri,sans-serif;">Inconsistent Patient Experience</span></h3></strong>
+    </li></strong>
 </ol>
-<p><span style="font-size:11pt;font-family:Arial,sans-serif;">Many patients feel that healthcare services are inconsistent or lack personalization. This could be due to poor communication, lack of follow-up, or a mismatch between expectations and services provided.</span></p>
+<p><span style="font-size:16pt;font-family:Calibri,sans-serif;">Many patients feel that healthcare services are inconsistent or lack personalization. This could be due to poor communication, lack of follow-up, or a mismatch between expectations and services provided.</span></p>
 <p><br></p>
 <ol start="3">
-    <li style="list-style-type:decimal;font-size:11pt;font-family:Arial,sans-serif;">
-        <strong><h3 style="display:inline-block"><span style="font-size:11pt;font-family:Arial,sans-serif;">Accessibility and Communication Limitations</span></h3></strong>
-    </li>
+    <strong><li style="list-style-type:decimal;font-size:16pt;font-family:Calibri,sans-serif;">
+        <strong><h3 style="display:inline-block"><span style="font-size:16pt;font-family:Calibri,sans-serif;">Accessibility and Communication Limitations</span></h3></strong>
+    </li></strong>
 </ol>
-<p><span style="font-size:11pt;font-family:Arial,sans-serif;">Accessibility of medical information and communication between patients and healthcare providers is often limited. Patients may have difficulty contacting doctors or getting real-time medical information.</span></p>
+<p><span style="font-size:16pt;font-family:Calibri,sans-serif;">Accessibility of medical information and communication between patients and healthcare providers is often limited. Patients may have difficulty contacting doctors or getting real-time medical information.</span></p>
 <p><br></p>
 <ol start="4">
-    <li style="list-style-type:decimal;font-size:11pt;font-family:Arial,sans-serif;">
-        <strong><h3 style="display:inline-block"><span style="font-size:11pt;font-family:Arial,sans-serif;">Low Level of Patient Satisfaction</span></h3></strong>
-    </li>
+    <strong><li style="list-style-type:decimal;font-size:16pt;font-family:Calibri,sans-serif;">
+        <strong><h3 style="display:inline-block"><span style="font-size:16pt;font-family:Calibri,sans-serif;">Low Level of Patient Satisfaction</span></h3></strong>
+    </li></strong>
 </ol>
-<p><span style="font-size:11pt;font-family:Arial,sans-serif;">Low patient satisfaction can affect a hospital&apos;s reputation and reduce patient loyalty levels. Issues such as long waiting times, poor communication, or lack of attention to patient needs can be to blame.</span></p>
+<p><span style="font-size:16pt;font-family:Calibri,sans-serif;">Low patient satisfaction can affect a hospital&apos;s reputation and reduce patient loyalty levels. Issues such as long waiting times, poor communication, or lack of attention to patient needs can be to blame.</span></p>
 <p><br></p>
 <ol start="5">
-    <li style="list-style-type:decimal;font-size:11pt;font-family:Arial,sans-serif;">
-        <strong><h3 style="display:inline-block"><span style="font-size:11pt;font-family:Arial,sans-serif;">Regulatory Compliance and Data Security</span></h3></strong>
-    </li>
+    <strong><li style="list-style-type:decimal;font-size:16pt;font-family:Calibri,sans-serif;">
+        <strong><h3 style="display:inline-block"><span style="font-size:16pt;font-family:Calibri,sans-serif;">Regulatory Compliance and Data Security</span></h3></strong>
+    </li></strong>
 </ol>
-<p><span style="font-size:11pt;font-family:Arial,sans-serif;">In the healthcare industry, there are strict regulations related to patient privacy and data security. Violation of these regulations can lead to hefty fines and damage patient trust.&nbsp;</span></p>
+<p><span style="font-size:16pt;font-family:Calibri,sans-serif;">In the healthcare industry, there are strict regulations related to patient privacy and data security. Violation of these regulations can lead to hefty fines and damage patient trust.&nbsp;</span></p>
 <p><br></p>
 <ol start="6">
-    <li style="list-style-type:decimal;font-size:11pt;font-family:Arial,sans-serif;">
-        <strong><h3 style="display:inline-block"><span style="font-size:11pt;font-family:Arial,sans-serif;">Inefficiencies in Operational Processes</span></h3></strong>
-    </li>
+    <strong><li style="list-style-type:decimal;font-size:16pt;font-family:Calibri,sans-serif;">
+        <strong><h3 style="display:inline-block"><span style="font-size:16pt;font-family:Calibri,sans-serif;">Inefficiencies in Operational Processes</span></h3></strong>
+    </li></strong>
 </ol>
-<p><span style="font-size:11pt;font-family:Arial,sans-serif;">Inefficient administrative processes, such as appointment scheduling, bill management, and doctor schedule management, can cause disruptions in service and increase the workload of medical staff.&nbsp;</span></p>
+<p><span style="font-size:16pt;font-family:Calibri,sans-serif;">Inefficient administrative processes, such as appointment scheduling, bill management, and doctor schedule management, can cause disruptions in service and increase the workload of medical staff.&nbsp;</span></p>
 <p><br></p>
-<h2><strong><span style="font-size:11pt;font-family:Arial,sans-serif;">How CRM Can Help Challenges in the Healthcare Industry</span></strong></h2>
-<p><span style="font-size:11pt;font-family:Arial,sans-serif;">CRM can help overcome various challenges in the healthcare industry by providing technology-based solutions that are more organized, efficient, and patient-focused. Here are some of the ways CRM can help with key challenges in the healthcare industry:&nbsp;</span></p>
+<h2><strong><span style="font-size:16pt;font-family:Calibri,sans-serif;">How CRM Can Help Challenges in the Healthcare Industry</span></strong></h2>
+<p><span style="font-size:16pt;font-family:Calibri,sans-serif;">CRM can help overcome various challenges in the healthcare industry by providing technology-based solutions that are more organized, efficient, and patient-focused. Here are some of the ways CRM can help with key challenges in the healthcare industry:&nbsp;</span></p>
 <ol>
-    <li style="list-style-type:decimal;font-size:11pt;font-family:Arial,sans-serif;">
-        <strong><h3 style="display:inline-block"><span style="font-size:11pt;font-family:Arial,sans-serif;">Managing Patient Data More Efficiently</span></h3></strong>
-    </li>
+    <strong><li style="list-style-type:decimal;font-size:16pt;font-family:Calibri,sans-serif;">
+        <strong><h3 style="display:inline-block"><span style="font-size:16pt;font-family:Calibri,sans-serif;">Managing Patient Data More Efficiently</span></h3></strong>
+    </li></strong>
 </ol>
-<p><span style="font-size:11pt;font-family:Arial,sans-serif;">CRM systems store all patient information in one centralized platform that is easily accessible by medical and administrative staff. This can facilitate faster and more precise access to patients&apos; medical histories, treatment schedules, and preferences, which helps in making better medical decisions.</span></p>
+<p><span style="font-size:16pt;font-family:Calibri,sans-serif;">CRM systems store all patient information in one centralized platform that is easily accessible by medical and administrative staff. This can facilitate faster and more precise access to patients&apos; medical histories, treatment schedules, and preferences, which helps in making better medical decisions.</span></p>
 <p><br></p>
 <ol start="2">
-    <li style="list-style-type:decimal;font-size:11pt;font-family:Arial,sans-serif;">
-        <strong><h3 style="display:inline-block"><span style="font-size:11pt;font-family:Arial,sans-serif;">Improving Patient Experience</span></h3></strong>
-    </li>
+    <strong><li style="list-style-type:decimal;font-size:16pt;font-family:Calibri,sans-serif;">
+        <strong><h3 style="display:inline-block"><span style="font-size:16pt;font-family:Calibri,sans-serif;">Improving Patient Experience</span></h3></strong>
+    </li></strong>
 </ol>
-<p><span style="font-size:11pt;font-family:Arial,sans-serif;">CRM enables hospitals to communicate with patients in a more proactive, personalized manner. With features such as automated appointment reminders, medication reminders, and post-visit follow-ups, patients feel more valued and better served. In addition, CRM can be used to provide a patient portal that allows them to access real-time medical information.</span></p>
+<p><span style="font-size:16pt;font-family:Calibri,sans-serif;">CRM enables hospitals to communicate with patients in a more proactive, personalized manner. With features such as automated appointment reminders, medication reminders, and post-visit follow-ups, patients feel more valued and better served. In addition, CRM can be used to provide a patient portal that allows them to access real-time medical information.</span></p>
 <p><br></p>
 <ol start="3">
-    <li style="list-style-type:decimal;font-size:11pt;font-family:Arial,sans-serif;">
-        <strong><h3 style="display:inline-block"><span style="font-size:11pt;font-family:Arial,sans-serif;">Increase Patient Satisfaction and Loyalty</span></h3></strong>
-    </li>
+    <strong><li style="list-style-type:decimal;font-size:16pt;font-family:Calibri,sans-serif;">
+        <strong><h3 style="display:inline-block"><span style="font-size:16pt;font-family:Calibri,sans-serif;">Increase Patient Satisfaction and Loyalty</span></h3></strong>
+    </li></strong>
 </ol>
-<p><span style="font-size:11pt;font-family:Arial,sans-serif;">With CRM, hospitals can conduct regular follow-ups, collect feedback from patients, and provide more personalized services. For example, after a patient finishes treatment, hospitals can send thank you messages or coupons for follow-up services, which can increase satisfaction and build stronger relationships with patients.</span></p>
+<p><span style="font-size:16pt;font-family:Calibri,sans-serif;">With CRM, hospitals can conduct regular follow-ups, collect feedback from patients, and provide more personalized services. For example, after a patient finishes treatment, hospitals can send thank you messages or coupons for follow-up services, which can increase satisfaction and build stronger relationships with patients.</span></p>
 <p><br></p>
 <ol start="4">
-    <li style="list-style-type:decimal;font-size:11pt;font-family:Arial,sans-serif;">
-        <strong><h3 style="display:inline-block"><span style="font-size:11pt;font-family:Arial,sans-serif;">Improve Administrative Process Efficiency</span></h3></strong>
-    </li>
+    <strong><li style="list-style-type:decimal;font-size:16pt;font-family:Calibri,sans-serif;">
+        <strong><h3 style="display:inline-block"><span style="font-size:16pt;font-family:Calibri,sans-serif;">Improve Administrative Process Efficiency</span></h3></strong>
+    </li></strong>
 </ol>
-<p><span style="font-size:11pt;font-family:Arial,sans-serif;">CRM can automate many administrative tasks, such as appointment scheduling, payment reminders, and bill management. This automation reduces the workload of administrative staff, minimizes errors, and improves the operational efficiency of the hospital or clinic.</span></p>
+<p><span style="font-size:16pt;font-family:Calibri,sans-serif;">CRM can automate many administrative tasks, such as appointment scheduling, payment reminders, and bill management. This automation reduces the workload of administrative staff, minimizes errors, and improves the operational efficiency of the hospital or clinic.</span></p>
 <p><br></p>
 <ol start="5">
-    <li style="list-style-type:decimal;font-size:11pt;font-family:Arial,sans-serif;">
-        <strong><h3 style="display:inline-block"><span style="font-size:11pt;font-family:Arial,sans-serif;">Improved Communication with Patients</span></h3></strong>
-    </li>
+    <strong><li style="list-style-type:decimal;font-size:16pt;font-family:Calibri,sans-serif;">
+        <strong><h3 style="display:inline-block"><span style="font-size:16pt;font-family:Calibri,sans-serif;">Improved Communication with Patients</span></h3></strong>
+    </li></strong>
 </ol>
-<p><span style="font-size:11pt;font-family:Arial,sans-serif;">With an integrated CRM system, hospitals can use various communication channels to contact patients, such as SMS, email, or messaging apps. This allows for clearer, faster, and more accurate information, and makes it easier for patients to communicate with medical personnel.</span></p>
+<p><span style="font-size:16pt;font-family:Calibri,sans-serif;">With an integrated CRM system, hospitals can use various communication channels to contact patients, such as SMS, email, or messaging apps. This allows for clearer, faster, and more accurate information, and makes it easier for patients to communicate with medical personnel.</span></p>
 <p><br></p>
 <ol start="6">
-    <li style="list-style-type:decimal;font-size:11pt;font-family:Arial,sans-serif;">
-        <strong><h3 style="display:inline-block"><span style="font-size:11pt;font-family:Arial,sans-serif;">Comply with Regulations and Data Security</span></h3></strong>
-    </li>
+    <strong><li style="list-style-type:decimal;font-size:16pt;font-family:Calibri,sans-serif;">
+        <strong><h3 style="display:inline-block"><span style="font-size:16pt;font-family:Calibri,sans-serif;">Comply with Regulations and Data Security</span></h3></strong>
+    </li></strong>
 </ol>
-<p><span style="font-size:11pt;font-family:Arial,sans-serif;">CRM comes with high security and privacy features, including data encryption and access control, which help hospitals meet the necessary data security and protection standards. Thus, patient data remains safe and secure, while the hospital is able to operate efficiently.</span></p>
+<p><span style="font-size:16pt;font-family:Calibri,sans-serif;">CRM comes with high security and privacy features, including data encryption and access control, which help hospitals meet the necessary data security and protection standards. Thus, patient data remains safe and secure, while the hospital is able to operate efficiently.</span></p>
 <p><br></p>
-<p><span style="font-size:11pt;font-family:Arial,sans-serif;">With a CRM application integrated with medical records, you can manage patient data more efficiently, improve communication, and provide better care. Don&apos;t wait any longer! Sign up now for a free demo and see how Notes can bring positive changes to your hospital!</span></p>`, 
+<p><span style="font-size:16pt;font-family:Calibri,sans-serif;">With a CRM application integrated with medical records, you can manage patient data more efficiently, improve communication, and provide better care. Don&apos;t wait any longer! Sign up now for a free demo and see how Notes can bring positive changes to your hospital!</span></p>`, 
             },
             id: {
                 title: "Pentingnya CRM Untuk Industri Kesehatan",
                 slug: "Pentingnya-CRM-Untuk-Industri-Kesehatan",
                 meta_desc: "Digitalisasi di Indonesia semakin berkembang pesat, dengan berbagai aplikasi kesehatan yang terus dikembangkan Salah satu contoh hasil dari produk teknologi di bidang kesehatan adalah CRM.",
                 summary: "Digitalisasi di Indonesia semakin berkembang pesat, dengan berbagai aplikasi kesehatan yang terus dikembangkan Salah satu contoh hasil dari produk teknologi di bidang kesehatan adalah CRM (Customer Relationship Manajement).  CRM juga dapat membantu rumah sakit dalam mengelola data pasien mengumpulkan umpan balik pasien, dan meningkatkan loyalitas pelanggan. Dalam artikel ini, akan banyak dibahas mengenai pentingnya CRM untuk Industri kesehatan masa kini.",
-                content:`<p><span style="font-size:11pt;font-family:Arial,sans-serif;">Digitalisasi di Indonesia semakin berkembang pesat, dengan berbagai aplikasi kesehatan yang terus dikembangkan Salah satu contoh hasil dari produk teknologi di bidang kesehatan adalah CRM (Customer Relationship Manajement). &nbsp;CRM juga dapat membantu rumah sakit dalam mengelola data pasien mengumpulkan umpan balik pasien, dan meningkatkan loyalitas pelanggan. Dalam artikel ini, akan banyak dibahas mengenai pentingnya CRM untuk Industri kesehatan masa kini.</span></p>
+                content:`<p><span style="font-size:16pt;font-family:Calibri,sans-serif;">Digitalisasi di Indonesia semakin berkembang pesat, dengan berbagai aplikasi kesehatan yang terus dikembangkan Salah satu contoh hasil dari produk teknologi di bidang kesehatan adalah CRM (Customer Relationship Manajement). &nbsp;CRM juga dapat membantu rumah sakit dalam mengelola data pasien mengumpulkan umpan balik pasien, dan meningkatkan loyalitas pelanggan. Dalam artikel ini, akan banyak dibahas mengenai pentingnya CRM untuk Industri kesehatan masa kini.</span></p>
 <p><br></p>
-<h2><strong><span style="font-size:11pt;font-family:Arial,sans-serif;">Apa itu CRM untuk Industri Kesehatan?</span></strong></h2>
-<p><span style="font-size:11pt;font-family:Arial,sans-serif;">CRM atau perangkat lunak manajemen hubungan pelanggan dalam industri kesehatan merupakan sistem yang digunakan oleh rumah sakit, klinik atau penyedia layanan kesehatan lainnya untuk mengelola hubungan dengan pasien, meningkatkan pengalaman pasien, dan memperkuat loyalitas pasien. Sistem ini memungkinkan pengumpulan, penyimpanan, dan analisis data pasien untuk menyediakan layanan yang lebih baik dan profesional.&nbsp;</span></p>
+<h2><strong><span style="font-size:16pt;font-family:Calibri,sans-serif;">Apa itu CRM untuk Industri Kesehatan?</span></strong></h2>
+<p><span style="font-size:16pt;font-family:Calibri,sans-serif;">CRM atau perangkat lunak manajemen hubungan pelanggan dalam industri kesehatan merupakan sistem yang digunakan oleh rumah sakit, klinik atau penyedia layanan kesehatan lainnya untuk mengelola hubungan dengan pasien, meningkatkan pengalaman pasien, dan memperkuat loyalitas pasien. Sistem ini memungkinkan pengumpulan, penyimpanan, dan analisis data pasien untuk menyediakan layanan yang lebih baik dan profesional.&nbsp;</span></p>
 <p><br></p>
-<h2><strong><span style="font-size:11pt;font-family:Arial,sans-serif;">Tantangan yang Ada dalam Industri Kesehatan</span></strong></h2>
-<p><span style="font-size:11pt;font-family:Arial,sans-serif;">Industri kesehatan menghadapi berbagai tantangan yang kompleks. Berikut adalah beberapa tantangan utama dalam industri kesehatan :&nbsp;</span></p>
-<p><br></p>
-<ol>
-    <li style="list-style-type:decimal;font-size:11pt;font-family:Arial,sans-serif;">
-        <strong><h3 style="display:inline-block"><span style="font-size:11pt;font-family:Arial,sans-serif;">Pengelolaan Data Pasien yang Kompleks</span></h3></strong>
-    </li>
-</ol>
-<p><span style="font-size:11pt;font-family:Arial,sans-serif;">Data pasien yang ada dalam industri kesehatan sangat beragam dan terus berkembang, mulai dari riwayat medis, jadwal perawatan, hingga interaksi dengan berbagai penyedia layanan. Pengelolaan data yang buruk bisa berisiko terhadap kualitas layanan dan keselamatan pasien.</span></p>
-<p><br></p>
-<ol start="2">
-    <li style="list-style-type:decimal;font-size:11pt;font-family:Arial,sans-serif;">
-        <strong><h3 style="display:inline-block"><span style="font-size:11pt;font-family:Arial,sans-serif;">Pengalaman Pasien yang Tidak Konsisten</span></h3></strong>
-    </li>
-</ol>
-<p><span style="font-size:11pt;font-family:Arial,sans-serif;">Banyak pasien yang merasa pelayanan kesehatan tidak konsisten atau kurang personal. Ini bisa terjadi karena komunikasi yang buruk, kurangnya tindak lanjut, atau ketidaksesuaian antara ekspektasi dan pelayanan yang diberikan.</span></p>
-<p><br></p>
-<ol start="3">
-    <li style="list-style-type:decimal;font-size:11pt;font-family:Arial,sans-serif;">
-        <strong><h3 style="display:inline-block"><span style="font-size:11pt;font-family:Arial,sans-serif;">Keterbatasan Aksesibilitas dan Komunikasi</span></h3></strong>
-    </li>
-</ol>
-<p><span style="font-size:11pt;font-family:Arial,sans-serif;">Aksesibilitas informasi medis dan komunikasi antara pasien dan penyedia layanan kesehatan seringkali terbatas. Pasien mungkin kesulitan menghubungi dokter atau mendapatkan informasi medis secara real-time.</span></p>
-<p><br></p>
-<ol start="4">
-    <li style="list-style-type:decimal;font-size:11pt;font-family:Arial,sans-serif;">
-        <strong><h3 style="display:inline-block"><span style="font-size:11pt;font-family:Arial,sans-serif;">Tingkat Kepuasan Pasien yang Rendah</span></h3></strong>
-    </li>
-</ol>
-<p><span style="font-size:11pt;font-family:Arial,sans-serif;">Kepuasan pasien yang rendah dapat memengaruhi reputasi rumah sakit dan mengurangi tingkat loyalitas pasien. Masalah seperti waktu tunggu yang lama, komunikasi yang buruk, atau kurangnya perhatian terhadap kebutuhan pasien dapat menjadi penyebabnya.</span></p>
-<p><br></p>
-<ol start="5">
-    <li style="list-style-type:decimal;font-size:11pt;font-family:Arial,sans-serif;">
-        <strong><h3 style="display:inline-block"><span style="font-size:11pt;font-family:Arial,sans-serif;">Kepatuhan Terhadap Regulasi dan Keamanan Data</span></h3></strong>
-    </li>
-</ol>
-<p><span style="font-size:11pt;font-family:Arial,sans-serif;">Dalam Industri kesehatan, ada regulasi yang ketat terkait dengan privasi dan keamanan data pasien. Pelanggaran terhadap regulasi ini dapat menyebabkan denda besar dan merusak kepercayaan pasien.&nbsp;</span></p>
-<p><br></p>
-<ol start="6">
-    <li style="list-style-type:decimal;font-size:11pt;font-family:Arial,sans-serif;">
-        <strong><h3 style="display:inline-block"><span style="font-size:11pt;font-family:Arial,sans-serif;">Ketidakefisienan dalam Proses Operasional</span></h3></strong>
-    </li>
-</ol>
-<p><span style="font-size:11pt;font-family:Arial,sans-serif;">Proses administratif yang tidak efisien, seperti penjadwalan janji temu, pengelolaan tagihan, dan pengelolaan jadwal dokter, dapat menyebabkan gangguan dalam pelayanan dan meningkatkan beban kerja staf medis.&nbsp;</span></p>
-<p><br></p>
-<h2><strong><span style="font-size:11pt;font-family:Arial,sans-serif;">Bagaimana CRM Dapat Membantu Tantangan dalam Industri Kesehatan</span></strong></h2>
-<p><span style="font-size:11pt;font-family:Arial,sans-serif;">CRM dapat membantu mengatasi berbagai tantangan dalam industri kesehatan dengan menyediakan solusi berbasis teknologi yang lebih terorganisir, efisien, dan berfokus pada pasien. Berikut adalah beberapa cara CRM dapat membantu tantangan utama dalam industri kesehatan :&nbsp;</span></p>
+<h2><strong><span style="font-size:16pt;font-family:Calibri,sans-serif;">Tantangan yang Ada dalam Industri Kesehatan</span></strong></h2>
+<p><span style="font-size:16pt;font-family:Calibri,sans-serif;">Industri kesehatan menghadapi berbagai tantangan yang kompleks. Berikut adalah beberapa tantangan utama dalam industri kesehatan :&nbsp;</span></p>
 <p><br></p>
 <ol>
-    <li style="list-style-type:decimal;font-size:11pt;font-family:Arial,sans-serif;">
-        <strong><h3 style="display:inline-block"><span style="font-size:11pt;font-family:Arial,sans-serif;">Mengelola Data Pasien dengan Lebih Efisien</span></h3></strong>
-    </li>
+    <strong><li style="list-style-type:decimal;font-size:16pt;font-family:Calibri,sans-serif;">
+        <strong><h3 style="display:inline-block"><span style="font-size:16pt;font-family:Calibri,sans-serif;">Pengelolaan Data Pasien yang Kompleks</span></h3></strong>
+    </li></strong>
 </ol>
-<p><span style="font-size:11pt;font-family:Arial,sans-serif;">Sistem CRM menyimpan seluruh informasi pasien dalam satu platform terpusat yang mudah diakses oleh tenaga medis dan staf administrasi. Hal ini dapat mempermudah akses yang lebih cepat dan tepat terhadap riwayat medis, jadwal perawatan, dan preferensi pasien, yang membantu dalam membuat keputusan medis yang lebih baik.</span></p>
+<p><span style="font-size:16pt;font-family:Calibri,sans-serif;">Data pasien yang ada dalam industri kesehatan sangat beragam dan terus berkembang, mulai dari riwayat medis, jadwal perawatan, hingga interaksi dengan berbagai penyedia layanan. Pengelolaan data yang buruk bisa berisiko terhadap kualitas layanan dan keselamatan pasien.</span></p>
 <p><br></p>
 <ol start="2">
-    <li style="list-style-type:decimal;font-size:11pt;font-family:Arial,sans-serif;">
-        <strong><h3 style="display:inline-block"><span style="font-size:11pt;font-family:Arial,sans-serif;">Meningkatkan Pengalaman Pasien</span></h3></strong>
-    </li>
+    <strong><li style="list-style-type:decimal;font-size:16pt;font-family:Calibri,sans-serif;">
+        <strong><h3 style="display:inline-block"><span style="font-size:16pt;font-family:Calibri,sans-serif;">Pengalaman Pasien yang Tidak Konsisten</span></h3></strong>
+    </li></strong>
 </ol>
-<p><span style="font-size:11pt;font-family:Arial,sans-serif;">CRM membuat rumah sakit untuk berkomunikasi dengan pasien secara lebih proaktif, dan personal. Dengan fitur seperti pengingat janji temu otomatis, pengingat obat, dan tindak lanjut setelah kunjungan, pasien merasa lebih dihargai dan dilayani dengan lebih baik. Selain itu, CRM dapat digunakan untuk menyediakan portal pasien yang memungkinkan mereka mengakses informasi medis secara real-time.</span></p>
+<p><span style="font-size:16pt;font-family:Calibri,sans-serif;">Banyak pasien yang merasa pelayanan kesehatan tidak konsisten atau kurang personal. Ini bisa terjadi karena komunikasi yang buruk, kurangnya tindak lanjut, atau ketidaksesuaian antara ekspektasi dan pelayanan yang diberikan.</span></p>
 <p><br></p>
 <ol start="3">
-    <li style="list-style-type:decimal;font-size:11pt;font-family:Arial,sans-serif;">
-        <strong><h3 style="display:inline-block"><span style="font-size:11pt;font-family:Arial,sans-serif;">Meningkatkan Kepuasan dan Loyalitas Pasien</span></h3></strong>
-    </li>
+    <strong><li style="list-style-type:decimal;font-size:16pt;font-family:Calibri,sans-serif;">
+        <strong><h3 style="display:inline-block"><span style="font-size:16pt;font-family:Calibri,sans-serif;">Keterbatasan Aksesibilitas dan Komunikasi</span></h3></strong>
+    </li></strong>
 </ol>
-<p><span style="font-size:11pt;font-family:Arial,sans-serif;">Dengan CRM, rumah sakit bisa melakukan tindak lanjut rutin, mengumpulkan umpan balik dari pasien, dan memberikan layanan yang lebih personal. Misalnya, setelah pasien selesai perawatan, rumah sakit bisa mengirimkan pesan terima kasih atau kupon untuk layanan lanjutan, yang dapat meningkatkan kepuasan dan membangun hubungan yang lebih kuat dengan pasien.</span></p>
+<p><span style="font-size:16pt;font-family:Calibri,sans-serif;">Aksesibilitas informasi medis dan komunikasi antara pasien dan penyedia layanan kesehatan seringkali terbatas. Pasien mungkin kesulitan menghubungi dokter atau mendapatkan informasi medis secara real-time.</span></p>
 <p><br></p>
 <ol start="4">
-    <li style="list-style-type:decimal;font-size:11pt;font-family:Arial,sans-serif;">
-        <strong><h3 style="display:inline-block"><span style="font-size:11pt;font-family:Arial,sans-serif;">Meningkatkan Efisiensi Proses Administratif</span></h3></strong>
-    </li>
+    <strong><li style="list-style-type:decimal;font-size:16pt;font-family:Calibri,sans-serif;">
+        <strong><h3 style="display:inline-block"><span style="font-size:16pt;font-family:Calibri,sans-serif;">Tingkat Kepuasan Pasien yang Rendah</span></h3></strong>
+    </li></strong>
 </ol>
-<p><span style="font-size:11pt;font-family:Arial,sans-serif;">CRM dapat mengotomatiskan banyak tugas administratif, seperti penjadwalan janji temu, pengingat pembayaran, dan pengelolaan tagihan. Otomatisasi ini mengurangi beban kerja staf administratif, meminimalkan kesalahan, dan meningkatkan efisiensi operasional rumah sakit atau klinik.</span></p>
+<p><span style="font-size:16pt;font-family:Calibri,sans-serif;">Kepuasan pasien yang rendah dapat memengaruhi reputasi rumah sakit dan mengurangi tingkat loyalitas pasien. Masalah seperti waktu tunggu yang lama, komunikasi yang buruk, atau kurangnya perhatian terhadap kebutuhan pasien dapat menjadi penyebabnya.</span></p>
 <p><br></p>
 <ol start="5">
-    <li style="list-style-type:decimal;font-size:11pt;font-family:Arial,sans-serif;">
-        <strong><h3 style="display:inline-block"><span style="font-size:11pt;font-family:Arial,sans-serif;">Memperbaiki Komunikasi dengan Pasien</span></h3></strong>
-    </li>
+    <strong><li style="list-style-type:decimal;font-size:16pt;font-family:Calibri,sans-serif;">
+        <strong><h3 style="display:inline-block"><span style="font-size:16pt;font-family:Calibri,sans-serif;">Kepatuhan Terhadap Regulasi dan Keamanan Data</span></h3></strong>
+    </li></strong>
 </ol>
-<p><span style="font-size:11pt;font-family:Arial,sans-serif;">Dengan sistem CRM yang terintegrasi, rumah sakit dapat menggunakan berbagai saluran komunikasi untuk menghubungi pasien, seperti SMS, email, atau aplikasi pesan. Ini memungkinkan pemberian informasi secara lebih jelas, cepat, dan akurat, serta memudahkan pasien dalam berkomunikasi dengan tenaga medis.</span></p>
+<p><span style="font-size:16pt;font-family:Calibri,sans-serif;">Dalam Industri kesehatan, ada regulasi yang ketat terkait dengan privasi dan keamanan data pasien. Pelanggaran terhadap regulasi ini dapat menyebabkan denda besar dan merusak kepercayaan pasien.&nbsp;</span></p>
 <p><br></p>
 <ol start="6">
-    <li style="list-style-type:decimal;font-size:11pt;font-family:Arial,sans-serif;">
-        <strong><h3 style="display:inline-block"><span style="font-size:11pt;font-family:Arial,sans-serif;">Mematuhi Regulasi dan Keamanan Data</span></h3></strong>
-    </li>
+    <strong><li style="list-style-type:decimal;font-size:16pt;font-family:Calibri,sans-serif;">
+        <strong><h3 style="display:inline-block"><span style="font-size:16pt;font-family:Calibri,sans-serif;">Ketidakefisienan dalam Proses Operasional</span></h3></strong>
+    </li></strong>
 </ol>
-<p><span style="font-size:11pt;font-family:Arial,sans-serif;">CRM dilengkapi dengan fitur keamanan dan privasi yang tinggi, termasuk enkripsi data dan kontrol akses, yang membantu rumah sakit memenuhi standar keamanan dan perlindungan data yang diperlukan. Dengan demikian, data pasien tetap aman dan terjaga, sementara rumah sakit tetap dapat beroperasi dengan efisien.</span></p>
-<p><span style="font-size:11pt;font-family:Arial,sans-serif;">Dengan aplikasi CRM yang terintegrasi dengan pencatatan medis, Anda dapat mengelola data pasien dengan lebih efisien, meningkatkan komunikasi, dan memberikan perawatan yang lebih baik. Jangan tunggu lagi! Daftar sekarang untuk mendapatkan demo gratis dan lihat bagaimana Notes dapat membawa perubahan positif bagi rumah sakit Anda!</span></p>`      }
+<p><span style="font-size:16pt;font-family:Calibri,sans-serif;">Proses administratif yang tidak efisien, seperti penjadwalan janji temu, pengelolaan tagihan, dan pengelolaan jadwal dokter, dapat menyebabkan gangguan dalam pelayanan dan meningkatkan beban kerja staf medis.&nbsp;</span></p>
+<p><br></p>
+<h2><strong><span style="font-size:16pt;font-family:Calibri,sans-serif;">Bagaimana CRM Dapat Membantu Tantangan dalam Industri Kesehatan</span></strong></h2>
+<p><span style="font-size:16pt;font-family:Calibri,sans-serif;">CRM dapat membantu mengatasi berbagai tantangan dalam industri kesehatan dengan menyediakan solusi berbasis teknologi yang lebih terorganisir, efisien, dan berfokus pada pasien. Berikut adalah beberapa cara CRM dapat membantu tantangan utama dalam industri kesehatan :&nbsp;</span></p>
+<p><br></p>
+<ol>
+    <strong><li style="list-style-type:decimal;font-size:16pt;font-family:Calibri,sans-serif;">
+        <strong><h3 style="display:inline-block"><span style="font-size:16pt;font-family:Calibri,sans-serif;">Mengelola Data Pasien dengan Lebih Efisien</span></h3></strong>
+    </li></strong>
+</ol>
+<p><span style="font-size:16pt;font-family:Calibri,sans-serif;">Sistem CRM menyimpan seluruh informasi pasien dalam satu platform terpusat yang mudah diakses oleh tenaga medis dan staf administrasi. Hal ini dapat mempermudah akses yang lebih cepat dan tepat terhadap riwayat medis, jadwal perawatan, dan preferensi pasien, yang membantu dalam membuat keputusan medis yang lebih baik.</span></p>
+<p><br></p>
+<ol start="2">
+    <strong><li style="list-style-type:decimal;font-size:16pt;font-family:Calibri,sans-serif;">
+        <strong><h3 style="display:inline-block"><span style="font-size:16pt;font-family:Calibri,sans-serif;">Meningkatkan Pengalaman Pasien</span></h3></strong>
+    </li></strong>
+</ol>
+<p><span style="font-size:16pt;font-family:Calibri,sans-serif;">CRM membuat rumah sakit untuk berkomunikasi dengan pasien secara lebih proaktif, dan personal. Dengan fitur seperti pengingat janji temu otomatis, pengingat obat, dan tindak lanjut setelah kunjungan, pasien merasa lebih dihargai dan dilayani dengan lebih baik. Selain itu, CRM dapat digunakan untuk menyediakan portal pasien yang memungkinkan mereka mengakses informasi medis secara real-time.</span></p>
+<p><br></p>
+<ol start="3">
+    <strong><li style="list-style-type:decimal;font-size:16pt;font-family:Calibri,sans-serif;">
+        <strong><h3 style="display:inline-block"><span style="font-size:16pt;font-family:Calibri,sans-serif;">Meningkatkan Kepuasan dan Loyalitas Pasien</span></h3></strong>
+    </li></strong>
+</ol>
+<p><span style="font-size:16pt;font-family:Calibri,sans-serif;">Dengan CRM, rumah sakit bisa melakukan tindak lanjut rutin, mengumpulkan umpan balik dari pasien, dan memberikan layanan yang lebih personal. Misalnya, setelah pasien selesai perawatan, rumah sakit bisa mengirimkan pesan terima kasih atau kupon untuk layanan lanjutan, yang dapat meningkatkan kepuasan dan membangun hubungan yang lebih kuat dengan pasien.</span></p>
+<p><br></p>
+<ol start="4">
+    <strong><li style="list-style-type:decimal;font-size:16pt;font-family:Calibri,sans-serif;">
+        <strong><h3 style="display:inline-block"><span style="font-size:16pt;font-family:Calibri,sans-serif;">Meningkatkan Efisiensi Proses Administratif</span></h3></strong>
+    </li></strong>
+</ol>
+<p><span style="font-size:16pt;font-family:Calibri,sans-serif;">CRM dapat mengotomatiskan banyak tugas administratif, seperti penjadwalan janji temu, pengingat pembayaran, dan pengelolaan tagihan. Otomatisasi ini mengurangi beban kerja staf administratif, meminimalkan kesalahan, dan meningkatkan efisiensi operasional rumah sakit atau klinik.</span></p>
+<p><br></p>
+<ol start="5">
+    <strong><li style="list-style-type:decimal;font-size:16pt;font-family:Calibri,sans-serif;">
+        <strong><h3 style="display:inline-block"><span style="font-size:16pt;font-family:Calibri,sans-serif;">Memperbaiki Komunikasi dengan Pasien</span></h3></strong>
+    </li></strong>
+</ol>
+<p><span style="font-size:16pt;font-family:Calibri,sans-serif;">Dengan sistem CRM yang terintegrasi, rumah sakit dapat menggunakan berbagai saluran komunikasi untuk menghubungi pasien, seperti SMS, email, atau aplikasi pesan. Ini memungkinkan pemberian informasi secara lebih jelas, cepat, dan akurat, serta memudahkan pasien dalam berkomunikasi dengan tenaga medis.</span></p>
+<p><br></p>
+<ol start="6">
+    <strong><li style="list-style-type:decimal;font-size:16pt;font-family:Calibri,sans-serif;">
+        <strong><h3 style="display:inline-block"><span style="font-size:16pt;font-family:Calibri,sans-serif;">Mematuhi Regulasi dan Keamanan Data</span></h3></strong>
+    </li></strong>
+</ol>
+<p><span style="font-size:16pt;font-family:Calibri,sans-serif;">CRM dilengkapi dengan fitur keamanan dan privasi yang tinggi, termasuk enkripsi data dan kontrol akses, yang membantu rumah sakit memenuhi standar keamanan dan perlindungan data yang diperlukan. Dengan demikian, data pasien tetap aman dan terjaga, sementara rumah sakit tetap dapat beroperasi dengan efisien.</span></p>
+<p><span style="font-size:16pt;font-family:Calibri,sans-serif;">Dengan aplikasi CRM yang terintegrasi dengan pencatatan medis, Anda dapat mengelola data pasien dengan lebih efisien, meningkatkan komunikasi, dan memberikan perawatan yang lebih baik. Jangan tunggu lagi! Daftar sekarang untuk mendapatkan demo gratis dan lihat bagaimana Notes dapat membawa perubahan positif bagi rumah sakit Anda!</span></p>`      }
         }
     },
     {
@@ -217,158 +336,158 @@ export const articles = [
                 slug: "Customer-Satisfaction-Definition-Factors-and-Indicators-in-Business",
                 meta_desc: "In the business world, customer satisfaction is one of the things that is very important and requires great attention. Customer satisfaction can be a measure of the success of a business.",
                 summary: "In the business world, customer satisfaction is one of the things that is very important and requires great attention. Customer satisfaction can be a measure of the success of a business. By understanding the needs and wants of customers, companies not only build more personal relationships, but can also create loyalty, which will ultimately benefit the company.",
-                content: `<p><span style="font-size:11pt;font-family:Arial,sans-serif;">In the business world, customer satisfaction is one of the things that is very important and requires great attention. Customer satisfaction can be a measure of the success of a business. By understanding the needs and wants of customers, companies not only build more personal relationships, but can also create loyalty, which will ultimately benefit the company.&nbsp;</span></p>
-<p><span style="font-size:11pt;font-family:Arial,sans-serif;">Therefore, it is important for you to understand the definition of customer satisfaction, its benefits, factors that affect customer satisfaction, and indicators of customer satisfaction which will be discussed in this article.&nbsp;</span></p>
+                content: `<p><span style="font-size:16pt;font-family:Calibri,sans-serif;">In the business world, customer satisfaction is one of the things that is very important and requires great attention. Customer satisfaction can be a measure of the success of a business. By understanding the needs and wants of customers, companies not only build more personal relationships, but can also create loyalty, which will ultimately benefit the company.&nbsp;</span></p>
+<p><span style="font-size:16pt;font-family:Calibri,sans-serif;">Therefore, it is important for you to understand the definition of customer satisfaction, its benefits, factors that affect customer satisfaction, and indicators of customer satisfaction which will be discussed in this article.&nbsp;</span></p>
 <p><br></p>
-<h2><strong><span style="font-size:11pt;font-family:Arial,sans-serif;">Definition of Customer Satisfaction</span></strong></h2>
-<p><span style="font-size:11pt;font-family:Arial,sans-serif;">According to Kotler and Keller, customer satisfaction is a feeling of pleasure or disappointment that arises after comparing the performance or results received with customer expectations. If the performance or results received exceed customer expectations, they will feel satisfied. Conversely, if the performance or results received are less than expectations, the customer will feel disappointed.&nbsp;</span></p>
-<p><span style="font-size:11pt;font-family:Arial,sans-serif;">Kotler and Keller also stated that customer satisfaction is closely related to the customer&apos;s experience of the service received. This customer satisfaction will also have an impact on customer loyalty and the tendency to recommend products or services to others.</span></p>
+<h2><strong><span style="font-size:16pt;font-family:Calibri,sans-serif;">Definition of Customer Satisfaction</span></strong></h2>
+<p><span style="font-size:16pt;font-family:Calibri,sans-serif;">According to Kotler and Keller, customer satisfaction is a feeling of pleasure or disappointment that arises after comparing the performance or results received with customer expectations. If the performance or results received exceed customer expectations, they will feel satisfied. Conversely, if the performance or results received are less than expectations, the customer will feel disappointed.&nbsp;</span></p>
+<p><span style="font-size:16pt;font-family:Calibri,sans-serif;">Kotler and Keller also stated that customer satisfaction is closely related to the customer&apos;s experience of the service received. This customer satisfaction will also have an impact on customer loyalty and the tendency to recommend products or services to others.</span></p>
 <p><br></p>
-<h2><strong><span style="font-size:11pt;font-family:Arial,sans-serif;">Benefits of Customer Satisfaction in Business</span></strong></h2>
-<p><span style="font-size:11pt;font-family:Arial,sans-serif;">Customer satisfaction plays a big role in business continuity. Satisfied customers tend to buy products or services again, which increases loyalty and reduces the marketing costs needed to attract new customers. Satisfied customers also become effective marketing assets by providing positive reviews that can improve the company&apos;s image in the community. In addition, a company that focuses on customer satisfaction can differentiate itself from competitors. Customer satisfaction is an important factor that keeps the company afloat in the market.&nbsp;</span></p>
+<h2><strong><span style="font-size:16pt;font-family:Calibri,sans-serif;">Benefits of Customer Satisfaction in Business</span></strong></h2>
+<p><span style="font-size:16pt;font-family:Calibri,sans-serif;">Customer satisfaction plays a big role in business continuity. Satisfied customers tend to buy products or services again, which increases loyalty and reduces the marketing costs needed to attract new customers. Satisfied customers also become effective marketing assets by providing positive reviews that can improve the company&apos;s image in the community. In addition, a company that focuses on customer satisfaction can differentiate itself from competitors. Customer satisfaction is an important factor that keeps the company afloat in the market.&nbsp;</span></p>
 <p><br></p>
-<h2><strong><span style="font-size:11pt;font-family:Arial,sans-serif;">Factors Affecting Customer Satisfaction</span></strong></h2>
+<h2><strong><span style="font-size:16pt;font-family:Calibri,sans-serif;">Factors Affecting Customer Satisfaction</span></strong></h2>
 <ol>
-    <li style="list-style-type:decimal;font-size:11pt;font-family:Arial,sans-serif;">
-        <strong><h3 style="display:inline-block"><span style="font-size:11pt;font-family:Arial,sans-serif;">Good Product or Service Quality</span></h3></strong>
-    </li>
+    <strong><li style="list-style-type:decimal;font-size:16pt;font-family:Calibri,sans-serif;">
+        <strong><h3 style="display:inline-block"><span style="font-size:16pt;font-family:Calibri,sans-serif;">Good Product or Service Quality</span></h3></strong>
+    </li></strong>
 </ol>
-<p><span style="font-size:11pt;font-family:Arial,sans-serif;">Product or service quality can be the most important factor in determining your customer satisfaction. Products or services that meet or even exceed customer expectations can influence satisfaction. Good quality creates a sense of satisfaction and customer loyalty.</span></p>
+<p><span style="font-size:16pt;font-family:Calibri,sans-serif;">Product or service quality can be the most important factor in determining your customer satisfaction. Products or services that meet or even exceed customer expectations can influence satisfaction. Good quality creates a sense of satisfaction and customer loyalty.</span></p>
 <p><br></p>
 <ol start="2">
-    <li style="list-style-type:decimal;font-size:11pt;font-family:Arial,sans-serif;">
-        <strong><h3 style="display:inline-block"><span style="font-size:11pt;font-family:Arial,sans-serif;">Price</span></h3></strong>
-    </li>
+    <strong><li style="list-style-type:decimal;font-size:16pt;font-family:Calibri,sans-serif;">
+        <strong><h3 style="display:inline-block"><span style="font-size:16pt;font-family:Calibri,sans-serif;">Price</span></h3></strong>
+    </li></strong>
 </ol>
-<p><span style="font-size:11pt;font-family:Arial,sans-serif;">Prices that are reasonable and in accordance with the quality of the product or service will provide satisfaction. Customers will feel satisfied if they feel they get the right value for the money they spend to buy your product or service.</span></p>
+<p><span style="font-size:16pt;font-family:Calibri,sans-serif;">Prices that are reasonable and in accordance with the quality of the product or service will provide satisfaction. Customers will feel satisfied if they feel they get the right value for the money they spend to buy your product or service.</span></p>
 <p><br></p>
 <ol start="3">
-    <li style="list-style-type:decimal;font-size:11pt;font-family:Arial,sans-serif;">
-        <strong><h3 style="display:inline-block"><span style="font-size:11pt;font-family:Arial,sans-serif;">Customer Service</span></h3></strong>
-    </li>
+    <strong><li style="list-style-type:decimal;font-size:16pt;font-family:Calibri,sans-serif;">
+        <strong><h3 style="display:inline-block"><span style="font-size:16pt;font-family:Calibri,sans-serif;">Customer Service</span></h3></strong>
+    </li></strong>
 </ol>
-<p><span style="font-size:11pt;font-family:Arial,sans-serif;">Friendly, responsive and helpful service is essential to ensure customers feel valued. A positive customer service experience can increase satisfaction.&nbsp;</span></p>
+<p><span style="font-size:16pt;font-family:Calibri,sans-serif;">Friendly, responsive and helpful service is essential to ensure customers feel valued. A positive customer service experience can increase satisfaction.&nbsp;</span></p>
 <p><br></p>
 <ol start="4">
-    <li style="list-style-type:decimal;font-size:11pt;font-family:Arial,sans-serif;">
-        <strong><h3 style="display:inline-block"><span style="font-size:11pt;font-family:Arial,sans-serif;">Customer Experience</span></h3></strong>
-    </li>
+    <strong><li style="list-style-type:decimal;font-size:16pt;font-family:Calibri,sans-serif;">
+        <strong><h3 style="display:inline-block"><span style="font-size:16pt;font-family:Calibri,sans-serif;">Customer Experience</span></h3></strong>
+    </li></strong>
 </ol>
-<p><span style="font-size:11pt;font-family:Arial,sans-serif;">Ease of access, overall comfort experienced by customers when interacting or transacting can affect satisfaction levels. In addition, speed in providing services, delivering products, or responding to questions and complaints is also very influential, especially coupled with emotional factors such as a sense of value and personal relationships that are established, can create higher loyalty.&nbsp;</span></p>
+<p><span style="font-size:16pt;font-family:Calibri,sans-serif;">Ease of access, overall comfort experienced by customers when interacting or transacting can affect satisfaction levels. In addition, speed in providing services, delivering products, or responding to questions and complaints is also very influential, especially coupled with emotional factors such as a sense of value and personal relationships that are established, can create higher loyalty.&nbsp;</span></p>
 <p><br></p>
 <ol start="5">
-    <li style="list-style-type:decimal;font-size:11pt;font-family:Arial,sans-serif;">
-        <strong><h3 style="display:inline-block"><span style="font-size:11pt;font-family:Arial,sans-serif;">Innovation or change</span></h3></strong>
-    </li>
+    <strong><li style="list-style-type:decimal;font-size:16pt;font-family:Calibri,sans-serif;">
+        <strong><h3 style="display:inline-block"><span style="font-size:16pt;font-family:Calibri,sans-serif;">Innovation or change</span></h3></strong>
+    </li></strong>
 </ol>
-<p><span style="font-size:11pt;font-family:Arial,sans-serif;">Businesses that continuously make updates in terms of services and relevant products will attract customer attention and provide additional satisfaction.&nbsp;</span></p>
+<p><span style="font-size:16pt;font-family:Calibri,sans-serif;">Businesses that continuously make updates in terms of services and relevant products will attract customer attention and provide additional satisfaction.&nbsp;</span></p>
 <p><br></p>
-<h2><strong><span style="font-size:11pt;font-family:Arial,sans-serif;">Customer Satisfaction Indicator</span></strong></h2>
+<h2><strong><span style="font-size:16pt;font-family:Calibri,sans-serif;">Customer Satisfaction Indicator</span></strong></h2>
 <p><br></p>
 <ol>
-    <li style="list-style-type:decimal;font-size:11pt;font-family:Arial,sans-serif;">
-        <strong><h3 style="display:inline-block"><span style="font-size:11pt;font-family:Arial,sans-serif;">Customer Retention Rate</span></h3></strong>
-    </li>
+    <strong><li style="list-style-type:decimal;font-size:16pt;font-family:Calibri,sans-serif;">
+        <strong><h3 style="display:inline-block"><span style="font-size:16pt;font-family:Calibri,sans-serif;">Customer Retention Rate</span></h3></strong>
+    </li></strong>
 </ol>
-<p><span style="font-size:11pt;font-family:Arial,sans-serif;">By seeing how many continue to use the product or service over time. If many come back, it means they are satisfied.</span></p>
+<p><span style="font-size:16pt;font-family:Calibri,sans-serif;">By seeing how many continue to use the product or service over time. If many come back, it means they are satisfied.</span></p>
 <p><br></p>
 <ol start="2">
-    <li style="list-style-type:decimal;font-size:11pt;font-family:Arial,sans-serif;">
-        <strong><h3 style="display:inline-block"><span style="font-size:11pt;font-family:Arial,sans-serif;">Repurchase Frequency</span></h3></strong>
-    </li>
+    <strong><li style="list-style-type:decimal;font-size:16pt;font-family:Calibri,sans-serif;">
+        <strong><h3 style="display:inline-block"><span style="font-size:16pt;font-family:Calibri,sans-serif;">Repurchase Frequency</span></h3></strong>
+    </li></strong>
 </ol>
-<p><span style="font-size:11pt;font-family:Arial,sans-serif;">Measures how often customers buy products or use the same service. Satisfied customers will usually repurchase more often.&nbsp;</span></p>
+<p><span style="font-size:16pt;font-family:Calibri,sans-serif;">Measures how often customers buy products or use the same service. Satisfied customers will usually repurchase more often.&nbsp;</span></p>
 <p><br></p>
 <ol start="3">
-    <li style="list-style-type:decimal;font-size:11pt;font-family:Arial,sans-serif;">
-        <strong><h3 style="display:inline-block"><span style="font-size:11pt;font-family:Arial,sans-serif;">Number of complaints</span></h3></strong>
-    </li>
+    <strong><li style="list-style-type:decimal;font-size:16pt;font-family:Calibri,sans-serif;">
+        <strong><h3 style="display:inline-block"><span style="font-size:16pt;font-family:Calibri,sans-serif;">Number of complaints</span></h3></strong>
+    </li></strong>
 </ol>
-<p><span style="font-size:11pt;font-family:Arial,sans-serif;">Calculates how many complaints or problems are filed by customers. The fewer complaints, the more satisfied the customer.</span></p>
+<p><span style="font-size:16pt;font-family:Calibri,sans-serif;">Calculates how many complaints or problems are filed by customers. The fewer complaints, the more satisfied the customer.</span></p>
 <p><br></p>
 <ol start="4">
-    <li style="list-style-type:decimal;font-size:11pt;font-family:Arial,sans-serif;">
-        <strong><h3 style="display:inline-block"><span style="font-size:11pt;font-family:Arial,sans-serif;">Reviews and Testimonials</span></h3></strong>
-    </li>
+    <strong><li style="list-style-type:decimal;font-size:16pt;font-family:Calibri,sans-serif;">
+        <strong><h3 style="display:inline-block"><span style="font-size:16pt;font-family:Calibri,sans-serif;">Reviews and Testimonials</span></h3></strong>
+    </li></strong>
 </ol>
-<p><span style="font-size:11pt;font-family:Arial,sans-serif;">Looks at whether customers leave positive or negative reviews on social media or business sites. Positive reviews will indicate high satisfaction.&nbsp;</span></p>
+<p><span style="font-size:16pt;font-family:Calibri,sans-serif;">Looks at whether customers leave positive or negative reviews on social media or business sites. Positive reviews will indicate high satisfaction.&nbsp;</span></p>
 <p><br></p>
-<p><span style="font-size:11pt;font-family:Arial,sans-serif;">Overall, measuring customer or patient satisfaction is an important step to maintain service quality and improve long-term relationships. By paying attention to various satisfaction indicators, companies or healthcare providers can continue to adapt and meet customer needs more effectively. Success in improving customer satisfaction will have a direct impact on loyalty and a positive reputation.</span></p>`        },
+<p><span style="font-size:16pt;font-family:Calibri,sans-serif;">Overall, measuring customer or patient satisfaction is an important step to maintain service quality and improve long-term relationships. By paying attention to various satisfaction indicators, companies or healthcare providers can continue to adapt and meet customer needs more effectively. Success in improving customer satisfaction will have a direct impact on loyalty and a positive reputation.</span></p>`        },
             id: {
                 title: "Kepuasan Pelanggan : Pengertian, Faktor, dan Indikator Dalam Bisnis",
                 slug: "Kepuasan-Pelanggan-Pengertian-Faktor-dan-Indikator-Dalam-Bisnis",
                 meta_desc: "Dalam dunia bisnis, kepuasan pelanggan merupakan salah satu hal yang sangat penting dan memerlukan perhatian besar.",
                 summary: "Dalam dunia bisnis, kepuasan pelanggan merupakan salah satu hal yang sangat penting dan memerlukan perhatian besar. Kepuasan pelanggan dapat menjadi tolak ukur kesuksesan sebuah bisnis. Dengan memahami kebutuhan dan keinginan pelanggan, perusahaan tak hanya membangun hubungan yang lebih personal, tetapi juga dapat menciptakan loyalitas, yang pada akhirnya akan menguntungkan perusahaan.",
-                content: `<p><span style="font-size:11pt;font-family:Arial,sans-serif;">Dalam dunia bisnis, kepuasan pelanggan merupakan salah satu hal yang sangat penting dan memerlukan perhatian besar. Kepuasan pelanggan dapat menjadi tolak ukur kesuksesan sebuah bisnis. Dengan memahami kebutuhan dan keinginan pelanggan, perusahaan tak hanya membangun hubungan yang lebih personal, tetapi juga dapat menciptakan loyalitas, yang pada akhirnya akan menguntungkan perusahaan.&nbsp;</span></p>
-                        <p><span style="font-size:11pt;font-family:Arial,sans-serif;">Maka dari itu, penting untuk Anda memahami pengertian kepuasan pelanggan, manfaatnya, faktor-faktor yang mempengaruhi kepuasan pelanggan, sampai indikator kepuasan pelanggan yang akan dibahas dalam artikel ini.&nbsp;</span></p>
-                        <p><span style="font-size:11pt;font-family:Arial,sans-serif;">Dalam dunia bisnis, kepuasan pelanggan merupakan salah satu hal yang sangat penting dan memerlukan perhatian besar. Kepuasan pelanggan dapat menjadi tolak ukur kesuksesan sebuah bisnis. Dengan memahami kebutuhan dan keinginan pelanggan, perusahaan tak hanya membangun hubungan yang lebih personal, tetapi juga dapat menciptakan loyalitas, yang pada akhirnya akan menguntungkan perusahaan.&nbsp;</span></p>
-                        <p><span style="font-size:11pt;font-family:Arial,sans-serif;">Maka dari itu, penting untuk Anda memahami pengertian kepuasan pelanggan, manfaatnya, faktor-faktor yang mempengaruhi kepuasan pelanggan, sampai indikator kepuasan pelanggan yang akan dibahas dalam artikel ini.&nbsp;</span></p>
+                content: `<p><span style="font-size:16pt;font-family:Calibri,sans-serif;">Dalam dunia bisnis, kepuasan pelanggan merupakan salah satu hal yang sangat penting dan memerlukan perhatian besar. Kepuasan pelanggan dapat menjadi tolak ukur kesuksesan sebuah bisnis. Dengan memahami kebutuhan dan keinginan pelanggan, perusahaan tak hanya membangun hubungan yang lebih personal, tetapi juga dapat menciptakan loyalitas, yang pada akhirnya akan menguntungkan perusahaan.&nbsp;</span></p>
+                        <p><span style="font-size:16pt;font-family:Calibri,sans-serif;">Maka dari itu, penting untuk Anda memahami pengertian kepuasan pelanggan, manfaatnya, faktor-faktor yang mempengaruhi kepuasan pelanggan, sampai indikator kepuasan pelanggan yang akan dibahas dalam artikel ini.&nbsp;</span></p>
+                        <p><span style="font-size:16pt;font-family:Calibri,sans-serif;">Dalam dunia bisnis, kepuasan pelanggan merupakan salah satu hal yang sangat penting dan memerlukan perhatian besar. Kepuasan pelanggan dapat menjadi tolak ukur kesuksesan sebuah bisnis. Dengan memahami kebutuhan dan keinginan pelanggan, perusahaan tak hanya membangun hubungan yang lebih personal, tetapi juga dapat menciptakan loyalitas, yang pada akhirnya akan menguntungkan perusahaan.&nbsp;</span></p>
+                        <p><span style="font-size:16pt;font-family:Calibri,sans-serif;">Maka dari itu, penting untuk Anda memahami pengertian kepuasan pelanggan, manfaatnya, faktor-faktor yang mempengaruhi kepuasan pelanggan, sampai indikator kepuasan pelanggan yang akan dibahas dalam artikel ini.&nbsp;</span></p>
                         <p><br></p>
-                        <h2><strong><span style="font-size:11pt;font-family:Arial,sans-serif;">Pengertian Kepuasan Pelanggan</span></strong></h2>
-                        <p><span style="font-size:11pt;font-family:Arial,sans-serif;">Menurut Kotler dan Keller, kepuasan pelanggan merupakan perasaan senang atau kecewa yang timbul setelah membandingkan kinerja atau hasil yang diterima dengan harapan pelanggan. Jika kinerja atau hasil yang diterima melebihi ekspektasi pelanggan, mereka akan merasa puas. Sebaliknya, jika kinerja atau hasil yang diterima kurang dari harapan, maka pelanggan akan merasa kecewa.&nbsp;</span></p>
-                        <p><span style="font-size:11pt;font-family:Arial,sans-serif;">Kotler dan keller juga menyatakan kepuasan pelanggan berkaitan erat dengan pengalaman pelanggan terhadap pelayanan yang diterima. Kepuasan pelanggan ini juga akan berdampak pada loyalitas pelanggan dan kecenderungan untuk merekomendasikan produk atau layanan kepada orang lain.</span></p>
+                        <h2><strong><span style="font-size:16pt;font-family:Calibri,sans-serif;">Pengertian Kepuasan Pelanggan</span></strong></h2>
+                        <p><span style="font-size:16pt;font-family:Calibri,sans-serif;">Menurut Kotler dan Keller, kepuasan pelanggan merupakan perasaan senang atau kecewa yang timbul setelah membandingkan kinerja atau hasil yang diterima dengan harapan pelanggan. Jika kinerja atau hasil yang diterima melebihi ekspektasi pelanggan, mereka akan merasa puas. Sebaliknya, jika kinerja atau hasil yang diterima kurang dari harapan, maka pelanggan akan merasa kecewa.&nbsp;</span></p>
+                        <p><span style="font-size:16pt;font-family:Calibri,sans-serif;">Kotler dan keller juga menyatakan kepuasan pelanggan berkaitan erat dengan pengalaman pelanggan terhadap pelayanan yang diterima. Kepuasan pelanggan ini juga akan berdampak pada loyalitas pelanggan dan kecenderungan untuk merekomendasikan produk atau layanan kepada orang lain.</span></p>
                         <p><br></p>
-                        <h2><strong><span style="font-size:11pt;font-family:Arial,sans-serif;">Manfaat Kepuasan Pelanggan dalam Bisnis</span></strong></h2>
-                        <p><span style="font-size:11pt;font-family:Arial,sans-serif;">Kepuasan pelanggan memegang peran besar dalam keberlangsungan bisnis. Pelanggan yang puas cenderung untuk kembali membeli produk atau layanan, yang meningkatkan loyalitas dan mengurangi biaya pemasaran yang dibutuhkan untuk menarik pelanggan yang baru. Pelanggan yang puas juga menjadi aset pemasaran yang efektif dengan memberikan ulasan positif yang dapat memperbaiki citra perusahaan di masyarakat. Selain itu, perusahaan yang fokus pada kepuasan pelanggan dapat membedakan dirinya dari pesaing. Kepuasan pelanggan menjadi faktor penting yang membuat perusahaan tetap bertahan di pasar.&nbsp;</span></p>
+                        <h2><strong><span style="font-size:16pt;font-family:Calibri,sans-serif;">Manfaat Kepuasan Pelanggan dalam Bisnis</span></strong></h2>
+                        <p><span style="font-size:16pt;font-family:Calibri,sans-serif;">Kepuasan pelanggan memegang peran besar dalam keberlangsungan bisnis. Pelanggan yang puas cenderung untuk kembali membeli produk atau layanan, yang meningkatkan loyalitas dan mengurangi biaya pemasaran yang dibutuhkan untuk menarik pelanggan yang baru. Pelanggan yang puas juga menjadi aset pemasaran yang efektif dengan memberikan ulasan positif yang dapat memperbaiki citra perusahaan di masyarakat. Selain itu, perusahaan yang fokus pada kepuasan pelanggan dapat membedakan dirinya dari pesaing. Kepuasan pelanggan menjadi faktor penting yang membuat perusahaan tetap bertahan di pasar.&nbsp;</span></p>
                         <p><br></p>
-                        <h2><strong><span style="font-size:11pt;font-family:Arial,sans-serif;">Faktor yang Mempengaruhi Kepuasan Pelanggan</span></strong><strong><span style="font-size:11pt;font-family:Arial,sans-serif;"><br><br></span></strong></h2>
+                        <h2><strong><span style="font-size:16pt;font-family:Calibri,sans-serif;">Faktor yang Mempengaruhi Kepuasan Pelanggan</span></strong><strong><span style="font-size:16pt;font-family:Calibri,sans-serif;"><br><br></span></strong></h2>
                         <ol>
-                            <li style="list-style-type:decimal;font-size:11pt;font-family:Arial,sans-serif;">
-                                <strong><h3 style="display:inline-block"><span style="font-size:11pt;font-family:Arial,sans-serif;">Kualitas Produk atau Layanan yang Baik</span></h3></strong>
-                            </li>
+                            <strong><li style="list-style-type:decimal;font-size:16pt;font-family:Calibri,sans-serif;">
+                                <strong><h3 style="display:inline-block"><span style="font-size:16pt;font-family:Calibri,sans-serif;">Kualitas Produk atau Layanan yang Baik</span></h3></strong>
+                            </li></strong>
                         </ol>
-                        <p><span style="font-size:11pt;font-family:Arial,sans-serif;">Kualitas produk atau layanan bisa menjadi faktor terpenting dalam menentukan kepuasan pelanggan Anda. Produk atau layanan yang memenuhi bahkan melebihi ekspektasi pelanggan adalah bisa mempengaruhi kepuasan. Kualitas yang baik menciptakan rasa puas dan loyalitas pelanggan.</span></p>
+                        <p><span style="font-size:16pt;font-family:Calibri,sans-serif;">Kualitas produk atau layanan bisa menjadi faktor terpenting dalam menentukan kepuasan pelanggan Anda. Produk atau layanan yang memenuhi bahkan melebihi ekspektasi pelanggan adalah bisa mempengaruhi kepuasan. Kualitas yang baik menciptakan rasa puas dan loyalitas pelanggan.</span></p>
                         <ol start="2">
-                            <li style="list-style-type:decimal;font-size:11pt;font-family:Arial,sans-serif;">
-                                <strong><h3 style="display:inline-block"><span style="font-size:11pt;font-family:Arial,sans-serif;">Harga</span></h3></strong>
-                            </li>
+                            <strong><li style="list-style-type:decimal;font-size:16pt;font-family:Calibri,sans-serif;">
+                                <strong><h3 style="display:inline-block"><span style="font-size:16pt;font-family:Calibri,sans-serif;">Harga</span></h3></strong>
+                            </li></strong>
                         </ol>
-                        <p><span style="font-size:11pt;font-family:Arial,sans-serif;">Harga yang wajar dan sesuai dengan kualitas produk atau layanan akan memberikan kepuasan. Pelanggan akan merasa puas jika mereka merasa mendapat nilai yang sesuai dengan uang yang mereka keluarkan untuk membeli produk atau layanan Anda.</span></p>
+                        <p><span style="font-size:16pt;font-family:Calibri,sans-serif;">Harga yang wajar dan sesuai dengan kualitas produk atau layanan akan memberikan kepuasan. Pelanggan akan merasa puas jika mereka merasa mendapat nilai yang sesuai dengan uang yang mereka keluarkan untuk membeli produk atau layanan Anda.</span></p>
                         <ol start="3">
-                            <li style="list-style-type:decimal;font-size:11pt;font-family:Arial,sans-serif;">
-                                <strong><h3 style="display:inline-block"><span style="font-size:11pt;font-family:Arial,sans-serif;">Pelayanan Pelanggan</span></h3></strong>
-                            </li>
+                            <strong><li style="list-style-type:decimal;font-size:16pt;font-family:Calibri,sans-serif;">
+                                <strong><h3 style="display:inline-block"><span style="font-size:16pt;font-family:Calibri,sans-serif;">Pelayanan Pelanggan</span></h3></strong>
+                            </li></strong>
                         </ol>
-                        <p><span style="font-size:11pt;font-family:Arial,sans-serif;">Dengan pelayanan yang ramah, responsif, dan membantu sangat penting untuk memastikan pelanggan merasa dihargai. Pengalaman layanan pelanggan yang positif dapat meningkatkan kepuasan.&nbsp;</span></p>
+                        <p><span style="font-size:16pt;font-family:Calibri,sans-serif;">Dengan pelayanan yang ramah, responsif, dan membantu sangat penting untuk memastikan pelanggan merasa dihargai. Pengalaman layanan pelanggan yang positif dapat meningkatkan kepuasan.&nbsp;</span></p>
                         <ol start="4">
-                            <li style="list-style-type:decimal;font-size:11pt;font-family:Arial,sans-serif;">
-                                <strong><h3 style="display:inline-block"><span style="font-size:11pt;font-family:Arial,sans-serif;">Pengalaman Pelanggan</span></h3></strong>
-                            </li>
+                            <strong><li style="list-style-type:decimal;font-size:16pt;font-family:Calibri,sans-serif;">
+                                <strong><h3 style="display:inline-block"><span style="font-size:16pt;font-family:Calibri,sans-serif;">Pengalaman Pelanggan</span></h3></strong>
+                            </li></strong>
                         </ol>
-                        <p><span style="font-size:11pt;font-family:Arial,sans-serif;">Kemudahan akses, kenyamanan secara keseluruhan yang dialami pelanggan saat berinteraksi maupun bertransaksi dapat mempengaruhi tingkat kepuasan. Selain itu, kecepatan dalam memberikan layanan, pengiriman produk, atau respon terhadap pertanyaan dan keluhan juga sangat berpengaruh apalagi ditambah dengan faktor emosional seperti rasa dihargai dan hubungan pribadi yang terjalin, dapat menciptakan loyalitas yang lebih tinggi.&nbsp;</span></p>
+                        <p><span style="font-size:16pt;font-family:Calibri,sans-serif;">Kemudahan akses, kenyamanan secara keseluruhan yang dialami pelanggan saat berinteraksi maupun bertransaksi dapat mempengaruhi tingkat kepuasan. Selain itu, kecepatan dalam memberikan layanan, pengiriman produk, atau respon terhadap pertanyaan dan keluhan juga sangat berpengaruh apalagi ditambah dengan faktor emosional seperti rasa dihargai dan hubungan pribadi yang terjalin, dapat menciptakan loyalitas yang lebih tinggi.&nbsp;</span></p>
                         <ol start="5">
-                            <li style="list-style-type:decimal;font-size:11pt;font-family:Arial,sans-serif;">
-                                <strong><h3 style="display:inline-block"><span style="font-size:11pt;font-family:Arial,sans-serif;">Inovasi atau perubahan</span></h3></strong>
-                            </li>
+                            <strong><li style="list-style-type:decimal;font-size:16pt;font-family:Calibri,sans-serif;">
+                                <strong><h3 style="display:inline-block"><span style="font-size:16pt;font-family:Calibri,sans-serif;">Inovasi atau perubahan</span></h3></strong>
+                            </li></strong>
                         </ol>
-                        <p><span style="font-size:11pt;font-family:Arial,sans-serif;">Bisnis yang terus menerus melakukan pembaharuan dalam segi pelayanan maupun produk yang relevan, akan menarik perhatian pelanggan dan memberikan kepuasan tambahan.&nbsp;</span></p>
+                        <p><span style="font-size:16pt;font-family:Calibri,sans-serif;">Bisnis yang terus menerus melakukan pembaharuan dalam segi pelayanan maupun produk yang relevan, akan menarik perhatian pelanggan dan memberikan kepuasan tambahan.&nbsp;</span></p>
                         <p><br></p>
-                        <h2><strong><span style="font-size:11pt;font-family:Arial,sans-serif;">Indikator Kepuasan Pelanggan</span></strong></h2>
+                        <h2><strong><span style="font-size:16pt;font-family:Calibri,sans-serif;">Indikator Kepuasan Pelanggan</span></strong></h2>
                         <ol>
-                            <li style="list-style-type:decimal;font-size:11pt;font-family:Arial,sans-serif;">
-                                <strong><h3 style="display:inline-block"><span style="font-size:11pt;font-family:Arial,sans-serif;">Tingkat Retensi Pelanggan</span></h3></strong>
-                            </li>
+                            <strong><li style="list-style-type:decimal;font-size:16pt;font-family:Calibri,sans-serif;">
+                                <strong><h3 style="display:inline-block"><span style="font-size:16pt;font-family:Calibri,sans-serif;">Tingkat Retensi Pelanggan</span></h3></strong>
+                            </li></strong>
                         </ol>
-                        <p><span style="font-size:11pt;font-family:Arial,sans-serif;">Dengan melihat berapa banyak yang terus menerus menggunakan produk atau layanan dari waktu ke waktu. Jika banyak yang kembali, berarti mereka puas.</span></p>
+                        <p><span style="font-size:16pt;font-family:Calibri,sans-serif;">Dengan melihat berapa banyak yang terus menerus menggunakan produk atau layanan dari waktu ke waktu. Jika banyak yang kembali, berarti mereka puas.</span></p>
                         <ol start="2">
-                            <li style="list-style-type:decimal;font-size:11pt;font-family:Arial,sans-serif;">
-                                <strong><h3 style="display:inline-block"><span style="font-size:11pt;font-family:Arial,sans-serif;">Frekuensi Pembelian Ulang</span></h3></strong>
-                            </li>
+                            <strong><li style="list-style-type:decimal;font-size:16pt;font-family:Calibri,sans-serif;">
+                                <strong><h3 style="display:inline-block"><span style="font-size:16pt;font-family:Calibri,sans-serif;">Frekuensi Pembelian Ulang</span></h3></strong>
+                            </li></strong>
                         </ol>
-                        <p><span style="font-size:11pt;font-family:Arial,sans-serif;">Mengukur seberapa sering pelanggan membeli produk atau menggunakan layanan yang sama. Pelanggan yang puas biasanya akan membeli ulang lebih sering.&nbsp;</span></p>
+                        <p><span style="font-size:16pt;font-family:Calibri,sans-serif;">Mengukur seberapa sering pelanggan membeli produk atau menggunakan layanan yang sama. Pelanggan yang puas biasanya akan membeli ulang lebih sering.&nbsp;</span></p>
                         <ol start="3">
-                            <li style="list-style-type:decimal;font-size:11pt;font-family:Arial,sans-serif;">
-                                <strong><h3 style="display:inline-block"><span style="font-size:11pt;font-family:Arial,sans-serif;">Jumlah keluhan</span></h3></strong>
-                            </li>
+                            <strong><li style="list-style-type:decimal;font-size:16pt;font-family:Calibri,sans-serif;">
+                                <strong><h3 style="display:inline-block"><span style="font-size:16pt;font-family:Calibri,sans-serif;">Jumlah keluhan</span></h3></strong>
+                            </li></strong>
                         </ol>
-                        <p><span style="font-size:11pt;font-family:Arial,sans-serif;">Menghitung seberapa banyak keluhan atau masalah yang diajukan oleh pelanggan. Semakin sedikit keluhan, semakin puas pelanggan.</span></p>
+                        <p><span style="font-size:16pt;font-family:Calibri,sans-serif;">Menghitung seberapa banyak keluhan atau masalah yang diajukan oleh pelanggan. Semakin sedikit keluhan, semakin puas pelanggan.</span></p>
                         <ol start="4">
-                            <li style="list-style-type:decimal;font-size:11pt;font-family:Arial,sans-serif;">
-                                <strong><h3 style="display:inline-block"><span style="font-size:11pt;font-family:Arial,sans-serif;">Ulasan dan Testimoni</span></h3></strong>
-                            </li>
+                            <strong><li style="list-style-type:decimal;font-size:16pt;font-family:Calibri,sans-serif;">
+                                <strong><h3 style="display:inline-block"><span style="font-size:16pt;font-family:Calibri,sans-serif;">Ulasan dan Testimoni</span></h3></strong>
+                            </li></strong>
                         </ol>
-                        <p><span style="font-size:11pt;font-family:Arial,sans-serif;">Melihat apakah pelanggan memberikan ulasan positif atau negatif di media sosial atau situs bisnis. Ulasan positif akan menunjukan kepuasan tinggi.&nbsp;</span></p>
-                        <p><span style="font-size:11pt;font-family:Arial,sans-serif;">Secara keseluruhan, mengukur kepuasan pelanggan atau pasien merupakan langkah penting untuk menjaga kualitas layanan dan meningkatkan hubungan jangka panjang. Dengan memperhatikan berbagai indikator kepuasan, perusahaan atau penyedia layanan kesehatan dapat terus beradaptasi dan memenuhi kebutuhan pelanggan secara lebih efektif. Keberhasilan dalam meningkatkan kepuasan pelanggan akan berdampak langsung pada loyalitas dan reputasi yang positif.</span></p>`,
+                        <p><span style="font-size:16pt;font-family:Calibri,sans-serif;">Melihat apakah pelanggan memberikan ulasan positif atau negatif di media sosial atau situs bisnis. Ulasan positif akan menunjukan kepuasan tinggi.&nbsp;</span></p>
+                        <p><span style="font-size:16pt;font-family:Calibri,sans-serif;">Secara keseluruhan, mengukur kepuasan pelanggan atau pasien merupakan langkah penting untuk menjaga kualitas layanan dan meningkatkan hubungan jangka panjang. Dengan memperhatikan berbagai indikator kepuasan, perusahaan atau penyedia layanan kesehatan dapat terus beradaptasi dan memenuhi kebutuhan pelanggan secara lebih efektif. Keberhasilan dalam meningkatkan kepuasan pelanggan akan berdampak langsung pada loyalitas dan reputasi yang positif.</span></p>`,
             }
         }
     },
@@ -468,12 +587,12 @@ export const articles = [
                 content: `<p><span style="font-size:16pt;font-family:Calibri,sans-serif;">Memos is a super app platform specifically designed for the healthcare sector, integrating various essential tools and features into one cohesive application. As the parent platform for two standout products, Notes and Clinix, Memos offers a complete solution for managing patient data, schedules, communications, and operational processes in clinics or hospitals. With Memos, all healthcare service management processes can be executed more efficiently and organized.</span></p>
                 <p><strong><h2 style="font-size:16pt;font-family:Calibri,sans-serif;">Main Products in Memos </h2></strong><span style="font-size:16pt;font-family:Calibri,sans-serif;"><br></span><span style="font-size:16pt;font-family:Calibri,sans-serif;">Memos serves as the central platform that connects various health-related applications and features. Within Memos, there are two primary products tailored to different needs:</span></p>
                 <ol>
-                    <li style="list-style-type:decimal;font-size:16pt;font-family:Calibri,sans-serif;">
+                    <strong><li style="list-style-type:decimal;font-size:16pt;font-family:Calibri,sans-serif;">
                         <strong><h3 style="display:inline-block;font-size:16pt;font-family:Calibri,sans-serif;">Notes: Healthcare CRM for Hospitals </h3></strong><span style="font-size:16pt;font-family:Calibri,sans-serif;"><br></span><span style="font-size:16pt;font-family:Calibri,sans-serif;">Notes is the component of Memos designed for hospital management. With comprehensive features, Notes allows for efficient management of patient data, schedules, medical team communications, and hospital financial transactions.</span><span style="font-size:16pt;font-family:Calibri,sans-serif;"><br><br></span></p>
-                    </li>
-                    <li style="list-style-type:decimal;font-size:16pt;font-family:Calibri,sans-serif;">
+                    </li></strong>
+                    <strong><li style="list-style-type:decimal;font-size:16pt;font-family:Calibri,sans-serif;">
                         <strong><h3 style="display:inline-block;font-size:16pt;font-family:Calibri,sans-serif;">Clinix: Healthcare CRM for Clinics and Private Practices </h3></strong><span style="font-size:16pt;font-family:Calibri,sans-serif;"><br></span><span style="font-size:16pt;font-family:Calibri,sans-serif;">Clinix is the CRM solution within Memos designed for clinics and private medical practices. This product helps clinics and practitioners manage patient data, visit schedules, payments, and communications effectively.</span><span style="font-size:16pt;font-family:Calibri,sans-serif;"><br><br></span></p>
-                    </li>
+                    </li></strong>
                 </ol>
                 <p><strong><h2 style="font-size:16pt;font-family:Calibri,sans-serif;">Advantages of Memos as a Healthcare Super App </h2></strong></p>
                 <p><strong><h3 style="font-size:16pt;font-family:Calibri,sans-serif;">Integrated Solution in One Platform </h3></strong><span style="font-size:16pt;font-family:Calibri,sans-serif;"><br></span><span style="font-size:16pt;font-family:Calibri,sans-serif;">Memos combines various healthcare management tools into a single integrated application. With Memos, hospitals and clinics no longer need to use multiple separate applications, as everything is available in one easily accessible platform.</span></p>
