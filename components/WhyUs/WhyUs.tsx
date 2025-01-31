@@ -31,7 +31,13 @@ export function WhyUs({ t }: WhyUsProps) {
         <div className="lg:absolute lg:-top-10 flex flex-col lg:-right-10 lg:w-[60%] gap-4 mt-8 lg:mt-0">
           <Fade triggerOnce={true} direction="right">
             <div className="p-8 bg-white shadow-md flex flex-col lg:flex-row items-start lg:items-center gap-4 rounded-md">
-              <UspIcon className="lg:w-[15%] flex-none" />
+              <Image
+                src="/assets/images/why-us-1.png"
+                alt="usp"
+                width={120}
+                height={96}
+                className="lg:w-[15%] flex-none"
+              />
               <div id="item-1">
                 <h3 className="text-[20px] font-bold">
                   {t("home.seamlessIntegration")}
@@ -42,7 +48,13 @@ export function WhyUs({ t }: WhyUsProps) {
           </Fade>
           <Fade triggerOnce={true} direction="right">
             <div className="p-8 bg-white shadow-md flex flex-col lg:flex-row items-start lg:items-center gap-4 rounded-md">
-              <LayananIcon className="lg:w-[15%] flex-none" />
+              <Image
+                src="/assets/images/why-us-2.png"
+                alt="usp-2"
+                width={120}
+                height={96}
+                className="lg:w-[15%] flex-none"
+              />
               <div id="item-1">
                 <h3 className="text-[20px] font-bold">
                   {t("home.readyToUse")}
@@ -53,7 +65,13 @@ export function WhyUs({ t }: WhyUsProps) {
           </Fade>
           <Fade triggerOnce={true} direction="right">
             <div className="p-8 bg-white shadow-md flex flex-col lg:flex-row items-start lg:items-center gap-4 rounded-md">
-              <SolusiIcon className="lg:w-[15%] flex-none" />
+              <Image
+                src="/assets/images/why-us-3.png"
+                alt="usp-3"
+                width={120}
+                height={96}
+                className="lg:w-[15%] flex-none"
+              />
               <div id="item-1">
                 <h3 className="text-[20px] font-bold">
                   {t("home.specializedSolutions")}

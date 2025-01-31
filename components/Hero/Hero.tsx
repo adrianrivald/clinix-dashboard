@@ -9,26 +9,26 @@ import { Fade } from "react-awesome-reveal";
 
 interface HeroProps {
   onClickToDemo: () => void;
-  onClickMailTo: () => void;
   t: TFunction<"common", undefined>;
 }
 
-export function Hero({ onClickToDemo, onClickMailTo, t }: HeroProps) {
+export function Hero({ onClickToDemo, t }: HeroProps) {
   return (
     <div
       id="hero"
       className={twMerge(
-        "flex flex-col lg:flex-row flex-col-reverse items-center min-h-[400px] gap-4 lg:gap-16 p-4 lg:p-0",
+        "flex flex-col lg:flex-row flex-col-reverse items-center min-h-[400px] gap-4 lg:gap-16 p-4 lg:p-0 lg:m-[4rem]",
         maxWidthContainer
       )}
     >
       {/* Hero image */}
       <Image
-        src="/assets/images/doctor-3.png"
-        width={840}
-        height={980}
+        src="/assets/images/dokter-hero.png"
+        width={586}
+        height={620}
         alt="doctor"
         className="w-full lg:w-1/2"
+        fetchPriority="high"
       />
 
       {/* Our Words */}
@@ -48,16 +48,13 @@ export function Hero({ onClickToDemo, onClickMailTo, t }: HeroProps) {
               className="w-full lg:w-auto"
               onClick={onClickToDemo}
             />
-            {/* <Link href=""> */}
             <a href="mailto:info@notes.co.id" className="w-full lg:w-auto">
               <Button
                 title={t("home.consultYourNeeds")}
                 isPrimary={false}
                 className="w-full lg:w-auto"
-                // onClick={onClickMailTo}
               />
             </a>
-            {/* </Link> */}
           </div>
         </div>
       </Fade>

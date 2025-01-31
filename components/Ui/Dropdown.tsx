@@ -22,7 +22,11 @@ export function Dropdown({
   return (
     <Menu as="div" className="relative inline-block text-left">
       <div>
-        <Menu.Button className="rounded-md px-4 py-2 bg-neutral-200 flex items-center gap-6 min-h-12 focus:outline-none">
+        <Menu.Button
+          className="rounded-md px-4 py-2 bg-neutral-200 flex items-center gap-6 min-h-12 focus:outline-none"
+          id={`button-${currentLanguage}`}
+          aria-label={currentLanguage}
+        >
           {({ open }) => (
             <>
               <GlobeIcon />

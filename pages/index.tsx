@@ -20,10 +20,6 @@ export default function HomePage() {
   const onClickToDemo = () => {
     router.push("/demo");
   };
-  const onClickMailTo = () => {
-    router.push("mailto:info@notes.co.id");
-    // window.location.href = "mailto:info@notes.co.id";
-  };
   return (
     <div>
       <Head>
@@ -36,11 +32,7 @@ export default function HomePage() {
       </Head>
 
       <main className="mt-[1.5rem]">
-        <Hero
-          t={t}
-          onClickToDemo={onClickToDemo}
-          onClickMailTo={onClickMailTo}
-        />
+        <Hero t={t} onClickToDemo={onClickToDemo} />
         <WhyUs t={t} />
         <Products t={t} />
         <Client t={t} />

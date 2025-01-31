@@ -72,6 +72,7 @@ export function Footer() {
                 href="https://www.instagram.com/memos_idn?igsh=bjdrZTZnMG56c2cy"
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="Memos Instagram Acoount"
               >
                 <InstagramRoundedIcon />
               </Link>
@@ -79,6 +80,7 @@ export function Footer() {
                 href="https://id.linkedin.com/company/pt-cipta-integrasi-nusantara"
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="Memos LinkedIn Acoount"
               >
                 <LinkedInRoundedIcon />
               </Link>
