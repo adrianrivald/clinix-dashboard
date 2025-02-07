@@ -24,18 +24,18 @@ export function Hero({ onClickToDemo, t }: HeroProps) {
       {/* Hero image */}
 
       <Image
-        src="/assets/images/dokter-hero-mobile.jpg"
-        width={250}
-        height={244.17}
-        alt="doctor"
-        className="block w-full lg:hidden"
+        src="/assets/images/dokter-hero-mobile.png"
+        width={300}
+        height={293}
+        alt="doctor-hero-m"
+        className="block lg:hidden w-full "
         fetchPriority="high"
       />
       <Image
         src="/assets/images/dokter-hero.png"
         width={700}
         height={740.61}
-        alt="doctor"
+        alt="doctor-hero-d"
         className="hidden lg:block lg:w-1/2"
         fetchPriority="high"
       />
