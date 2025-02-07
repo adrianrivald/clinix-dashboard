@@ -25,8 +25,8 @@ export function Hero({ onClickToDemo, t }: HeroProps) {
 
       <Image
         src="/assets/images/dokter-hero-mobile.png"
-        width={300}
-        height={293}
+        width={250}
+        height={244.17}
         alt="doctor"
         className="block w-full lg:hidden"
         fetchPriority="high"
