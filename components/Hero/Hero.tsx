@@ -30,7 +30,6 @@ export function Hero({ onClickToDemo, t }: HeroProps) {
         alt="doctor-hero-m"
         className="block lg:hidden w-full "
         priority
-        quality={75}
       />
       <Image
         src="/assets/images/dokter-hero.png"

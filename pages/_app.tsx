@@ -29,11 +29,6 @@ export function App({ Component, pageProps }: AppProps) {
           name="google-site-verification"
           content="RMbsBIUpcLYYwPo4uGuQf1xftz_DMnhb87bv13cscGM"
         />
-        <link
-          rel="preload"
-          as="image"
-          href="/assets/images/dokter-hero-mobile.webp"
-        />
       </Head>
       <Script
         async
