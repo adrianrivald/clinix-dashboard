@@ -24,12 +24,13 @@ export function Hero({ onClickToDemo, t }: HeroProps) {
       {/* Hero image */}
 
       <Image
-        src="/assets/images/dokter-hero-mobile.png"
+        src="/assets/images/dokter-hero-mobile.webp"
         width={300}
         height={293}
         alt="doctor-hero-m"
         className="block lg:hidden w-full "
         fetchPriority="high"
+        loading="lazy"
       />
       <Image
         src="/assets/images/dokter-hero.png"
@@ -38,6 +39,7 @@ export function Hero({ onClickToDemo, t }: HeroProps) {
         alt="doctor-hero-d"
         className="hidden lg:block lg:w-1/2"
         fetchPriority="high"
+        loading="lazy"
       />
 
       {/* Our Words */}
