@@ -24,7 +24,7 @@ export function Hero({ onClickToDemo, t }: HeroProps) {
       {/* Hero image */}
 
       <Image
-        src="/assets/images/dokter-hero.png"
+        src="/assets/images/dokter-hero-mobile.png"
         width={300}
         height={293}
         alt="doctor"
