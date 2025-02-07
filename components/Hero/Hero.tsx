@@ -22,12 +22,21 @@ export function Hero({ onClickToDemo, t }: HeroProps) {
       )}
     >
       {/* Hero image */}
+
+      <Image
+        src="/assets/images/dokter-hero.png"
+        width={343}
+        height={335}
+        alt="doctor"
+        className="block w-full lg:hidden"
+        fetchPriority="high"
+      />
       <Image
         src="/assets/images/dokter-hero.png"
         width={700}
         height={740.61}
         alt="doctor"
-        className="w-full lg:w-1/2"
+        className="hidden lg:block lg:w-1/2"
         fetchPriority="high"
       />
 
