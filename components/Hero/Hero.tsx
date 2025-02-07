@@ -29,8 +29,7 @@ export function Hero({ onClickToDemo, t }: HeroProps) {
         height={293}
         alt="doctor-hero-m"
         className="block lg:hidden w-full "
-        fetchPriority="high"
-        loading="lazy"
+        priority
       />
       <Image
         src="/assets/images/dokter-hero.png"
@@ -38,8 +37,7 @@ export function Hero({ onClickToDemo, t }: HeroProps) {
         height={740.61}
         alt="doctor-hero-d"
         className="hidden lg:block lg:w-1/2"
-        fetchPriority="high"
-        loading="lazy"
+        priority
       />
 
       {/* Our Words */}
