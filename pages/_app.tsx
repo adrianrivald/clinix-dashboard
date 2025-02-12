@@ -1,7 +1,7 @@
 import React from "react";
 import "../styles/globals.css";
 import type { AppProps } from "next/app";
-import { Header, Footer } from "../components";
+import { Header } from "../components";
 import { appWithTranslation } from "next-i18next";
 import Head from "next/head";
 import Script from "next/script";
@@ -62,7 +62,6 @@ export function App({ Component, pageProps }: AppProps) {
         <Header />
         <div className="mt-[1.5rem] lg:mt-0">
           <Component {...pageProps} />
-          <Footer />
         </div>
       </section>
     </>

@@ -1,18 +1,9 @@
 import Head from "next/head";
 import { useRouter } from "next/router";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
-import {
-  Client,
-  Contact,
-  Faq,
-  Hero,
-  Products,
-  Testimoni,
-  WhyUs,
-  Banner,
-} from "../components";
 import { useTranslation } from "next-i18next";
 import { GetStaticProps } from "next";
+import { SignupContent } from "../components/Pages/Signup";
 
 export default function HomePage() {
   const { t } = useTranslation("common");
@@ -37,14 +28,7 @@ export default function HomePage() {
       </Head>
 
       <main className="mt-[1.5rem]">
-        <Hero t={t} onClickToDemo={onClickToDemo} />
-        <WhyUs t={t} />
-        <Products t={t} />
-        <Client t={t} />
-        {/* <Testimoni t={t} /> */}
-        <Faq t={t} />
-        <Contact t={t} />
-        <Banner t={t} onClickToDemo={onClickToDemo} />
+        <SignupContent t={t} />
       </main>
     </div>
   );
