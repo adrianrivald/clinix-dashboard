@@ -162,6 +162,25 @@ export function TermsConditionContent({ t }: TermsConditionContentProps) {
           </div>
           {/* Content */}
         </Card>
+        <Card className="mt-8">
+          <div className="flex items-center gap-2">
+            <input
+              className="accent-green-500 w-4 h-4"
+              id="aggreement"
+              type="checkbox"
+            />
+
+            <label htmlFor="aggreement" className="cursor-pointer">
+              Menyetujui semua syarat & ketentuan yang berlaku
+            </label>
+          </div>
+          <Button
+            isClinix
+            isPrimary
+            className="w-full mt-4"
+            title="Selanjutnya"
+          />
+        </Card>
       </div>
       <ToastContainer />
     </div>
