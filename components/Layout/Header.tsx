@@ -7,7 +7,7 @@ import { useRouter } from "next/router";
 import React, { Dispatch, SetStateAction } from "react";
 import { Button, Dropdown, SearchBox } from "..";
 import { ChevronRightIcon } from "../Icons";
-import { useSearchDebounce } from "../../hooks";
+import { useSearchDebounce } from "../../helpers/hooks";
 import type { Language } from "../Ui/Dropdown";
 import { TFunction } from "i18next";
 import { articles } from "../../constants/article";
