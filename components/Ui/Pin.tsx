@@ -1,3 +1,4 @@
+import { useRouter } from "next/router";
 import React, { useRef } from "react";
 
 interface PinInputProps {
@@ -8,7 +9,7 @@ interface PinInputProps {
 const PinInput: React.FC<PinInputProps> = ({ length = 6, onComplete }) => {
   const [pin, setPin] = React.useState<string[]>(new Array(length).fill(""));
   const inputRefs = useRef<(HTMLInputElement | null)[]>([]);
-
+  const router = useRouter();
   const handleChange = (value: string, index: number) => {
     if (!/^\d?$/.test(value)) return; // Only allow a single digit (0-9)
 
@@ -25,6 +26,9 @@ const PinInput: React.FC<PinInputProps> = ({ length = 6, onComplete }) => {
     if (newPin.every((num) => num !== "")) {
       //   TODO: Submit handler when PIN fields are filled
       onComplete(newPin.join(""));
+      setTimeout(() => {
+        router.push("/registration/step/1");
+      }, 1000);
     }
   };
 

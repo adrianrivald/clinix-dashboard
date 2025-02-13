@@ -3,9 +3,9 @@ import { useRouter } from "next/router";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { useTranslation } from "next-i18next";
 import { GetStaticProps } from "next";
-import { TermsConditionContent } from "../../components/Pages/TermsCondition";
+import { IdentityForm } from "../../../components/Pages/RegistrationSteps";
 
-export default function TermsConditionPage() {
+export default function RegistrationStepTwo() {
   const { t } = useTranslation("common");
   const router = useRouter();
   return (
@@ -20,7 +20,7 @@ export default function TermsConditionPage() {
       </Head>
 
       <main className="mt-[1.5rem]">
-        <TermsConditionContent t={t} />
+        <IdentityForm t={t} />
       </main>
     </div>
   );

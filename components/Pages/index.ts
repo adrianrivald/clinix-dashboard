@@ -1,2 +1,2 @@
 export * from "./Signup"
-export * from "./TermsCondition"
+export * from "./RegistrationSteps"

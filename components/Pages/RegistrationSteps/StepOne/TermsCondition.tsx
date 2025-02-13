@@ -5,21 +5,21 @@ import { useRouter } from "next/router";
 import React, { Fragment, useRef } from "react";
 import { set, SubmitHandler, useForm } from "react-hook-form";
 import { twMerge } from "tailwind-merge";
-import { maxWidthContainer } from "../../../constants/class";
-import { useSearchDebounce } from "../../../helpers/hooks";
+import { maxWidthContainer } from "../../../../constants/class";
+import { useSearchDebounce } from "../../../../helpers/hooks";
 import {
   ArrowDownIcon,
   ArrowLeftIcon,
   ArrowRightBlueIcon,
   SuccessDemo,
-} from "../../Icons";
-import { SearchBox } from "../../SearchBox/SearchBox";
-import { Button, Card } from "../../Ui";
+} from "../../../Icons";
+import { SearchBox } from "../../../SearchBox/SearchBox";
+import { Button, Card } from "../../../Ui";
 import { TFunction } from "i18next";
 import { ToastContainer, toast } from "react-toastify";
 import Image from "next/image";
-import Countdown from "../../../helpers/countdown";
-import PinInput from "../../Ui/Pin";
+import Countdown from "../../../../helpers/countdown";
+import PinInput from "../../../Ui/Pin";
 
 interface TermsConditionContentProps {
   t: TFunction<"common", undefined>;
@@ -27,6 +27,14 @@ interface TermsConditionContentProps {
 
 export function TermsConditionContent({ t }: TermsConditionContentProps) {
   const router = useRouter();
+
+  const onNextStep = () => {
+    router.push("/registration/step/2");
+  };
+
+  const onPreviousStep = () => {
+    router.push("/");
+  };
 
   return (
     <div
@@ -37,10 +45,12 @@ export function TermsConditionContent({ t }: TermsConditionContentProps) {
         <Card>
           <div className="flex items-center gap-4 mb-2">
             <Image
+              onClick={onPreviousStep}
               src="/assets/icons/arrow-back.svg"
               alt="back"
               width={24}
               height={24}
+              className="cursor-pointer"
             />
             {/* Heading */}
             <div className="flex flex-col gap-2">
@@ -175,6 +185,7 @@ export function TermsConditionContent({ t }: TermsConditionContentProps) {
             </label>
           </div>
           <Button
+            onClick={onNextStep}
             isClinix
             isPrimary
             className="w-full mt-4"
