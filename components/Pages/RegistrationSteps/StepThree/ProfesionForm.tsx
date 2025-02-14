@@ -223,7 +223,7 @@ export function ProfesionForm({ t }: IdentityFormProps) {
 
                 {/* Row 2 */}
                 <div className="flex flex-col lg:flex-row justify-between gap-4">
-                  <div className="w-full flex flex-none w-1/2 flex-col gap-2">
+                  <div className="w-full flex flex-none flex-col gap-2">
                     <label className="text-[14px] font-medium" htmlFor="no_str">
                       No. STR Aktif
                       <span className="text-warning">*</span>
@@ -275,7 +275,7 @@ export function ProfesionForm({ t }: IdentityFormProps) {
 
                 {/* Row 3 */}
                 <div className="flex flex-col lg:flex-row justify-between gap-4">
-                  <div className="w-full flex flex-none w-1/2 flex-col gap-2">
+                  <div className="w-full flex flex-none flex-col gap-2">
                     <label
                       className="text-[14px] font-medium"
                       htmlFor="organization"
@@ -291,7 +291,7 @@ export function ProfesionForm({ t }: IdentityFormProps) {
                       placeholder="Masukkan nama organisasi"
                     />
                   </div>
-                  <div className="w-full flex flex-none w-1/2 flex-col gap-2">
+                  <div className="w-full flex flex-none flex-col gap-2">
                     <label className="text-[14px] font-medium" htmlFor="clinic">
                       Nama Klinik/Usaha
                       <span className="text-warning">*</span>
@@ -312,7 +312,7 @@ export function ProfesionForm({ t }: IdentityFormProps) {
 
               {/* Row 3 */}
               <div className="flex flex-col lg:flex-row justify-between gap-4">
-                <div className="w-full flex flex-none w-1/2 flex-col gap-2">
+                <div className="w-full flex flex-none flex-col gap-2">
                   <label
                     className="text-[14px] font-medium"
                     htmlFor="organization"
@@ -328,7 +328,7 @@ export function ProfesionForm({ t }: IdentityFormProps) {
                     placeholder="Masukkan nama organisasi"
                   />
                 </div>
-                <div className="w-full flex flex-none w-1/2 flex-col gap-2">
+                <div className="w-full flex flex-none flex-col gap-2">
                   <label className="text-[14px] font-medium" htmlFor="clinic">
                     Nama Klinik/Usaha
                     <span className="text-warning">*</span>
@@ -345,7 +345,7 @@ export function ProfesionForm({ t }: IdentityFormProps) {
 
               {/* Row 4 */}
               <div className="flex flex-col lg:flex-row justify-between gap-4">
-                <div className="w-full flex flex-none w-1/2 flex-col gap-2">
+                <div className="w-full flex flex-none flex-col gap-2">
                   <label
                     className="text-[14px] font-medium"
                     htmlFor="organization"
@@ -408,7 +408,7 @@ export function ProfesionForm({ t }: IdentityFormProps) {
                     </div>
                   </Listbox>
                 </div>
-                <div className="w-full flex flex-none w-1/2 flex-col gap-2">
+                <div className="w-full flex flex-none flex-col gap-2">
                   <label
                     className="text-[14px] font-medium"
                     htmlFor="no_str_file"
