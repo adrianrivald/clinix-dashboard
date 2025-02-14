@@ -20,7 +20,7 @@ import { ToastContainer, toast } from "react-toastify";
 import Image from "next/image";
 import Countdown from "../../../../helpers/countdown";
 import PinInput from "../../../Ui/Pin";
-import { genders, provinces } from "../../../constants/constants";
+import { genders } from "../../../constants/constants";
 
 interface IdentityFormProps {
   t: TFunction<"common", undefined>;
