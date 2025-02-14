@@ -61,7 +61,7 @@ export function ProfesionForm({ t }: IdentityFormProps) {
   };
 
   const onPreviousStep = () => {
-    router.push("/registration/step/1");
+    router.push("/registration/step/2");
   };
 
   const onSubmit: SubmitHandler<any> = async () => {

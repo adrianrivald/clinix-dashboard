@@ -178,6 +178,9 @@ export function IdentityForm({ t }: IdentityFormProps) {
                       className="rounded-[8px] p-4 border border-neutral-100 focus:outline-none"
                       placeholder="Masukkan NIK"
                     />
+                    <span className="text-[13px] text-neutral-300">
+                      Digunakan hanya untuk keperluan verifikasi
+                    </span>
                   </div>
                   <div className="w-full flex flex-col gap-2">
                     <label className="text-[14px] font-medium" htmlFor="foto">
@@ -191,6 +194,9 @@ export function IdentityForm({ t }: IdentityFormProps) {
                       className="rounded-[8px] p-4 border border-neutral-100 focus:outline-none"
                       placeholder="Unggah Foto KTP"
                     />
+                    <span className="text-[13px] text-neutral-300">
+                      Digunakan hanya untuk keperluan verifikasi
+                    </span>
                   </div>
                 </div>
 
