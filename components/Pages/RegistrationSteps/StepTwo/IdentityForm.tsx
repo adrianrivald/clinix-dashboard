@@ -621,7 +621,7 @@ export function IdentityForm({ t }: IdentityFormProps) {
 
                 {/* Row 7 */}
                 <div className="flex flex-col lg:flex-row justify-between gap-4">
-                  <div className="w-full flex flex-col gap-2 w-1/2">
+                  <div className="w-full flex flex-col gap-2">
                     <label
                       className="text-[14px] font-medium"
                       htmlFor="address"
@@ -638,7 +638,7 @@ export function IdentityForm({ t }: IdentityFormProps) {
                     />
                   </div>
                   <div className="flex items-center gap-2 w-1/2">
-                    <div className="w-full flex flex-col gap-2 w-1/2">
+                    <div className="w-full flex flex-col gap-2">
                       <label
                         className="text-[14px] font-medium"
                         htmlFor="address_detail"
@@ -653,7 +653,7 @@ export function IdentityForm({ t }: IdentityFormProps) {
                         placeholder="Detail Alamat, No. Lantai"
                       />
                     </div>
-                    <div className="w-full flex flex-col gap-2 w-1/2">
+                    <div className="w-full flex flex-col gap-2">
                       <label
                         className="text-[14px] font-medium"
                         htmlFor="house_no"
@@ -673,7 +673,7 @@ export function IdentityForm({ t }: IdentityFormProps) {
 
                 {/* Row 8 */}
                 <div className="flex flex-col lg:flex-row justify-between gap-4">
-                  <div className="w-full flex flex-col gap-2 w-1/2">
+                  <div className="w-full flex flex-col gap-2">
                     <label
                       className="text-[14px] font-medium"
                       htmlFor="postal_code"
@@ -690,7 +690,7 @@ export function IdentityForm({ t }: IdentityFormProps) {
                     />
                   </div>
                   <div className="flex items-center gap-2 w-1/2">
-                    <div className="w-full flex flex-col gap-2 w-1/2">
+                    <div className="w-full flex flex-col gap-2">
                       <label className="text-[14px] font-medium" htmlFor="rt">
                         RT
                       </label>
@@ -702,7 +702,7 @@ export function IdentityForm({ t }: IdentityFormProps) {
                         placeholder="Masukkan RT"
                       />
                     </div>
-                    <div className="w-full flex flex-col gap-2 w-1/2">
+                    <div className="w-full flex flex-col gap-2">
                       <label className="text-[14px] font-medium" htmlFor="rw">
                         RW
                       </label>
