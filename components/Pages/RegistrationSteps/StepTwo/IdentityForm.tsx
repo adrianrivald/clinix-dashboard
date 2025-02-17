@@ -140,7 +140,6 @@ export function IdentityForm({ t }: IdentityFormProps) {
   };
 
   const handleFileChange = (e: ChangeEvent<HTMLInputElement>) => {
-    console.log(e.target.value, "value");
     if (e.target.files) {
       const file = e.target.files[0];
       setFotoKtp(file);
@@ -150,8 +149,6 @@ export function IdentityForm({ t }: IdentityFormProps) {
   const onSubmit: SubmitHandler<any> = async () => {
     // TODO Submit handler
   };
-
-  console.log(fotoKtp, "fotoKTP");
 
   return (
     <div
@@ -662,7 +659,7 @@ export function IdentityForm({ t }: IdentityFormProps) {
 
                 {/* Row 7 */}
                 <div className="flex flex-col lg:flex-row justify-between gap-4">
-                  <div className="flex flex-col gap-2 w-1/2 lg:w-full">
+                  <div className="flex flex-col gap-2 w-full">
                     <label
                       className="text-[14px] font-medium"
                       htmlFor="address"
@@ -678,7 +675,7 @@ export function IdentityForm({ t }: IdentityFormProps) {
                       placeholder="Masukkan Alamat"
                     />
                   </div>
-                  <div className="flex items-center gap-2 w-1/2 lg:w-full">
+                  <div className="flex flex-col md:flex-row items-center gap-2 lg:w-full">
                     <div className="w-full flex flex-col gap-2">
                       <label
                         className="text-[14px] font-medium"
@@ -714,7 +711,7 @@ export function IdentityForm({ t }: IdentityFormProps) {
 
                 {/* Row 8 */}
                 <div className="flex flex-col lg:flex-row justify-between gap-4">
-                  <div className="flex flex-col gap-2 w-1/2 lg:w-full">
+                  <div className="flex flex-col gap-2 lg:w-full">
                     <label
                       className="text-[14px] font-medium"
                       htmlFor="postal_code"
@@ -730,7 +727,7 @@ export function IdentityForm({ t }: IdentityFormProps) {
                       placeholder="Masukkan Kode Pos"
                     />
                   </div>
-                  <div className="flex items-center gap-2 w-1/2 lg:w-full">
+                  <div className="flex flex-col md:flex-row items-center gap-2 lg:w-full">
                     <div className="w-full flex flex-col gap-2">
                       <label className="text-[14px] font-medium" htmlFor="rt">
                         RT

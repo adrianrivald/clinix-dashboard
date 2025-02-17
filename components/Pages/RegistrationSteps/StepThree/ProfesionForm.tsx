@@ -90,7 +90,6 @@ export function ProfesionForm({ t }: IdentityFormProps) {
     // TODO Submit handler
   };
 
-  console.log(noStrFile, "noStrFile");
   return (
     <div
       id="terms-condition"
@@ -247,7 +246,7 @@ export function ProfesionForm({ t }: IdentityFormProps) {
 
                 {/* Row 2 */}
                 <div className="flex flex-col lg:flex-row justify-between gap-4">
-                  <div className="flex flex-col gap-2 w-1/2 lg:w-full">
+                  <div className="flex flex-col gap-2 lg:w-full">
                     <label className="text-[14px] font-medium" htmlFor="no_str">
                       No. STR Aktif
                       <span className="text-warning">*</span>
@@ -259,8 +258,12 @@ export function ProfesionForm({ t }: IdentityFormProps) {
                       className="rounded-[8px] p-4 border border-neutral-100 focus:outline-none"
                       placeholder="Masukkan No. STR"
                     />
+
+                    <span className="text-[13px] text-neutral-300">
+                      Digunakan hanya untuk keperluan verifikasi
+                    </span>
                   </div>
-                  <div className="flex items-center gap-2 w-1/2 lg:w-full">
+                  <div className="flex flex-col md:flex-row items-center gap-2 lg:w-full">
                     <div className="w-full flex flex-col gap-2">
                       <label
                         className="text-[14px] font-medium"
@@ -311,39 +314,6 @@ export function ProfesionForm({ t }: IdentityFormProps) {
                     </div>
                   </div>
                 </div>
-
-                {/* Row 3 */}
-                <div className="flex flex-col lg:flex-row justify-between gap-4">
-                  <div className="flex flex-col gap-2 w-1/2 lg:w-full">
-                    <label
-                      className="text-[14px] font-medium"
-                      htmlFor="organization"
-                    >
-                      Organisasi
-                      <span className="text-warning">*</span>
-                    </label>
-                    <input
-                      id="organization"
-                      {...register("organization", { required: true })}
-                      type="text"
-                      className="rounded-[8px] p-4 border border-neutral-100 focus:outline-none"
-                      placeholder="Masukkan nama organisasi"
-                    />
-                  </div>
-                  <div className="w-full flex flex-col gap-2">
-                    <label className="text-[14px] font-medium" htmlFor="clinic">
-                      Nama Klinik/Usaha
-                      <span className="text-warning">*</span>
-                    </label>
-                    <input
-                      id="clinic"
-                      {...register("clinic", { required: true })}
-                      type="text"
-                      className="rounded-[8px] p-4 border border-neutral-100 focus:outline-none"
-                      placeholder="Masukkan nama klinik/usaha"
-                    />
-                  </div>
-                </div>
               </div>
               <div className="border-t-2 border-dashed border-neutral-400 w-full h-1"></div>
 
@@ -351,7 +321,7 @@ export function ProfesionForm({ t }: IdentityFormProps) {
 
               {/* Row 4 */}
               <div className="flex flex-col lg:flex-row justify-between gap-4">
-                <div className="flex flex-col gap-2 w-1/2 lg:w-full">
+                <div className="flex flex-col gap-2 lg:w-full">
                   <label
                     className="text-[14px] font-medium"
                     htmlFor="organization"
@@ -384,7 +354,7 @@ export function ProfesionForm({ t }: IdentityFormProps) {
 
               {/* Row 5 */}
               <div className="flex flex-col lg:flex-row justify-between gap-4">
-                <div className="flex flex-col gap-2 w-1/2 lg:w-full">
+                <div className="flex flex-col gap-2 lg:w-full">
                   <label
                     className="text-[14px] font-medium"
                     htmlFor="organization"

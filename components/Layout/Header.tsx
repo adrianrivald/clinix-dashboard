@@ -323,29 +323,6 @@ export function Header() {
   };
 
   const onChangeLanguage = (lang: string) => {
-    // if (pathname === "/article/[slug]") {
-    //   const url = window.location.href;
-    //   const origin = window.location.origin;
-    //   let sliced = url.split(origin)[1];
-
-    //   let slug = url.split("article/")[1];
-    //   const enSlug = articles?.find((item) => item?.language?.id?.slug === slug)
-    //     ?.language?.en?.slug;
-    //   const idSlug = articles?.find((item) => item?.language?.en?.slug === slug)
-    //     ?.language?.id?.slug;
-    //   console.log(slug, "slug");
-    //   console.log(idSlug, "idSlug");
-    //   if (locale !== "id") {
-    //     sliced = sliced.replace(`/${locale}`, "");
-    //     slug = idSlug ?? "";
-    //     console.log(slug, "slugindo");
-    //     window.location.href = origin + "/article/" + slug;
-    //   } else {
-    //     sliced = `/${lang}` + sliced;
-    //     slug = enSlug ?? "";
-    //     window.location.href = origin + "/en/article/" + slug;
-    //   }
-    // } else {
     const url = window.location.href;
     const origin = window.location.origin;
     let sliced = url.split(origin)[1];
@@ -371,28 +348,6 @@ export function Header() {
     } else {
       window.location.href = origin + sliced;
     }
-    // }
-
-    // let slug = url.split("article/")[1];
-    // const enSlug = articles?.find((item) => item?.language?.id?.slug === slug)
-    //   ?.language?.en?.slug;
-    // const idSlug = articles?.find((item) => item?.language?.en?.slug === slug)
-    //   ?.language?.id?.slug;
-    // console.log(slug, "slug");
-    // console.log(idSlug, "idSlug");
-    // if (pathname === "/article/[slug]") {
-    //   if (locale !== "id") {
-    //     sliced = sliced.replace(`/${locale}`, "");
-    //     slug = idSlug ?? "";
-    //     console.log(slug, "slugindo");
-    //     window.location.href = origin + "/article/" + slug;
-    //   } else {
-    //     sliced = `/${lang}` + sliced;
-    //     slug = enSlug ?? "";
-    //     window.location.href = origin + "/en/article/" + slug;
-    //   }
-    // } else {
-    // }
   };
 
   React.useEffect(() => {
