@@ -2,7 +2,13 @@ import { Dialog, Listbox, Transition } from "@headlessui/react";
 import emailjs from "@emailjs/browser";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import React, { Fragment, useEffect, useRef, useState } from "react";
+import React, {
+  ChangeEvent,
+  Fragment,
+  useEffect,
+  useRef,
+  useState,
+} from "react";
 import { set, SubmitHandler, useForm } from "react-hook-form";
 import { twMerge } from "tailwind-merge";
 import { maxWidthContainer } from "../../../../constants/class";
@@ -47,6 +53,7 @@ export function IdentityForm({ t }: IdentityFormProps) {
   const { register, handleSubmit, watch } = useForm<any>();
   const form = useRef() as any;
   const [selectedGender, setSelectedGender] = useState<SelectProps>();
+  const [fotoKtp, setFotoKtp] = useState<File>();
 
   // Wilayah
   const [provinceList, setProvinceList] = useState<Province[]>([]);
@@ -132,9 +139,20 @@ export function IdentityForm({ t }: IdentityFormProps) {
     router.push("/registration/step/1");
   };
 
+  const handleFileChange = (e: ChangeEvent<HTMLInputElement>) => {
+    console.log(e.target.value, "value");
+    if (e.target.files) {
+      const file = e.target.files[0];
+      setFotoKtp(file);
+    }
+  };
+
   const onSubmit: SubmitHandler<any> = async () => {
     // TODO Submit handler
   };
+
+  console.log(fotoKtp, "fotoKTP");
+
   return (
     <div
       id="terms-condition"
@@ -169,31 +187,54 @@ export function IdentityForm({ t }: IdentityFormProps) {
                 <div className="flex flex-col lg:flex-row justify-between gap-4">
                   <div className="w-full flex flex-col gap-2">
                     <label className="text-[14px] font-medium" htmlFor="nik">
-                      NIK <span className="text-warning">*</span>
+                      NIK
+                      <span className="text-warning">*</span>
                     </label>
-                    <input
-                      id="nik"
-                      {...register("nik", { required: true })}
-                      type="text"
-                      className="rounded-[8px] p-4 border border-neutral-100 focus:outline-none"
-                      placeholder="Masukkan NIK"
-                    />
+                    <div className="relative rounded-[8px] p-4 border border-neutral-100 flex items-center gap-2">
+                      <input
+                        id="nik"
+                        {...register("nik", { required: true })}
+                        type="text"
+                        className="focus:outline-none w-full"
+                        placeholder="Masukkan NIK"
+                      />
+                      <div className="text-link cursor-pointer">Verifikasi</div>
+                    </div>
                     <span className="text-[13px] text-neutral-300">
                       Digunakan hanya untuk keperluan verifikasi
                     </span>
                   </div>
                   <div className="w-full flex flex-col gap-2">
-                    <label className="text-[14px] font-medium" htmlFor="foto">
-                      Unggah KTP
+                    <label
+                      className="text-[14px] font-medium"
+                      htmlFor="unggah_foto_ktp"
+                    >
+                      Unggah Foto KTP
                       <span className="text-warning">*</span>
                     </label>
-                    <input
-                      id="foto"
-                      {...register("foto", { required: true })}
-                      type="foto"
-                      className="rounded-[8px] p-4 border border-neutral-100 focus:outline-none"
-                      placeholder="Unggah Foto KTP"
-                    />
+                    <div className="relative rounded-[8px] p-4 border border-neutral-100 flex items-center gap-2">
+                      <input
+                        {...register("unggah_foto_ktp", { required: true })}
+                        type="text"
+                        className="focus:outline-none w-full"
+                        placeholder="Unggah Foto KTP"
+                        value={fotoKtp?.name}
+                        readOnly
+                      />
+                      {fotoKtp?.name}
+                      <input
+                        type="file"
+                        hidden
+                        id="unggah_foto_ktp"
+                        onChange={handleFileChange}
+                      />
+                      <label
+                        htmlFor="unggah_foto_ktp"
+                        className="text-link cursor-pointer"
+                      >
+                        Unggah
+                      </label>
+                    </div>
                     <span className="text-[13px] text-neutral-300">
                       Digunakan hanya untuk keperluan verifikasi
                     </span>

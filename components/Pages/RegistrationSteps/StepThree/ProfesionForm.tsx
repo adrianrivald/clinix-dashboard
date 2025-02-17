@@ -2,7 +2,13 @@ import { Dialog, Listbox, Transition } from "@headlessui/react";
 import emailjs from "@emailjs/browser";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import React, { Fragment, useEffect, useRef, useState } from "react";
+import React, {
+  ChangeEvent,
+  Fragment,
+  useEffect,
+  useRef,
+  useState,
+} from "react";
 import { set, SubmitHandler, useForm } from "react-hook-form";
 import { twMerge } from "tailwind-merge";
 import { maxWidthContainer } from "../../../../constants/class";
@@ -55,6 +61,8 @@ export function ProfesionForm({ t }: IdentityFormProps) {
   const [selectedBusiness, setSelectedBusiness] = useState<SelectProps>();
 
   const [isHidePassword, setIsHidePassword] = useState(true);
+  const [noStrFile, setNoStrFile] = useState<File>();
+  const [fotoUsaha, setFotoUsaha] = useState<File>();
 
   const onNextStep = () => {
     router.push("/registration/summary");
@@ -64,9 +72,25 @@ export function ProfesionForm({ t }: IdentityFormProps) {
     router.push("/registration/step/2");
   };
 
+  const handleFileChange = (e: ChangeEvent<HTMLInputElement>) => {
+    if (e.target.files) {
+      const file = e.target.files[0];
+      setNoStrFile(file);
+    }
+  };
+
+  const handleFileFotoUsahaChange = (e: ChangeEvent<HTMLInputElement>) => {
+    if (e.target.files) {
+      const file = e.target.files[0];
+      setFotoUsaha(file);
+    }
+  };
+
   const onSubmit: SubmitHandler<any> = async () => {
     // TODO Submit handler
   };
+
+  console.log(noStrFile, "noStrFile");
   return (
     <div
       id="terms-condition"
@@ -262,13 +286,28 @@ export function ProfesionForm({ t }: IdentityFormProps) {
                         Unggah STR Aktif
                         <span className="text-warning">*</span>
                       </label>
-                      <input
-                        id="no_str_file"
-                        {...register("no_str_file", { required: true })}
-                        type="no_str_file"
-                        className="rounded-[8px] p-4 border border-neutral-100 focus:outline-none"
-                        placeholder="Unggah No. STR"
-                      />
+
+                      <div className="relative rounded-[8px] p-4 border border-neutral-100 flex items-center gap-2">
+                        <div
+                          className={`w-full ${
+                            noStrFile?.name ? "text-black" : "text-neutral-400"
+                          }`}
+                        >
+                          {noStrFile?.name ?? "Unggah No. STR"}
+                        </div>
+                        <input
+                          type="file"
+                          hidden
+                          id="no_str_file"
+                          onChange={handleFileChange}
+                        />
+                        <label
+                          htmlFor="no_str_file"
+                          className="text-link cursor-pointer"
+                        >
+                          Unggah
+                        </label>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -415,13 +454,28 @@ export function ProfesionForm({ t }: IdentityFormProps) {
                   >
                     Unggah Foto Tempat Klinik/Usaha (Opsional)
                   </label>
-                  <input
-                    id="no_str_file"
-                    {...register("no_str_file", { required: true })}
-                    type="no_str_file"
-                    className="rounded-[8px] p-4 border border-neutral-100 focus:outline-none"
-                    placeholder="Unggah Foto Tempat Praktek"
-                  />
+
+                  <div className="relative rounded-[8px] p-4 border border-neutral-100 flex items-center gap-2">
+                    <div
+                      className={`w-full ${
+                        fotoUsaha?.name ? "text-black" : "text-neutral-400"
+                      }`}
+                    >
+                      {fotoUsaha?.name ?? "Unggah Foto Tempat Praktek"}
+                    </div>
+                    <input
+                      type="file"
+                      hidden
+                      id="foto_usaha"
+                      onChange={handleFileFotoUsahaChange}
+                    />
+                    <label
+                      htmlFor="foto_usaha"
+                      className="text-link cursor-pointer"
+                    >
+                      Unggah
+                    </label>
+                  </div>
                 </div>
               </div>
 
