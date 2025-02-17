@@ -31,3 +31,14 @@ export const businesses = [
     label: "Klinik"
   }
 ]
+
+export const bankList = [
+  {
+    id: "bca",
+    label: "BCA"
+  },
+  {
+    id: "mandiri",
+    label: "Mandiri"
+  }
+]

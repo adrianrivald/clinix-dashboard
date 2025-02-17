@@ -4,13 +4,14 @@ import { Squash as Hamburger } from "hamburger-react";
 import { useTranslation } from "next-i18next";
 
 import { useRouter } from "next/router";
-import React, { Dispatch, SetStateAction } from "react";
+import React, { Dispatch, Fragment, SetStateAction } from "react";
 import { Button, Dropdown, SearchBox } from "..";
 import { ChevronRightIcon } from "../Icons";
 import { useSearchDebounce } from "../../helpers/hooks";
 import type { Language } from "../Ui/Dropdown";
 import { TFunction } from "i18next";
 import { articles } from "../../constants/article";
+import { Menu, Transition } from "@headlessui/react";
 
 const languageList = [
   {
@@ -83,12 +84,13 @@ function NavMenuMobile({
           />
         </div>
 
-        <Hamburger
-          toggled={isOpen}
-          onToggle={() => {
-            setOpen(!isOpen);
-            setIsChangeLanguageMode(false);
-          }}
+        {/* TODO: Notification handler */}
+        <Image
+          src="/assets/icons/notification.svg"
+          alt="notification"
+          width={24}
+          height={24}
+          className="cursor-pointer"
         />
       </header>
       {!isChangeLanguageMode ? (
@@ -194,29 +196,69 @@ function NavMenuMobile({
   );
 }
 
+function UserAccount() {
+  return (
+    <Menu as="div" className="relative inline-block text-left">
+      <div>
+        <Menu.Button className="flex items-center gap-3">
+          <Image
+            src="/assets/images/dummy-ava.png"
+            alt="dummy"
+            width={44}
+            height={44}
+            className="rounded-full"
+          />
+          <div className="flex flex-col gap-1 items-start">
+            <span className="font-bold">Dr. Tony Molly</span>
+            <span>Dokter Bedah</span>
+          </div>
+          <Image
+            src="/assets/icons/chevron-down.svg"
+            width={16}
+            height={16}
+            alt="chevron-down"
+          />
+        </Menu.Button>
+      </div>
+      <Transition
+        as={Fragment}
+        enter="transition ease-out duration-100"
+        enterFrom="transform opacity-0 scale-95"
+        enterTo="transform opacity-100 scale-100"
+        leave="transition ease-in duration-75"
+        leaveFrom="transform opacity-100 scale-100"
+        leaveTo="transform opacity-0 scale-95"
+      >
+        <Menu.Items className="absolute right-0 mt-2 w-56 origin-top-right divide-y divide-gray-100 rounded-md bg-white shadow-lg ring-1 ring-black/5 focus:outline-none">
+          <div className="py-2 ">
+            <Menu.Item>
+              {({ active }) => (
+                <div className="p-4 cursor-pointer hover:bg-primary-200">
+                  Logout
+                </div>
+              )}
+            </Menu.Item>
+          </div>
+        </Menu.Items>
+      </Transition>
+    </Menu>
+  );
+}
+
 interface NavMenuDesktopProps {
   pathname: string;
-  isHome: boolean;
   onClickLogo: () => void;
   visible: boolean;
   onClickToDemo: () => void;
-  onChangeLanguage: (lang: string) => void;
-  locale: string | undefined;
-  languages: Language[];
-  t: TFunction<"common", undefined>;
 }
 
 function NavMenuDesktop({
   pathname,
-  isHome,
   onClickLogo,
   visible,
   onClickToDemo,
-  onChangeLanguage,
-  locale,
-  languages,
-  t,
 }: NavMenuDesktopProps) {
+  console.log(pathname, "pathname");
   return (
     <div
       className={`transition-all sticky z-50 ${
@@ -245,10 +287,23 @@ function NavMenuDesktop({
         </div>
 
         {/* Right section */}
-        <div id="right" className="hidden lg:flex gap-3 items-center">
-          <span>Sudah memiliki akun?</span>
-          <Button isClinix title="Masuk" onClick={onClickToDemo} />
-        </div>
+        {pathname === "/dashboard" ? (
+          <div id="right" className="hidden lg:flex gap-8 items-center">
+            {/* TODO: Notification handler */}
+            <Image
+              src="/assets/icons/notification.svg"
+              alt="notification"
+              width={24}
+              height={24}
+            />
+            <UserAccount />
+          </div>
+        ) : (
+          <div id="right" className="hidden lg:flex gap-3 items-center">
+            <span>Sudah memiliki akun?</span>
+            <Button isClinix title="Masuk" onClick={onClickToDemo} />
+          </div>
+        )}
       </header>
     </div>
   );
@@ -359,14 +414,9 @@ export function Header() {
     <>
       <NavMenuDesktop
         pathname={pathname}
-        isHome={isHome}
         onClickLogo={onClickLogo}
         visible={visible}
         onClickToDemo={onClickToDemo}
-        onChangeLanguage={onChangeLanguage}
-        languages={languages}
-        locale={locale}
-        t={t}
       />
       <NavMenuMobile
         visible={visible}

@@ -1,7 +1,7 @@
 import React from "react";
 import "../styles/globals.css";
 import type { AppProps } from "next/app";
-import { Header } from "../components";
+import { Header, MenubarBottom, Sidebar } from "../components";
 import { appWithTranslation } from "next-i18next";
 import Head from "next/head";
 import Script from "next/script";
@@ -10,7 +10,9 @@ import { gtmVirtualPageView } from "../libs";
 
 export function App({ Component, pageProps }: AppProps) {
   const router = useRouter();
-
+  const isLoggedIn =
+    router.asPath.includes("/dashboard") &&
+    !router.asPath.includes("/subscription");
   React.useEffect(() => {
     const mainDataLayer = {
       pageTypeName: pageProps.page || null,
@@ -60,8 +62,12 @@ export function App({ Component, pageProps }: AppProps) {
       />
       <section className="w-full mx-auto text-neutral-500">
         <Header />
-        <div className="mt-[1.5rem] lg:mt-0">
-          <Component {...pageProps} />
+        <div className="flex">
+          {isLoggedIn && <Sidebar />}
+          <div className="mt-[1.5rem] w-full lg:mt-0">
+            <Component {...pageProps} />
+          </div>
+          {isLoggedIn && <MenubarBottom />}
         </div>
       </section>
     </>
