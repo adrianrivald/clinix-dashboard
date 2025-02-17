@@ -621,7 +621,7 @@ export function IdentityForm({ t }: IdentityFormProps) {
 
                 {/* Row 7 */}
                 <div className="flex flex-col lg:flex-row justify-between gap-4">
-                  <div className="w-full flex flex-col gap-2">
+                  <div className="flex flex-col gap-2 w-1/2 lg:w-full">
                     <label
                       className="text-[14px] font-medium"
                       htmlFor="address"
@@ -637,7 +637,7 @@ export function IdentityForm({ t }: IdentityFormProps) {
                       placeholder="Masukkan Alamat"
                     />
                   </div>
-                  <div className="flex items-center gap-2 w-1/2">
+                  <div className="flex items-center gap-2 w-1/2 lg:w-full">
                     <div className="w-full flex flex-col gap-2">
                       <label
                         className="text-[14px] font-medium"
@@ -673,7 +673,7 @@ export function IdentityForm({ t }: IdentityFormProps) {
 
                 {/* Row 8 */}
                 <div className="flex flex-col lg:flex-row justify-between gap-4">
-                  <div className="w-full flex flex-col gap-2">
+                  <div className="flex flex-col gap-2 w-1/2 lg:w-full">
                     <label
                       className="text-[14px] font-medium"
                       htmlFor="postal_code"
@@ -689,7 +689,7 @@ export function IdentityForm({ t }: IdentityFormProps) {
                       placeholder="Masukkan Kode Pos"
                     />
                   </div>
-                  <div className="flex items-center gap-2 w-1/2">
+                  <div className="flex items-center gap-2 w-1/2 lg:w-full">
                     <div className="w-full flex flex-col gap-2">
                       <label className="text-[14px] font-medium" htmlFor="rt">
                         RT

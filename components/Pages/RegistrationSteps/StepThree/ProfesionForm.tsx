@@ -57,7 +57,7 @@ export function ProfesionForm({ t }: IdentityFormProps) {
   const [isHidePassword, setIsHidePassword] = useState(true);
 
   const onNextStep = () => {
-    router.push("/registration/step/3");
+    router.push("/registration/summary");
   };
 
   const onPreviousStep = () => {
@@ -223,7 +223,7 @@ export function ProfesionForm({ t }: IdentityFormProps) {
 
                 {/* Row 2 */}
                 <div className="flex flex-col lg:flex-row justify-between gap-4">
-                  <div className="w-full flex flex-none flex-col gap-2">
+                  <div className="flex flex-col gap-2 w-1/2 lg:w-full">
                     <label className="text-[14px] font-medium" htmlFor="no_str">
                       No. STR Aktif
                       <span className="text-warning">*</span>
@@ -236,8 +236,8 @@ export function ProfesionForm({ t }: IdentityFormProps) {
                       placeholder="Masukkan No. STR"
                     />
                   </div>
-                  <div className="flex items-center flex-none gap-2 w-1/2">
-                    <div className="w-full flex flex-col gap-2 flex-none w-1/2">
+                  <div className="flex items-center gap-2 w-1/2 lg:w-full">
+                    <div className="w-full flex flex-col gap-2">
                       <label
                         className="text-[14px] font-medium"
                         htmlFor="expired_date"
@@ -254,7 +254,7 @@ export function ProfesionForm({ t }: IdentityFormProps) {
                         placeholder="Tanggal Habis Berlaku"
                       />
                     </div>
-                    <div className="w-full flex flex-col gap-2 flex-none w-1/2">
+                    <div className="w-full flex flex-col gap-2">
                       <label
                         className="text-[14px] font-medium"
                         htmlFor="no_str_file"
@@ -275,7 +275,7 @@ export function ProfesionForm({ t }: IdentityFormProps) {
 
                 {/* Row 3 */}
                 <div className="flex flex-col lg:flex-row justify-between gap-4">
-                  <div className="w-full flex flex-none flex-col gap-2">
+                  <div className="flex flex-col gap-2 w-1/2 lg:w-full">
                     <label
                       className="text-[14px] font-medium"
                       htmlFor="organization"
@@ -291,7 +291,7 @@ export function ProfesionForm({ t }: IdentityFormProps) {
                       placeholder="Masukkan nama organisasi"
                     />
                   </div>
-                  <div className="w-full flex flex-none flex-col gap-2">
+                  <div className="w-full flex flex-col gap-2">
                     <label className="text-[14px] font-medium" htmlFor="clinic">
                       Nama Klinik/Usaha
                       <span className="text-warning">*</span>
@@ -310,9 +310,9 @@ export function ProfesionForm({ t }: IdentityFormProps) {
 
               {/* Bottom fields */}
 
-              {/* Row 3 */}
+              {/* Row 4 */}
               <div className="flex flex-col lg:flex-row justify-between gap-4">
-                <div className="w-full flex flex-none flex-col gap-2">
+                <div className="flex flex-col gap-2 w-1/2 lg:w-full">
                   <label
                     className="text-[14px] font-medium"
                     htmlFor="organization"
@@ -328,7 +328,7 @@ export function ProfesionForm({ t }: IdentityFormProps) {
                     placeholder="Masukkan nama organisasi"
                   />
                 </div>
-                <div className="w-full flex flex-none flex-col gap-2">
+                <div className="w-full flex flex-col gap-2">
                   <label className="text-[14px] font-medium" htmlFor="clinic">
                     Nama Klinik/Usaha
                     <span className="text-warning">*</span>
@@ -343,9 +343,9 @@ export function ProfesionForm({ t }: IdentityFormProps) {
                 </div>
               </div>
 
-              {/* Row 4 */}
+              {/* Row 5 */}
               <div className="flex flex-col lg:flex-row justify-between gap-4">
-                <div className="w-full flex flex-none flex-col gap-2">
+                <div className="flex flex-col gap-2 w-1/2 lg:w-full">
                   <label
                     className="text-[14px] font-medium"
                     htmlFor="organization"
@@ -408,7 +408,7 @@ export function ProfesionForm({ t }: IdentityFormProps) {
                     </div>
                   </Listbox>
                 </div>
-                <div className="w-full flex flex-none flex-col gap-2">
+                <div className="w-full flex flex-col gap-2">
                   <label
                     className="text-[14px] font-medium"
                     htmlFor="no_str_file"

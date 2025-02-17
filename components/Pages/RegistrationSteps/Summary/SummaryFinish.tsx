@@ -16,9 +16,8 @@ interface SummaryFinishContentProps {
 
 export function SummaryFinishContent({ t }: SummaryFinishContentProps) {
   const router = useRouter();
-  const [isChecked, setIsChecked] = React.useState(false);
-  const onCheckAgreement = () => {
-    setIsChecked((prev) => !prev);
+  const onClickToHome = () => {
+    router.push("/");
   };
   return (
     <div
@@ -75,6 +74,7 @@ export function SummaryFinishContent({ t }: SummaryFinishContentProps) {
 
             <div className="flex flex-col-reverse lg:flex-row  justify-between gap-4 mt-4">
               <Button
+                onClick={onClickToHome}
                 isClinix
                 isPrimary
                 title="Ke Halaman Utama"
