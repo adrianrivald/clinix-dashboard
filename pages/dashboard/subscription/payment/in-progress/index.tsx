@@ -3,9 +3,9 @@ import { useRouter } from "next/router";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { useTranslation } from "next-i18next";
 import { GetStaticProps } from "next";
-import { PaymentContent } from "../../../../components/Pages/Dashboard";
+import { PaymentInProgressContent } from "../../../../../components/Pages/Dashboard";
 
-export default function PaymentPage() {
+export default function PaymentInProgressPage() {
   const { t } = useTranslation("common");
   const router = useRouter();
   return (
@@ -25,7 +25,7 @@ export default function PaymentPage() {
       </Head>
 
       <main className="mt-[1.5rem]">
-        <PaymentContent t={t} />
+        <PaymentInProgressContent t={t} />
       </main>
     </div>
   );
