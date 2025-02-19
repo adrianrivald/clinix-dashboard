@@ -25,7 +25,6 @@ const orgList = [
 
 function Navmenu({ pathname }: { pathname: string }) {
   const router = useRouter();
-  console.log(router, "router");
   const { asPath } = router;
   const [selectedOrg, setSelectedOrg] = useState<SelectProps>(orgList[0]);
 

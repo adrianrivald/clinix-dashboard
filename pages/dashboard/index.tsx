@@ -24,7 +24,7 @@ export default function DashboardPage() {
         />
       </Head>
 
-      <main className="mt-[1.5rem]">
+      <main>
         <DashboardContent t={t} />
       </main>
     </div>

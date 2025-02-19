@@ -26,37 +26,11 @@ const languageList = [
 
 interface NavMenuMobileProps {
   isOpen: boolean;
-  setOpen: Dispatch<React.SetStateAction<boolean>>;
   onClickLogo: () => void;
-  onClickLanguage: () => void;
-  pathname: string;
-  isChangeLanguageMode: boolean;
-  onSearchLanguage: (e: React.ChangeEvent<HTMLInputElement>) => void;
-  searchTerm: string;
-  onClickToDemo: () => void;
   visible: boolean;
-  setIsChangeLanguageMode: Dispatch<SetStateAction<boolean>>;
-  t: TFunction<"common", undefined>;
-  onChangeLanguage: (lang: string) => void;
-  locale: string | undefined;
 }
 
-function NavMenuMobile({
-  isOpen,
-  setOpen,
-  onClickLogo,
-  pathname,
-  onClickLanguage,
-  isChangeLanguageMode,
-  onSearchLanguage,
-  searchTerm,
-  onClickToDemo,
-  visible,
-  setIsChangeLanguageMode,
-  t,
-  onChangeLanguage,
-  locale,
-}: NavMenuMobileProps) {
+function NavMenuMobile({ isOpen, onClickLogo, visible }: NavMenuMobileProps) {
   return (
     <div
       className={`transition-all sticky ${
@@ -93,105 +67,6 @@ function NavMenuMobile({
           className="cursor-pointer"
         />
       </header>
-      {!isChangeLanguageMode ? (
-        <div
-          className={`transition-all ${
-            isOpen ? "h-screen" : "h-0 hidden"
-          } bg-white px-4 py-4 mt-2 relative w-full`}
-        >
-          <nav id="menus" className="flex-col flex gap-8 text-base">
-            <Link
-              href="/"
-              className={`hover:text-primary-500 cursor-pointer ${
-                pathname === "/" ? "font-bold text-primary-500" : ""
-              }`}
-            >
-              {t("navbar.home")}
-            </Link>
-            <Link
-              href="/about"
-              className={`hover:text-primary-500 cursor-pointer ${
-                pathname.includes("/about") ? "font-bold text-primary-500" : ""
-              }`}
-            >
-              {t("navbar.company")}
-            </Link>
-            <Link
-              href="/product"
-              className={`hover:text-primary-500 cursor-pointer ${
-                pathname.includes("/product")
-                  ? "font-bold text-primary-500"
-                  : ""
-              }`}
-            >
-              {t("navbar.product")}
-            </Link>
-            {/* <Link
-              href="/career"
-              className={`hover:text-primary-500 cursor-pointer ${
-                pathname.includes("/career") ? "font-bold text-primary-500" : ""
-              }`}
-            >
-              {t("navbar.career")}
-            </Link> */}
-            <Link
-              href="/article"
-              className={`hover:text-primary-500 cursor-pointer ${
-                pathname.includes("/article")
-                  ? "font-bold text-primary-500"
-                  : ""
-              }`}
-            >
-              {t("navbar.article")}
-            </Link>
-
-            <div
-              onClick={onClickLanguage}
-              className="hover:text-primary-500 cursor-pointer flex justify-between items-center"
-            >
-              {locale === "id" ? "Bahasa Indonesia" : "English"}
-              <ChevronRightIcon className="w-3 h-3" />
-            </div>
-          </nav>
-
-          <div className="absolute -translate-x-1/2 left-1/2 transform w-full bottom-32 flex flex-col items-center gap-4 px-4 justify-center">
-            <Button
-              title={t("navbar.tryDemo")}
-              isPrimary
-              className="w-full lg:w-auto"
-              onClick={onClickToDemo}
-            />
-            <Button
-              title={t("navbar.consultYourNeeds")}
-              isPrimary={false}
-              className="w-full lg:w-auto"
-            />
-          </div>
-        </div>
-      ) : (
-        <div
-          className={`transition-all ${
-            isOpen ? "h-screen" : "h-0 hidden"
-          } bg-white px-4 py-4 mt-2 relative w-full`}
-        >
-          <SearchBox onSearch={onSearchLanguage} />
-          <ul className="h-[75%] overflow-x-auto mt-4 flex flex-col gap-2">
-            {languageList
-              ?.filter((item) => item?.label.toLowerCase().includes(searchTerm))
-              .map((language) => (
-                <li
-                  onClick={() => onChangeLanguage(language?.id)}
-                  className={`w-full py-3 ${
-                    locale === language?.id ? "bg-primary-100 rounded-full" : ""
-                  }`}
-                  key={language?.id}
-                >
-                  <div className="mx-3 rounded-lg">{language?.label}</div>
-                </li>
-              ))}
-          </ul>
-        </div>
-      )}
     </div>
   );
 }
@@ -424,18 +299,7 @@ export function Header() {
       <NavMenuMobile
         visible={visible}
         isOpen={isOpen}
-        setOpen={setOpen}
         onClickLogo={onClickLogo}
-        pathname={pathname}
-        onClickLanguage={onClickLanguage}
-        isChangeLanguageMode={isChangeLanguageMode}
-        onSearchLanguage={onSearchLanguage}
-        searchTerm={searchTerm as string}
-        onClickToDemo={onClickToDemo}
-        setIsChangeLanguageMode={setIsChangeLanguageMode}
-        t={t}
-        onChangeLanguage={onChangeLanguage}
-        locale={locale}
       />
     </>
   );

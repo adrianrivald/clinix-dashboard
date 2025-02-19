@@ -1,41 +1,95 @@
 import Image from "next/image";
+import { useRouter } from "next/router";
+import { HomeIcon, ProfileIcon, SocialIcon, WorkIcon } from "../Icons";
 
 function Navmenu() {
-  return (
-    <nav className="w-full border-t border-neutral-250">
-      <ul className="flex justify-center gap-8">
-        <li className="bg-gradient-to-b from-[#FFEFEF] via-white to-white via-50%  pb-4 flex items-center cursor-pointer">
-          <div className="flex flex-col items-center gap-3">
-            <div className="h-[4px]">
-              <Image
-                src="/assets/icons/bottom-menu.svg"
-                width={72}
-                height={4}
-                alt="bottom-menu"
-              />
-            </div>
-            <Image
-              src="/assets/icons/home.svg"
-              width={20}
-              height={20}
-              alt="home"
-            />
-            <span className="font-bold text-primary-500">Home</span>
-          </div>
-        </li>
-        <li className="pb-4 flex items-center cursor-pointer">
-          <div className="flex flex-col items-center gap-3">
-            <div className="h-[4px]" />
+  const router = useRouter();
+  const { asPath } = router;
+  const menus = [
+    {
+      path: "/dashboard",
+      label: "Home",
+      icon: (
+        <HomeIcon
+          className={`mt-4 w-[20px] h-[20px] ${
+            asPath.includes("/dashboard") ? "text-primary-500" : ""
+          }`}
+        />
+      ),
+    },
 
-            <Image
-              src="/assets/icons/person.svg"
-              width={20}
-              height={20}
-              alt="person"
-            />
-            <span className="">Profil</span>
-          </div>
-        </li>
+    {
+      path: "/workspace",
+      label: "Workspace",
+      icon: (
+        <WorkIcon
+          className={`mt-4 w-[20px] h-[20px] ${
+            asPath.includes("/workspace") ? "text-primary-500" : ""
+          }`}
+        />
+      ),
+    },
+
+    {
+      path: "/social",
+      label: "Social",
+      icon: (
+        <SocialIcon
+          className={`mt-4 w-[20px] h-[20px] ${
+            asPath.includes("/social") ? "text-primary-500" : ""
+          }`}
+        />
+      ),
+    },
+
+    {
+      path: "/profile",
+      label: "Profile",
+      icon: (
+        <ProfileIcon
+          className={`mt-4 w-[20px] h-[20px] ${
+            asPath.includes("/profile") ? "text-primary-500" : ""
+          }`}
+        />
+      ),
+    },
+  ];
+  return (
+    <nav className="bg-white w-full border-t border-neutral-250">
+      <ul className="flex justify-center gap-8">
+        {menus?.map((menu) => (
+          <li
+            className={`${
+              asPath.includes(menu?.path)
+                ? "bg-gradient-to-b from-[#FFEFEF] via-white to-white via-50%"
+                : ""
+            }  pb-4 flex items-center cursor-pointer`}
+          >
+            <div className="flex flex-col items-center gap-3 relative">
+              {asPath.includes(menu?.path) && (
+                <div className="absolute top-0 w-[72px] h-[4px]">
+                  <Image
+                    src="/assets/icons/bottom-menu.svg"
+                    width={72}
+                    height={4}
+                    alt="bottom-menu"
+                  />
+                </div>
+              )}
+
+              {menu?.icon}
+              <span
+                className={`${
+                  asPath.includes(menu?.path)
+                    ? "font-bold text-primary-500"
+                    : ""
+                }`}
+              >
+                {menu?.label}
+              </span>
+            </div>
+          </li>
+        ))}
       </ul>
     </nav>
   );

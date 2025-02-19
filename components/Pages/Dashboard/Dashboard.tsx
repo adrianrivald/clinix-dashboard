@@ -56,7 +56,7 @@ export function DashboardContent({ t }: DashboardContentProps) {
   return (
     <div
       id="dashboard"
-      className={twMerge("mb-24 p-4 lg:p-8", "max-w-full mx-auto")}
+      className={twMerge("mb-24 px-4 lg:px-8", "max-w-full mx-auto")}
     >
       <div className="">
         <Card className="p-4 flex flex-col md:flex-row justify-between">
