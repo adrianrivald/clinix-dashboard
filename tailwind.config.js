@@ -30,6 +30,10 @@ module.exports = {
         },
         link: "#3080E2",
         warning: "#E40044",
+        yellow: {
+          100: "#FFF7E5",
+          500: "#996B00"
+        },
         blue: {
           50: "#FBFDFE",
           500: "#6694C4",

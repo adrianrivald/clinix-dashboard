@@ -10,8 +10,9 @@ import { gtmVirtualPageView } from "../libs";
 
 export function App({ Component, pageProps }: AppProps) {
   const router = useRouter();
+  const authorizedPage = ["/dashboard", "/workspace"];
   const isLoggedIn =
-    router.asPath.includes("/dashboard") &&
+    authorizedPage.some((page) => router.asPath.startsWith(page)) &&
     !router.asPath.includes("/subscription");
   React.useEffect(() => {
     const mainDataLayer = {

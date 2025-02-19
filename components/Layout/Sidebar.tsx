@@ -2,6 +2,7 @@ import { Disclosure, Listbox, Transition } from "@headlessui/react";
 import Image from "next/image";
 import { ArrowDownIcon } from "../Icons";
 import { Fragment, useState } from "react";
+import { useRouter } from "next/router";
 
 interface SelectProps {
   label: string;
@@ -22,18 +23,28 @@ const orgList = [
   },
 ];
 
-function Navmenu() {
+function Navmenu({ pathname }: { pathname: string }) {
+  const router = useRouter();
+  console.log(router, "router");
+  const { asPath } = router;
   const [selectedOrg, setSelectedOrg] = useState<SelectProps>(orgList[0]);
+
+  const onClickWorkspace = (workspaceItem: string) => {
+    router.push(`/workspace/${workspaceItem}`);
+  };
+
   return (
     <nav>
       <ul className="list-style-none flex flex-col gap-4">
         <li className="py-4 flex items-center w-full cursor-pointer border-b border-neutral-250 pb-6">
-          <Image
-            src="/assets/icons/side-menu.svg"
-            width={4}
-            height={52}
-            alt="side-menu"
-          />
+          {pathname === "/dashboard" && (
+            <Image
+              src="/assets/icons/side-menu.svg"
+              width={4}
+              height={52}
+              alt="side-menu"
+            />
+          )}
           <div className="ml-8 flex items-center gap-3">
             <Image
               src="/assets/icons/dashboard.svg"
@@ -41,7 +52,13 @@ function Navmenu() {
               height={18}
               alt="dashboard"
             />
-            <span className="font-bold text-primary-500">Dashboard</span>
+            <span
+              className={`font-bold ${
+                pathname === "/dashboard" ? "text-primary-500" : ""
+              } `}
+            >
+              Dashboard
+            </span>
           </div>
         </li>
 
@@ -206,25 +223,47 @@ function Navmenu() {
                 </Disclosure.Button>
                 <Disclosure.Panel className="relative">
                   <div className="flex flex-col gap-0">
-                    <div className="py-4 flex items-center w-full cursor-pointer">
-                      <Image
-                        src="/assets/icons/side-menu.svg"
-                        width={4}
-                        height={52}
-                        alt="side-menu"
-                      />
-                      <span className="ml-16 font-bold text-primary-500">
+                    <div
+                      onClick={() => onClickWorkspace("setio-yogya")}
+                      className="py-4 flex items-center w-full cursor-pointer"
+                    >
+                      {asPath.includes("/workspace/setio-yogya") && (
+                        <Image
+                          src="/assets/icons/side-menu.svg"
+                          width={4}
+                          height={52}
+                          alt="side-menu"
+                        />
+                      )}
+                      <span
+                        className={`ml-16 font-bold ${
+                          asPath.includes("/workspace/setio-yogya")
+                            ? "text-primary-500"
+                            : "pl-1"
+                        }`}
+                      >
                         RS Setio Husodo Jogja
                       </span>
                     </div>
-                    <div className="py-4 flex items-center w-full cursor-pointer">
-                      {/* <Image
-                        src="/assets/icons/side-menu.svg"
-                        width={4}
-                        height={52}
-                        alt="side-menu"
-                      /> */}
-                      <span className="ml-16 font-bold text-primary-500">
+                    <div
+                      onClick={() => onClickWorkspace("setio-medan")}
+                      className="py-4 flex items-center w-full cursor-pointer"
+                    >
+                      {asPath.includes("/workspace/setio-medan") && (
+                        <Image
+                          src="/assets/icons/side-menu.svg"
+                          width={4}
+                          height={52}
+                          alt="side-menu"
+                        />
+                      )}
+                      <span
+                        className={`ml-16 font-bold ${
+                          asPath.includes("/workspace/setio-medan")
+                            ? "text-primary-500"
+                            : "pl-1"
+                        }`}
+                      >
                         RS Setio Husodo Medan
                       </span>
                     </div>
@@ -240,9 +279,11 @@ function Navmenu() {
 }
 
 export function Sidebar() {
+  const router = useRouter();
+  const { pathname } = router;
   return (
     <div className="hidden lg:block pt-[2rem] h-screen border-r border-neutral-250 min-w-[300px] overflow-auto">
-      <Navmenu />
+      <Navmenu pathname={pathname} />
     </div>
   );
 }

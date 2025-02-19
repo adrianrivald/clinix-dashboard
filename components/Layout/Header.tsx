@@ -246,14 +246,14 @@ function UserAccount() {
 }
 
 interface NavMenuDesktopProps {
-  pathname: string;
+  isLoggedIn: boolean;
   onClickLogo: () => void;
   visible: boolean;
   onClickToDemo: () => void;
 }
 
 function NavMenuDesktop({
-  pathname,
+  isLoggedIn,
   onClickLogo,
   visible,
   onClickToDemo,
@@ -286,7 +286,7 @@ function NavMenuDesktop({
         </div>
 
         {/* Right section */}
-        {pathname === "/dashboard" ? (
+        {isLoggedIn ? (
           <div id="right" className="hidden lg:flex gap-8 items-center">
             {/* TODO: Notification handler */}
             <Image
@@ -312,6 +312,10 @@ export function Header() {
   const router = useRouter();
   const { asPath, pathname, locale } = router;
   const isHome = pathname === "/";
+  const authorizedPage = ["/dashboard", "/workspace"];
+  const isLoggedIn =
+    authorizedPage.some((page) => router.asPath.startsWith(page)) &&
+    !router.asPath.includes("/subscription");
   const [language, setLanguage] = React.useState(locale);
   const [isOpen, setOpen] = React.useState(false);
   const [isChangeLanguageMode, setIsChangeLanguageMode] = React.useState(false);
@@ -412,7 +416,7 @@ export function Header() {
   return (
     <>
       <NavMenuDesktop
-        pathname={pathname}
+        isLoggedIn={isLoggedIn}
         onClickLogo={onClickLogo}
         visible={visible}
         onClickToDemo={onClickToDemo}
