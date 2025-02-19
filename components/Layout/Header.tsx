@@ -258,7 +258,6 @@ function NavMenuDesktop({
   visible,
   onClickToDemo,
 }: NavMenuDesktopProps) {
-  console.log(pathname, "pathname");
   return (
     <div
       className={`transition-all sticky z-50 ${
