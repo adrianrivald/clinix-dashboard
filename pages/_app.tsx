@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "../styles/globals.css";
 import type { AppProps } from "next/app";
 import { Header, MenubarBottom, Sidebar } from "../components";
@@ -10,11 +10,11 @@ import { gtmVirtualPageView } from "../libs";
 
 export function App({ Component, pageProps }: AppProps) {
   const router = useRouter();
-  const authorizedPage = ["/dashboard", "/workspace"];
+  const authorizedPage = ["/dashboard", "/workspace", "/profile"];
   const isLoggedIn =
     authorizedPage.some((page) => router.asPath.startsWith(page)) &&
     !router.asPath.includes("/subscription");
-
+  const [isExpandedMenubar, setIsExpandedMenubar] = useState(true);
   return (
     <>
       <Head>
@@ -24,10 +24,10 @@ export function App({ Component, pageProps }: AppProps) {
         />
       </Head>
       <section className="w-full mx-auto text-neutral-500">
-        <Header />
+        <Header setIsExpandedMenubar={setIsExpandedMenubar} />
         <div className="flex">
-          {isLoggedIn && <Sidebar />}
-          <div className="lg:mt-[1.5rem] w-full lg:mt-0">
+          {isLoggedIn && <Sidebar isExpandedMenubar={isExpandedMenubar} />}
+          <div className="w-full lg:mt-0">
             <Component {...pageProps} />
           </div>
           {isLoggedIn && <MenubarBottom />}

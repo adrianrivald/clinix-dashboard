@@ -1,6 +1,6 @@
 import { Disclosure, Listbox, Transition } from "@headlessui/react";
 import Image from "next/image";
-import { ArrowDownIcon } from "../Icons";
+import { ArrowDownIcon, DashboardIcon, ProfileIcon, WorkIcon } from "../Icons";
 import { Fragment, useState } from "react";
 import { useRouter } from "next/router";
 
@@ -23,7 +23,13 @@ const orgList = [
   },
 ];
 
-function Navmenu({ pathname }: { pathname: string }) {
+function Navmenu({
+  pathname,
+  isExpandedMenubar,
+}: {
+  pathname: string;
+  isExpandedMenubar: boolean;
+}) {
   const router = useRouter();
   const { asPath } = router;
   const [selectedOrg, setSelectedOrg] = useState<SelectProps>(orgList[0]);
@@ -35,8 +41,11 @@ function Navmenu({ pathname }: { pathname: string }) {
   return (
     <nav>
       <ul className="list-style-none flex flex-col gap-4">
-        <li className="py-4 flex items-center w-full cursor-pointer border-b border-neutral-250 pb-6">
-          {pathname === "/dashboard" && (
+        <li
+          onClick={() => router.push("/dashboard")}
+          className="py-4 flex items-center w-full cursor-pointer border-b border-neutral-250 pb-6"
+        >
+          {asPath.includes("/dashboard") && (
             <Image
               src="/assets/icons/side-menu.svg"
               width={4}
@@ -45,19 +54,20 @@ function Navmenu({ pathname }: { pathname: string }) {
             />
           )}
           <div className="ml-8 flex items-center gap-3">
-            <Image
-              src="/assets/icons/dashboard.svg"
-              width={18}
-              height={18}
-              alt="dashboard"
+            <DashboardIcon
+              className={`w-[18px] h-[18px] ${
+                asPath.includes("/dashboard") ? "text-primary-500" : ""
+              }`}
             />
-            <span
-              className={`font-bold ${
-                pathname === "/dashboard" ? "text-primary-500" : ""
-              } `}
-            >
-              Dashboard
-            </span>
+            {isExpandedMenubar && (
+              <span
+                className={`font-bold ${
+                  asPath.includes("/dashboard") ? "text-primary-500" : ""
+                } `}
+              >
+                Dashboard
+              </span>
+            )}
           </div>
         </li>
 
@@ -85,9 +95,11 @@ function Navmenu({ pathname }: { pathname: string }) {
                   </div>
                 </div>
               </span>
-              <span className="pointer-events-none absolute inset-y-0 right-4 flex items-center pr-2">
-                <ArrowDownIcon />
-              </span>
+              {isExpandedMenubar && (
+                <span className="pointer-events-none absolute inset-y-0 right-4 flex items-center pr-2">
+                  <ArrowDownIcon />
+                </span>
+              )}
             </Listbox.Button>
             <Transition
               as={Fragment}
@@ -202,23 +214,30 @@ function Navmenu({ pathname }: { pathname: string }) {
                   <span className="block truncate">
                     <div className="cursor-pointer flex items-center justify-between gap-2">
                       <div className="flex items-center gap-4">
-                        <Image
-                          src="/assets/icons/work.svg"
-                          alt="work"
-                          width={16}
-                          height={16}
+                        <WorkIcon
+                          className={`w-[18px] h-[18px] ${
+                            asPath.includes("/workspace")
+                              ? "text-primary-500"
+                              : ""
+                          }`}
                         />
                         <span
-                          className={`text-[14px] block truncate font-bold`}
+                          className={`font-bold ${
+                            asPath.includes("/workspace")
+                              ? "text-primary-500"
+                              : ""
+                          } `}
                         >
                           Workspace
-                        </span>{" "}
+                        </span>
                       </div>
                     </div>
                   </span>
-                  <span className="pointer-events-none absolute right-4 flex items-center pr-2">
-                    <ArrowDownIcon />
-                  </span>
+                  {isExpandedMenubar && (
+                    <span className="pointer-events-none absolute right-4 flex items-center pr-2">
+                      <ArrowDownIcon />
+                    </span>
+                  )}
                 </Disclosure.Button>
                 <Disclosure.Panel className="relative">
                   <div className="flex flex-col gap-0">
@@ -272,17 +291,50 @@ function Navmenu({ pathname }: { pathname: string }) {
             )}
           </Disclosure>
         </div>
+        <li
+          onClick={() => router.push("/profile")}
+          className="py-4 flex items-center w-full cursor-pointer border-b border-neutral-250 pb-6"
+        >
+          {asPath.includes("/profile") && (
+            <Image
+              src="/assets/icons/side-menu.svg"
+              width={4}
+              height={52}
+              alt="side-menu"
+            />
+          )}
+          <div className="ml-8 flex items-center gap-3">
+            <ProfileIcon
+              className={`w-[18px] h-[18px] ${
+                asPath.includes("/profile") ? "text-primary-500" : ""
+              }`}
+            />
+            {isExpandedMenubar && (
+              <span
+                className={`font-bold ${
+                  asPath.includes("/profile") ? "text-primary-500" : ""
+                } `}
+              >
+                Profile
+              </span>
+            )}
+          </div>
+        </li>
       </ul>
     </nav>
   );
 }
 
-export function Sidebar() {
+export function Sidebar({ isExpandedMenubar }: { isExpandedMenubar: boolean }) {
   const router = useRouter();
   const { pathname } = router;
   return (
-    <div className="hidden lg:block pt-[2rem] h-screen border-r border-neutral-250 min-w-[300px] overflow-auto">
-      <Navmenu pathname={pathname} />
+    <div
+      className={`transition-all hidden lg:block pt-[2rem] h-screen border-r border-neutral-250 w-0 ${
+        isExpandedMenubar ? "min-w-[300px] " : "min-w-[85px] "
+      }  overflow-auto`}
+    >
+      <Navmenu isExpandedMenubar={isExpandedMenubar} pathname={pathname} />
     </div>
   );
 }

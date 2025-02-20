@@ -6,7 +6,7 @@ import { useTranslation } from "next-i18next";
 import { useRouter } from "next/router";
 import React, { Dispatch, Fragment, SetStateAction } from "react";
 import { Button, Dropdown, SearchBox } from "..";
-import { ChevronRightIcon } from "../Icons";
+import { ChevronRightIcon, MenubarIcon } from "../Icons";
 import { useSearchDebounce } from "../../helpers/hooks";
 import type { Language } from "../Ui/Dropdown";
 import { TFunction } from "i18next";
@@ -125,6 +125,7 @@ interface NavMenuDesktopProps {
   onClickLogo: () => void;
   visible: boolean;
   onClickToDemo: () => void;
+  setIsExpandedMenubar: Dispatch<SetStateAction<boolean>>;
 }
 
 function NavMenuDesktop({
@@ -132,7 +133,11 @@ function NavMenuDesktop({
   onClickLogo,
   visible,
   onClickToDemo,
+  setIsExpandedMenubar,
 }: NavMenuDesktopProps) {
+  const onToggleMenubar = () => {
+    setIsExpandedMenubar((prev) => !prev);
+  };
   return (
     <div
       className={`transition-all sticky z-50 ${
@@ -142,14 +147,15 @@ function NavMenuDesktop({
       <header className="hidden lg:flex w-full bg-white shadow-md  justify-between border-neutral-300 py-4 items-center mx-auto max-w-[100%] px-8">
         {/* Logo */}
         <div id="logo" className="flex items-center gap-4">
-          <Image
-            src="/assets/logo/logo-clinix.png"
-            width={122}
-            height={48}
-            alt="logo-clinix"
-            onClick={onClickLogo}
-            className="cursor-pointer"
-          />
+          <MenubarIcon className="cursor-pointer" onClick={onToggleMenubar} />
+          {/* <Image
+              src="/assets/logo/logo-clinix.png"
+              width={122}
+              height={48}
+              alt="logo-clinix"
+              onClick={onClickLogo}
+              className="cursor-pointer"
+            /> */}
           <Image
             src="/assets/logo/logo-memos.png"
             width={112}
@@ -183,7 +189,11 @@ function NavMenuDesktop({
   );
 }
 
-export function Header() {
+export function Header({
+  setIsExpandedMenubar,
+}: {
+  setIsExpandedMenubar: Dispatch<SetStateAction<boolean>>;
+}) {
   const router = useRouter();
   const { asPath, pathname, locale } = router;
   const isHome = pathname === "/";
@@ -295,6 +305,7 @@ export function Header() {
         onClickLogo={onClickLogo}
         visible={visible}
         onClickToDemo={onClickToDemo}
+        setIsExpandedMenubar={setIsExpandedMenubar}
       />
       <NavMenuMobile
         visible={visible}

@@ -25,7 +25,7 @@ export default function WorkspacePage() {
         />
       </Head>
 
-      <main>
+      <main className="lg:mt-[1.5rem]">
         <WorkspaceContent t={t} />
       </main>
     </div>

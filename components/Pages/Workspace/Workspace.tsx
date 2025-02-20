@@ -62,7 +62,7 @@ export function WorkspaceContent({ t }: WorkspaceContentProps) {
 
   return (
     <div
-      id="dashboard"
+      id="workspace"
       className={twMerge("mb-24 px-4 lg:px-8", "max-w-full mx-auto")}
     >
       <div className="flex md:hidden flex-col gap-4 mb-6">
