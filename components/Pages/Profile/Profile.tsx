@@ -20,9 +20,11 @@ import PinInput from "../../Ui/Pin";
 import { title } from "process";
 import {
   ArrowDownIcon,
+  ChevronRightColorIcon,
   ChevronRightIcon,
   GearIcon,
   LogoutIcon,
+  PlusWhiteIcon,
   ProfileHomeIcon,
   ProfileIcon,
   ProfileMenuIcon,
@@ -68,6 +70,149 @@ interface AccountContainerProps {
   handleSubmit: UseFormHandleSubmit<any, undefined>;
   onSubmit: SubmitHandler<any>;
   register: UseFormRegister<any>;
+}
+
+function ProfileContainer() {
+  return (
+    <div className="mt-6 text-[14px]">
+      <div id="identitas-diri" className="mt-4">
+        <div className="flex items-center">
+          <span className="font-bold">Identitas Diri</span>
+        </div>
+        <div className="flex flex-col lg:flex-row lg:items-center mt-4">
+          <span className="w-[15%]">Nama Lengkap</span>
+          <span>Tony Molly</span>
+        </div>
+        <div className="flex flex-col lg:flex-row lg:items-center mt-4">
+          <span className="w-[15%]">Jenis Kelamin</span>
+          <span>Perempuan</span>
+        </div>
+        <div className="flex flex-col lg:flex-row lg:items-center mt-4">
+          <span className="w-[15%]">Status Pernikahan</span>
+          <span>M (Married)</span>
+        </div>
+        <div className="flex flex-col lg:flex-row lg:items-center mt-4">
+          <span className="w-[15%]">Tinggi & Berat Badan</span>
+          <span>175 cm & 65 kg</span>
+        </div>
+        <div className="flex flex-col lg:flex-row lg:items-center mt-4">
+          <span className="w-[15%]">Agama</span>
+          <span>Islam</span>
+        </div>
+        <div className="flex flex-col lg:flex-row lg:items-center mt-4">
+          <span className="w-[15%]">Kewarganegaraan</span>
+          <span>Indonesia</span>
+        </div>
+      </div>
+
+      <div id="kartu-identitas" className="mt-8">
+        <div className="flex items-center">
+          <span className="font-bold">Kartu Identitas</span>
+        </div>
+        <div className="flex flex-col lg:flex-row lg:items-center mt-4">
+          <span className="w-[15%]">NIK</span>
+          <span>140909894843134</span>
+        </div>
+        <div className="flex flex-col lg:flex-row lg:items-center mt-4">
+          <span className="w-[15%]">No KK</span>
+          <span>140909894843134</span>
+        </div>
+      </div>
+
+      <div id="kontak" className="mt-8">
+        <div className="flex items-center">
+          <span className="font-bold">Kontak</span>
+        </div>
+        <div className="flex flex-col lg:flex-row lg:items-center mt-4">
+          <span className="w-[15%]">No Handphone</span>
+          <span>081299878393</span>
+        </div>
+        <div className="flex flex-col lg:flex-row lg:items-center mt-4">
+          <span className="w-[15%]">Email</span>
+          <span>william.saputra02@gmail.com</span>
+        </div>
+      </div>
+
+      <div id="bahasa" className="mt-8">
+        <div className="flex items-center">
+          <span className="font-bold">Bahasa</span>
+        </div>
+        <div className="flex flex-col lg:flex-row lg:items-center mt-4">
+          <span className="w-[15%]">Bahasa 1</span>
+          <div className="flex items-center gap-2">
+            <span>Indonesia</span>
+            <div className="bg-[#EFFBF3] rounded-full px-2 py-1 text-[#31B057]">
+              Aktif
+            </div>
+          </div>
+        </div>
+        <div className="flex flex-col lg:flex-row lg:items-center mt-4">
+          <span className="w-[15%]">Bahasa 2</span>
+          <div className="flex items-center gap-2">
+            <span>Inggris</span>
+            <div className="bg-[#EFFBF3] rounded-full px-2 py-1 text-[#31B057]">
+              Aktif
+            </div>
+          </div>
+        </div>
+        <div className="flex flex-col lg:flex-row lg:items-center mt-4">
+          <span className="w-[15%]">Bahasa 3</span>
+          <div className="flex items-center gap-2">
+            <span>Spanyol</span>
+            <div className="bg-[#EFFBF3] rounded-full px-2 py-1 text-[#31B057]">
+              Aktif
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="alamat" className="mt-8">
+        <div className="flex items-center">
+          <span className="font-bold">Alamat</span>
+        </div>
+        <div className="flex flex-col lg:flex-row lg:items-center mt-4">
+          <span className="w-[15%]">Alamat 1</span>
+          <span>
+            Jl. Surabaya No. 123, RT.08/RW.07, Kel. Kandangan, Kec. Benowo, Kota
+            Surabaya 60182 Indonesia.
+          </span>
+        </div>
+        <div className="flex flex-col lg:flex-row lg:items-center mt-4">
+          <span className="w-[15%]">Alamat 1</span>
+          <span>
+            Jl. Surabaya No. 123, RT.08/RW.07, Kel. Kandangan, Kec. Benowo, Kota
+            Surabaya 60182 Indonesia.
+          </span>
+        </div>
+      </div>
+
+      <div id="alamat" className="mt-8">
+        <div className="flex items-center">
+          <span className="font-bold">Legalitas</span>
+        </div>
+        <div className="flex flex-col lg:flex-row lg:items-center mt-4">
+          <span className="w-[15%]">Tanda Tangan</span>
+          <div>
+            <span className="underline text-link">tonymollyttd.png</span>
+            <span className="italic text-neutral-300 ml-3">
+              terakhir diperbarui: 09 Mei 2024 | 09:00 WIB
+            </span>
+          </div>
+        </div>
+        <div className="flex flex-col lg:flex-row lg:items-center mt-4">
+          <span className="w-[15%]">Nama Terang</span>
+          <span>Dr. Tony Molly</span>
+        </div>
+      </div>
+
+      <Button
+        className="flex-none w-40 mt-8 h-0"
+        isPrimary
+        title="Edit Profil"
+        icon={<PlusWhiteIcon />}
+      />
+    </div>
+  );
 }
 
 function AccountContainer({
@@ -130,8 +275,12 @@ function AccountContainer({
 export function ProfileContent({ t }: ProfileContentProps) {
   const router = useRouter();
   const { register, handleSubmit, watch } = useForm<any>();
-  const [openedSection, setOpenedSection] = useState("account");
+  const [openedSection, setOpenedSection] = useState("profile");
   const form = useRef() as any;
+
+  const onClickMenu = (path: string) => {
+    setOpenedSection(path);
+  };
 
   const onSubmit: SubmitHandler<any> = async () => {
     // TODO Submit handler
@@ -142,7 +291,11 @@ export function ProfileContent({ t }: ProfileContentProps) {
         <div className="w-full lg:w-1/4 h-screen border-r border-neutral-250 p-4 lg:p-8">
           <div className="flex items-center gap-5">
             <ProfileHomeIcon className="w-[16px] h-[16px]" />
-            <ChevronRightIcon className="w-[14px] h-[14px]" />
+            <ChevronRightColorIcon
+              className={`"w-[14px] h-[14px] ${
+                openedSection === "" ? "text-primary-500" : ""
+              }`}
+            />
             <span>Tony Moly</span>
           </div>
           <div className="flex items-center gap-2 mt-8">
@@ -169,13 +322,30 @@ export function ProfileContent({ t }: ProfileContentProps) {
 
           <div className="flex flex-col gap-6 mt-8">
             {/* Akun */}
-            <div className="flex flex-col gap-2">
+            <div
+              onClick={() => onClickMenu("account")}
+              className="flex flex-col gap-2 cursor-pointer"
+            >
               <div className="flex justify-between items-center">
                 <div className="flex items-center gap-2">
-                  <ProfileIcon className="w-[14px] h-[14px]" />
-                  <span className="font-bold">Akun</span>
+                  <ProfileIcon
+                    className={`"w-[14px] h-[14px] ${
+                      openedSection === "account" ? "text-primary-500" : ""
+                    }`}
+                  />
+                  <span
+                    className={`font-bold ${
+                      openedSection === "account" ? "text-primary-500" : ""
+                    }`}
+                  >
+                    Akun
+                  </span>
                 </div>
-                <ChevronRightIcon className="w-[12px] h-[12px]" />
+                <ChevronRightColorIcon
+                  className={`w-[12px] h-[12px] ${
+                    openedSection === "account" ? "text-primary-500" : ""
+                  }`}
+                />
               </div>
               <span className="text-neutral-300">
                 Kelola informasi utama yang digunakan untuk masuk ke akun Anda
@@ -183,13 +353,30 @@ export function ProfileContent({ t }: ProfileContentProps) {
             </div>
 
             {/* Profil */}
-            <div className="flex flex-col gap-2">
+            <div
+              onClick={() => onClickMenu("my-profile")}
+              className="flex flex-col gap-2 cursor-pointer"
+            >
               <div className="flex justify-between items-center">
                 <div className="flex items-center gap-2">
-                  <ProfileMenuIcon className="w-[14px] h-[14px]" />
-                  <span className="font-bold">Profil</span>
+                  <ProfileMenuIcon
+                    className={`"w-[14px] h-[14px] ${
+                      openedSection === "my-profile" ? "text-primary-500" : ""
+                    }`}
+                  />
+                  <span
+                    className={`font-bold ${
+                      openedSection === "my-profile" ? "text-primary-500" : ""
+                    }`}
+                  >
+                    Profil
+                  </span>
                 </div>
-                <ChevronRightIcon className="w-[12px] h-[12px]" />
+                <ChevronRightColorIcon
+                  className={`w-[12px] h-[12px] ${
+                    openedSection === "my-profile" ? "text-primary-500" : ""
+                  }`}
+                />
               </div>
               <span className="text-neutral-300">
                 Identitas diri, kontak, alamat, bahasa, keluarga, dan kartu
@@ -198,13 +385,36 @@ export function ProfileContent({ t }: ProfileContentProps) {
             </div>
 
             {/* Informasi Profesional */}
-            <div className="flex flex-col gap-2">
+            <div
+              onClick={() => onClickMenu("professional-information")}
+              className="flex flex-col gap-2 cursor-pointer"
+            >
               <div className="flex justify-between items-center">
                 <div className="flex items-center gap-2">
-                  <WorkIcon className="w-[14px] h-[14px]" />
-                  <span className="font-bold">Informasi Profesional</span>
+                  <WorkIcon
+                    className={`"w-[14px] h-[14px] ${
+                      openedSection === "professional-information"
+                        ? "text-primary-500"
+                        : ""
+                    }`}
+                  />
+                  <span
+                    className={`font-bold ${
+                      openedSection === "professional-information"
+                        ? "text-primary-500"
+                        : ""
+                    }`}
+                  >
+                    Informasi Profesional
+                  </span>
                 </div>
-                <ChevronRightIcon className="w-[12px] h-[12px]" />
+                <ChevronRightColorIcon
+                  className={`w-[12px] h-[12px] ${
+                    openedSection === "professional-information"
+                      ? "text-primary-500"
+                      : ""
+                  }`}
+                />
               </div>
               <span className="text-neutral-300">
                 Informasi profesional mencakup latar belakang pekerjaan dan
@@ -214,25 +424,53 @@ export function ProfileContent({ t }: ProfileContentProps) {
           </div>
           <div className="border-t-2 mt-6 border-neutral-250 w-full h-1"></div>
 
-          <div className="flex flex-col gap-2 mt-4">
+          <div
+            onClick={() => onClickMenu("settings")}
+            className="flex flex-col gap-2 cursor-pointer mt-4"
+          >
             <div className="flex justify-between items-center">
               <div className="flex items-center gap-2">
-                <GearIcon className="w-[14px] h-[14px]" />
-                <span className="font-bold">Pengaturan</span>
+                <GearIcon
+                  className={`"w-[14px] h-[14px] ${
+                    openedSection === "settings" ? "text-primary-500" : ""
+                  }`}
+                />
+                <span
+                  className={`font-bold ${
+                    openedSection === "settings" ? "text-primary-500" : ""
+                  }`}
+                >
+                  Pengaturan
+                </span>
               </div>
-              <ChevronRightIcon className="w-[12px] h-[12px]" />
+              <ChevronRightColorIcon
+                className={`w-[12px] h-[12px] ${
+                  openedSection === "settings" ? "text-primary-500" : ""
+                }`}
+              />
             </div>
           </div>
 
           <div className="border-t-2 mt-6 border-neutral-250 w-full h-1"></div>
 
-          <div className="flex flex-col gap-2 mt-4">
+          <div
+            onClick={() => onClickMenu("logout")}
+            className="flex flex-col gap-2 cursor-pointer mt-4"
+          >
             <div className="flex justify-between items-center">
               <div className="flex items-center gap-2">
-                <LogoutIcon className="w-[14px] h-[14px]" />
+                <LogoutIcon
+                  className={`"w-[14px] h-[14px] ${
+                    openedSection === "" ? "text-primary-500" : ""
+                  }`}
+                />
                 <span className="font-bold">Keluar</span>
               </div>
-              <ChevronRightIcon className="w-[12px] h-[12px]" />
+              <ChevronRightColorIcon
+                className={`w-[12px] h-[12px] ${
+                  openedSection === "" ? "text-primary-500" : ""
+                }`}
+              />
             </div>
           </div>
         </div>
@@ -245,6 +483,7 @@ export function ProfileContent({ t }: ProfileContentProps) {
               register={register}
             />
           )}
+          {openedSection === "my-profile" && <ProfileContainer />}
         </div>
       </div>
       <ToastContainer />

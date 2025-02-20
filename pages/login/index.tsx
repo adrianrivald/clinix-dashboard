@@ -3,16 +3,18 @@ import { useRouter } from "next/router";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { useTranslation } from "next-i18next";
 import { GetStaticProps } from "next";
-import { WorkspaceContent } from "../../components";
+import { LoginContent } from "../../components";
 
-export default function WorkspacePage() {
+export default function LoginPage() {
   const { t } = useTranslation("common");
   const router = useRouter();
-  const { query } = router;
+  const onClickToDemo = () => {
+    router.push("/demo");
+  };
   return (
     <div>
       <Head>
-        <title>Dashboard - Memos Healthcare CRM</title>
+        <title>Memos Healthcare CRM</title>
         <meta
           name="description"
           content="Sistem CRM Healthcare yang dirancang untuk beradaptasi dengan anda bekerja, mengintegrasikan berbagai aspek operasional kesehatan ke dalam satu platform yang intuitif dan mudah digunakan"
@@ -26,8 +28,15 @@ export default function WorkspacePage() {
       </Head>
 
       <main className="mt-[1.5rem]">
-        <WorkspaceContent t={t} />
+        <LoginContent t={t} />
       </main>
     </div>
   );
 }
+
+export const getStaticProps: GetStaticProps<any> = async ({ locale }) => ({
+  props: {
+    locale,
+    ...(await serverSideTranslations(locale ?? "id", ["common"])),
+  },
+});

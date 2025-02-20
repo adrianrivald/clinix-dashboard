@@ -2,7 +2,7 @@ import { Dialog, Listbox, Transition } from "@headlessui/react";
 import emailjs from "@emailjs/browser";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import React, { Fragment, useRef } from "react";
+import React, { Fragment, useRef, useState } from "react";
 import { set, SubmitHandler, useForm } from "react-hook-form";
 import { twMerge } from "tailwind-merge";
 import { Button, Card } from "../../Ui";
@@ -12,14 +12,15 @@ import Image from "next/image";
 import Countdown from "../../../helpers/countdown";
 import PinInput from "../../Ui/Pin";
 
-interface SignupContentProps {
+interface LoginContentProps {
   t: TFunction<"common", undefined>;
 }
 
-export function SignupContent({ t }: SignupContentProps) {
+export function LoginContent({ t }: LoginContentProps) {
   const router = useRouter();
   const [isSubmitted, setIsSubmitted] = React.useState(false);
   const [isShowOTPModal, setIsShowOTPModal] = React.useState(false);
+  const [isHidePassword, setIsHidePassword] = useState(true);
 
   const { register, handleSubmit, watch } = useForm<any>();
   const form = useRef() as any;
@@ -33,7 +34,7 @@ export function SignupContent({ t }: SignupContentProps) {
   };
 
   const onSubmit: SubmitHandler<any> = async () => {
-    setIsShowOTPModal(true);
+    // TODO: login function
   };
 
   const onClickHome = () => {
@@ -51,11 +52,8 @@ export function SignupContent({ t }: SignupContentProps) {
         <div>
           <form ref={form} onSubmit={handleSubmit(onSubmit)}>
             <Card>
-              <h2 className="font-bold text-[30px]">Daftar</h2>
-              <h3 className="mt-2">
-                Masukkan email dan kata sandi untuk melanjutkan akses ke akun
-                Anda
-              </h3>
+              <h2 className="font-bold text-[30px]">Login</h2>
+              <h3 className="mt-2">Masukkan data Anda untuk login</h3>
               <div className="flex flex-col gap-8 mt-6">
                 <div className="flex flex-col gap-4">
                   {/* Row 1 */}
@@ -73,21 +71,45 @@ export function SignupContent({ t }: SignupContentProps) {
                       />
                     </div>
                   </div>
-                </div>
+                  {/* Row 1 */}
+                  <div className="flex flex-col lg:flex-row justify-between gap-4">
+                    <div className="w-full flex flex-col gap-2">
+                      <label className="text-[14px] font-medium" htmlFor="name">
+                        Kata Sandi
+                      </label>
+                      <div className="relative rounded-[8px] p-4 border border-neutral-100 flex items-center justify-between gap-2">
+                        <input
+                          id="password"
+                          {...register("password", { required: true })}
+                          type={isHidePassword ? "password" : "text"}
+                          className="focus:outline-none w-full"
+                          placeholder="Masukkan Kata Sandi"
+                        />
 
-                <p className="text-[14px]">
-                  Dengan klik daftar, Anda menyetujui{" "}
-                  <Link href="/terms-condition" className="underline">
-                    Pernyataan Privasi
-                  </Link>{" "}
-                  dan Ketentuan Layanan Memos.
-                </p>
+                        <Image
+                          onClick={() => setIsHidePassword(!isHidePassword)}
+                          src="/assets/icons/eye.svg"
+                          alt="showhidepassword"
+                          width={16}
+                          height={16}
+                          className="cursor-pointer"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
+
+              <p
+                onClick={() => setIsShowOTPModal(true)}
+                className="mt-2 text-[14px] underline text-link cursor-pointer"
+              >
+                Lupa kata sandi?
+              </p>
 
               <Button
                 isPrimary
-                isClinix
-                title="Daftar"
+                title="Masuk"
                 className="w-full mt-4 focus:outline-none"
                 type="submit"
               />
@@ -107,8 +129,8 @@ export function SignupContent({ t }: SignupContentProps) {
               </button>
               <div className="mt-4 text-center">
                 <span>
-                  Sudah memiliki akun?{" "}
-                  <span className="underline text-[#037EFF]">Masuk</span>
+                  Belum memiliki akun?{" "}
+                  <span className="underline text-[#037EFF]">Daftar</span>
                 </span>
               </div>
             </Card>
@@ -174,7 +196,7 @@ export function SignupContent({ t }: SignupContentProps) {
                           width={24}
                           height={24}
                         />
-                        Verifikasi email kamu
+                        Lupa Kata Sandi
                       </div>
                     </Dialog.Title>
                     <div className="mt-2">
@@ -183,11 +205,11 @@ export function SignupContent({ t }: SignupContentProps) {
                         alamat email : {censoredEmail}
                       </p>
                     </div>
-                    <PinInput isClinix length={6} onComplete={() => {}} />
+                    <PinInput length={6} onComplete={() => {}} />
                     <div className="mt-8">
                       <span className="text-[14px] ">
                         Kirim ulang kode dalam{" "}
-                        <span className="text-green-500">
+                        <span className="text-[#1094DD]">
                           <Countdown initialTime={150} />
                         </span>
                       </span>

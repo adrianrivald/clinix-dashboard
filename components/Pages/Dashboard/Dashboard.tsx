@@ -12,6 +12,7 @@ import Image from "next/image";
 import Countdown from "../../../helpers/countdown";
 import PinInput from "../../Ui/Pin";
 import { title } from "process";
+import { CloseIcon, DownloadIcon } from "../../Icons";
 
 interface DashboardContentProps {
   t: TFunction<"common", undefined>;
@@ -38,19 +39,36 @@ const activities = [
     title: "Workspace RS Setio Husodo tersedia!",
     content:
       "HR telah mengirim undangan, pilih konfirmasi untuk mulai bekerja!",
-    actions: true,
+    actions: {
+      value: true,
+      label: "Terima",
+    },
+  },
+  {
+    image: "/assets/images/dummy-ava-2.png",
+    title: "Workspace RS Setio Husodo tersedia!",
+    content: "HR Setio Husodo telah mengirim perjanjian kerjasama",
+    actions: {
+      value: true,
+      label: "Lihat Detail",
+    },
   },
 ];
 
 export function DashboardContent({ t }: DashboardContentProps) {
   const router = useRouter();
   const [isWorkspaceModal, setIsWorkspaceModal] = useState(false);
+  const [isDetailWorkspaceModal, setIsDetailWorkspaceModal] = useState(false);
   const onToDetail = () => {
     router.push("/dashboard/subscription");
   };
 
-  const onAcceptWorkspace = () => {
-    setIsWorkspaceModal(true);
+  const onAcceptWorkspace = (mode: string) => {
+    if (mode === "Terima") {
+      setIsWorkspaceModal(true);
+    } else {
+      setIsDetailWorkspaceModal(true);
+    }
   };
 
   return (
@@ -121,10 +139,12 @@ export function DashboardContent({ t }: DashboardContentProps) {
                         </span>
 
                         <button
-                          onClick={onAcceptWorkspace}
+                          onClick={() =>
+                            onAcceptWorkspace(activity?.actions?.label)
+                          }
                           className="block md:hidden mt-4 bg-white border-primary-500 text-primary-500 rounded-lg px-2 py-1 border-2  "
                         >
-                          Terima
+                          {activity?.actions?.label}
                         </button>
                       </div>
                     )}
@@ -140,10 +160,10 @@ export function DashboardContent({ t }: DashboardContentProps) {
                 </div>
                 {activity?.actions && (
                   <button
-                    onClick={onAcceptWorkspace}
+                    onClick={() => onAcceptWorkspace(activity?.actions?.label)}
                     className="hidden md:block mt-4 bg-white border-primary-500 text-primary-500 rounded-lg px-4 p-2 border-2  "
                   >
-                    Terima
+                    {activity?.actions?.label}
                   </button>
                 )}
               </div>
@@ -195,6 +215,82 @@ export function DashboardContent({ t }: DashboardContentProps) {
                         className="w-full"
                         title="Mulai Bekerja"
                       />
+                    </div>
+                  </Dialog.Panel>
+                </Transition.Child>
+              </div>
+            </div>
+          </Dialog>
+        </Transition>
+      )}
+
+      {isDetailWorkspaceModal && (
+        <Transition appear show={isDetailWorkspaceModal} as={Fragment}>
+          <Dialog
+            as="div"
+            className="relative z-10"
+            onClose={() => setIsDetailWorkspaceModal(false)}
+          >
+            <Transition.Child
+              as={Fragment}
+              enter="ease-out duration-300"
+              enterFrom="opacity-0"
+              enterTo="opacity-100"
+              leave="ease-in duration-200"
+              leaveFrom="opacity-100"
+              leaveTo="opacity-0"
+            >
+              <div className="fixed inset-0 bg-black/25" />
+            </Transition.Child>
+
+            <div className="fixed inset-0 overflow-y-auto">
+              <div className="flex min-h-full items-center justify-center p-4 text-center">
+                <Transition.Child
+                  as={Fragment}
+                  enter="ease-out duration-300"
+                  enterFrom="opacity-0 scale-95"
+                  enterTo="opacity-100 scale-100"
+                  leave="ease-in duration-200"
+                  leaveFrom="opacity-100 scale-100"
+                  leaveTo="opacity-0 scale-95"
+                >
+                  <Dialog.Panel className="w-full max-w-[80rem] transform overflow-hidden rounded-2xl bg-white p-8 text-left align-middle shadow-xl transition-all">
+                    <Dialog.Title
+                      as="h3"
+                      className="flex items-center justify-between mb-2"
+                    >
+                      PKS_John_doe.pdf
+                      <CloseIcon
+                        className="cursor-pointer"
+                        onClick={() => setIsDetailWorkspaceModal(false)}
+                      />
+                    </Dialog.Title>
+
+                    <div className="max-h-[40rem] overflow-y-auto p-4">
+                      <Image
+                        src="/assets/images/PKS.png"
+                        width={1200}
+                        height={640}
+                        alt="pks"
+                      />
+                    </div>
+
+                    <div className="flex justify-between items-center mt-4">
+                      <Button
+                        icon={<DownloadIcon />}
+                        title="Unduh Dokumen"
+                        className="w-[15%]"
+                      />
+
+                      <div className="flex flex-none flex-col-reverse lg:flex-row  justify-between gap-4 ">
+                        <Button title="Tolak" className="w-64" />
+                        <Button
+                          isPrimary
+                          // onClick={onFinishRegistration}
+                          title="Terima"
+                          className="w-64"
+                        />
+                      </div>
                     </div>
                   </Dialog.Panel>
                 </Transition.Child>

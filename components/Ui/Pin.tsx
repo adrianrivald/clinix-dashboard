@@ -4,9 +4,14 @@ import React, { useRef } from "react";
 interface PinInputProps {
   length?: number;
   onComplete: (pin: string) => void;
+  isClinix?: boolean;
 }
 
-const PinInput: React.FC<PinInputProps> = ({ length = 6, onComplete }) => {
+const PinInput: React.FC<PinInputProps> = ({
+  length = 6,
+  onComplete,
+  isClinix = false,
+}) => {
   const [pin, setPin] = React.useState<string[]>(new Array(length).fill(""));
   const inputRefs = useRef<(HTMLInputElement | null)[]>([]);
   const router = useRouter();
@@ -52,7 +57,9 @@ const PinInput: React.FC<PinInputProps> = ({ length = 6, onComplete }) => {
           onChange={(e) => handleChange(e.target.value, index)}
           onKeyDown={(e) => handleKeyDown(e, index)}
           ref={(el) => (inputRefs.current[index] = el)}
-          className="border-b-2 border-green-500 w-10 h-14 focus:outline-none text-center text-4xl pb-6 font-bold"
+          className={`border-b-2 w-10 h-14 focus:outline-none text-center text-4xl pb-6 font-bold ${
+            isClinix ? "border-green-500" : "border-primary-500"
+          }`}
         />
       ))}
     </div>

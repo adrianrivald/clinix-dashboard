@@ -6,7 +6,12 @@ import { useTranslation } from "next-i18next";
 import { useRouter } from "next/router";
 import React, { Dispatch, Fragment, SetStateAction } from "react";
 import { Button, Dropdown, SearchBox } from "..";
-import { ChevronRightIcon, MenubarIcon } from "../Icons";
+import {
+  ChevronRightIcon,
+  LogoutIcon,
+  MenubarIcon,
+  ProfileIcon,
+} from "../Icons";
 import { useSearchDebounce } from "../../helpers/hooks";
 import type { Language } from "../Ui/Dropdown";
 import { TFunction } from "i18next";
@@ -108,7 +113,17 @@ function UserAccount() {
           <div className="py-2 ">
             <Menu.Item>
               {({ active }) => (
-                <div className="p-4 cursor-pointer hover:bg-primary-200">
+                <div className="p-4 cursor-pointer hover:bg-primary-200 flex items-center gap-4">
+                  <ProfileIcon />
+                  Profil
+                </div>
+              )}
+            </Menu.Item>
+            <div className="border-t w-full border-neutral-250" />
+            <Menu.Item>
+              {({ active }) => (
+                <div className="p-4 cursor-pointer hover:bg-primary-200 flex items-center gap-4">
+                  <LogoutIcon />
                   Logout
                 </div>
               )}
@@ -140,7 +155,7 @@ function NavMenuDesktop({
   };
   return (
     <div
-      className={`transition-all sticky z-50 ${
+      className={`transition-all sticky z-2 ${
         visible ? "top-0" : "-top-[6rem]"
       }`}
     >
@@ -148,14 +163,14 @@ function NavMenuDesktop({
         {/* Logo */}
         <div id="logo" className="flex items-center gap-4">
           <MenubarIcon className="cursor-pointer" onClick={onToggleMenubar} />
-          {/* <Image
-              src="/assets/logo/logo-clinix.png"
-              width={122}
-              height={48}
-              alt="logo-clinix"
-              onClick={onClickLogo}
-              className="cursor-pointer"
-            /> */}
+          <Image
+            src="/assets/logo/logo-clinix.png"
+            width={122}
+            height={48}
+            alt="logo-clinix"
+            onClick={onClickLogo}
+            className="cursor-pointer"
+          />
           <Image
             src="/assets/logo/logo-memos.png"
             width={112}

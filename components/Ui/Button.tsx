@@ -1,4 +1,4 @@
-import React, { ButtonHTMLAttributes } from "react";
+import React, { ButtonHTMLAttributes, ReactElement } from "react";
 import { twMerge } from "tailwind-merge";
 
 interface ButtonParams {
@@ -8,6 +8,7 @@ interface ButtonParams {
   className?: string;
   isClinix?: boolean;
   isDisabled?: boolean;
+  icon?: ReactElement;
 }
 
 type ButtonProps = ButtonParams & ButtonHTMLAttributes<HTMLButtonElement>;
@@ -19,6 +20,7 @@ export function Button({
   onClick,
   isClinix = false,
   isDisabled = false,
+  icon,
   ...rest
 }: ButtonProps) {
   return (
@@ -26,7 +28,7 @@ export function Button({
       onClick={onClick}
       disabled={isDisabled}
       className={twMerge(
-        "rounded-lg px-4 py-2 border-2 min-h-12",
+        "rounded-lg px-4 py-2 border-2 min-h-12 flex items-center justify-center",
         isDisabled
           ? "bg-neutral-100 text-neutral-500 border-neutral-100"
           : isPrimary
@@ -40,6 +42,7 @@ export function Button({
       )}
       {...rest}
     >
+      {icon && <div className="mr-2">{icon}</div>}
       {title}
     </button>
   );
