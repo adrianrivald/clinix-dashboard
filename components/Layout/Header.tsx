@@ -139,7 +139,7 @@ interface NavMenuDesktopProps {
   isLoggedIn: boolean;
   onClickLogo: () => void;
   visible: boolean;
-  onClickToDemo: () => void;
+  onClickToLogin: () => void;
   setIsExpandedMenubar: Dispatch<SetStateAction<boolean>>;
 }
 
@@ -147,7 +147,7 @@ function NavMenuDesktop({
   isLoggedIn,
   onClickLogo,
   visible,
-  onClickToDemo,
+  onClickToLogin,
   setIsExpandedMenubar,
 }: NavMenuDesktopProps) {
   const onToggleMenubar = () => {
@@ -196,7 +196,7 @@ function NavMenuDesktop({
         ) : (
           <div id="right" className="hidden lg:flex gap-3 items-center">
             <span>Sudah memiliki akun?</span>
-            <Button isClinix title="Masuk" onClick={onClickToDemo} />
+            <Button isClinix title="Masuk" onClick={onClickToLogin} />
           </div>
         )}
       </header>
@@ -212,7 +212,7 @@ export function Header({
   const router = useRouter();
   const { asPath, pathname, locale } = router;
   const isHome = pathname === "/";
-  const authorizedPage = ["/dashboard", "/workspace"];
+  const authorizedPage = ["/dashboard", "/workspace", "/profile"];
   const isLoggedIn =
     authorizedPage.some((page) => router.asPath.startsWith(page)) &&
     !router.asPath.includes("/subscription");
@@ -239,8 +239,8 @@ export function Header({
     router.push("/");
   };
 
-  const onClickToDemo = () => {
-    router.push("/demo");
+  const onClickToLogin = () => {
+    router.push("/login");
   };
 
   React.useEffect(() => {
@@ -319,7 +319,7 @@ export function Header({
         isLoggedIn={isLoggedIn}
         onClickLogo={onClickLogo}
         visible={visible}
-        onClickToDemo={onClickToDemo}
+        onClickToLogin={onClickToLogin}
         setIsExpandedMenubar={setIsExpandedMenubar}
       />
       <NavMenuMobile

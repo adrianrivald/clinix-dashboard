@@ -105,7 +105,10 @@ export function SignupContent({ t }: SignupContentProps) {
                 />
                 Daftar dengan Google
               </button>
-              <div className="mt-4 text-center">
+              <div
+                onClick={() => router.push("/login")}
+                className="mt-4 text-center cursor-pointer"
+              >
                 <span>
                   Sudah memiliki akun?{" "}
                   <span className="underline text-[#037EFF]">Masuk</span>

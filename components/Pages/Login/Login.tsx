@@ -127,7 +127,10 @@ export function LoginContent({ t }: LoginContentProps) {
                 />
                 Daftar dengan Google
               </button>
-              <div className="mt-4 text-center">
+              <div
+                onClick={() => router.push("/")}
+                className="mt-4 text-center cursor-pointer"
+              >
                 <span>
                   Belum memiliki akun?{" "}
                   <span className="underline text-[#037EFF]">Daftar</span>
