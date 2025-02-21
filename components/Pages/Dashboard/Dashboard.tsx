@@ -275,20 +275,20 @@ export function DashboardContent({ t }: DashboardContentProps) {
                       />
                     </div>
 
-                    <div className="flex justify-between items-center mt-4">
+                    <div className="flex flex-col md:flex-row justify-between items-center mt-4">
                       <Button
                         icon={<DownloadIcon />}
                         title="Unduh Dokumen"
-                        className="w-[15%]"
+                        className="w-full md:w-[15%]"
                       />
 
-                      <div className="flex flex-none flex-col-reverse lg:flex-row  justify-between gap-4 ">
-                        <Button title="Tolak" className="w-64" />
+                      <div className="flex w-full md:w-auto mt-4 md:mt-0 flex-none flex-col-reverse lg:flex-row  justify-between gap-4 ">
+                        <Button title="Tolak" className="w-full md:w-64" />
                         <Button
                           isPrimary
                           // onClick={onFinishRegistration}
                           title="Terima"
-                          className="w-64"
+                          className="w-full md:w-64"
                         />
                       </div>
                     </div>
