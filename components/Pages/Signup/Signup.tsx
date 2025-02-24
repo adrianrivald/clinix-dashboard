@@ -26,9 +26,11 @@ export function SignupContent({ t }: SignupContentProps) {
   const { mutate: registerEmail } = useRegisterEmail();
   const { mutate: requestAuthCode } = useRequestAuthCode();
   const { mutate: verifyAuthCode, isError } = useVerifyAuthCode();
+  const [initialTime, setInitialTime] = React.useState(150);
   const [isSubmitted, setIsSubmitted] = React.useState(false);
   const [isShowOTPModal, setIsShowOTPModal] = React.useState(false);
   const [isRequested, setIsRequested] = React.useState(false);
+  const [isShouldRequestOtp, setIsShouldRequestOtp] = React.useState(false);
 
   const { register, handleSubmit, watch, formState } = useForm<any>();
   const form = useRef() as any;
@@ -42,29 +44,44 @@ export function SignupContent({ t }: SignupContentProps) {
   };
 
   const onSubmit: SubmitHandler<any> = async (formData: any) => {
-    console.log(formData, "formdata");
-    registerEmail(
-      {
-        email: formData?.email,
-      },
-      {
-        onSuccess: () => {
-          setIsShowOTPModal(true);
-          setIsRequested(true);
-          requestAuthCode({
-            contact_type: "email",
-            contact_value: formData?.email,
-            token_type: "mfa_otp",
-          });
+    if (!isShouldRequestOtp) {
+      registerEmail(
+        {
+          email: formData?.email,
         },
-        onError: (error: any) => {
-          const reason = error?.message
-            ? error?.message?.split("~")[0]
-            : "Terjadi error, silakan coba lagi";
-          toast.error(reason);
-        },
-      }
-    );
+        {
+          onSuccess: () => {
+            setIsShouldRequestOtp(false);
+            setIsShowOTPModal(true);
+            setIsRequested(true);
+            requestAuthCode({
+              contact_type: "email",
+              contact_value: formData?.email,
+              token_type: "email_verification",
+            });
+          },
+          onError: (error: any) => {
+            setIsShouldRequestOtp(true);
+            setInitialTime(150);
+          },
+        }
+      );
+    } else {
+      setIsShowOTPModal(true);
+      setIsRequested(true);
+      requestAuthCode(
+        {
+          contact_type: "email",
+          contact_value: formData?.email,
+          token_type: "mfa_otp",
+        }
+        // {
+        //   onSuccess: () => {
+        //     setIsShouldRequestOtp(false);
+        //   },
+        // }
+      );
+    }
   };
 
   const onClickRequestAuthCode = () => {
@@ -72,7 +89,7 @@ export function SignupContent({ t }: SignupContentProps) {
       {
         contact_type: "email",
         contact_value: watch("email"),
-        token_type: "mfa_otp",
+        token_type: isShouldRequestOtp ? "mfa_otp" : "email_verification",
       },
       {
         onSuccess: () => {
@@ -93,7 +110,7 @@ export function SignupContent({ t }: SignupContentProps) {
       {
         contact_type: "email",
         contact_value: watch("email"),
-        token_type: "mfa_otp",
+        token_type: isShouldRequestOtp ? "mfa_otp" : "email_verification",
         token: pin,
       },
       {
@@ -149,16 +166,26 @@ export function SignupContent({ t }: SignupContentProps) {
                             value: true,
                             message: "Email harus diisi",
                           },
+                          onChange: () => {
+                            setIsShouldRequestOtp(false);
+                          },
                         })}
                         type="email"
                         className={`rounded-md p-4 border border-neutral-100 focus:outline-none ${
-                          formState?.errors?.email && "border-primary-500"
+                          (formState?.errors?.email || isShouldRequestOtp) &&
+                          "border-primary-500"
                         }`}
                         placeholder="Masukkan Email Anda"
                       />
                       {formState?.errors?.email && (
-                        <span className="text-primary-500">
+                        <span className="text-primary-500 text-sm">
                           {formState?.errors?.email?.message as any}
+                        </span>
+                      )}
+                      {isShouldRequestOtp && (
+                        <span className="text-primary-500 text-sm">
+                          Email ini sudah terdaftar. Kirim OTP untuk
+                          melanjutkan.
                         </span>
                       )}
                     </div>
@@ -177,7 +204,7 @@ export function SignupContent({ t }: SignupContentProps) {
               <Button
                 isPrimary
                 isClinix
-                title="Daftar"
+                title={isShouldRequestOtp ? "Kirim OTP" : "Daftar"}
                 className="w-full mt-4 focus:outline-none"
                 type="submit"
               />
@@ -262,10 +289,12 @@ export function SignupContent({ t }: SignupContentProps) {
                     >
                       <div className="flex items-center gap-2 mb-2">
                         <Image
+                          onClick={() => setIsShowOTPModal(false)}
                           src="/assets/icons/arrow-back.svg"
                           alt="back"
                           width={24}
                           height={24}
+                          className="cursor-pointer"
                         />
                         Verifikasi email kamu
                       </div>
@@ -283,7 +312,7 @@ export function SignupContent({ t }: SignupContentProps) {
                     />
                     <div className="mt-8">
                       <Countdown
-                        initialTime={150}
+                        initialTime={initialTime}
                         onClickRequestAuthCode={onClickRequestAuthCode}
                         isRequested={isRequested}
                         setIsRequested={setIsRequested}
