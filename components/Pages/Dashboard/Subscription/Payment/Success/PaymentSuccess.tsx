@@ -6,7 +6,6 @@ import React, { ChangeEvent, Fragment, useRef, useState } from "react";
 import { set, SubmitHandler, useForm } from "react-hook-form";
 import { twMerge } from "tailwind-merge";
 import { TFunction } from "i18next";
-import { ToastContainer, toast } from "react-toastify";
 import Image from "next/image";
 import { Button, Card } from "../../../../../Ui";
 
@@ -124,7 +123,6 @@ export function PaymentSuccessContent({ t }: PaymentSuccessContentProps) {
           </Card>
         </div>
       </div>
-      <ToastContainer />
     </div>
   );
 }

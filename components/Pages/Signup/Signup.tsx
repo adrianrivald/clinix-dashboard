@@ -2,15 +2,20 @@ import { Dialog, Listbox, Transition } from "@headlessui/react";
 import emailjs from "@emailjs/browser";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import React, { Fragment, useRef } from "react";
+import React, { Fragment, useEffect, useRef } from "react";
 import { set, SubmitHandler, useForm } from "react-hook-form";
 import { twMerge } from "tailwind-merge";
 import { Button, Card } from "../../Ui";
 import { TFunction } from "i18next";
-import { ToastContainer, toast } from "react-toastify";
 import Image from "next/image";
 import Countdown from "../../../helpers/countdown";
 import PinInput from "../../Ui/Pin";
+import {
+  useRegisterEmail,
+  useRequestAuthCode,
+  useVerifyAuthCode,
+} from "../../../services/auth/use-registration";
+import toast from "react-hot-toast";
 
 interface SignupContentProps {
   t: TFunction<"common", undefined>;
@@ -18,10 +23,13 @@ interface SignupContentProps {
 
 export function SignupContent({ t }: SignupContentProps) {
   const router = useRouter();
+  const { mutate: registerEmail } = useRegisterEmail();
+  const { mutate: requestAuthCode } = useRequestAuthCode();
+  const { mutate: verifyAuthCode, isError } = useVerifyAuthCode();
   const [isSubmitted, setIsSubmitted] = React.useState(false);
   const [isShowOTPModal, setIsShowOTPModal] = React.useState(false);
 
-  const { register, handleSubmit, watch } = useForm<any>();
+  const { register, handleSubmit, watch, formState } = useForm<any>();
   const form = useRef() as any;
 
   React.useEffect(() => {
@@ -32,8 +40,54 @@ export function SignupContent({ t }: SignupContentProps) {
     email: watch("email"),
   };
 
-  const onSubmit: SubmitHandler<any> = async () => {
-    setIsShowOTPModal(true);
+  const onSubmit: SubmitHandler<any> = async (formData: any) => {
+    console.log(formData, "formdata");
+    registerEmail(
+      {
+        email: formData?.email,
+      },
+      {
+        onSuccess: () => {
+          setIsShowOTPModal(true);
+
+          requestAuthCode({
+            contact_type: "email",
+            contact_value: formData?.email,
+            token_type: "mfa_otp",
+          });
+        },
+        onError: (error: any) => {
+          const reason = error?.message
+            ? error?.message?.split("~")[0]
+            : "Terjadi error, silakan coba lagi";
+          toast.error(reason);
+        },
+      }
+    );
+  };
+
+  const onVerifyAuthCode = (pin: string) => {
+    verifyAuthCode(
+      {
+        contact_type: "email",
+        contact_value: watch("email"),
+        token_type: "mfa_otp",
+        token: pin,
+      },
+      {
+        onSuccess: () => {
+          setTimeout(() => {
+            router.push("/registration/step/1");
+          }, 1000);
+        },
+        onError: (error: any) => {
+          const reason = error?.message
+            ? error?.message?.split("~")[0]
+            : "Terjadi error, silakan coba lagi";
+          toast.error(reason);
+        },
+      }
+    );
   };
 
   const onClickHome = () => {
@@ -41,6 +95,8 @@ export function SignupContent({ t }: SignupContentProps) {
   };
 
   const censoredEmail = watch("email");
+
+  console.log(formState?.errors, "formStateformState");
 
   return (
     <div
@@ -66,11 +122,23 @@ export function SignupContent({ t }: SignupContentProps) {
                       </label>
                       <input
                         id="email"
-                        {...register("email", { required: true })}
+                        {...register("email", {
+                          required: {
+                            value: true,
+                            message: "Email harus diisi",
+                          },
+                        })}
                         type="email"
-                        className="rounded-md p-4 border border-neutral-100 focus:outline-none"
+                        className={`rounded-md p-4 border border-neutral-100 focus:outline-none ${
+                          formState?.errors?.email && "border-primary-500"
+                        }`}
                         placeholder="Masukkan Email Anda"
                       />
+                      {formState?.errors?.email && (
+                        <span className="text-primary-500">
+                          {formState?.errors?.email?.message as any}
+                        </span>
+                      )}
                     </div>
                   </div>
                 </div>
@@ -186,7 +254,11 @@ export function SignupContent({ t }: SignupContentProps) {
                         alamat email : {censoredEmail}
                       </p>
                     </div>
-                    <PinInput isClinix length={6} onComplete={() => {}} />
+                    <PinInput
+                      isClinix
+                      length={6}
+                      onComplete={onVerifyAuthCode}
+                    />
                     <div className="mt-8">
                       <span className="text-[14px] ">
                         Kirim ulang kode dalam{" "}
@@ -202,7 +274,6 @@ export function SignupContent({ t }: SignupContentProps) {
           </Dialog>
         </Transition>
       )}
-      <ToastContainer />
     </div>
   );
 }

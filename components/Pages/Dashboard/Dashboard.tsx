@@ -7,7 +7,6 @@ import { set, SubmitHandler, useForm } from "react-hook-form";
 import { twMerge } from "tailwind-merge";
 import { Button, Card } from "../../Ui";
 import { TFunction } from "i18next";
-import { ToastContainer, toast } from "react-toastify";
 import Image from "next/image";
 import Countdown from "../../../helpers/countdown";
 import PinInput from "../../Ui/Pin";
@@ -299,7 +298,6 @@ export function DashboardContent({ t }: DashboardContentProps) {
           </Dialog>
         </Transition>
       )}
-      <ToastContainer />
     </div>
   );
 }

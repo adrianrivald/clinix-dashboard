@@ -7,7 +7,6 @@ import { set, SubmitHandler, useForm } from "react-hook-form";
 import { twMerge } from "tailwind-merge";
 import { Button, Card } from "../../Ui";
 import { TFunction } from "i18next";
-import { ToastContainer, toast } from "react-toastify";
 import Image from "next/image";
 import Countdown from "../../../helpers/countdown";
 import PinInput from "../../Ui/Pin";
@@ -108,6 +107,7 @@ export function LoginContent({ t }: LoginContentProps) {
               </p>
 
               <Button
+                isClinix
                 isPrimary
                 title="Masuk"
                 className="w-full mt-4 focus:outline-none"
@@ -157,74 +157,6 @@ export function LoginContent({ t }: LoginContentProps) {
           </div>
         </div>
       </div>
-      {isShowOTPModal && (
-        <Transition appear show={isShowOTPModal} as={Fragment}>
-          <Dialog
-            as="div"
-            className="relative z-10"
-            onClose={() => setIsShowOTPModal(false)}
-          >
-            <Transition.Child
-              as={Fragment}
-              enter="ease-out duration-300"
-              enterFrom="opacity-0"
-              enterTo="opacity-100"
-              leave="ease-in duration-200"
-              leaveFrom="opacity-100"
-              leaveTo="opacity-0"
-            >
-              <div className="fixed inset-0 bg-black/25" />
-            </Transition.Child>
-
-            <div className="fixed inset-0 overflow-y-auto">
-              <div className="flex min-h-full items-center justify-center p-4 text-center">
-                <Transition.Child
-                  as={Fragment}
-                  enter="ease-out duration-300"
-                  enterFrom="opacity-0 scale-95"
-                  enterTo="opacity-100 scale-100"
-                  leave="ease-in duration-200"
-                  leaveFrom="opacity-100 scale-100"
-                  leaveTo="opacity-0 scale-95"
-                >
-                  <Dialog.Panel className="w-full max-w-[30rem] transform overflow-hidden rounded-2xl bg-white p-8 text-left align-middle shadow-xl transition-all">
-                    <Dialog.Title
-                      as="h3"
-                      className="text-lg font-medium leading-6 text-gray-900"
-                    >
-                      <div className="flex items-center gap-2 mb-2">
-                        <Image
-                          src="/assets/icons/arrow-back.svg"
-                          alt="back"
-                          width={24}
-                          height={24}
-                        />
-                        Lupa Kata Sandi
-                      </div>
-                    </Dialog.Title>
-                    <div className="mt-2">
-                      <p className="text-sm text-gray-500">
-                        Kami telah mengirim pesan berisi kode verifikasi ke
-                        alamat email : {censoredEmail}
-                      </p>
-                    </div>
-                    <PinInput length={6} onComplete={() => {}} />
-                    <div className="mt-8">
-                      <span className="text-[14px] ">
-                        Kirim ulang kode dalam{" "}
-                        <span className="text-[#1094DD]">
-                          <Countdown initialTime={150} />
-                        </span>
-                      </span>
-                    </div>
-                  </Dialog.Panel>
-                </Transition.Child>
-              </div>
-            </div>
-          </Dialog>
-        </Transition>
-      )}
-      <ToastContainer />
     </div>
   );
 }

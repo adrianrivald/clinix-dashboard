@@ -29,11 +29,7 @@ const PinInput: React.FC<PinInputProps> = ({
 
     // Call onComplete when all fields are filled
     if (newPin.every((num) => num !== "")) {
-      //   TODO: Submit handler when PIN fields are filled
       onComplete(newPin.join(""));
-      setTimeout(() => {
-        router.push("/registration/step/1");
-      }, 1000);
     }
   };
 

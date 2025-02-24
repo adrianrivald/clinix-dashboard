@@ -1,7 +1,7 @@
 import { joinURL, withQuery, type QueryObject } from 'ufo';
 import { flushStorage, getSession } from './session';
 
-const API_URL = process.env.NEXT_PUBLIC_API_URL
+export const API_URL = "https://5533-182-253-162-178.ngrok-free.app/v1"
 
 export interface RequestInitClient extends Omit<RequestInit, 'body'> {
   data?: Record<string, unknown> | FormData;
@@ -11,7 +11,8 @@ export interface RequestInitClient extends Omit<RequestInit, 'body'> {
 }
 
 interface HttpResponseError {
-  message: string;
+  error: string;
+  message:string;
   errors?: Record<string, string[]>;
 }
 
@@ -105,7 +106,8 @@ export function http<TData = any>(
     }
 
     const reason = (responseData as HttpResponseError).message;
-    throw new HttpError(response.status, reason, responseData);
+    const subReason = (responseData as HttpResponseError).error;
+    throw new HttpError(response.status, `${reason} ~ ${subReason}`, responseData);
   });
 
   return Object.assign(fetcher, { cancel: abort });
