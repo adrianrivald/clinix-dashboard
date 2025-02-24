@@ -1,14 +1,24 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, Dispatch, SetStateAction } from "react";
 
 interface CountdownProps {
   initialTime: number;
+  onClickRequestAuthCode: () => void;
+  isRequested: boolean;
+  setIsRequested: Dispatch<SetStateAction<boolean>>;
 }
 
-const Countdown: React.FC<CountdownProps> = ({ initialTime }) => {
+const Countdown: React.FC<CountdownProps> = ({
+  initialTime,
+  onClickRequestAuthCode,
+  isRequested,
+  setIsRequested,
+}) => {
   const [timeLeft, setTimeLeft] = useState<number>(initialTime);
 
   useEffect(() => {
-    if (timeLeft <= 0) return;
+    if (timeLeft <= 0) {
+      setIsRequested(false);
+    }
 
     const timer = setInterval(() => {
       setTimeLeft((prev) => prev - 1);
@@ -16,6 +26,11 @@ const Countdown: React.FC<CountdownProps> = ({ initialTime }) => {
 
     return () => clearInterval(timer);
   }, [timeLeft]);
+
+  const onClickRequestCode = () => {
+    setTimeLeft(initialTime);
+    onClickRequestAuthCode?.();
+  };
 
   // Convert seconds to mm:ss format
   const formatTime = (seconds: number): string => {
@@ -29,7 +44,21 @@ const Countdown: React.FC<CountdownProps> = ({ initialTime }) => {
   };
 
   return (
-    <span>{timeLeft > 0 ? `${formatTime(timeLeft)} ` : "Time's up!"}</span>
+    <span className="text-[14px]">
+      {isRequested ? (
+        <span>
+          Kirim ulang kode dalam{" "}
+          <span className="text-green-500">{formatTime(timeLeft)}</span>
+        </span>
+      ) : (
+        <span
+          onClick={onClickRequestCode}
+          className="cursor-pointer text-green-500"
+        >
+          Kirim ulang permintaan kode
+        </span>
+      )}
+    </span>
   );
 };
 

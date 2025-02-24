@@ -28,6 +28,7 @@ export function SignupContent({ t }: SignupContentProps) {
   const { mutate: verifyAuthCode, isError } = useVerifyAuthCode();
   const [isSubmitted, setIsSubmitted] = React.useState(false);
   const [isShowOTPModal, setIsShowOTPModal] = React.useState(false);
+  const [isRequested, setIsRequested] = React.useState(false);
 
   const { register, handleSubmit, watch, formState } = useForm<any>();
   const form = useRef() as any;
@@ -49,12 +50,33 @@ export function SignupContent({ t }: SignupContentProps) {
       {
         onSuccess: () => {
           setIsShowOTPModal(true);
-
+          setIsRequested(true);
           requestAuthCode({
             contact_type: "email",
             contact_value: formData?.email,
             token_type: "mfa_otp",
           });
+        },
+        onError: (error: any) => {
+          const reason = error?.message
+            ? error?.message?.split("~")[0]
+            : "Terjadi error, silakan coba lagi";
+          toast.error(reason);
+        },
+      }
+    );
+  };
+
+  const onClickRequestAuthCode = () => {
+    requestAuthCode(
+      {
+        contact_type: "email",
+        contact_value: watch("email"),
+        token_type: "mfa_otp",
+      },
+      {
+        onSuccess: () => {
+          setIsRequested(true);
         },
         onError: (error: any) => {
           const reason = error?.message
@@ -260,12 +282,12 @@ export function SignupContent({ t }: SignupContentProps) {
                       onComplete={onVerifyAuthCode}
                     />
                     <div className="mt-8">
-                      <span className="text-[14px] ">
-                        Kirim ulang kode dalam{" "}
-                        <span className="text-green-500">
-                          <Countdown initialTime={150} />
-                        </span>
-                      </span>
+                      <Countdown
+                        initialTime={150}
+                        onClickRequestAuthCode={onClickRequestAuthCode}
+                        isRequested={isRequested}
+                        setIsRequested={setIsRequested}
+                      />
                     </div>
                   </Dialog.Panel>
                 </Transition.Child>
