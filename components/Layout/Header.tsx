@@ -162,7 +162,7 @@ function NavMenuDesktop({
       <header className="hidden lg:flex w-full bg-white shadow-md  justify-between border-neutral-300 py-4 items-center mx-auto max-w-[100%] px-8">
         {/* Logo */}
         <div id="logo" className="flex items-center gap-4">
-          <MenubarIcon className="cursor-pointer" onClick={onToggleMenubar} />
+          {/* <MenubarIcon className="cursor-pointer" onClick={onToggleMenubar} /> */}
           <Image
             src="/assets/logo/logo-clinix.png"
             width={122}

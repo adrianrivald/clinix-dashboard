@@ -14,7 +14,7 @@ export default function HomePage() {
   return (
     <div>
       <Head>
-        <title>Memos Healthcare CRM</title>
+        <title>Clinix</title>
         <meta
           name="description"
           content="Sistem CRM Healthcare yang dirancang untuk beradaptasi dengan anda bekerja, mengintegrasikan berbagai aspek operasional kesehatan ke dalam satu platform yang intuitif dan mudah digunakan"
