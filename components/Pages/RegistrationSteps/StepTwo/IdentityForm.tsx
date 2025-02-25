@@ -58,10 +58,10 @@ export function IdentityForm({ t }: IdentityFormProps) {
   const [fotoKtp, setFotoKtp] = useState<File>();
 
   // Wilayah
-  const [provinceList, setProvinceList] = useState<Province[]>([]);
-  const [cityList, setCityList] = useState<City[]>([]);
-  const [districtList, setDistrictList] = useState<City[]>([]);
-  const [villageList, setVillageList] = useState<City[]>([]);
+  const [provinceList, setProvinceList] = useState<any[]>([]);
+  const [cityList, setCityList] = useState<any[]>([]);
+  const [districtList, setDistrictList] = useState<any[]>([]);
+  const [villageList, setVillageList] = useState<any[]>([]);
 
   // Selected Wilayah
   const [selectedProvince, setSelectedProvince] = useState<
@@ -82,14 +82,16 @@ export function IdentityForm({ t }: IdentityFormProps) {
   useEffect(() => {
     setSelectedGender(genders?.find((item) => item?.id === formData["gender"]));
     setSelectedProvince(
-      provinceList?.find((item) => item?.id === formData["province"])
+      provinceList?.find((item: any) => item?.id === formData["province"])
     );
-    setSelectedCity(cityList?.find((item) => item?.id === formData["city"]));
+    setSelectedCity(
+      cityList?.find((item: any) => item?.id === formData["city"])
+    );
     setSelectedDistrict(
-      districtList?.find((item) => item?.id === formData["sub_district"])
+      districtList?.find((item: any) => item?.id === formData["sub_district"])
     );
     setSelectedVillage(
-      villageList?.find((item) => item?.id === formData["village"])
+      villageList?.find((item: any) => item?.id === formData["village"])
     );
   });
 
