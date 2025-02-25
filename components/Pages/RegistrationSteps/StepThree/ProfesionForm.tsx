@@ -14,6 +14,7 @@ import { Button, Card } from "../../../Ui";
 import { TFunction } from "i18next";
 import Image from "next/image";
 import {
+  BASE_URL_STORAGE,
   businesses,
   profesions,
   spesialisData,
@@ -22,6 +23,7 @@ import { useRegistrationFormStore } from "../../../../stores/useRegistrationForm
 import * as sessionService from "../../../../utils/session";
 import { useRegister } from "../../../../services/auth/use-registration";
 import toast from "react-hot-toast";
+import { uploadImage } from "../../../../services/utils/uploadImage";
 
 interface IdentityFormProps {
   t: TFunction<"common", undefined>;
@@ -75,23 +77,46 @@ export function ProfesionForm({ t }: IdentityFormProps) {
     router.push("/registration/step/2");
   };
 
-  const handleFileChange = (e: ChangeEvent<HTMLInputElement>) => {
+  const handleSTRNoChange = (e: ChangeEvent<HTMLInputElement>) => {
     if (e.target.files) {
       const file = e.target.files[0];
-      setNoStrFile(file);
+
+      const imageData = new FormData();
+      imageData.append("foto", file as unknown as File);
+      uploadImage(imageData).then((res) => {
+        setFormData({
+          str_photo: `${BASE_URL_STORAGE}${res}`,
+        });
+      });
+      setFormData({
+        str_photo_name: file?.name,
+      });
     }
   };
 
   const handleFileFotoUsahaChange = (e: ChangeEvent<HTMLInputElement>) => {
     if (e.target.files) {
       const file = e.target.files[0];
-      setFotoUsaha(file);
+
+      const imageData = new FormData();
+      imageData.append("foto", file as unknown as File);
+      uploadImage(imageData).then((res) => {
+        setFormData({
+          facility_photo: `${BASE_URL_STORAGE}${res}`,
+        });
+      });
+
+      setFormData({
+        facility_photo_name: file?.name,
+      });
     }
   };
 
   const onSubmit: SubmitHandler<any> = async () => {
     // TODO SUBMIT HANDLER
   };
+
+  console.log(formData, "formdata");
 
   return (
     <div
@@ -308,16 +333,18 @@ export function ProfesionForm({ t }: IdentityFormProps) {
                       <div className="relative rounded-[8px] p-4 border border-neutral-100 flex items-center gap-2">
                         <div
                           className={`w-full ${
-                            noStrFile?.name ? "text-black" : "text-neutral-400"
+                            formData?.str_photo_name
+                              ? "text-black"
+                              : "text-neutral-400"
                           }`}
                         >
-                          {noStrFile?.name ?? "Unggah No. STR"}
+                          {formData?.str_photo_name ?? "Unggah No. STR"}
                         </div>
                         <input
                           type="file"
                           hidden
                           id="no_str_file"
-                          onChange={handleFileChange}
+                          onChange={handleSTRNoChange}
                         />
                         <label
                           htmlFor="no_str_file"
@@ -461,10 +488,13 @@ export function ProfesionForm({ t }: IdentityFormProps) {
                   <div className="relative rounded-[8px] p-4 border border-neutral-100 flex items-center gap-2">
                     <div
                       className={`w-full ${
-                        fotoUsaha?.name ? "text-black" : "text-neutral-400"
+                        formData?.facility_photo_name
+                          ? "text-black"
+                          : "text-neutral-400"
                       }`}
                     >
-                      {fotoUsaha?.name ?? "Unggah Foto Tempat Praktek"}
+                      {formData?.facility_photo_name ??
+                        "Unggah Foto Tempat Praktek"}
                     </div>
                     <input
                       type="file"

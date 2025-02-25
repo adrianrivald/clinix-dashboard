@@ -25,7 +25,7 @@ import { TFunction } from "i18next";
 import Image from "next/image";
 import Countdown from "../../../../helpers/countdown";
 import PinInput from "../../../Ui/Pin";
-import { genders } from "../../../constants/constants";
+import { BASE_URL_STORAGE, genders } from "../../../constants/constants";
 import { useRegistrationFormStore } from "../../../../stores/useRegistrationFormStore";
 import { uploadImage } from "../../../../services/utils/uploadImage";
 
@@ -157,14 +157,20 @@ export function IdentityForm({ t }: IdentityFormProps) {
     router.push("/registration/step/1");
   };
 
-  const handleFileChange = (e: ChangeEvent<HTMLInputElement>) => {
+  const handleFotoKtpChange = (e: ChangeEvent<HTMLInputElement>) => {
     if (e.target.files) {
       const file = e.target.files[0];
 
       const imageData = new FormData();
-      imageData.append("file", file as unknown as File);
-      uploadImage(imageData);
-      setFotoKtp(file);
+      imageData.append("foto", file as unknown as File);
+      uploadImage(imageData).then((res) => {
+        setFormData({
+          identity_photo: `${BASE_URL_STORAGE}${res}`,
+        });
+      });
+      setFormData({
+        identity_photo_name: file?.name,
+      });
     }
   };
 
@@ -250,7 +256,7 @@ export function IdentityForm({ t }: IdentityFormProps) {
                         type="text"
                         className="focus:outline-none w-full"
                         placeholder="Unggah Foto KTP"
-                        value={fotoKtp?.name}
+                        value={formData?.identity_photo_name}
                         readOnly
                       />
                       {/* {fotoKtp?.name} */}
@@ -258,7 +264,7 @@ export function IdentityForm({ t }: IdentityFormProps) {
                         type="file"
                         hidden
                         id="unggah_foto_ktp"
-                        onChange={handleFileChange}
+                        onChange={handleFotoKtpChange}
                       />
                       <label
                         htmlFor="unggah_foto_ktp"

@@ -12,7 +12,7 @@ interface UploadBulkResponse {
 
 
 export async function uploadImage(formData: FormData) {
-  const { data: response } = await http<{ data: UploadResponse }>(
+  const { path } = await http<{ path: string }>(
     'upload/foto',
     {
       baseURL: "https://backend-uat.notes.co.id/v1",
@@ -22,6 +22,6 @@ export async function uploadImage(formData: FormData) {
       }
     }
   );
-
-  return response;
+  
+  return path;
 }

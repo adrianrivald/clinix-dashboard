@@ -142,7 +142,7 @@ export function SummaryContent({ t }: SummaryContentProps) {
                 <div className="flex flex-col lg:flex-row justify-between lg:items-center mt-4">
                   <span>Unggah KTP</span>
                   <span className="underline text-link">
-                    {formData?.identity_photo}
+                    {formData?.identity_photo_name}
                   </span>
                 </div>
                 <div className="flex flex-col lg:flex-row justify-between lg:items-center mt-4">
@@ -190,7 +190,7 @@ export function SummaryContent({ t }: SummaryContentProps) {
                 <div className="flex flex-col lg:flex-row justify-between lg:items-center mt-4">
                   <span>Unggah STR</span>
                   <span className="underline text-link">
-                    {formData?.str_photo}
+                    {formData?.str_photo_name}
                   </span>
                 </div>
                 <div className="flex flex-col lg:flex-row justify-between lg:items-center mt-4">
@@ -212,7 +212,7 @@ export function SummaryContent({ t }: SummaryContentProps) {
                 <div className="flex flex-col lg:flex-row justify-between lg:items-center mt-4">
                   <span>Unggah Tempat Usaha</span>
                   <span className="underline text-link">
-                    {formData?.facility_photo}
+                    {formData?.facility_photo_name}
                   </span>
                 </div>
                 <div className="flex flex-col lg:flex-row justify-between lg:items-center mt-4">

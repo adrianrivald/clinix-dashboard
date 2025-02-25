@@ -42,3 +42,5 @@ export const bankList = [
     label: "Mandiri"
   }
 ]
+
+export const BASE_URL_STORAGE="https://backend-uat.notes.co.id"
