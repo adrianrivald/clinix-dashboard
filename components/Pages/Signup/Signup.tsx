@@ -16,6 +16,7 @@ import {
   useVerifyAuthCode,
 } from "../../../services/auth/use-registration";
 import toast from "react-hot-toast";
+import * as sessionService from "../../../utils/session";
 
 interface SignupContentProps {
   t: TFunction<"common", undefined>;
@@ -114,7 +115,9 @@ export function SignupContent({ t }: SignupContentProps) {
         token: pin,
       },
       {
-        onSuccess: () => {
+        onSuccess: (data) => {
+          const { token } = data?.data;
+          sessionService.setSession(token);
           setTimeout(() => {
             router.push("/registration/step/1");
           }, 1000);

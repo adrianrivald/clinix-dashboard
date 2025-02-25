@@ -2,11 +2,11 @@
 
 export const genders = [
     {
-      id: "male",
+      id: "1",
       label: "Laki-laki",
     },
     {
-      id: "female",
+      id: "2",
       label: "Perempuan",
     },
   ];

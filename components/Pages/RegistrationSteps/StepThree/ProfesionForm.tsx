@@ -1,6 +1,4 @@
 import { Dialog, Listbox, Transition } from "@headlessui/react";
-import emailjs from "@emailjs/browser";
-import Link from "next/link";
 import { useRouter } from "next/router";
 import React, {
   ChangeEvent,
@@ -11,25 +9,19 @@ import React, {
 } from "react";
 import { set, SubmitHandler, useForm } from "react-hook-form";
 import { twMerge } from "tailwind-merge";
-import { maxWidthContainer } from "../../../../constants/class";
-import { useSearchDebounce } from "../../../../helpers/hooks";
-import {
-  ArrowDownIcon,
-  ArrowLeftIcon,
-  ArrowRightBlueIcon,
-  SuccessDemo,
-} from "../../../Icons";
-import { SearchBox } from "../../../SearchBox/SearchBox";
+import { ArrowDownIcon } from "../../../Icons";
 import { Button, Card } from "../../../Ui";
 import { TFunction } from "i18next";
 import Image from "next/image";
-import Countdown from "../../../../helpers/countdown";
-import PinInput from "../../../Ui/Pin";
 import {
   businesses,
   profesions,
   spesialisData,
 } from "../../../constants/constants";
+import { useRegistrationFormStore } from "../../../../stores/useRegistrationFormStore";
+import * as sessionService from "../../../../utils/session";
+import { useRegister } from "../../../../services/auth/use-registration";
+import toast from "react-hot-toast";
 
 interface IdentityFormProps {
   t: TFunction<"common", undefined>;
@@ -53,6 +45,8 @@ interface City {
 
 export function ProfesionForm({ t }: IdentityFormProps) {
   const router = useRouter();
+  const { formData, setFormData, resetFormData } = useRegistrationFormStore();
+  const { mutate: registerAccount } = useRegister();
   const { register, handleSubmit, watch } = useForm<any>();
   const form = useRef() as any;
   const [selectedProfesion, setSelectedProfesion] = useState<SelectProps>();
@@ -62,10 +56,17 @@ export function ProfesionForm({ t }: IdentityFormProps) {
   const [isHidePassword, setIsHidePassword] = useState(true);
   const [noStrFile, setNoStrFile] = useState<File>();
   const [fotoUsaha, setFotoUsaha] = useState<File>();
-
-  const onNextStep = () => {
-    router.push("/registration/summary");
-  };
+  useEffect(() => {
+    setSelectedProfesion(
+      profesions?.find((item) => item?.id === formData["profession_id"])
+    );
+    setSelectedSpesialis(
+      spesialisData?.find((item) => item?.id === formData["smf_id"])
+    );
+    setSelectedBusiness(
+      businesses?.find((item) => item?.id === formData["facility_type"])
+    );
+  });
 
   const onPreviousStep = () => {
     router.push("/registration/step/2");
@@ -86,7 +87,73 @@ export function ProfesionForm({ t }: IdentityFormProps) {
   };
 
   const onSubmit: SubmitHandler<any> = async () => {
-    // TODO Submit handler
+    const payload = {
+      full_name: formData?.full_name,
+      password: formData?.password,
+      user: {
+        gender: formData?.gender,
+        birth_place: formData?.birth_place,
+        birth_date: formData?.birth_date,
+        identity_number: formData?.identity_number,
+        identity_photo: formData?.identity_photo,
+        phone_number: formData?.phone_number,
+        profession_id: formData?.profession_id,
+        str_no: formData?.str_no,
+        expires_date: formData?.expires_date,
+        str_photo: formData?.str_photo,
+      },
+      addresses: [
+        {
+          country: "1",
+          province: formData?.province,
+          city: formData?.city,
+          sub_district: formData?.sub_district,
+          village: formData?.village,
+          street_address: formData?.street_address,
+          postal_code: formData?.postal_code,
+          phone_number: formData?.telp,
+          detail_note: formData?.detail_note,
+          house_no: formData?.house_no,
+          rt_no: formData?.rt_no,
+          rw_no: formData?.rw_no,
+          latitude: formData?.latitude,
+          longitude: formData?.longitude,
+        },
+      ],
+      facility: {
+        name: formData?.facility_name,
+        organization_name: formData?.facility_organization_name,
+        photo: formData?.facility_photo,
+        ref_address: {
+          country: "1",
+          province: formData?.province,
+          city: formData?.city,
+          sub_district: formData?.sub_district,
+          village: formData?.village,
+          street_address: formData?.street_address,
+          postal_code: formData?.postal_code,
+          phone_number: formData?.telp,
+          detail_note: formData?.detail_note,
+          house_no: formData?.house_no,
+          rt_no: formData?.rt_no,
+          rw_no: formData?.rw_no,
+          latitude: formData?.latitude,
+          longitude: formData?.longitude,
+        },
+      },
+    };
+    console.log(payload, "payloadnya");
+    registerAccount(payload, {
+      onSuccess: () => {
+        router.push("/registration/summary");
+      },
+      onError: (error: any) => {
+        const reason = error?.message
+          ? error?.message?.split("~")[0]
+          : "Terjadi error, silakan coba lagi";
+        toast.error(reason);
+      },
+    });
   };
 
   return (
@@ -155,6 +222,9 @@ export function ProfesionForm({ t }: IdentityFormProps) {
                           <Listbox.Options className="z-10 absolute mt-1 max-h-60 w-full overflow-auto rounded-md bg-white py-1 text-base shadow-lg ring-1 ring-black/5 focus:outline-none sm:text-sm">
                             {profesions.map((profesion, idx) => (
                               <Listbox.Option
+                                onClick={() => {
+                                  setFormData({ profession_id: profesion?.id });
+                                }}
                                 key={idx}
                                 className={({ active }) =>
                                   `relative cursor-default select-none py-2 pl-10 pr-4 ${
@@ -215,6 +285,9 @@ export function ProfesionForm({ t }: IdentityFormProps) {
                           <Listbox.Options className="z-10 absolute mt-1 max-h-60 w-full overflow-auto rounded-md bg-white py-1 text-base shadow-lg ring-1 ring-black/5 focus:outline-none sm:text-sm">
                             {spesialisData.map((spesialis, idx) => (
                               <Listbox.Option
+                                onClick={() => {
+                                  setFormData({ smf_id: spesialis?.id });
+                                }}
                                 key={idx}
                                 className={({ active }) =>
                                   `relative cursor-default select-none py-2 pl-10 pr-4 ${
@@ -246,16 +319,18 @@ export function ProfesionForm({ t }: IdentityFormProps) {
                 {/* Row 2 */}
                 <div className="flex flex-col lg:flex-row justify-between gap-4">
                   <div className="flex flex-col gap-2 lg:w-full">
-                    <label className="text-[14px] font-medium" htmlFor="no_str">
+                    <label className="text-[14px] font-medium" htmlFor="str_no">
                       No. STR Aktif
                       <span className="text-warning">*</span>
                     </label>
                     <input
-                      id="no_str"
-                      {...register("no_str", { required: true })}
+                      id="str_no"
+                      {...register("str_no", { required: true })}
                       type="text"
                       className="rounded-[8px] p-4 border border-neutral-100 focus:outline-none"
                       placeholder="Masukkan No. STR"
+                      onChange={(e) => setFormData({ str_no: e.target.value })}
+                      defaultValue={formData["str_no"]}
                     />
 
                     <span className="text-[13px] text-neutral-300">
@@ -266,18 +341,22 @@ export function ProfesionForm({ t }: IdentityFormProps) {
                     <div className="w-full flex flex-col gap-2">
                       <label
                         className="text-[14px] font-medium"
-                        htmlFor="expired_date"
+                        htmlFor="expires_date"
                       >
                         Tanggal Habis Berlaku
                         <span className="text-warning">*</span>
                       </label>
 
                       <input
-                        id="expired_date"
-                        {...register("expired_date", { required: true })}
+                        id="expires_date"
+                        {...register("expires_date", { required: true })}
                         type="date"
                         className="rounded-[8px] p-4 border border-neutral-100 focus:outline-none"
                         placeholder="Tanggal Habis Berlaku"
+                        onChange={(e) =>
+                          setFormData({ expires_date: e.target.value })
+                        }
+                        defaultValue={formData["expires_date"]}
                       />
                     </div>
                     <div className="w-full flex flex-col gap-2">
@@ -323,30 +402,45 @@ export function ProfesionForm({ t }: IdentityFormProps) {
                 <div className="flex flex-col gap-2 lg:w-full">
                   <label
                     className="text-[14px] font-medium"
-                    htmlFor="organization"
+                    htmlFor="facility_organization_name"
                   >
                     Organisasi
                     <span className="text-warning">*</span>
                   </label>
                   <input
-                    id="organization"
-                    {...register("organization", { required: true })}
+                    id="facility_organization_name"
+                    {...register("facility_organization_name", {
+                      required: true,
+                    })}
                     type="text"
                     className="rounded-[8px] p-4 border border-neutral-100 focus:outline-none"
                     placeholder="Masukkan nama organisasi"
+                    onChange={(e) =>
+                      setFormData({
+                        facility_organization_name: e.target.value,
+                      })
+                    }
+                    defaultValue={formData["facility_organization_name"]}
                   />
                 </div>
                 <div className="w-full flex flex-col gap-2">
-                  <label className="text-[14px] font-medium" htmlFor="clinic">
+                  <label
+                    className="text-[14px] font-medium"
+                    htmlFor="facility_name"
+                  >
                     Nama Klinik/Usaha
                     <span className="text-warning">*</span>
                   </label>
                   <input
-                    id="clinic"
-                    {...register("clinic", { required: true })}
+                    id="facility_name"
+                    {...register("facility_name", { required: true })}
                     type="text"
                     className="rounded-[8px] p-4 border border-neutral-100 focus:outline-none"
                     placeholder="Masukkan nama klinik/usaha"
+                    onChange={(e) =>
+                      setFormData({ facility_name: e.target.value })
+                    }
+                    defaultValue={formData["facility_name"]}
                   />
                 </div>
               </div>
@@ -390,6 +484,9 @@ export function ProfesionForm({ t }: IdentityFormProps) {
                         <Listbox.Options className="z-10 absolute mt-1 max-h-60 w-full overflow-auto rounded-md bg-white py-1 text-base shadow-lg ring-1 ring-black/5 focus:outline-none sm:text-sm">
                           {businesses.map((business, idx) => (
                             <Listbox.Option
+                              onClick={() => {
+                                setFormData({ facility_type: business?.id });
+                              }}
                               key={idx}
                               className={({ active }) =>
                                 `relative cursor-default select-none py-2 pl-10 pr-4 ${
@@ -463,11 +560,11 @@ export function ProfesionForm({ t }: IdentityFormProps) {
           </Card>
           <Card className="mt-8">
             <Button
-              onClick={onNextStep}
               isClinix
               isPrimary
               className="w-full"
               title="Simpan"
+              type="submit"
             />
           </Card>
         </form>

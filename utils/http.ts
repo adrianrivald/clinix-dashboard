@@ -1,7 +1,7 @@
 import { joinURL, withQuery, type QueryObject } from 'ufo';
 import { flushStorage, getSession } from './session';
 
-export const API_URL = "https://5533-182-253-162-178.ngrok-free.app/v1"
+export const API_URL = "https://7720-182-253-162-178.ngrok-free.app/v1"
 
 export interface RequestInitClient extends Omit<RequestInit, 'body'> {
   data?: Record<string, unknown> | FormData;
@@ -100,8 +100,8 @@ export function http<TData = any>(
     }
 
     if (response.status === 401 && !response.url.includes('login')) {
-      flushStorage();
-      window.location.href= "/"
+      // flushStorage();
+      // window.location.href= "/"
       // window.location.reload();
     }
 

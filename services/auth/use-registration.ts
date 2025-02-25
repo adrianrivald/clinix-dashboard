@@ -86,5 +86,26 @@ export function useVerifyAuthCode() {
       }
     );
   }
+
+  
+export function useRegister() {
+  const queryClient = useQueryClient();
+  return useMutation(
+    async (formData: any) => {
+      return http(`account/register-clinix`, {
+        data: formData
+      });
+    },
+    {
+        onSuccess: () => {
+      },
+      onError: (error) => {
+        const reason =
+          error instanceof Error ? error.message : 'Something went wrong';
+
+      },
+    }
+  );
+}
   
   
