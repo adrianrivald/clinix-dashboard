@@ -2,7 +2,7 @@ import { Dialog, Listbox, Transition } from "@headlessui/react";
 import emailjs from "@emailjs/browser";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import React, { Fragment, useRef } from "react";
+import React, { Fragment, useRef, useState } from "react";
 import { set, SubmitHandler, useForm } from "react-hook-form";
 import { twMerge } from "tailwind-merge";
 import { maxWidthContainer } from "../../../../constants/class";
@@ -26,13 +26,17 @@ interface TermsConditionContentProps {
 
 export function TermsConditionContent({ t }: TermsConditionContentProps) {
   const router = useRouter();
-
+  const [isAgree, setIsAgree] = useState(false);
   const onNextStep = () => {
     router.push("/registration/step/2");
   };
 
   const onPreviousStep = () => {
     router.push("/");
+  };
+
+  const onCheckAgree = () => {
+    setIsAgree((prev) => !prev);
   };
 
   return (
@@ -177,6 +181,7 @@ export function TermsConditionContent({ t }: TermsConditionContentProps) {
               className="accent-green-500 w-4 h-4"
               id="aggreement"
               type="checkbox"
+              onChange={onCheckAgree}
             />
 
             <label htmlFor="aggreement" className="cursor-pointer">
@@ -189,6 +194,7 @@ export function TermsConditionContent({ t }: TermsConditionContentProps) {
             isPrimary
             className="w-full mt-4"
             title="Selanjutnya"
+            isDisabled={!isAgree}
           />
         </Card>
       </div>

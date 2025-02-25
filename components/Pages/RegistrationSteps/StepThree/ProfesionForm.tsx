@@ -46,7 +46,6 @@ interface City {
 export function ProfesionForm({ t }: IdentityFormProps) {
   const router = useRouter();
   const { formData, setFormData, resetFormData } = useRegistrationFormStore();
-  const { mutate: registerAccount } = useRegister();
   const { register, handleSubmit, watch } = useForm<any>();
   const form = useRef() as any;
   const [selectedProfesion, setSelectedProfesion] = useState<SelectProps>();
@@ -66,7 +65,11 @@ export function ProfesionForm({ t }: IdentityFormProps) {
     setSelectedBusiness(
       businesses?.find((item) => item?.id === formData["facility_type"])
     );
-  });
+  }, []);
+
+  const onNextStep = () => {
+    router.push("/registration/summary");
+  };
 
   const onPreviousStep = () => {
     router.push("/registration/step/2");
@@ -87,73 +90,7 @@ export function ProfesionForm({ t }: IdentityFormProps) {
   };
 
   const onSubmit: SubmitHandler<any> = async () => {
-    const payload = {
-      full_name: formData?.full_name,
-      password: formData?.password,
-      user: {
-        gender: formData?.gender,
-        birth_place: formData?.birth_place,
-        birth_date: formData?.birth_date,
-        identity_number: formData?.identity_number,
-        identity_photo: formData?.identity_photo,
-        phone_number: formData?.phone_number,
-        profession_id: formData?.profession_id,
-        str_no: formData?.str_no,
-        expires_date: formData?.expires_date,
-        str_photo: formData?.str_photo,
-      },
-      addresses: [
-        {
-          country: "1",
-          province: formData?.province,
-          city: formData?.city,
-          sub_district: formData?.sub_district,
-          village: formData?.village,
-          street_address: formData?.street_address,
-          postal_code: formData?.postal_code,
-          phone_number: formData?.telp,
-          detail_note: formData?.detail_note,
-          house_no: formData?.house_no,
-          rt_no: formData?.rt_no,
-          rw_no: formData?.rw_no,
-          latitude: formData?.latitude,
-          longitude: formData?.longitude,
-        },
-      ],
-      facility: {
-        name: formData?.facility_name,
-        organization_name: formData?.facility_organization_name,
-        photo: formData?.facility_photo,
-        ref_address: {
-          country: "1",
-          province: formData?.province,
-          city: formData?.city,
-          sub_district: formData?.sub_district,
-          village: formData?.village,
-          street_address: formData?.street_address,
-          postal_code: formData?.postal_code,
-          phone_number: formData?.telp,
-          detail_note: formData?.detail_note,
-          house_no: formData?.house_no,
-          rt_no: formData?.rt_no,
-          rw_no: formData?.rw_no,
-          latitude: formData?.latitude,
-          longitude: formData?.longitude,
-        },
-      },
-    };
-    console.log(payload, "payloadnya");
-    registerAccount(payload, {
-      onSuccess: () => {
-        router.push("/registration/summary");
-      },
-      onError: (error: any) => {
-        const reason = error?.message
-          ? error?.message?.split("~")[0]
-          : "Terjadi error, silakan coba lagi";
-        toast.error(reason);
-      },
-    });
+    // TODO SUBMIT HANDLER
   };
 
   return (
@@ -560,11 +497,11 @@ export function ProfesionForm({ t }: IdentityFormProps) {
           </Card>
           <Card className="mt-8">
             <Button
+              onClick={onNextStep}
               isClinix
               isPrimary
               className="w-full"
               title="Simpan"
-              type="submit"
             />
           </Card>
         </form>

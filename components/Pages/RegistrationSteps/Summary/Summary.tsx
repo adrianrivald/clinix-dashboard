@@ -8,6 +8,9 @@ import { twMerge } from "tailwind-merge";
 import { TFunction } from "i18next";
 import Image from "next/image";
 import { Button, Card } from "../../../Ui";
+import { useRegistrationFormStore } from "../../../../stores/useRegistrationFormStore";
+import { useRegister } from "../../../../services/auth/use-registration";
+import toast from "react-hot-toast";
 
 interface SummaryContentProps {
   t: TFunction<"common", undefined>;
@@ -15,14 +18,86 @@ interface SummaryContentProps {
 
 export function SummaryContent({ t }: SummaryContentProps) {
   const router = useRouter();
+  const { formData, setFormData, resetFormData } = useRegistrationFormStore();
+  const { mutate: registerAccount } = useRegister();
   const [isChecked, setIsChecked] = React.useState(false);
 
   const onCheckAgreement = () => {
     setIsChecked((prev) => !prev);
   };
 
+  const onClickToEdit = () => {
+    router.push("/registration/step/2");
+  };
+
   const onFinishRegistration = () => {
-    router.push("/registration/summary/finish");
+    const payload = {
+      full_name: formData?.full_name,
+      password: formData?.password,
+      user: {
+        gender: formData?.gender,
+        birth_place: formData?.birth_place,
+        birth_date: formData?.birth_date,
+        identity_number: formData?.identity_number,
+        identity_photo: formData?.identity_photo,
+        phone_number: formData?.phone_number,
+        profession_id: formData?.profession_id,
+        str_no: formData?.str_no,
+        expires_date: formData?.expires_date,
+        str_photo: formData?.str_photo,
+      },
+      addresses: [
+        {
+          country: "1",
+          province: formData?.province,
+          city: formData?.city,
+          sub_district: formData?.sub_district,
+          village: formData?.village,
+          street_address: formData?.street_address,
+          postal_code: formData?.postal_code,
+          phone_number: formData?.telp,
+          detail_note: formData?.detail_note,
+          house_no: formData?.house_no,
+          rt_no: formData?.rt_no,
+          rw_no: formData?.rw_no,
+          latitude: formData?.latitude,
+          longitude: formData?.longitude,
+        },
+      ],
+      facility: {
+        name: formData?.facility_name,
+        organization_name: formData?.facility_organization_name,
+        photo: formData?.facility_photo,
+        ref_address: {
+          country: "1",
+          province: formData?.province,
+          city: formData?.city,
+          sub_district: formData?.sub_district,
+          village: formData?.village,
+          street_address: formData?.street_address,
+          postal_code: formData?.postal_code,
+          phone_number: formData?.telp,
+          detail_note: formData?.detail_note,
+          house_no: formData?.house_no,
+          rt_no: formData?.rt_no,
+          rw_no: formData?.rw_no,
+          latitude: formData?.latitude,
+          longitude: formData?.longitude,
+        },
+      },
+    };
+    console.log(payload, "payloadnya");
+    registerAccount(payload, {
+      onSuccess: () => {
+        router.push("/registration/summary/finish");
+      },
+      onError: (error: any) => {
+        const reason = error?.message
+          ? error?.message?.split("~")[0]
+          : "Terjadi error, silakan coba lagi";
+        toast.error(reason);
+      },
+    });
   };
 
   return (
@@ -62,31 +137,40 @@ export function SummaryContent({ t }: SummaryContentProps) {
                 </div>
                 <div className="flex flex-col lg:flex-row justify-between lg:items-center mt-4">
                   <span>NIK</span>
-                  <span>7990890890</span>
+                  <span>{formData?.identity_number}</span>
                 </div>
                 <div className="flex flex-col lg:flex-row justify-between lg:items-center mt-4">
                   <span>Unggah KTP</span>
-                  <span className="underline text-link">KTP.PNG</span>
+                  <span className="underline text-link">
+                    {formData?.identity_photo}
+                  </span>
                 </div>
                 <div className="flex flex-col lg:flex-row justify-between lg:items-center mt-4">
                   <span>Nama Lengkap</span>
-                  <span>Dr. John Doe</span>
+                  <span>{formData?.full_name}</span>
                 </div>
                 <div className="flex flex-col lg:flex-row justify-between lg:items-center mt-4">
                   <span>Jenis Kelamin</span>
-                  <span>Laki-Laki</span>
+                  <span>
+                    {formData?.gender === "1" ? "Laki-laki" : "Perempuan"}
+                  </span>
                 </div>
                 <div className="flex flex-col lg:flex-row justify-between lg:items-center mt-4">
                   <span>Tempat/Tanggal Lahir</span>
-                  <span>Yogyakarta, 09 Mei 2000</span>
+                  <span>
+                    {formData?.birth_place}, {formData?.birth_date}
+                  </span>
                 </div>
                 <div className="flex flex-col lg:flex-row justify-between lg:items-center mt-4">
                   <span>No. HP</span>
-                  <span>09799907900</span>
+                  <span>{formData?.phone_number}</span>
                 </div>
                 <div className="flex flex-col lg:flex-row justify-between lg:items-center mt-4">
                   <span>Alamat</span>
-                  <span>RT22/RW10, Sanggrahan, Sentolo, Yogyakarta</span>
+                  <span>
+                    {formData?.street_address} {formData?.detail_note} RT
+                    {formData?.rt_no} RW{formData?.rw_no}
+                  </span>
                 </div>
               </div>
             </div>
@@ -97,39 +181,46 @@ export function SummaryContent({ t }: SummaryContentProps) {
                 </div>
                 <div className="flex flex-col lg:flex-row justify-between lg:items-center mt-4">
                   <span>SMF</span>
-                  <span>Umum</span>
+                  <span>{formData?.smf_id}</span>
                 </div>
                 <div className="flex flex-col lg:flex-row justify-between lg:items-center mt-4">
                   <span>No. STR Aktif</span>
-                  <span>7978979099</span>
+                  <span>{formData?.str_no}</span>
                 </div>
                 <div className="flex flex-col lg:flex-row justify-between lg:items-center mt-4">
                   <span>Unggah STR</span>
-                  <span className="underline text-link">STR.PNG</span>
+                  <span className="underline text-link">
+                    {formData?.str_photo}
+                  </span>
                 </div>
                 <div className="flex flex-col lg:flex-row justify-between lg:items-center mt-4">
                   <span>Tanggal Habis Berlaku</span>
-                  <span>09-09-28</span>
+                  <span>{formData?.expires_date}</span>
                 </div>
                 <div className="flex flex-col lg:flex-row justify-between lg:items-center mt-4">
                   <span>Organisasi</span>
-                  <span>Dr. John Doe</span>
+                  <span>{formData?.facility_organization_name}</span>
                 </div>
                 <div className="flex flex-col lg:flex-row justify-between lg:items-center mt-4">
                   <span>Nama Klinik</span>
-                  <span>Praktek Dr. John Doe</span>
+                  <span>{formData?.facility_name}</span>
                 </div>
                 <div className="flex flex-col lg:flex-row justify-between lg:items-center mt-4">
                   <span>Jenis Usaha</span>
-                  <span>Pribadi</span>
+                  <span>{formData?.facility_type}</span>
                 </div>
                 <div className="flex flex-col lg:flex-row justify-between lg:items-center mt-4">
                   <span>Unggah Tempat Usaha</span>
-                  <span className="underline text-link">usaha.PNG</span>
+                  <span className="underline text-link">
+                    {formData?.facility_photo}
+                  </span>
                 </div>
                 <div className="flex flex-col lg:flex-row justify-between lg:items-center mt-4">
                   <span>Alamat</span>
-                  <span>RT22/RW10, Sanggrahan, Sentolo, Yogyakarta</span>
+                  <span>
+                    {formData?.street_address} {formData?.detail_note} RT
+                    {formData?.rt_no} RW{formData?.rw_no}
+                  </span>
                 </div>
               </div>
             </div>
@@ -153,6 +244,7 @@ export function SummaryContent({ t }: SummaryContentProps) {
 
             <div className="flex flex-col-reverse lg:flex-row  justify-between gap-4 mt-4">
               <Button
+                onClick={onClickToEdit}
                 isClinix
                 isPrimary={false}
                 title="Edit Data"
