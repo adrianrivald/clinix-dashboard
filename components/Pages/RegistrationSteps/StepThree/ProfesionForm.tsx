@@ -44,14 +44,17 @@ interface City {
   name: string;
   province_id: number;
 }
-
+interface ProfesionProps {
+  label: string;
+  id: number;
+}
 export function ProfesionForm({ t }: IdentityFormProps) {
   const router = useRouter();
   const { formData, setFormData, resetFormData } = useRegistrationFormStore();
   const { register, handleSubmit, watch } = useForm<any>();
   const form = useRef() as any;
-  const [selectedProfesion, setSelectedProfesion] = useState<SelectProps>();
-  const [selectedSpesialis, setSelectedSpesialis] = useState<SelectProps>();
+  const [selectedProfesion, setSelectedProfesion] = useState<ProfesionProps>();
+  const [selectedSpesialis, setSelectedSpesialis] = useState<ProfesionProps>();
   const [selectedBusiness, setSelectedBusiness] = useState<SelectProps>();
 
   const [isHidePassword, setIsHidePassword] = useState(true);
@@ -82,7 +85,7 @@ export function ProfesionForm({ t }: IdentityFormProps) {
       const file = e.target.files[0];
 
       const imageData = new FormData();
-      imageData.append("foto", file as unknown as File);
+      imageData.append("file", file as unknown as File);
       uploadImage(imageData).then((res) => {
         setFormData({
           str_photo: `${BASE_URL_STORAGE}${res}`,
@@ -99,7 +102,7 @@ export function ProfesionForm({ t }: IdentityFormProps) {
       const file = e.target.files[0];
 
       const imageData = new FormData();
-      imageData.append("foto", file as unknown as File);
+      imageData.append("file", file as unknown as File);
       uploadImage(imageData).then((res) => {
         setFormData({
           facility_photo: `${BASE_URL_STORAGE}${res}`,

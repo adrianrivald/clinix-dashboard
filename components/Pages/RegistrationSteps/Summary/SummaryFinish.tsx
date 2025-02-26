@@ -8,6 +8,7 @@ import { twMerge } from "tailwind-merge";
 import { TFunction } from "i18next";
 import Image from "next/image";
 import { Button, Card } from "../../../Ui";
+import { useRegistrationFormStore } from "../../../../stores/useRegistrationFormStore";
 
 interface SummaryFinishContentProps {
   t: TFunction<"common", undefined>;
@@ -15,6 +16,8 @@ interface SummaryFinishContentProps {
 
 export function SummaryFinishContent({ t }: SummaryFinishContentProps) {
   const router = useRouter();
+  const { formData } = useRegistrationFormStore();
+
   const onClickToHome = () => {
     router.push("/");
   };
@@ -48,15 +51,18 @@ export function SummaryFinishContent({ t }: SummaryFinishContentProps) {
                 </div>
                 <div className="flex flex-col lg:flex-row justify-between lg:items-center mt-4">
                   <span>Nama Pelanggan</span>
-                  <span>Dr. John Doe</span>
+                  <span>{formData?.full_name}</span>
                 </div>
                 <div className="flex flex-col lg:flex-row justify-between lg:items-center mt-4">
                   <span>Nama Klinik</span>
-                  <span>Praktek Dr. John Doe</span>
+                  <span>{formData?.facility_name}</span>
                 </div>
                 <div className="flex flex-col lg:flex-row justify-between lg:items-center mt-4">
                   <span>Alamat Klinik</span>
-                  <span>RT22/RW10, Sanggrahan, Sentolo, Yogyakarta</span>
+                  <span>
+                    {formData?.street_address} {formData?.detail_note} RT
+                    {formData?.rt_no} RW{formData?.rw_no}
+                  </span>
                 </div>
               </div>
             </div>

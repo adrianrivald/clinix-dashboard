@@ -10,6 +10,7 @@ import { gtmVirtualPageView } from "../libs";
 import { QueryClientProvider } from "@tanstack/react-query";
 import { queryClient } from "../utils/query-client";
 import { Toaster } from "react-hot-toast";
+import { AuthProvider } from "../utils/auth/providers";
 
 export function App({ Component, pageProps }: AppProps) {
   const router = useRouter();
@@ -21,23 +22,25 @@ export function App({ Component, pageProps }: AppProps) {
   return (
     <>
       <QueryClientProvider client={queryClient}>
-        <Head>
-          <meta
-            name="google-site-verification"
-            content="RMbsBIUpcLYYwPo4uGuQf1xftz_DMnhb87bv13cscGM"
-          />
-        </Head>
-        <section className="w-full mx-auto text-neutral-500">
-          <Header setIsExpandedMenubar={setIsExpandedMenubar} />
-          <div className="flex">
-            {isLoggedIn && <Sidebar isExpandedMenubar={isExpandedMenubar} />}
-            <div className="w-full lg:mt-0">
-              <Component {...pageProps} />
+        <AuthProvider>
+          <Head>
+            <meta
+              name="google-site-verification"
+              content="RMbsBIUpcLYYwPo4uGuQf1xftz_DMnhb87bv13cscGM"
+            />
+          </Head>
+          <section className="w-full mx-auto text-neutral-500">
+            <Header setIsExpandedMenubar={setIsExpandedMenubar} />
+            <div className="flex">
+              {isLoggedIn && <Sidebar isExpandedMenubar={isExpandedMenubar} />}
+              <div className="w-full lg:mt-0">
+                <Component {...pageProps} />
+              </div>
+              {isLoggedIn && <MenubarBottom />}
             </div>
-            {isLoggedIn && <MenubarBottom />}
-          </div>
-        </section>
-        <Toaster position="top-right" />
+          </section>
+          <Toaster position="top-right" />
+        </AuthProvider>
       </QueryClientProvider>
     </>
   );

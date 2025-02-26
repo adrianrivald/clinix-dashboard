@@ -13,9 +13,8 @@ interface UploadBulkResponse {
 
 export async function uploadImage(formData: FormData) {
   const { path } = await http<{ path: string }>(
-    'upload/foto',
+    'files',
     {
-      baseURL: "https://backend-uat.notes.co.id/v1",
       data: formData,
       headers: {
         'Content-Type': 'multipart/form-data',

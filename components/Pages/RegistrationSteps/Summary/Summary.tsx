@@ -18,7 +18,7 @@ interface SummaryContentProps {
 
 export function SummaryContent({ t }: SummaryContentProps) {
   const router = useRouter();
-  const { formData, setFormData, resetFormData } = useRegistrationFormStore();
+  const { formData } = useRegistrationFormStore();
   const { mutate: registerAccount } = useRegister();
   const [isChecked, setIsChecked] = React.useState(false);
 
@@ -57,9 +57,9 @@ export function SummaryContent({ t }: SummaryContentProps) {
           postal_code: formData?.postal_code,
           phone_number: formData?.telp,
           detail_note: formData?.detail_note,
-          house_no: formData?.house_no,
-          rt_no: formData?.rt_no,
-          rw_no: formData?.rw_no,
+          house_no: Number(formData?.house_no),
+          rt_no: Number(formData?.rt_no),
+          rw_no: Number(formData?.rw_no),
           latitude: formData?.latitude,
           longitude: formData?.longitude,
         },
@@ -78,9 +78,9 @@ export function SummaryContent({ t }: SummaryContentProps) {
           postal_code: formData?.postal_code,
           phone_number: formData?.telp,
           detail_note: formData?.detail_note,
-          house_no: formData?.house_no,
-          rt_no: formData?.rt_no,
-          rw_no: formData?.rw_no,
+          house_no: Number(formData?.house_no),
+          rt_no: Number(formData?.rt_no),
+          rw_no: Number(formData?.rw_no),
           latitude: formData?.latitude,
           longitude: formData?.longitude,
         },

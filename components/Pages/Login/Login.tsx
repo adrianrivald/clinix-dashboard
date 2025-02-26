@@ -10,6 +10,8 @@ import { TFunction } from "i18next";
 import Image from "next/image";
 import Countdown from "../../../helpers/countdown";
 import PinInput from "../../Ui/Pin";
+import { useAuth } from "../../../utils/auth/providers";
+import toast from "react-hot-toast";
 
 interface LoginContentProps {
   t: TFunction<"common", undefined>;
@@ -17,6 +19,7 @@ interface LoginContentProps {
 
 export function LoginContent({ t }: LoginContentProps) {
   const router = useRouter();
+  const { login } = useAuth();
   const [isSubmitted, setIsSubmitted] = React.useState(false);
   const [isShowOTPModal, setIsShowOTPModal] = React.useState(false);
   const [isHidePassword, setIsHidePassword] = useState(true);
@@ -32,7 +35,16 @@ export function LoginContent({ t }: LoginContentProps) {
     email: watch("email"),
   };
 
-  const onSubmit: SubmitHandler<any> = async () => {
+  const onSubmit: SubmitHandler<any> = async (formData: any) => {
+    console.log(formData, "formlogin");
+    try {
+      await login(formData);
+    } catch (error: any) {
+      const reason = error?.message
+        ? error?.message?.split("~")[0]
+        : "Terjadi error, silakan coba lagi";
+      toast.error(reason);
+    }
     // TODO: login function
   };
 

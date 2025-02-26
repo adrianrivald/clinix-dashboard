@@ -162,7 +162,7 @@ export function IdentityForm({ t }: IdentityFormProps) {
       const file = e.target.files[0];
 
       const imageData = new FormData();
-      imageData.append("foto", file as unknown as File);
+      imageData.append("file", file as unknown as File);
       uploadImage(imageData).then((res) => {
         setFormData({
           identity_photo: `${BASE_URL_STORAGE}${res}`,
