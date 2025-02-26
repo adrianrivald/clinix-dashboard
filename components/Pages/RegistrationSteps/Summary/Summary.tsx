@@ -11,6 +11,7 @@ import { Button, Card } from "../../../Ui";
 import { useRegistrationFormStore } from "../../../../stores/useRegistrationFormStore";
 import { useRegister } from "../../../../services/auth/use-registration";
 import toast from "react-hot-toast";
+import * as sessionService from "../../../../utils/session";
 
 interface SummaryContentProps {
   t: TFunction<"common", undefined>;
@@ -86,9 +87,9 @@ export function SummaryContent({ t }: SummaryContentProps) {
         },
       },
     };
-    console.log(payload, "payloadnya");
     registerAccount(payload, {
       onSuccess: () => {
+        sessionService.flushSession();
         router.push("/registration/summary/finish");
       },
       onError: (error: any) => {

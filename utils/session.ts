@@ -1,6 +1,6 @@
-const API_URL = process.env.NEXT_PUBLIC_API_URL
+import { API_URL } from "./http";
+
 const STORAGE_KEY = 'session';
-const USER_KEY = 'user_info';
 
 export function getSession() {
   if (typeof window !== "undefined") {
@@ -15,8 +15,8 @@ export function setSession(newSession: string) {
 
 export function flushStorage() {
   window.localStorage.removeItem(STORAGE_KEY);
-  window.localStorage.removeItem(USER_KEY);
 }
+
 export async function flushSession() {
   // use `fetch` instead of `http` from `utils` to prevent circular dependency
   await window.fetch(`${API_URL}/logout`, {
